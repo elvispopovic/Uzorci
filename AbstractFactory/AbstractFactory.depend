@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1539006260 source:d:\programiranje\c++\abstractfactory\main.cpp
+	<iostream>
+	<KonkretniProizvodjaci.h>
+	<IApstraktniProizvodi.h>
+
+1538950240 source:d:\programiranje\c++\abstractfactory\src\konkretniproizvoda.cpp
+	"KonkretniProizvodA.h"
+
+1538950061 d:\programiranje\c++\abstractfactory\include\konkretniproizvoda.h
+	<IApstraktniProizvodi.h>
+
+1539007150 d:\programiranje\c++\abstractfactory\include\iapstraktniproizvodi.h
+	<string>
+
+1538950502 source:d:\programiranje\c++\abstractfactory\src\konkretniproizvodb.cpp
+	"KonkretniProizvodB.h"
+
+1538950624 d:\programiranje\c++\abstractfactory\include\konkretniproizvodb.h
+	<IApstraktniProizvodi.h>
+
+1538950523 source:d:\programiranje\c++\abstractfactory\src\konkretniproizvodc.cpp
+	"KonkretniProizvodC.h"
+
+1538950570 d:\programiranje\c++\abstractfactory\include\konkretniproizvodc.h
+	<IApstraktniProizvodi.h>
+
+1538999237 source:d:\programiranje\c++\abstractfactory\src\konkretniproizvodia.cpp
+	"KonkretniProizvodiA.h"
+
+1539007164 d:\programiranje\c++\abstractfactory\include\konkretniproizvodia.h
+	<IApstraktniProizvodi.h>
+
+1538999189 source:d:\programiranje\c++\abstractfactory\src\konkretniproizvodib.cpp
+	"KonkretniProizvodiB.h"
+
+1539007176 d:\programiranje\c++\abstractfactory\include\konkretniproizvodib.h
+	<IApstraktniProizvodi.h>
+
+1538999171 source:d:\programiranje\c++\abstractfactory\src\konkretniproizvodic.cpp
+	"KonkretniProizvodiC.h"
+
+1539007187 d:\programiranje\c++\abstractfactory\include\konkretniproizvodic.h
+	<IApstraktniProizvodi.h>
+
+1539006197 source:d:\programiranje\c++\abstractfactory\src\konkretniproizvodjaci.cpp
+	<KonkretniProizvodjaci.h>
+	<KonkretniProizvodiA.h>
+	<KonkretniProizvodiB.h>
+	<KonkretniProizvodiC.h>
+
+1539006115 d:\programiranje\c++\abstractfactory\include\konkretniproizvodjaci.h
+	<IApstraktniProizvodjac.h>
+
+1539005744 d:\programiranje\c++\abstractfactory\include\iapstraktniproizvodjac.h
+	<string>
+	<IApstraktniProizvodi.h>
+
