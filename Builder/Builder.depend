@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1539049920 source:d:\programiranje\c++\builder\main.cpp
+	<iostream>
+	<KonkretniGraditelji.h>
+	<Upravljac.h>
+
+1539047835 source:d:\programiranje\c++\builder\src\konkretniproizvod.cpp
+	"KonkretniProizvod.h"
+
+1539046759 d:\programiranje\c++\builder\include\konkretniproizvod.h
+	<IApstraktniProizvod.h>
+
+1539047027 d:\programiranje\c++\builder\include\iapstraktniproizvod.h
+	<sstream>
+	<string>
+
+1539049081 source:d:\programiranje\c++\builder\src\konkretnigraditelji.cpp
+	"konkretnigraditelji.h"
+
+1539048478 d:\programiranje\c++\builder\include\konkretnigraditelji.h
+	<IApstraktniGraditelj.h>
+	<KonkretniProizvod.h>
+
+1539048439 d:\programiranje\c++\builder\include\iapstraktnigraditelj.h
+	<iostream>
+	<KonkretniProizvod.h>
+
+1539049493 source:d:\programiranje\c++\builder\src\upravljac.cpp
+	"Upravljac.h"
+
+1539049506 d:\programiranje\c++\builder\include\upravljac.h
+	<IApstraktniGraditelj.h>
+
