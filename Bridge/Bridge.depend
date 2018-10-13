@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1539424092 source:d:\programiranje\c++\bridge\main.cpp
+	<iostream>
+	<apstrakcija.h>
+	<implementacija.h>
+
+1539420187 d:\programiranje\c++\bridge\include\iapstrakcija.h
+
+1539424041 source:d:\programiranje\c++\bridge\src\apstrakcija.cpp
+	"apstrakcija.h"
+
+1539424147 d:\programiranje\c++\bridge\include\apstrakcija.h
+	<implementacija.h>
+
+1539423761 d:\programiranje\c++\bridge\include\implementacija.h
+	<string>
+	<sstream>
+
+1539423842 source:d:\programiranje\c++\bridge\src\implementacija.cpp
+	"implementacija.h"
+
