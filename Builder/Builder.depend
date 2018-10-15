@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1539049920 source:d:\programiranje\c++\builder\main.cpp
+1539639086 source:d:\programiranje\c++\builder\main.cpp
 	<iostream>
 	<KonkretniGraditelji.h>
 	<Upravljac.h>
@@ -14,18 +14,18 @@
 	<sstream>
 	<string>
 
-1539049081 source:d:\programiranje\c++\builder\src\konkretnigraditelji.cpp
+1539639018 source:d:\programiranje\c++\builder\src\konkretnigraditelji.cpp
 	"konkretnigraditelji.h"
 
-1539048478 d:\programiranje\c++\builder\include\konkretnigraditelji.h
+1539639086 d:\programiranje\c++\builder\include\konkretnigraditelji.h
 	<IApstraktniGraditelj.h>
 	<KonkretniProizvod.h>
 
-1539048439 d:\programiranje\c++\builder\include\iapstraktnigraditelj.h
+1539638845 d:\programiranje\c++\builder\include\iapstraktnigraditelj.h
 	<iostream>
 	<KonkretniProizvod.h>
 
-1539049493 source:d:\programiranje\c++\builder\src\upravljac.cpp
+1539639162 source:d:\programiranje\c++\builder\src\upravljac.cpp
 	"Upravljac.h"
 
 1539049506 d:\programiranje\c++\builder\include\upravljac.h

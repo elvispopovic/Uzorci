@@ -8,7 +8,7 @@ int main()
 {
     string poruka;
     IApstraktniGraditelj *graditeljA, *graditeljB;
-    Upravljac *upravljac;
+    Upravljac *upravljacA, *upravljacB;
     KonkretniProizvod *proizvod;
 
     cout << "Pokrenuta je aplikacija koja prikazuje uzorak dizajna \"Builder\"" << endl;
@@ -17,21 +17,22 @@ int main()
     graditeljB = new KonkretniGraditeljB(poruka);
     cout << poruka << endl;
 
-    upravljac = new Upravljac(graditeljA, poruka);
+    upravljacA = new Upravljac(graditeljA, poruka);
     cout << poruka << endl;
-    upravljac->SagradiProizvod();
-    proizvod = upravljac->DajProizvod();
+    upravljacA->SagradiProizvod();
+    proizvod = upravljacA->DajProizvod();
     cout << "Sagradjen je proizvod " << proizvod->DajOpis() << endl;
     delete proizvod;
 
-    upravljac->PromijeniGraditelja(graditeljB, poruka);
+    upravljacB = new Upravljac(graditeljB, poruka);
     cout << poruka << endl;
-    upravljac->SagradiProizvod();
-    proizvod = upravljac->DajProizvod();
+    upravljacB->SagradiProizvod();
+    proizvod = upravljacB->DajProizvod();
     cout << "Sagradjen je proizvod " << proizvod->DajOpis() << endl;
     delete proizvod;
 
-    delete upravljac;
+    delete upravljacA;
+    delete upravljacB;
     delete graditeljA;
     delete graditeljB;
     cout << "Unisteni su graditelji i upravljac." << endl;

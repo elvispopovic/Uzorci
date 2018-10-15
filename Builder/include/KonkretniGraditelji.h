@@ -9,11 +9,11 @@ class KonkretniGraditeljA : public IApstraktniGraditelj
 {
     public:
         KonkretniGraditeljA(string &poruka);
-        void IzgradiDio_1();
-        void IzgradiDio_2();
-        void IzgradiDio_3();
-        void IzgradiDio_4();
-        void IzgradiDio_5();
+        IApstraktniGraditelj* IzgradiDio_1();
+        IApstraktniGraditelj* IzgradiDio_2();
+        IApstraktniGraditelj* IzgradiDio_3();
+        IApstraktniGraditelj* IzgradiDio_4();
+        IApstraktniGraditelj* IzgradiDio_5();
         string dajIme();
         KonkretniProizvod* DajProizvod();
     private:
@@ -24,11 +24,11 @@ class KonkretniGraditeljB : public IApstraktniGraditelj
 {
     public:
         KonkretniGraditeljB(string &poruka);
-        void IzgradiDio_1();
-        void IzgradiDio_2();
-        void IzgradiDio_3();
-        void IzgradiDio_4();
-        void IzgradiDio_5();
+        IApstraktniGraditelj* IzgradiDio_1();
+        IApstraktniGraditelj* IzgradiDio_2();
+        IApstraktniGraditelj* IzgradiDio_3();
+        IApstraktniGraditelj* IzgradiDio_4();
+        IApstraktniGraditelj* IzgradiDio_5();
         string dajIme();
         KonkretniProizvod* DajProizvod();
     private:

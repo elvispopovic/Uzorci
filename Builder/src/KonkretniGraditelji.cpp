@@ -6,25 +6,30 @@ KonkretniGraditeljA::KonkretniGraditeljA(string& poruka)
     proizvod = new KonkretniProizvod("Proizvod graditelja A");
 }
 
-void KonkretniGraditeljA::IzgradiDio_1()
+IApstraktniGraditelj* KonkretniGraditeljA::IzgradiDio_1()
 {
     proizvod->PostaviDio_1("Dio 1 vrste A");
+    return this;
 }
-void KonkretniGraditeljA::IzgradiDio_2()
+IApstraktniGraditelj* KonkretniGraditeljA::IzgradiDio_2()
 {
     proizvod->PostaviDio_2("Dio 2 vrste A");
+    return this;
 }
-void KonkretniGraditeljA::IzgradiDio_3()
+IApstraktniGraditelj* KonkretniGraditeljA::IzgradiDio_3()
 {
     proizvod->PostaviDio_3("Dio 3 vrste A");
+    return this;
 }
-void KonkretniGraditeljA::IzgradiDio_4()
+IApstraktniGraditelj* KonkretniGraditeljA::IzgradiDio_4()
 {
     proizvod->PostaviDio_4("Dio 4 vrste A");
+    return this;
 }
-void KonkretniGraditeljA::IzgradiDio_5()
+IApstraktniGraditelj* KonkretniGraditeljA::IzgradiDio_5()
 {
     proizvod->PostaviDio_5("Dio 5 vrste A");
+    return this;
 }
 string KonkretniGraditeljA::dajIme()
 {
@@ -42,25 +47,30 @@ KonkretniGraditeljB::KonkretniGraditeljB(string& poruka)
     proizvod = new KonkretniProizvod("Proizvod graditelja B");
 }
 
-void KonkretniGraditeljB::IzgradiDio_1()
+IApstraktniGraditelj* KonkretniGraditeljB::IzgradiDio_1()
 {
     proizvod->PostaviDio_1("Dio 1 vrste B");
+    return this;
 }
-void KonkretniGraditeljB::IzgradiDio_2()
+IApstraktniGraditelj* KonkretniGraditeljB::IzgradiDio_2()
 {
     proizvod->PostaviDio_2("Dio 2 vrste B");
+    return this;
 }
-void KonkretniGraditeljB::IzgradiDio_3()
+IApstraktniGraditelj* KonkretniGraditeljB::IzgradiDio_3()
 {
     proizvod->PostaviDio_3("Dio 3 vrste B");
+    return this;
 }
-void KonkretniGraditeljB::IzgradiDio_4()
+IApstraktniGraditelj* KonkretniGraditeljB::IzgradiDio_4()
 {
     proizvod->PostaviDio_4("Dio 4 vrste B");
+    return this;
 }
-void KonkretniGraditeljB::IzgradiDio_5()
+IApstraktniGraditelj* KonkretniGraditeljB::IzgradiDio_5()
 {
     proizvod->PostaviDio_5("Dio 5 vrste B");
+    return this;
 }
 string KonkretniGraditeljB::dajIme()
 {
