@@ -1,0 +1,1 @@
+java -jar dist\elvpopovi_zadaca_1.jar DZ_1_parametri.txt
