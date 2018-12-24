@@ -1,0 +1,891 @@
+Kreiran je ispisivač.
+Kreiran je generator identifikatora
+Kreiran je random generator sa sjemenom 17153
+Pročitano je 8 redaka podataka iz DZ_2_podrucja.txt
+Pročitano je 10 redaka podataka iz DZ_2_ulice.txt
+Prilikom čitanja podataka iz DZ_2_spremnici.txt otkriven neispravan redak 5.
+Pročitano je 5 redaka podataka iz DZ_2_spremnici.txt
+Pročitano je 7 redaka podataka iz DZ_2_vozila.txt
+Pročitano je 11 redaka podataka iz DZ_2_dispecer.txt
+Init: sjeme generatora: 17153
+Init: izlazna datoteka: DZ2_elvpopovic.txt
+Poziva se problem iz DZ_2.
+Kreiraju se područja.
+Kreiraju se ulice.
+Pogreška u zapisu 9 u podacima o ulicama: Premalo parametara u retku.
+Ispisuje se tablica otpada u pojedinim područjima i ulicama:
+         Opis |                         Naziv | staklo [kg] | papir [kg] | metal [kg] |  bio [kg] | mješano [kg] | ukupno [kg]
+ =============================================================================================================================
+     područje |     EZO Aglomeracija Varaždin |     2307,39 |    4500,72 |    1026,62 |   8462,21 |     12170,13 |    28467,07
+  ----------------------------------------------------------------------------------------------------------------------------
+  potpodručja |                 Varaždin grad |     2147,25 |    4396,25 |     967,02 |   8150,11 |     11390,20 |    27050,84
+              |              Varaždin okolica |      160,14 |     104,47 |      59,60 |    312,10 |       779,93 |     1416,24
+ =============================================================================================================================
+     područje |                 Varaždin grad |     2147,25 |    4396,25 |     967,02 |   8150,11 |     11390,20 |    27050,84
+  ----------------------------------------------------------------------------------------------------------------------------
+  potpodručja |                        Centar |      597,74 |    1169,41 |     237,25 |   2176,26 |      2924,27 |     7104,93
+              |                       Banfica |      437,92 |     881,07 |     207,29 |   1716,22 |      2409,51 |     5652,01
+              |                         Đurek |     1111,59 |    2345,77 |     522,48 |   4257,63 |      6056,42 |    14293,88
+ =============================================================================================================================
+     područje |                        Centar |      597,74 |    1169,41 |     237,25 |   2176,26 |      2924,27 |     7104,93
+  ----------------------------------------------------------------------------------------------------------------------------
+        ulice |                     Pavlinska |       63,97 |     168,02 |      28,44 |    339,05 |       542,35 |     1141,83
+              |             Alojzija Stepinca |       57,11 |      45,05 |      25,77 |     86,84 |       245,68 |      460,45
+              |            Petra Krešimira IV |      476,66 |     956,34 |     183,04 |   1750,37 |      2136,24 |     5502,65
+ =============================================================================================================================
+     područje |                       Banfica |      437,92 |     881,07 |     207,29 |   1716,22 |      2409,51 |     5652,01
+  ----------------------------------------------------------------------------------------------------------------------------
+        ulice |              Ruđera Boškovića |      384,23 |     845,56 |     187,50 |   1640,22 |      2263,73 |     5321,24
+              |                       Dravska |       53,69 |      35,51 |      19,79 |     76,00 |       145,78 |      330,77
+ =============================================================================================================================
+     područje |                         Đurek |     1111,59 |    2345,77 |     522,48 |   4257,63 |      6056,42 |    14293,88
+  ----------------------------------------------------------------------------------------------------------------------------
+        ulice |         Zrinskih i Frankopana |      437,98 |     963,36 |     219,32 |   1777,73 |      2268,31 |     5666,70
+              |              Krešimira Filića |      535,25 |    1286,38 |     248,75 |   2263,33 |      3220,27 |     7553,98
+              |                  Tina Ujevića |      138,36 |      96,03 |      54,41 |    216,57 |       567,84 |     1073,21
+ =============================================================================================================================
+     područje |              Varaždin okolica |      160,14 |     104,47 |      59,60 |    312,10 |       779,93 |     1416,24
+  ----------------------------------------------------------------------------------------------------------------------------
+  potpodručje |                      Hrašcica |      160,14 |     104,47 |      59,60 |    312,10 |       779,93 |     1416,24
+ =============================================================================================================================
+     područje |                      Hrašcica |      160,14 |     104,47 |      59,60 |    312,10 |       779,93 |     1416,24
+  ----------------------------------------------------------------------------------------------------------------------------
+        ulica |                   Varaždinska |      160,14 |     104,47 |      59,60 |    312,10 |       779,93 |     1416,24
+ =============================================================================================================================
+Statistika za korisnike
+Kreirano je statističko praćnje simulacije.
+Kreiran je dispečer.
+Komanda: PRIPREMI
+Komanda KRENI 
+Vozilo (id: v5) mješanko 1  preuzima 28.83 kg otpada.
+   otpad u vozilu: 28.83 kg, preostalo: 3971.17 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v5) mješanko 1  preuzima 21.41 kg otpada.
+   otpad u vozilu: 50.24 kg, preostalo: 3949.76 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v5) mješanko 1  preuzima 17.49 kg otpada.
+   otpad u vozilu: 67.73 kg, preostalo: 3932.27 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v5) mješanko 1  preuzima 12.91 kg otpada.
+   otpad u vozilu: 80.64 kg, preostalo: 3919.36 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v5) mješanko 1  preuzima 28.69 kg otpada.
+   otpad u vozilu: 109.33 kg, preostalo: 3890.67 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v5) mješanko 1  preuzima 11.6 kg otpada.
+   otpad u vozilu: 120.93 kg, preostalo: 3879.07 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v5) mješanko 1  preuzima 29.71 kg otpada.
+   otpad u vozilu: 150.64 kg, preostalo: 3849.36 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v5) mješanko 1  preuzima 98.4 kg otpada.
+   otpad u vozilu: 249.04 kg, preostalo: 3750.96 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v5) mješanko 1  preuzima 293.31 kg otpada.
+   otpad u vozilu: 542.35 kg, preostalo: 3457.65 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Pavlinska
+Vozilo (id: v5) mješanko 1  preuzima 3.06 kg otpada.
+   otpad u vozilu: 545.41 kg, preostalo: 3454.59 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  preuzima 27.73 kg otpada.
+   otpad u vozilu: 573.14 kg, preostalo: 3426.86 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  preuzima 21.45 kg otpada.
+   otpad u vozilu: 594.59 kg, preostalo: 3405.41 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  preuzima 10.18 kg otpada.
+   otpad u vozilu: 604.77 kg, preostalo: 3395.23 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  preuzima 14.63 kg otpada.
+   otpad u vozilu: 619.4 kg, preostalo: 3380.6 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  preuzima 20.31 kg otpada.
+   otpad u vozilu: 639.71 kg, preostalo: 3360.29 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  preuzima 19.79 kg otpada.
+   otpad u vozilu: 659.5 kg, preostalo: 3340.5 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  preuzima 24.93 kg otpada.
+   otpad u vozilu: 684.43 kg, preostalo: 3315.57 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  preuzima 5.95 kg otpada.
+   otpad u vozilu: 690.38 kg, preostalo: 3309.62 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  preuzima 26.41 kg otpada.
+   otpad u vozilu: 716.79 kg, preostalo: 3283.21 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Alojzija Stepinca
+Komanda KVAR
+Komanda KONTROLA
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
+==================================================================================================
+  Parkiralište |  v1 | staklarko 1 |  električni |    staklo |    4000 |        0,0 |         0.0
+  Parkiralište |  v2 | papirko 1   |  električni |     papir |    3000 |        0,0 |         0.0
+  Parkiralište |  v3 | metalko 1   |  električni |     metal |    5000 |        0,0 |         0.0
+  Parkiralište |  v4 | biotko 1    |  električni |       bio |    3000 |        0,0 |         0.0
+  Parkiralište |  v6 | mješanko 2  |      diesel |   mješano |    5000 |        0,0 |         0.0
+  Prikupljanje |  v7 | mješanko 3  |      diesel |   mješano |    3000 |        0,0 |         0.0
+      Kontrola |  v6 | mješanko 2  |      diesel |   mješano |    5000 |        0,0 |         0.0
+Komanda ISPRAZNI
+Komanda: PRIPREMI
+Komanda KRENI 
+Vozilo (id: v7) mješanko 3  preuzima 10.09 kg otpada.
+   otpad u vozilu: 10.09 kg, preostalo: 2989.91 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  preuzima 14.45 kg otpada.
+   otpad u vozilu: 24.54 kg, preostalo: 2975.46 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  preuzima 3.39 kg otpada.
+   otpad u vozilu: 27.93 kg, preostalo: 2972.07 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  preuzima 19.01 kg otpada.
+   otpad u vozilu: 46.94 kg, preostalo: 2953.06 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  preuzima 24.3 kg otpada.
+   otpad u vozilu: 71.24 kg, preostalo: 2928.76 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v7) mješanko 3  preuzima 24.22 kg otpada.
+   otpad u vozilu: 95.46 kg, preostalo: 2904.54 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 3.48 kg otpada.
+   otpad u vozilu: 98.94 kg, preostalo: 2901.06 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 19.18 kg otpada.
+   otpad u vozilu: 118.12 kg, preostalo: 2881.88 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 6.53 kg otpada.
+   otpad u vozilu: 124.65 kg, preostalo: 2875.35 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 16.8 kg otpada.
+   otpad u vozilu: 141.45 kg, preostalo: 2858.55 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 26.78 kg otpada.
+   otpad u vozilu: 168.23 kg, preostalo: 2831.77 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 4.49 kg otpada.
+   otpad u vozilu: 172.72 kg, preostalo: 2827.28 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 10.41 kg otpada.
+   otpad u vozilu: 183.13 kg, preostalo: 2816.87 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 7.65 kg otpada.
+   otpad u vozilu: 190.78 kg, preostalo: 2809.22 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 7.95 kg otpada.
+   otpad u vozilu: 198.73 kg, preostalo: 2801.27 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 6.84 kg otpada.
+   otpad u vozilu: 205.57 kg, preostalo: 2794.43 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 29.05 kg otpada.
+   otpad u vozilu: 234.62 kg, preostalo: 2765.38 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 4.6 kg otpada.
+   otpad u vozilu: 239.22 kg, preostalo: 2760.78 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 11.74 kg otpada.
+   otpad u vozilu: 250.96 kg, preostalo: 2749.04 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 12.31 kg otpada.
+   otpad u vozilu: 263.27 kg, preostalo: 2736.73 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 25.59 kg otpada.
+   otpad u vozilu: 288.86 kg, preostalo: 2711.14 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 28.95 kg otpada.
+   otpad u vozilu: 317.81 kg, preostalo: 2682.19 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 19.35 kg otpada.
+   otpad u vozilu: 337.16 kg, preostalo: 2662.84 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 8.91 kg otpada.
+   otpad u vozilu: 346.07 kg, preostalo: 2653.93 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 190.59 kg otpada.
+   otpad u vozilu: 536.66 kg, preostalo: 2463.34 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 125.92 kg otpada.
+   otpad u vozilu: 662.58 kg, preostalo: 2337.42 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 161.36 kg otpada.
+   otpad u vozilu: 823.94 kg, preostalo: 2176.06 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 102.68 kg otpada.
+   otpad u vozilu: 926.62 kg, preostalo: 2073.38 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 112.3 kg otpada.
+   otpad u vozilu: 1038.92 kg, preostalo: 1961.08 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 298.45 kg otpada.
+   otpad u vozilu: 1337.37 kg, preostalo: 1662.63 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 245.68 kg otpada.
+   otpad u vozilu: 1583.05 kg, preostalo: 1416.95 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 94.85 kg otpada.
+   otpad u vozilu: 1677.9 kg, preostalo: 1322.1 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 102.71 kg otpada.
+   otpad u vozilu: 1780.61 kg, preostalo: 1219.39 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 133.89 kg otpada.
+   otpad u vozilu: 1914.5 kg, preostalo: 1085.5 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 292.98 kg otpada.
+   otpad u vozilu: 2207.48 kg, preostalo: 792.52 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v7) mješanko 3  preuzima 11.47 kg otpada.
+   otpad u vozilu: 2218.95 kg, preostalo: 781.05 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 29.41 kg otpada.
+   otpad u vozilu: 2248.36 kg, preostalo: 751.64 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 4.34 kg otpada.
+   otpad u vozilu: 2252.7 kg, preostalo: 747.3 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 3.1 kg otpada.
+   otpad u vozilu: 2255.8 kg, preostalo: 744.2 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 15.63 kg otpada.
+   otpad u vozilu: 2271.43 kg, preostalo: 728.57 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 29.8 kg otpada.
+   otpad u vozilu: 2301.23 kg, preostalo: 698.77 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 21.22 kg otpada.
+   otpad u vozilu: 2322.45 kg, preostalo: 677.55 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 27.46 kg otpada.
+   otpad u vozilu: 2349.91 kg, preostalo: 650.09 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 11.24 kg otpada.
+   otpad u vozilu: 2361.15 kg, preostalo: 638.85 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 24.66 kg otpada.
+   otpad u vozilu: 2385.81 kg, preostalo: 614.19 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 3.59 kg otpada.
+   otpad u vozilu: 2389.4 kg, preostalo: 610.6 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 29.81 kg otpada.
+   otpad u vozilu: 2419.21 kg, preostalo: 580.79 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 6.76 kg otpada.
+   otpad u vozilu: 2425.97 kg, preostalo: 574.03 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 5.44 kg otpada.
+   otpad u vozilu: 2431.41 kg, preostalo: 568.59 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 240.09 kg otpada.
+   otpad u vozilu: 2671.5 kg, preostalo: 328.5 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 157.01 kg otpada.
+   otpad u vozilu: 2828.51 kg, preostalo: 171.49 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  preuzima 135.5 kg otpada.
+   otpad u vozilu: 2964.01 kg, preostalo: 35.99 kg
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  je napunjeno pa odlazi na deponij istovariti otpad.
+Vozilo (id: v6) mješanko 2  preuzima 189.53 kg otpada.
+   otpad u vozilu: 189.53 kg, preostalo: 4810.47 kg
+Vozilo (id: v6) mješanko 2  preuzima 178.08 kg otpada.
+   otpad u vozilu: 367.61 kg, preostalo: 4632.39 kg
+Vozilo (id: v6) mješanko 2  preuzima 176.7 kg otpada.
+   otpad u vozilu: 544.31 kg, preostalo: 4455.69 kg
+Vozilo (id: v6) mješanko 2  preuzima 254.18 kg otpada.
+   otpad u vozilu: 798.49 kg, preostalo: 4201.51 kg
+Vozilo (id: v6) mješanko 2  preuzima 235.91 kg otpada.
+   otpad u vozilu: 1034.4 kg, preostalo: 3965.6 kg
+Vozilo (id: v6) mješanko 2  preuzima 290.92 kg otpada.
+   otpad u vozilu: 1325.32 kg, preostalo: 3674.68 kg
+Vozilo (id: v6) mješanko 2  preuzima 181.88 kg otpada.
+   otpad u vozilu: 1507.2 kg, preostalo: 3492.8 kg
+Vozilo (id: v6) mješanko 2  preuzima 24.06 kg otpada.
+   otpad u vozilu: 1531.26 kg, preostalo: 3468.74 kg
+Vozilo (id: v6) mješanko 2  preuzima 24.61 kg otpada.
+   otpad u vozilu: 1555.87 kg, preostalo: 3444.13 kg
+Vozilo (id: v6) mješanko 2  preuzima 14.31 kg otpada.
+   otpad u vozilu: 1570.18 kg, preostalo: 3429.82 kg
+Vozilo (id: v6) mješanko 2  preuzima 11.86 kg otpada.
+   otpad u vozilu: 1582.04 kg, preostalo: 3417.96 kg
+Vozilo (id: v6) mješanko 2  preuzima 4.37 kg otpada.
+   otpad u vozilu: 1586.41 kg, preostalo: 3413.59 kg
+Vozilo (id: v6) mješanko 2  preuzima 3.32 kg otpada.
+   otpad u vozilu: 1589.73 kg, preostalo: 3410.27 kg
+Vozilo (id: v6) mješanko 2  preuzima 15.25 kg otpada.
+   otpad u vozilu: 1604.98 kg, preostalo: 3395.02 kg
+Vozilo (id: v6) mješanko 2  preuzima 6.27 kg otpada.
+   otpad u vozilu: 1611.25 kg, preostalo: 3388.75 kg
+Vozilo (id: v6) mješanko 2  preuzima 4.84 kg otpada.
+   otpad u vozilu: 1616.09 kg, preostalo: 3383.91 kg
+Vozilo (id: v6) mješanko 2  preuzima 10.72 kg otpada.
+   otpad u vozilu: 1626.81 kg, preostalo: 3373.19 kg
+Vozilo (id: v6) mješanko 2  preuzima 9.09 kg otpada.
+   otpad u vozilu: 1635.9 kg, preostalo: 3364.1 kg
+Vozilo (id: v6) mješanko 2  preuzima 17.08 kg otpada.
+   otpad u vozilu: 1652.98 kg, preostalo: 3347.02 kg
+Vozilo (id: v6) mješanko 2  preuzima 28.66 kg otpada.
+   otpad u vozilu: 1681.64 kg, preostalo: 3318.36 kg
+Vozilo (id: v6) mješanko 2  preuzima 22.87 kg otpada.
+   otpad u vozilu: 1704.51 kg, preostalo: 3295.49 kg
+Vozilo (id: v6) mješanko 2  preuzima 13.99 kg otpada.
+   otpad u vozilu: 1718.5 kg, preostalo: 3281.5 kg
+Vozilo (id: v6) mješanko 2  preuzima 15.65 kg otpada.
+   otpad u vozilu: 1734.15 kg, preostalo: 3265.85 kg
+Vozilo (id: v6) mješanko 2  preuzima 21.86 kg otpada.
+   otpad u vozilu: 1756.01 kg, preostalo: 3243.99 kg
+Vozilo (id: v6) mješanko 2  preuzima 10.73 kg otpada.
+   otpad u vozilu: 1766.74 kg, preostalo: 3233.26 kg
+Vozilo (id: v6) mješanko 2  preuzima 24.84 kg otpada.
+   otpad u vozilu: 1791.58 kg, preostalo: 3208.42 kg
+Vozilo (id: v6) mješanko 2  preuzima 14.09 kg otpada.
+   otpad u vozilu: 1805.67 kg, preostalo: 3194.33 kg
+Vozilo (id: v6) mješanko 2  preuzima 29.6 kg otpada.
+   otpad u vozilu: 1835.27 kg, preostalo: 3164.73 kg
+Vozilo (id: v6) mješanko 2  preuzima 28.0 kg otpada.
+   otpad u vozilu: 1863.27 kg, preostalo: 3136.73 kg
+Vozilo (id: v6) mješanko 2  preuzima 16.09 kg otpada.
+   otpad u vozilu: 1879.36 kg, preostalo: 3120.64 kg
+Vozilo (id: v6) mješanko 2  preuzima 10.49 kg otpada.
+   otpad u vozilu: 1889.85 kg, preostalo: 3110.15 kg
+Vozilo (id: v6) mješanko 2  preuzima 218.12 kg otpada.
+   otpad u vozilu: 2107.97 kg, preostalo: 2892.03 kg
+Vozilo (id: v6) mješanko 2  preuzima 236.59 kg otpada.
+   otpad u vozilu: 2344.56 kg, preostalo: 2655.44 kg
+Vozilo (id: v6) mješanko 2  preuzima 93.05 kg otpada.
+   otpad u vozilu: 2437.61 kg, preostalo: 2562.39 kg
+Vozilo (id: v6) mješanko 2  preuzima 252.1 kg otpada.
+   otpad u vozilu: 2689.71 kg, preostalo: 2310.29 kg
+Vozilo (id: v6) mješanko 2  preuzima 93.64 kg otpada.
+   otpad u vozilu: 2783.35 kg, preostalo: 2216.65 kg
+Vozilo (id: v6) mješanko 2  preuzima 164.31 kg otpada.
+   otpad u vozilu: 2947.66 kg, preostalo: 2052.34 kg
+Vozilo (id: v6) mješanko 2  preuzima 241.41 kg otpada.
+   otpad u vozilu: 3189.07 kg, preostalo: 1810.93 kg
+Vozilo (id: v6) mješanko 2  preuzima 127.61 kg otpada.
+   otpad u vozilu: 3316.68 kg, preostalo: 1683.32 kg
+Vozilo (id: v6) mješanko 2  preuzima 160.27 kg otpada.
+   otpad u vozilu: 3476.95 kg, preostalo: 1523.05 kg
+Vozilo (id: v6) mješanko 2  preuzima 210.74 kg otpada.
+   otpad u vozilu: 3687.69 kg, preostalo: 1312.31 kg
+Vozilo (id: v6) mješanko 2  preuzima 233.6 kg otpada.
+   otpad u vozilu: 3921.29 kg, preostalo: 1078.71 kg
+Vozilo (id: v6) mješanko 2  preuzima 23.42 kg otpada.
+   otpad u vozilu: 3944.71 kg, preostalo: 1055.29 kg
+Vozilo (id: v6) mješanko 2  preuzima 24.4 kg otpada.
+   otpad u vozilu: 3969.11 kg, preostalo: 1030.89 kg
+Vozilo (id: v6) mješanko 2  preuzima 12.43 kg otpada.
+   otpad u vozilu: 3981.54 kg, preostalo: 1018.46 kg
+Vozilo (id: v6) mješanko 2  preuzima 6.66 kg otpada.
+   otpad u vozilu: 3988.2 kg, preostalo: 1011.8 kg
+Vozilo (id: v6) mješanko 2  preuzima 16.27 kg otpada.
+   otpad u vozilu: 4004.47 kg, preostalo: 995.53 kg
+Vozilo (id: v6) mješanko 2  preuzima 20.97 kg otpada.
+   otpad u vozilu: 4025.44 kg, preostalo: 974.56 kg
+Vozilo (id: v6) mješanko 2  preuzima 21.3 kg otpada.
+   otpad u vozilu: 4046.74 kg, preostalo: 953.26 kg
+Vozilo (id: v6) mješanko 2  preuzima 26.8 kg otpada.
+   otpad u vozilu: 4073.54 kg, preostalo: 926.46 kg
+Vozilo (id: v6) mješanko 2  preuzima 10.17 kg otpada.
+   otpad u vozilu: 4083.71 kg, preostalo: 916.29 kg
+Vozilo (id: v6) mješanko 2  preuzima 3.06 kg otpada.
+   otpad u vozilu: 4086.77 kg, preostalo: 913.23 kg
+Vozilo (id: v6) mješanko 2  preuzima 28.57 kg otpada.
+   otpad u vozilu: 4115.34 kg, preostalo: 884.66 kg
+Vozilo (id: v6) mješanko 2  preuzima 4.55 kg otpada.
+   otpad u vozilu: 4119.89 kg, preostalo: 880.11 kg
+Vozilo (id: v6) mješanko 2  preuzima 19.78 kg otpada.
+   otpad u vozilu: 4139.67 kg, preostalo: 860.33 kg
+Vozilo (id: v6) mješanko 2  preuzima 205.55 kg otpada.
+   otpad u vozilu: 4345.22 kg, preostalo: 654.78 kg
+Vozilo (id: v6) mješanko 2  preuzima 103.31 kg otpada.
+   otpad u vozilu: 4448.53 kg, preostalo: 551.47 kg
+Vozilo (id: v6) mješanko 2  preuzima 193.59 kg otpada.
+   otpad u vozilu: 4642.12 kg, preostalo: 357.88 kg
+Vozilo (id: v6) mješanko 2  preuzima 264.93 kg otpada.
+   otpad u vozilu: 4907.05 kg, preostalo: 92.95 kg
+Vozilo (id: v6) mješanko 2  je napunjeno pa odlazi na deponij istovariti otpad.
+Vozilo mješanko 1  se vraća prazno sa deponija otpada.
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Alojzija Stepinca
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Petra Krešimira IV
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Dravska
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v5) mješanko 1  preuzima 290.11 kg otpada.
+   otpad u vozilu: 290.11 kg, preostalo: 3709.89 kg
+Vozilo (id: v5) mješanko 1  preuzima 131.25 kg otpada.
+   otpad u vozilu: 421.36 kg, preostalo: 3578.64 kg
+Vozilo (id: v5) mješanko 1  preuzima 241.56 kg otpada.
+   otpad u vozilu: 662.92 kg, preostalo: 3337.08 kg
+Vozilo (id: v5) mješanko 1  preuzima 147.41 kg otpada.
+   otpad u vozilu: 810.33 kg, preostalo: 3189.67 kg
+Vozilo (id: v5) mješanko 1  preuzima 154.78 kg otpada.
+   otpad u vozilu: 965.11 kg, preostalo: 3034.89 kg
+Vozilo (id: v5) mješanko 1  preuzima 103.28 kg otpada.
+   otpad u vozilu: 1068.39 kg, preostalo: 2931.61 kg
+Vozilo (id: v5) mješanko 1  preuzima 171.28 kg otpada.
+   otpad u vozilu: 1239.67 kg, preostalo: 2760.33 kg
+Vozilo (id: v5) mješanko 1  preuzima 243.65 kg otpada.
+   otpad u vozilu: 1483.32 kg, preostalo: 2516.68 kg
+Vozilo (id: v5) mješanko 1  preuzima 294.94 kg otpada.
+   otpad u vozilu: 1778.26 kg, preostalo: 2221.74 kg
+Vozilo (id: v5) mješanko 1  preuzima 243.68 kg otpada.
+   otpad u vozilu: 2021.94 kg, preostalo: 1978.06 kg
+Vozilo (id: v5) mješanko 1  preuzima 212.57 kg otpada.
+   otpad u vozilu: 2234.51 kg, preostalo: 1765.49 kg
+Vozilo (id: v5) mješanko 1  preuzima 19.24 kg otpada.
+   otpad u vozilu: 2253.75 kg, preostalo: 1746.25 kg
+Vozilo (id: v5) mješanko 1  preuzima 14.57 kg otpada.
+   otpad u vozilu: 2268.32 kg, preostalo: 1731.68 kg
+Vozilo (id: v5) mješanko 1  preuzima 9.06 kg otpada.
+   otpad u vozilu: 2277.38 kg, preostalo: 1722.62 kg
+Vozilo (id: v5) mješanko 1  preuzima 11.96 kg otpada.
+   otpad u vozilu: 2289.34 kg, preostalo: 1710.66 kg
+Vozilo (id: v5) mješanko 1  preuzima 4.33 kg otpada.
+   otpad u vozilu: 2293.67 kg, preostalo: 1706.33 kg
+Vozilo (id: v5) mješanko 1  preuzima 11.47 kg otpada.
+   otpad u vozilu: 2305.14 kg, preostalo: 1694.86 kg
+Vozilo (id: v5) mješanko 1  preuzima 21.31 kg otpada.
+   otpad u vozilu: 2326.45 kg, preostalo: 1673.55 kg
+Vozilo (id: v5) mješanko 1  preuzima 5.76 kg otpada.
+   otpad u vozilu: 2332.21 kg, preostalo: 1667.79 kg
+Vozilo (id: v5) mješanko 1  preuzima 21.09 kg otpada.
+   otpad u vozilu: 2353.3 kg, preostalo: 1646.7 kg
+Vozilo (id: v5) mješanko 1  preuzima 6.88 kg otpada.
+   otpad u vozilu: 2360.18 kg, preostalo: 1639.82 kg
+Vozilo (id: v5) mješanko 1  preuzima 6.37 kg otpada.
+   otpad u vozilu: 2366.55 kg, preostalo: 1633.45 kg
+Vozilo (id: v5) mješanko 1  preuzima 26.0 kg otpada.
+   otpad u vozilu: 2392.55 kg, preostalo: 1607.45 kg
+Vozilo (id: v5) mješanko 1  preuzima 16.85 kg otpada.
+   otpad u vozilu: 2409.4 kg, preostalo: 1590.6 kg
+Vozilo (id: v5) mješanko 1  preuzima 19.48 kg otpada.
+   otpad u vozilu: 2428.88 kg, preostalo: 1571.12 kg
+Vozilo (id: v5) mješanko 1  preuzima 18.72 kg otpada.
+   otpad u vozilu: 2447.6 kg, preostalo: 1552.4 kg
+Vozilo (id: v5) mješanko 1  preuzima 11.49 kg otpada.
+   otpad u vozilu: 2459.09 kg, preostalo: 1540.91 kg
+Vozilo (id: v5) mješanko 1  preuzima 22.98 kg otpada.
+   otpad u vozilu: 2482.07 kg, preostalo: 1517.93 kg
+Vozilo (id: v5) mješanko 1  preuzima 11.18 kg otpada.
+   otpad u vozilu: 2493.25 kg, preostalo: 1506.75 kg
+Vozilo (id: v5) mješanko 1  preuzima 22.59 kg otpada.
+   otpad u vozilu: 2515.84 kg, preostalo: 1484.16 kg
+Vozilo (id: v5) mješanko 1  preuzima 11.02 kg otpada.
+   otpad u vozilu: 2526.86 kg, preostalo: 1473.14 kg
+Vozilo (id: v5) mješanko 1  preuzima 26.81 kg otpada.
+   otpad u vozilu: 2553.67 kg, preostalo: 1446.33 kg
+Vozilo (id: v5) mješanko 1  preuzima 6.05 kg otpada.
+   otpad u vozilu: 2559.72 kg, preostalo: 1440.28 kg
+Vozilo (id: v5) mješanko 1  preuzima 9.64 kg otpada.
+   otpad u vozilu: 2569.36 kg, preostalo: 1430.64 kg
+Vozilo (id: v5) mješanko 1  preuzima 4.4 kg otpada.
+   otpad u vozilu: 2573.76 kg, preostalo: 1426.24 kg
+Vozilo (id: v5) mješanko 1  preuzima 228.59 kg otpada.
+   otpad u vozilu: 2802.35 kg, preostalo: 1197.65 kg
+Vozilo (id: v5) mješanko 1  preuzima 9.11 kg otpada.
+   otpad u vozilu: 2811.46 kg, preostalo: 1188.54 kg
+Vozilo (id: v5) mješanko 1  preuzima 10.78 kg otpada.
+   otpad u vozilu: 2822.24 kg, preostalo: 1177.76 kg
+Vozilo (id: v5) mješanko 1  preuzima 28.73 kg otpada.
+   otpad u vozilu: 2850.97 kg, preostalo: 1149.03 kg
+Vozilo (id: v5) mješanko 1  preuzima 12.88 kg otpada.
+   otpad u vozilu: 2863.85 kg, preostalo: 1136.15 kg
+Vozilo (id: v5) mješanko 1  preuzima 15.69 kg otpada.
+   otpad u vozilu: 2879.54 kg, preostalo: 1120.46 kg
+Vozilo (id: v5) mješanko 1  preuzima 27.5 kg otpada.
+   otpad u vozilu: 2907.04 kg, preostalo: 1092.96 kg
+Vozilo (id: v5) mješanko 1  preuzima 3.94 kg otpada.
+   otpad u vozilu: 2910.98 kg, preostalo: 1089.02 kg
+Vozilo (id: v5) mješanko 1  preuzima 15.85 kg otpada.
+   otpad u vozilu: 2926.83 kg, preostalo: 1073.17 kg
+Vozilo (id: v5) mješanko 1  preuzima 20.69 kg otpada.
+   otpad u vozilu: 2947.52 kg, preostalo: 1052.48 kg
+Vozilo (id: v5) mješanko 1  preuzima 5.86 kg otpada.
+   otpad u vozilu: 2953.38 kg, preostalo: 1046.62 kg
+Vozilo (id: v5) mješanko 1  preuzima 28.43 kg otpada.
+   otpad u vozilu: 2981.81 kg, preostalo: 1018.19 kg
+Vozilo (id: v5) mješanko 1  preuzima 10.59 kg otpada.
+   otpad u vozilu: 2992.4 kg, preostalo: 1007.6 kg
+Vozilo (id: v5) mješanko 1  preuzima 24.36 kg otpada.
+   otpad u vozilu: 3016.76 kg, preostalo: 983.24 kg
+Vozilo (id: v5) mješanko 1  preuzima 14.25 kg otpada.
+   otpad u vozilu: 3031.01 kg, preostalo: 968.99 kg
+Vozilo (id: v5) mješanko 1  preuzima 9.81 kg otpada.
+   otpad u vozilu: 3040.82 kg, preostalo: 959.18 kg
+Vozilo (id: v5) mješanko 1  preuzima 18.29 kg otpada.
+   otpad u vozilu: 3059.11 kg, preostalo: 940.89 kg
+Vozilo (id: v5) mješanko 1  preuzima 21.63 kg otpada.
+   otpad u vozilu: 3080.74 kg, preostalo: 919.26 kg
+Vozilo (id: v5) mješanko 1  preuzima 21.37 kg otpada.
+   otpad u vozilu: 3102.11 kg, preostalo: 897.89 kg
+Vozilo (id: v5) mješanko 1  preuzima 24.64 kg otpada.
+   otpad u vozilu: 3126.75 kg, preostalo: 873.25 kg
+Vozilo (id: v5) mješanko 1  preuzima 14.27 kg otpada.
+   otpad u vozilu: 3141.02 kg, preostalo: 858.98 kg
+Vozilo (id: v5) mješanko 1  preuzima 4.08 kg otpada.
+   otpad u vozilu: 3145.1 kg, preostalo: 854.9 kg
+Vozilo (id: v5) mješanko 1  preuzima 17.33 kg otpada.
+   otpad u vozilu: 3162.43 kg, preostalo: 837.57 kg
+Vozilo (id: v5) mješanko 1  preuzima 9.01 kg otpada.
+   otpad u vozilu: 3171.44 kg, preostalo: 828.56 kg
+Vozilo (id: v5) mješanko 1  preuzima 20.54 kg otpada.
+   otpad u vozilu: 3191.98 kg, preostalo: 808.02 kg
+Vozilo (id: v5) mješanko 1  preuzima 211.43 kg otpada.
+   otpad u vozilu: 3403.41 kg, preostalo: 596.59 kg
+Vozilo (id: v5) mješanko 1  preuzima 178.87 kg otpada.
+   otpad u vozilu: 3582.28 kg, preostalo: 417.72 kg
+Vozilo (id: v5) mješanko 1  je obavilo sve ulice i odlazi poluprazno na deponij.
+Vozilo mješanko 3  se vraća prazno sa deponija otpada.
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Ruđera Boškovića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Dravska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Zrinskih i Frankopana
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v7) mješanko 3  nailazi na prazan spremnik u Varaždinska
+Vozilo mješanko 3  je završilo.
+Vozilo mješanko 2  se vraća prazno sa deponija otpada.
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Krešimira Filića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Tina Ujevića
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Komanda ISPRAZNI
+Komanda KRENI 
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo (id: v6) mješanko 2  nailazi na prazan spremnik u Varaždinska
+Vozilo mješanko 2  je završilo.
+Vozilo mješanko 1  se vraća prazno sa deponija otpada.
+Vozilo mješanko 1  je završilo.
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
+==================================================================================================
+  Parkiralište |  v1 | staklarko 1 |  električni |    staklo |    4000 |        0,0 |         0.0
+  Parkiralište |  v2 | papirko 1   |  električni |     papir |    3000 |        0,0 |         0.0
+  Parkiralište |  v3 | metalko 1   |  električni |     metal |    5000 |        0,0 |         0.0
+  Parkiralište |  v4 | biotko 1    |  električni |       bio |    3000 |        0,0 |         0.0
+      Završeno |  v5 | mješanko 1  |      diesel |   mješano |    4000 |        0,0 |    4299.071
+      Završeno |  v6 | mješanko 2  |      diesel |   mješano |    5000 |        0,0 |   4907.0493
+      Završeno |  v7 | mješanko 3  |      diesel |   mješano |    3000 |        0,0 |     2964.01
+
+STATISTIKA
+       Vrsta |    količina |
+      otpada |        [kg] |
+============================
+      staklo |        0,00 |
+       papir |        0,00 |
+       metal |        0,00 |
+         bio |        0,00 |
+     mješano |    12170,13 |
+============================
+      UKUPNO |    12170,13 |
+
+     |             |     Broj |     Broj |    Ukupna |     Broj |
+  ID |       Naziv |spremnika |   mjesta |  količina |   odvoza |
+================================================================
+  v1 | staklarko 1 |        0 |        0 |      0,00 |        0 |
+  v2 | papirko 1   |        0 |        0 |      0,00 |        0 |
+  v3 | metalko 1   |        0 |        0 |      0,00 |        0 |
+  v4 | biotko 1    |        0 |        0 |      0,00 |        0 |
+  v5 | mješanko 1  |       81 |       88 |   4299,07 |        1 |
+  v6 | mješanko 2  |       59 |       68 |   4907,05 |        1 |
+  v7 | mješanko 3  |       52 |       63 |   2964,01 |        1 |
+================================================================
+     |      UKUPNO |      192 |      219 |  12170,13 |        3 |

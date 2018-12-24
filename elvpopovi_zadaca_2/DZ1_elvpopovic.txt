@@ -1,0 +1,46 @@
+Kreiran je ispisivač.
+Kreiran je generator identifikatora
+Kreiran je random generator sa sjemenom 30125
+Pročitano je 8 redaka podataka iz DZ_1_ulice.txt
+Pročitano je 6 redaka podataka iz DZ_1_spremnici.txt
+Pročitano je 7 redaka podataka iz DZ_1_vozila.txt
+Init: sjeme generatora: 30125
+Init: izlazna datoteka: DZ1_elvpopovic.txt
+Poziva se problem iz DZ_1.
+Kreiraju se ulice.
+Količine otpada po ulicama [kg]
+Pavlinska: staklo: 681.98004, papir: 1620.29, metal: 404.06, bio: 3179.69, miješano: 4121.95
+Alojzija Stepinca: staklo: 681.98004, papir: 1620.29, metal: 404.06, bio: 3179.69, miješano: 4121.95
+Petra Krešimira IV: staklo: 681.98004, papir: 1620.29, metal: 404.06, bio: 3179.69, miješano: 4121.95
+Slavenska: staklo: 681.98004, papir: 1620.29, metal: 404.06, bio: 3179.69, miješano: 4121.95
+Julija Merlića: staklo: 681.98004, papir: 1620.29, metal: 404.06, bio: 3179.69, miješano: 4121.95
+Petra Preradovića: staklo: 681.98004, papir: 1620.29, metal: 404.06, bio: 3179.69, miješano: 4121.95
+Ivana Kukuljevića Sakcinskog: staklo: 681.98004, papir: 1620.29, metal: 404.06, bio: 3179.69, miješano: 4121.95
+Dr Ivana Novaka: staklo: 681.98004, papir: 1620.29, metal: 404.06, bio: 3179.69, miješano: 4121.95
+Kreirano je statističko praćnje simulacije.
+Kreiran je dispečer.
+
+STATISTIKA
+       Vrsta |    količina |
+      otpada |        [kg] |
+============================
+      staklo |     3117,61 |
+       papir |     6533,01 |
+       metal |     1742,88 |
+         bio |     8871,66 |
+     mješano |    16885,02 |
+============================
+      UKUPNO |    37150,18 |
+
+     |             |     Broj |     Broj |    Ukupna |     Broj |
+  ID |       Naziv |spremnika |   mjesta |  količina |   odvoza |
+================================================================
+1013 | staklarko 1 |      127 |      250 |   3117,61 |        1 |
+1014 | papirko 1   |      115 |      250 |   6533,01 |        3 |
+1015 | metalko 1   |       54 |      250 |   1742,88 |        1 |
+1016 | biotko 1    |      250 |      250 |   8871,66 |        4 |
+1017 | mješanko 1  |      115 |      133 |   7940,39 |        2 |
+1018 | mješanko 2  |       73 |       85 |   4954,65 |        1 |
+1019 | mješanko 3  |       28 |       32 |   3989,98 |        2 |
+================================================================
+     |      UKUPNO |      762 |     1250 |  37150,18 |       14 |

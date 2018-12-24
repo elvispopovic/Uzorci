@@ -1,0 +1,22 @@
+﻿Promijenjeni parametri:
+razdvojene metode za učitavanje datoteka i numeričkih podataka
+
+Kreiran iterator za podatke i parametre
+
+Kreiran je simulacijski builder koji kreira dispecera, statistiku i simulaciju te pokreće simulaciju. Glavna klasa više ne kreira i ne pokreće simulaciju.
+
+Kreiran je poseban package za sve buildere u aplikaciji.
+
+Problemski product kao dio problemskog buildera sada nije implementiran preko sučelja već preko apstraktne klase, koju po uzorku template method nasljeđuju dvije konkretne klase: ProblemskiProductBezPodrucja (za DZ1 funkcionalnost) i ProblemskiProductPodrucja (za DZ2 funkcionalnost).
+Izbor konkretne implementacije obavlja se automatski, sukladno tome jesu li pronadjeni zapisi područja ili nisu.
+
+Ispis ulica u novoj verziji crta tablicu i količine otpada u područjima, potpodručjima ulicama i zbirno.
+
+Komande su implementirane preko lanca odgovornosti.
+
+
+
+
+
+
+
