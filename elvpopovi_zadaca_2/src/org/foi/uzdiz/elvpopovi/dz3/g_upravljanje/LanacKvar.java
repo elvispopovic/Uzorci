@@ -10,7 +10,9 @@ import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.h_automat.StanjeKvar;
+import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *
@@ -22,7 +24,6 @@ public class LanacKvar implements LanacKomandiApstraktni
     private final Ispisivanje ispis;
     private final Parametri parametri;
     private final ListaVozila listaPrikupljanje;
-    private final ListaVozila listaParkiraliste;
     private LanacKomandiApstraktni sljedbenik;
     
     public LanacKvar(SimulacijaSucelje simulacija)
@@ -31,7 +32,6 @@ public class LanacKvar implements LanacKomandiApstraktni
         ispis = Ispisivanje.getInstance();
         parametri = Parametri.getInstance();
         listaPrikupljanje = simulacija.DajListaPrikupljanje();
-        listaParkiraliste = simulacija.DajListaParkiraliste();
         //listaKvar         = simulacija.DajListaKvar();
         sljedbenik = null;
     }
@@ -44,6 +44,7 @@ public class LanacKvar implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String komanda[], ArrayList<String> parametriVozila)
     {
+        VoziloKontekstSucelje kontekst;
         if(parametriVozila == null)
             return;
         if(komanda[0].equals("KVAR"))
@@ -54,16 +55,10 @@ public class LanacKvar implements LanacKomandiApstraktni
             {
                 VoziloSucelje vozilo = listaPrikupljanje.DajVozilo(s);
                 if(vozilo!=null)
-                    vozilo.dajKontekst().PostaviKvar();
-                else
                 {
-                    vozilo = listaParkiraliste.DajVozilo(s);
-                    if(vozilo!=null)
-                    {
-                        listaParkiraliste.IzdvojiVozilo(s);
-                        vozilo.dajKontekst().PostaviKvar();
-                        listaPrikupljanje.UbaciVozilo(vozilo);
-                    }
+                    kontekst = vozilo.dajKontekst();
+                    kontekst.PostaviKvar();
+                    kontekst.PostaviStanje(new StanjeKvar(kontekst));
                 }
             }
         }

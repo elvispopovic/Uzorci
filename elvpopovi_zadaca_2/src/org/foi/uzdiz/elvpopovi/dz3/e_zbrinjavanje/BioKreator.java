@@ -21,7 +21,7 @@ public class BioKreator implements ZbrinjavanjeFactory
     }
 
     @Override
-    public Vozilo KreirajVozilo() 
+    public VoziloSucelje KreirajVozilo() 
     {
         return new Vozilo(3);
     }

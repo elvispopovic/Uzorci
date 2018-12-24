@@ -7,9 +7,9 @@ package org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.IdGenerator;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.IdGenerator;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Korisnik;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *

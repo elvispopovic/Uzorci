@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *

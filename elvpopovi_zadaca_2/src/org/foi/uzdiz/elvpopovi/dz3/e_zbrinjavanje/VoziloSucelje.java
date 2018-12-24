@@ -7,6 +7,7 @@ package org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje;
 
 import java.util.ArrayList;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
+import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
 
 /**
  *
@@ -19,15 +20,12 @@ public interface VoziloSucelje
     ArrayList<ArrayList<Spremnik>> dajDodijeljeneSpremnike();
     void postaviDodijeljeneUlice(ArrayList<Ulica> ulice);
     void postaviDodijeljeneSpremnike(ArrayList<ArrayList<Spremnik>> spremnici);
+   
     String dajNaziv();
     int dajNosivost();
     String[] dajVozace();
-    VoziloKontekst dajKontekst();
-    VoziloStatistika dajStatistiku();
+    VoziloKontekstSucelje dajKontekst();
+    VoziloStatistika dajStatistikuVozila();
     int dajVrstu();
     int dajTip();
-    boolean IsprazniSpremnik();
-    boolean ProvjeriNapunjenost();
-    void IsprazniVozilo(int ciklusaOdvoz);
-    boolean ProvjeriOdvoz();
 }

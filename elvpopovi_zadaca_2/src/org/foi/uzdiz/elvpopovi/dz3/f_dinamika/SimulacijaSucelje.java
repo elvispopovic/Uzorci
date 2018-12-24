@@ -17,13 +17,10 @@ public interface SimulacijaSucelje
 {
     ArrayList<VoziloSucelje> DajListuVozila();
     ProblemskiAbstractProduct DajProblemske();
-    ListaVozila DajListaParkiraliste();
     ListaVozila DajListaPrikupljanje();
-    ListaVozila DajListaOdvoz();
+    //ListaVozila DajListaOdvoz();
     boolean ProvjeriParametre();
     void Pokreni();
-    boolean ObradiVozilaUPrikupljanju();
-    boolean ObradiVozilaZaZbrinjavanje();
-    void PostaviListeUlica();
-    void PosaljiNaDeponij(int brojUListi);
+    boolean ObradiStanjaVozila();
+    boolean provjeriZavrsetak();
 }

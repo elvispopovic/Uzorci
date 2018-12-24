@@ -7,7 +7,7 @@ package org.foi.uzdiz.elvpopovi.dz3.b_buideri;
 
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Podaci;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *

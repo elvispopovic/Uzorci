@@ -19,8 +19,8 @@ import java.util.Arrays;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Korisnik;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.RandomGenerator;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.RandomGenerator;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.ZbrinjavanjeFactory;
 
 /**

@@ -16,7 +16,7 @@ import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.Simulacija;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.Statistika;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *
@@ -84,45 +84,16 @@ public class Dispecer implements SimulacijaSucelje
     }
 
     @Override
-    public ListaVozila DajListaParkiraliste()
-    {
-        return simulacija.DajListaParkiraliste();
-    }
-
-    @Override
     public ListaVozila DajListaPrikupljanje()
     {
         return simulacija.DajListaPrikupljanje();
     }
 
-    @Override
-    public ListaVozila DajListaOdvoz()
-    {
-        return simulacija.DajListaOdvoz();
-    }
 
     @Override
-    public boolean ObradiVozilaUPrikupljanju()
-    {
-        return simulacija.ObradiVozilaUPrikupljanju();
-    }
-
-    @Override
-    public boolean ObradiVozilaZaZbrinjavanje()
-    {
-        return simulacija.ObradiVozilaZaZbrinjavanje();
-    }
-
-    @Override
-    public void PostaviListeUlica()
-    {
-        simulacija.PostaviListeUlica();
-    }
-
-    @Override
-    public void PosaljiNaDeponij(int brojUListi)
-    {
-        simulacija.PosaljiNaDeponij(brojUListi);
+    public boolean ObradiStanjaVozila()
+    { 
+        return false;
     }
 
     @Override
@@ -134,5 +105,11 @@ public class Dispecer implements SimulacijaSucelje
     public boolean ProvjeriParametre()
     {
         return simulacija.ProvjeriParametre();
+    }
+
+    @Override
+    public boolean provjeriZavrsetak()
+    {
+        return true;
     }
 }

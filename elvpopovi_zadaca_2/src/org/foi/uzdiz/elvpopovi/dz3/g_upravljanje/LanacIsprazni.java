@@ -10,7 +10,9 @@ import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.h_automat.StanjeOdvoz;
+import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *
@@ -63,11 +65,11 @@ public class LanacIsprazni implements LanacKomandiApstraktni
             VoziloSucelje vozilo = listaPrikupljanje.DajVozilo(s);
             if(vozilo!=null)
             {
-                int indeks = listaPrikupljanje.DajVoziloIndeks(s);
+                VoziloKontekstSucelje kontekst = vozilo.dajKontekst();
+                int indeks = listaPrikupljanje.DajIndeksVozila(s);
                 if(indeks>=0)
                 {
-                    simulacija.PosaljiNaDeponij(indeks); 
-                    vozilo.dajKontekst().UkloniKvar();
+                    kontekst.PostaviStanje(new StanjeOdvoz(kontekst));
                 }
             }
         }

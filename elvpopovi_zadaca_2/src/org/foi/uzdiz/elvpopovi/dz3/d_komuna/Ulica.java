@@ -8,8 +8,8 @@ package org.foi.uzdiz.elvpopovi.dz3.d_komuna;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.RandomGenerator;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.RandomGenerator;
 
 
 /**
@@ -26,24 +26,26 @@ public class Ulica
     {
         return naziv;
     }
+    
     public int Mali()
     {
         if(mjesta!=null)
-            return mjesta[1];
+            return mjesta[0];
         else return 0;
     }
     public int Srednji()
     {
         if(mjesta!=null)
-            return mjesta[2];
+            return mjesta[1];
         else return 0;
     }
     public int Veliki()
     {
         if(mjesta!=null)
-            return mjesta[3];
+            return mjesta[2];
         else return 0;
     }
+
     public int[] dajMjesta()
     {
         return mjesta;

@@ -10,7 +10,9 @@ import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.h_automat.StanjeKontrola;
+import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *
@@ -21,7 +23,7 @@ public class LanacKontrola implements LanacKomandiApstraktni
     private final SimulacijaSucelje simulacija;
     private final Ispisivanje ispis;
     private final Parametri parametri;
-    private final ListaVozila listaPrikupljanje, listaParkiraliste;
+    private final ListaVozila listaPrikupljanje;
     private LanacKomandiApstraktni sljedbenik;
     
     public LanacKontrola(SimulacijaSucelje simulacija)
@@ -30,7 +32,6 @@ public class LanacKontrola implements LanacKomandiApstraktni
         ispis = Ispisivanje.getInstance();
         parametri = Parametri.getInstance();
         listaPrikupljanje = this.simulacija.DajListaPrikupljanje();
-        listaParkiraliste = this.simulacija.DajListaParkiraliste();
         sljedbenik = null;
     }
     
@@ -42,6 +43,7 @@ public class LanacKontrola implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String komanda[], ArrayList<String> parametriVozila)
     {
+        VoziloKontekstSucelje kontekst; 
         if(parametriVozila == null)
             return;
         if(komanda[0].equals("KONTROLA"))
@@ -50,11 +52,11 @@ public class LanacKontrola implements LanacKomandiApstraktni
                 ispis.Ispisi("Komanda KONTROLA");
             for(String s : parametriVozila)
             {
-                VoziloSucelje vozilo = listaPrikupljanje.IzdvojiVozilo(s);
+                VoziloSucelje vozilo = listaPrikupljanje.DajVozilo(s);
                 if(vozilo!=null)
                 {
-                    vozilo.dajKontekst().PostaviKontrolu();
-                    listaParkiraliste.UbaciVozilo(vozilo);
+                    kontekst = vozilo.dajKontekst();
+                    kontekst.PostaviStanje(new StanjeKontrola(kontekst));
                 }
             }
         }

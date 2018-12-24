@@ -10,9 +10,9 @@ import org.foi.uzdiz.elvpopovi.dz3.c_podaci.KreatorPodataka;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.KreatorPodatakaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Podaci;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.IdGenerator;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.RandomGenerator;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.IdGenerator;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.RandomGenerator;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *

@@ -21,7 +21,7 @@ public class MetalKreator implements ZbrinjavanjeFactory
     }
 
     @Override
-    public Vozilo KreirajVozilo() 
+    public VoziloSucelje KreirajVozilo() 
     {
         return new Vozilo(2);
     }

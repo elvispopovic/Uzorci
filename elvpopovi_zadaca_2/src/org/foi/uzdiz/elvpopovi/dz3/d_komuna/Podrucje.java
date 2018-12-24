@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Formatter;
 import java.util.HashMap;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *
@@ -210,13 +211,15 @@ public class Podrucje implements PodrucjeSucelje
     private void ispisiRed(String naziv, String uloga, Ispisivanje ispis, 
     StringBuilder sb, Formatter form,boolean prvi, float[] kolicine)
     {
+        Parametri parametri = Parametri.getInstance();
+        int brojDecimala = parametri.DajVrijednost("brojDecimala");
         sb.setLength(0);
         if(prvi==true)
-            form.format("%13s |%30s |%12.2f |%11.2f |%11.2f |%10.2f |%13.2f |%12.2f",
+            form.format("%13s |%30s |%12."+brojDecimala+"f |%11."+brojDecimala+"f |%11."+brojDecimala+"f |%10."+brojDecimala+"f |%13."+brojDecimala+"f |%12."+brojDecimala+"f",
             uloga,naziv,kolicine[0],kolicine[1],kolicine[2],kolicine[3],
             kolicine[4], kolicine[5]);
         else
-            form.format("%13s |%30s |%12.2f |%11.2f |%11.2f |%10.2f |%13.2f |%12.2f","",
+            form.format("%13s |%30s |%12."+brojDecimala+"f |%11."+brojDecimala+"f |%11."+brojDecimala+"f |%10."+brojDecimala+"f |%13."+brojDecimala+"f |%12."+brojDecimala+"f","",
             naziv,kolicine[0],kolicine[1],kolicine[2],kolicine[3],
             kolicine[4], kolicine[5]);
         ispis.Ispisi(sb.toString());

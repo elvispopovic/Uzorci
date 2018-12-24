@@ -8,7 +8,7 @@ package org.foi.uzdiz.elvpopovi.dz3.g_upravljanje;
 import java.util.ArrayList;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *
@@ -61,21 +61,18 @@ public class LanacKreni implements LanacKomandiApstraktni
     } 
     private void izvrsiKomanduKreni(int brojCiklusa)
     {
-        simulacija.PostaviListeUlica();
-        boolean zavrseno=false;
         if(brojCiklusa==0)
-            while(!zavrseno)
+            while(true)
             {
-                zavrseno = true;
-                if((simulacija.ObradiVozilaUPrikupljanju()==false)||
-                   (simulacija.ObradiVozilaZaZbrinjavanje()==false))
-                    zavrseno=false;
+                simulacija.ObradiStanjaVozila();
+                if(simulacija.provjeriZavrsetak()==true)
+                    break;
             }
         else for(int i=0; i<brojCiklusa; i++)
         {
-            if((simulacija.ObradiVozilaUPrikupljanju()==true)&&
-               (simulacija.ObradiVozilaZaZbrinjavanje()==true))
-                break;
+            simulacija.ObradiStanjaVozila();
+                if(simulacija.provjeriZavrsetak()==true)
+                    break;
         }
     }
 }

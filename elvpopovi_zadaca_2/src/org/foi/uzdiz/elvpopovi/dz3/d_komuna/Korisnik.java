@@ -7,7 +7,7 @@ package org.foi.uzdiz.elvpopovi.dz3.d_komuna;
 
 
 import java.util.ArrayList;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.IdGenerator;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.IdGenerator;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Spremnik;
 
 

@@ -15,5 +15,5 @@ public interface ZbrinjavanjeFactory
 {
     Raspon KreirajRaspon(InicijalizacijaPodatakaProduct podaci);
     Spremnik KreirajSpremnik(String[] shema, String[] zapis);
-    Vozilo KreirajVozilo();
+    VoziloSucelje KreirajVozilo();
 }

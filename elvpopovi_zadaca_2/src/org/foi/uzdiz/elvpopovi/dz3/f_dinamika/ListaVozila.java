@@ -20,6 +20,7 @@ public class ListaVozila
         if(vozila!=null)
             for(VoziloSucelje v:vozila)
             {
+                v.dajKontekst().PostaviPocetnoStanje();
                 mjesta.add(v);
             }
     }
@@ -63,7 +64,7 @@ public class ListaVozila
         }
         return null;       
     }
-    public int DajVoziloIndeks(String idVozila)
+    public int DajIndeksVozila(String idVozila)
     {
         for(int i = 0; i<mjesta.size(); i++)
         {
@@ -90,6 +91,37 @@ public class ListaVozila
     {
         return mjesta.size();
     }
+    
+    public Iterator DajIterator()
+    {
+        return new Iterator(mjesta);
+    }
+    
+    public class Iterator
+    {
+        private final ArrayList<VoziloSucelje> listaVozila;
+        private int index;
+        public Iterator(ArrayList<VoziloSucelje> listaVozila)
+        {
+            this.listaVozila = listaVozila;
+        }
+        public boolean imaLiSlijedeceg()
+        {
+            if(index < listaVozila.size())
+                return true;
+            else
+                return false;
+        }
+        public VoziloSucelje slijedeci()
+        {
+            if(this.imaLiSlijedeceg()==true)
+                return listaVozila.get(index++);
+            else return null;
+        }
+    }
+
+    
+    
     /* testiranje */
     public void Test()
     {

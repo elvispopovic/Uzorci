@@ -10,7 +10,8 @@ import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.h_podrska.Ispisivanje;
+import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloStanje;
+import org.foi.uzdiz.elvpopovi.dz3.i_podrska.Ispisivanje;
 
 /**
  *
@@ -22,7 +23,6 @@ public class LanacPripremi implements LanacKomandiApstraktni
     private final Parametri parametri;
     private final Ispisivanje ispis;
     private final ListaVozila listaPrikupljanje;
-    private final ListaVozila listaParkiraliste;
     private LanacKomandiApstraktni sljedbenik;
     
     public LanacPripremi(SimulacijaSucelje simulacija)
@@ -31,7 +31,6 @@ public class LanacPripremi implements LanacKomandiApstraktni
         ispis = Ispisivanje.getInstance();
         parametri = Parametri.getInstance();
         listaPrikupljanje = simulacija.DajListaPrikupljanje();
-        listaParkiraliste = simulacija.DajListaParkiraliste();
         sljedbenik = null;
     }
     @Override
@@ -42,7 +41,7 @@ public class LanacPripremi implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String komanda[], ArrayList<String> parametriVozila)
     {
-        if(parametriVozila == null)
+        if(parametriVozila == null || listaPrikupljanje == null)
             return;
         if(komanda[0].equals("PRIPREMI"))
         {
@@ -50,11 +49,11 @@ public class LanacPripremi implements LanacKomandiApstraktni
                 ispis.Ispisi("Komanda: PRIPREMI");
             for(String s : parametriVozila)
             {
-                VoziloSucelje vozilo = listaParkiraliste.IzdvojiVozilo(s);
+                VoziloSucelje vozilo = listaPrikupljanje.DajVozilo(s);
                 if(vozilo!=null)
                 {
-                    vozilo.dajKontekst().UkloniKontrolu();
-                    listaPrikupljanje.UbaciVozilo(vozilo);
+                    VoziloStanje stanje = vozilo.dajKontekst().DajStanje();
+                    stanje.Prijelaz("PRIKUPLJANJE");
                 }
             }
 
