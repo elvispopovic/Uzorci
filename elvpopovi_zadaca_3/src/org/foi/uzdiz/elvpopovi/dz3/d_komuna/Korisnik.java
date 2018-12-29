@@ -27,7 +27,12 @@ public class Korisnik
     {
         return ulica;
     }
-    public Korisnik(Ulica ulica, int kategorija, int brojSpremnika) 
+    /**
+     * Konstruktor
+     * @param ulica Ulica koja se pridružuje korisniku
+     * @param kategorija kategorija korisnika (mali =0 , srednji = 1, veliki = 2)
+     */
+    public Korisnik(Ulica ulica, int kategorija) 
     {
         this.ulica = ulica;
         this.kategorija = kategorija;
@@ -35,7 +40,11 @@ public class Korisnik
         spremnici = new ArrayList<>();
         id=0;
     }
-    //kopirajuci konstruktor
+    /**
+     * Kopirajući konstruktor
+     * @param original originalni objekt
+     * @param kolicine količine otpada
+     */
     public Korisnik(Korisnik original, float[] kolicine)
     {
         this.ulica=original.ulica;
@@ -45,22 +54,42 @@ public class Korisnik
         id = IdGenerator.getInstance().dajId();
         System.arraycopy(kolicine, 0, kolicineOtpada, 0, kolicine.length);
     }
+    /**
+     * Korisniku se pridružuje spremnik
+     * @param spremnik referenca na spremnik
+     */
     public void DodajSpremnik(Spremnik spremnik)
     {
         spremnici.add(spremnik);
     }
+    /**
+     * Getter za količine otpada tog korisnika
+     * @return količine otpada po vrsti otpada
+     */
     public float[] dajKolicineOtpada()
     {
         return kolicineOtpada;
     }
+    /**
+     * Getter šifre spremnika
+     * @return šifra (identifikator) spremnika 
+     */
     public int dajId()
     {
         return id;
     }
+    /**
+     * Getter kategorije korisnika 
+     * @return kategorija korisnika (mali=0, srednji=1, veliki=2)
+     */
     public int dajKategorija()
     {
         return kategorija;
     }
+    /**
+     * Getter spremnika pridruženih tom korisniku
+     * @return 
+     */
     public ArrayList<Spremnik> DajSpremnike()
     {
         return spremnici;

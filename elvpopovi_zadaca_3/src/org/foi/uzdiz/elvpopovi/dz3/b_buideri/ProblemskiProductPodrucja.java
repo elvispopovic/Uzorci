@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.Formatter;
 import java.util.HashMap;
 import java.util.regex.Pattern;
+import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.PodaciIteratorSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.PodaciSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Korisnik;
@@ -24,7 +25,6 @@ import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
  */
 public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
 {  
-    //Podrucje ishodisteSustava;
     
     /*
     @Override
@@ -36,6 +36,11 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
         return rezultat;
     }
     */
+    /**
+     * Traži ulice u određenom području i vraća listu ulica
+     * @param podrucjeId Sifra određenog područja
+     * @return Lista pronađenih ulica
+     */
     public ArrayList<Ulica> dajListuUlica(String podrucjeId)
     {
         PodrucjeSucelje ishodiste = null;
@@ -45,7 +50,12 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
             ishodiste.NapuniListuUlica(listaUlica, true);
         return listaUlica;
     }
-    
+    /**
+     * Na osnovu Sifre koja se daje kao string, u listi ishodišta sustava
+     * pretražuje se određeno ishodište sustava
+     * @param podrucjeId Sifra određenog ishodista sustava
+     * @return Vraćeno ishodište sustava prema šifri, null ako ne postoji
+     */
     public PodrucjeSucelje nadjiIshodiste(String podrucjeId)
     {
         PodrucjeSucelje ishodiste = null;
@@ -60,27 +70,33 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
         return ishodiste;
     }
     
-
+    /**
+     * Konstruktor problemskog produkta, detektira i vrstu DZ prema unešenim argumentima
+     * @param podaci Produkt bildera podaci prosljeđuje se u konstruktor kao parametar
+     */
     public ProblemskiProductPodrucja(InicijalizacijaPodatakaProduct podaci)
     {
         super(podaci);
+        Parametri parametri = Parametri.getInstance();
         //ishodisteSustava = null;
         ishodistaSustava = new ArrayList<>();
-        ispis.Ispisi("Poziva se problem iz DZ_2.");
+        if(parametri.DajVrijednost("brg")==-1||parametri.DajVrijednost("brd")==-1)
+            ispis.Ispisi("Poziva se problem iz DZ_2.");
+        else
+            ispis.Ispisi("Poziva se problem iz DZ_3.");
     }
-    
-    @Override
-    void kreirajSpremistaZaUliceIPodrucja()
-    {
-        
-    }
+    /**
+     * Kreira ulicu i provjerava sva područja u svim ishodištima. Ako određeno područje
+     * sadrži tu ulicu, ulica mu se pridružuje. 
+     * @param shema Shema iz datoteke ulice, prvi red u datoteci
+     * @param i     Redni broj podatka u daoteci ulica  
+     */
     @Override
     void kreirajUlicu(String[] shema, int i)
     {  
         HashMap<String,PodrucjeSucelje> mapaPodrucja = new HashMap<>();
-        
         for(PodrucjeSucelje ishodiste:ishodistaSustava)
-            ishodiste.NapuniListuPodrucja(mapaPodrucja, true);
+            ishodiste.NapuniMapuPodrucja(mapaPodrucja, true);
 
         Ulica ulica = new Ulica(shema);
         ulica.Inicijaliziraj(podaci.dajUlice().DajPodatak(i));
@@ -92,6 +108,9 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
                     p.DodajUlicu(ulica);   
         }
     }
+    /**
+     * Ispisuje ulice u svim ishodištima sustava i njihovim područjima
+     */
     public void IspisiUlice()
     {
         ispis.prikaziRetke();
@@ -101,17 +120,21 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
             IspisiUlice(p.dajId());
         }
     }
-    
+    /**
+     * Tablično ispisivanje informacija o otpadu u određenom području
+     * Ispisuje se ukupni otpad koji uključuje i otpad u podpodručjima (rekurzivno)
+     * @param podrucjeId Šifra područja za koje se ispisuje količina otpada
+     */
     @Override
     public void IspisiUlice(String podrucjeId)
     {
         PodrucjeSucelje ishodiste = null;
         ispis.Ispisi("Ispisuje se tablica otpada u pojedinim područjima i ulicama:");
-        ArrayList<PodrucjeSucelje> listaPodrucja = new ArrayList<>();
+        HashMap<String,PodrucjeSucelje> mapaPodrucja = new HashMap<>();
         ishodiste = nadjiIshodiste(podrucjeId);
         if(ishodiste == null)
             return;
-        ishodiste.NapuniListuPodrucja(listaPodrucja, true);
+        ishodiste.NapuniMapuPodrucja(mapaPodrucja, true);
         StringBuilder sb = new StringBuilder();
         Formatter form = new Formatter(sb);
         form.format("%13s |%30s |%12s |%11s |%11s |%10s |%13s |%12s","Opis","Naziv", 
@@ -120,13 +143,16 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
         ispis.Ispisi(" "+String.join("", Collections.nCopies(125, "=")));
         ishodiste.IspisiKolicineOtpada();
     }
-    
+    /**
+     * Multipliciraju se korisnici prema prototipu korisnika 
+     * @param prototipovi lista prototipova korisnika
+     */
     @Override
     public void MultiplicirajKorisnike(Korisnik[] prototipovi)
     {
         HashMap<String, Ulica> mapaUlica = new HashMap<>();
         for(PodrucjeSucelje ishodiste:ishodistaSustava)
-            ishodiste.NapuniListuUlica(mapaUlica, true);
+            ishodiste.NapuniMapuUlica(mapaUlica, true);
         for(String k : mapaUlica.keySet())
         {
             Ulica ulica = mapaUlica.get(k);
@@ -134,7 +160,7 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
             for(int i=0; i<5; i++)
                 zbrojKolicinaOtpada[i]=0.0f;
             for(int i=0; i<3; i++)
-                prototipovi[i] = new Korisnik(ulica,i,podaci.dajSpremnike().BrojZapisa());
+                prototipovi[i] = new Korisnik(ulica,i);
             for(int j=0; j<mjesta.length; j++) //j= mali, srednji, veliki 
                 for(int i=0; i<mjesta[j]; i++)
                 {   
@@ -149,6 +175,10 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
                 }
         }
     }
+    /**
+     * Područja se kreiraju prema podacima iz zapisa u datoteci
+     * Uz to se pronalaze i ishodišta sustava, tj. područja koja nisu ničija potpodručja
+     */
     @Override
     public void KreirajPodrucja()
     {
@@ -163,10 +193,15 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
                 ishodistaSustava.add(mapaPodrucja.get(k));
             }
     }
-    
+    /**
+     * Parser redaka iz zapisa područja
+     * @param podaciPodrucja produkt podatkovnog bildera
+     * @param dijelovi potpodručja ili ulice
+     * @return vraća mapu područja
+     */
     private HashMap<String,PodrucjeSucelje> parsirajPodrucja(PodaciSucelje podaciPodrucja, ArrayList<String> dijelovi)
     {
-        HashMap<String,PodrucjeSucelje> listaPodrucja = new HashMap<>();
+        HashMap<String,PodrucjeSucelje> mapaPodrucja = new HashMap<>();
         String[] shema = podaciPodrucja.DajShemu();
         int idIndex = Arrays.asList(shema).indexOf("id");
             if(idIndex==-1)
@@ -180,13 +215,17 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
             if(dijeloviIndex>=si.length)
                 continue;
             String[] d = si[dijeloviIndex].split(Pattern.quote(","));
-            listaPodrucja.put(si[idIndex],new Podrucje(si[idIndex],si[nazivIndex],d));
+            mapaPodrucja.put(si[idIndex],new Podrucje(si[idIndex],si[nazivIndex],d));
             for(String s : d)
                 dijelovi.add(s);
         }
-        return listaPodrucja;
+        return mapaPodrucja;
     }
-   
+    /**
+     * Ova metoda na linearan način spaja područja. Sva područja u listi nastaloj čitanjem
+     * podataka se spajaju sa drugim područjima prema dijelovima u zapisu
+     * @param mapaPodrucja linearna mapa područja
+     */
     private void popuniPodrucja(HashMap<String,PodrucjeSucelje> mapaPodrucja)
     {
         for(String k : mapaPodrucja.keySet())
@@ -200,7 +239,10 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
             }
         }
     }
-    
+    /**
+     * Ispisuje informacije o korisnicima u određenom području
+     * @param podrucjeId Šifra (identifikator) područja
+     */
     @Override
     void ispisiKorisnikeStat(String podrucjeId)
     {
@@ -232,13 +274,18 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
             }
         }
     }
-    
-   @Override
+    /**
+     * Prolazi svim ishodištima i njihovim potpodručjima, pronalazi ulice i dodjeljuje im spremnike
+     * Podpodručja pojedinih ishodišta smiju se preklapati. Spremnici im neće biti dodijeljeni dva puta
+     * jer se prvo sagradi mapa ulica u kojoj se ulice ne mogu ponavljati, a onda se ulicama
+     * linearno dodjeljuju spremnici
+     */
+    @Override
     void podijeliSpremnike()
     {
         HashMap<String,Ulica> mapaUlica = new HashMap<>();
         for(PodrucjeSucelje p:ishodistaSustava)
-            p.NapuniListuUlica(mapaUlica, true);
+            p.NapuniMapuUlica(mapaUlica, true);
         for(String k : mapaUlica.keySet())
         {
             Ulica ulica = mapaUlica.get(k);
@@ -256,13 +303,14 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
     /* za testiranje */
     void ispisiPodrucja()
     {
-        ArrayList<PodrucjeSucelje> podrucja = new ArrayList<>();
+        HashMap<String,PodrucjeSucelje> mapaPodrucja = new HashMap<>();
         for(PodrucjeSucelje ishodiste:ishodistaSustava)
         {
-            ishodiste.NapuniListuPodrucja(podrucja, true);
+            ishodiste.NapuniMapuPodrucja(mapaPodrucja, true);
             System.out.println("Ishodiste sustava "+ishodiste.dajId()+": "+ishodiste.dajNaziv());
-            for(PodrucjeSucelje p : podrucja)
+            for(String k : mapaPodrucja.keySet())
             {
+                PodrucjeSucelje p = mapaPodrucja.get(k);
                 System.out.println("Podrucje "+p.dajId()+": "+p.dajNaziv());
                 ArrayList<Ulica> listaUlica = new ArrayList<>();
                 p.NapuniListuUlica(listaUlica, false);

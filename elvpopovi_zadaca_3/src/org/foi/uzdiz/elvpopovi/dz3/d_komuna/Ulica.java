@@ -18,38 +18,64 @@ import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
  */
 public class Ulica
 {
+    /**
+     * Getter sifre (identifikatora) ulice
+     * @return vraća identifikator
+     */
     public String Id()
     {
         return id;
     }
+    /**
+     * Getter naziva ulice
+     * @return vraća naziv ulice
+     */
     public String Naziv() 
     {
         return naziv;
     }
-    
+    /**
+     * vraća broj malih korisnika
+     * @return broj malih korisnika
+     */
     public int Mali()
     {
         if(mjesta!=null)
             return mjesta[0];
         else return 0;
     }
+    /**
+     * vraća broj srednjih korisnika
+     * @return broj srednjih korisnika
+     */
     public int Srednji()
     {
         if(mjesta!=null)
             return mjesta[1];
         else return 0;
     }
+    /**
+     * vraća broj velikih korisnika
+     * @return broj velikih korisnika
+     */
     public int Veliki()
     {
         if(mjesta!=null)
             return mjesta[2];
         else return 0;
     }
-
+    /**
+     * vraća broj mjesta u ulici
+     * @return broj mjesta
+     */
     public int[] dajMjesta()
     {
         return mjesta;
     }
+    /**
+     * vraća shemu zapisa ulice
+     * @param shema 
+     */
     public Ulica(String[] shema) 
     {
         ispis = Ispisivanje.getInstance();
@@ -60,6 +86,11 @@ public class Ulica
         for(int i=0; i<3; i++)
             korisnici.add(new ArrayList<>());
     }
+    /**
+     * Na osnovu podataka pročitanih iz datoteka inicijaliziraju se podaci u objektu ulice
+     * @param podaci redak zapisa u datoteci ulica
+     * @return ispravnost podataka
+     */
     public boolean Inicijaliziraj(String[] podaci)
     { 
         if(podaci==null||podaci.length<5)
@@ -81,6 +112,10 @@ public class Ulica
         }
         return true;
     }
+    /**
+     * Dodavanje korisnika
+     * @param korisnik Korisnik koji se dodaje
+     */
     public void dodajKorisnika(Korisnik korisnik)
     {
         int kategorija = korisnik.dajKategorija();
@@ -90,10 +125,20 @@ public class Ulica
             lista.add(korisnik);
         }
     }
+    /**
+     * Vraća listu korisnika
+     * @return lista korisnika
+     */
     public ArrayList<ArrayList<Korisnik>> dajKorisnike()
     {
         return korisnici;
     }
+    /**
+     * Kreiranje mjesta u ulici
+     * @param podaci redak zapisa
+     * @param numerickiIndeks mjesto gdje se u retku zapisa nalati podatak
+     * @throws NumberFormatException 
+     */
     private void kreirajMjesta(String[] podaci, int numerickiIndeks) throws NumberFormatException
     {
         int i, maxIndex, zbroj, razlika, max;

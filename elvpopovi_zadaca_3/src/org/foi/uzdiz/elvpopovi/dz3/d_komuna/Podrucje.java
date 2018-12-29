@@ -18,82 +18,152 @@ import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
  */
 public class Podrucje implements PodrucjeSucelje
 {   
-    private final ArrayList<PodrucjeSucelje> podPodrucja;
+    private final HashMap<String,PodrucjeSucelje> podPodrucja;
     private final ArrayList<Ulica> ulice;
     private final String id;
     private String naziv;
     private String[] dijelovi;
+    /**
+     * Getter za Šifru područja
+     * @return vraća šifru područja kao string
+     */
     @Override
     public String dajId()
     {
         return id;
     }
+    /**
+     * Getter za naziv područja
+     * @return vraća naziv područja
+     */
     @Override
     public String dajNaziv()
     {
         return naziv;
     }
+    /**
+     * Getter za dijelove: šifre potpodručja i ulica kako je upisano u datoteci
+     * @return Šifre potpodručja i ulica
+     */
     @Override
     public String[] dajDijelove()
     {
         return dijelovi;
     }
+    /**
+     * 
+     * Konstruktor
+     * @param id Šifra područja
+     * @param naziv Naziv područja
+     * @param dijelovi Šifre potpodručja i ulica
+     */
     public Podrucje(String id, String naziv, String[] dijelovi)
     {
         this.id = id;
         this.naziv = naziv;
         this.dijelovi = dijelovi;
-        podPodrucja = new ArrayList<>();
+        //podPodrucja = new ArrayList<>();
+        podPodrucja = new HashMap<>();
         ulice = new ArrayList<>();
     }
+    /**
+     * Području se dodaje potpodručje
+     * @param p Referenca na objekt područja koje se dodaje kao potpodručje
+     */
     @Override
     public void DodajPodrucje(PodrucjeSucelje p)
     {
-        podPodrucja.add(p);
+        //podPodrucja.add(p);
+        podPodrucja.put(p.dajId(),p);
     }
-
+    /**
+     * Području se dodaje ulica
+     * @param u Referenca na objekt ulice koja se dodaje području
+     */
     @Override
     public void DodajUlicu(Ulica u)
     {
         ulice.add(u);
     }
+    /**
+     * Pretražuju se potpodručja i ako se pronađe određeno područje vraća se kao referenca
+     * @param id Šifra traženog potpodručja
+     * @param rekurzivno Preklopnik rekurzivnog pretraživanja
+     * @return Referenca objekta područja koje je pronađeno
+     */
     @Override
     public PodrucjeSucelje PronadjiPodrucje(String id, boolean rekurzivno)
     {
-        PodrucjeSucelje pTrenutno;
+        PodrucjeSucelje pTrenutno = null;
+        /*
         for(PodrucjeSucelje p : podPodrucja) //BFS
             if(p.dajId().equals(id))
                 return p;
+        */
+        pTrenutno = podPodrucja.get(id);
+        if(pTrenutno != null)
+            return pTrenutno;
         if(rekurzivno == false)
             return null;
-        for(PodrucjeSucelje p : podPodrucja)
+        //for(PodrucjeSucelje p : podPodrucja)
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
             if((pTrenutno = p.PronadjiPodrucje(id, rekurzivno))!=null)
                 return pTrenutno;
+        }
         return null;
     }
-    
+    /**
+     * Popunjava se lista svim potpodručjima
+     * @param lista Lista koja se treba popuniti
+     * @param rekurzivno Preklopnik za rekurzivno popunjavanje
+     */
+    /*
     @Override
     public void NapuniListuPodrucja(ArrayList<PodrucjeSucelje> lista, boolean rekurzivno)
     {
-        for(PodrucjeSucelje p : podPodrucja)
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
             lista.add(p);
+        }
         if(rekurzivno == false)
             return;
-        for(PodrucjeSucelje p : podPodrucja)
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
             p.NapuniListuPodrucja(lista, rekurzivno);
+        }
     }
-    
+    */
+    /**
+     * Popunjava se hash mapa svim potpodručjima
+     * @param lista
+     * @param rekurzivno 
+     */
     @Override
-    public void NapuniListuPodrucja(HashMap<String,PodrucjeSucelje> lista, boolean rekurzivno)
+    public void NapuniMapuPodrucja(HashMap<String,PodrucjeSucelje> lista, boolean rekurzivno)
     {
-        for(PodrucjeSucelje p : podPodrucja)
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
             lista.put(p.dajId(),p);
+        }
         if(rekurzivno == false)
             return;
-        for(PodrucjeSucelje p : podPodrucja)
-            p.NapuniListuPodrucja(lista, rekurzivno);
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
+            p.NapuniMapuPodrucja(lista, rekurzivno);
+        }
     }
-    
+    /**
+     * Pretraživanje ulice u područjima i potpodručjima prema njezinoj šifri
+     * @param id Šifra (identifikator) ulice
+     * @param rekurzivno Preklopnik za rekurzivno pretraživanje
+     * @return Objekt pronađene ulice. Null ako nije pronađena.
+     */
     @Override
     public Ulica PronadjiUlicu(String id, boolean rekurzivno)
     {
@@ -103,11 +173,19 @@ public class Podrucje implements PodrucjeSucelje
                 return u;
         if(rekurzivno == false)
             return null;
-        for(PodrucjeSucelje p : podPodrucja)
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
             if((uTrenutna = p.PronadjiUlicu(id, rekurzivno))!=null)
                 return uTrenutna;
+        }
         return null;
     }
+    /**
+     * U DZ1 ulice nemaju id, pa se koristi obična lista
+     * @param lista Lista ulica koju treba popuniti ulicama
+     * @param rekurzivno Preklopnik za rekurzivno pretraživanje
+     */
     @Override
     public void NapuniListuUlica(ArrayList<Ulica> lista, boolean rekurzivno)
     {
@@ -115,18 +193,35 @@ public class Podrucje implements PodrucjeSucelje
             lista.add(u);
         if(rekurzivno == false)
             return;
-        for(PodrucjeSucelje p : podPodrucja)
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
             p.NapuniListuUlica(lista, rekurzivno);
+        }
     }
-    public void NapuniListuUlica(HashMap<String,Ulica> lista, boolean rekurzivno)
+    /**
+     * U DZ2 i DZ3 ulice imaju svoje identifikatore (šifre). Zato se koristi mapa 
+     * gdje su ključevi upravo ti identifikatori
+     * @param lista
+     * @param rekurzivno 
+     */
+    public void NapuniMapuUlica(HashMap<String,Ulica> lista, boolean rekurzivno)
     {
         for(Ulica u : ulice)
             lista.put(u.Id(), u);
         if(rekurzivno == false)
             return;
-        for(PodrucjeSucelje p : podPodrucja)
-            p.NapuniListuUlica(lista, rekurzivno);
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
+            p.NapuniMapuUlica(lista, rekurzivno);
+        }
     }
+    /**
+     * Dobavljanje količina otpada. Metoda je rekurzivna.
+     * @param ulazno Trenutni zbroj otpada u nadpodručjima, prema vrsti otpada
+     * @return vraća zbroj otpada u potpodručjima razvrstano na vrste otpada
+     */
     @Override
     public float[] DajKolicineOtpada(float[] ulazno)
     {
@@ -146,10 +241,17 @@ public class Podrucje implements PodrucjeSucelje
                     }
                 }
         }
-        for(PodrucjeSucelje p : podPodrucja)
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
             rezultat = p.DajKolicineOtpada(rezultat);
+        }
         return rezultat;
     }
+    /**
+     * Ispisivanje količina otpada. Metoda koristi privatnu metodu ispisiPodručja
+     * za ispis svakog retka tablice
+     */
     @Override
     public void IspisiKolicineOtpada()
     {
@@ -167,9 +269,20 @@ public class Podrucje implements PodrucjeSucelje
         }
         ispis.Ispisi(" "+String.join("", Collections.nCopies(125, "=")));
         
-        for(PodrucjeSucelje p : podPodrucja)
+        for(String k : podPodrucja.keySet())
+        {
+            PodrucjeSucelje p = podPodrucja.get(k);
             p.IspisiKolicineOtpada();
+        }
     }
+    /**
+     * Ispis potpodručja i otpada u području. Ovu metodu koristi javna metoda IspisiKolicine otpada.
+     * @param ispis Referenca na ispisivač
+     * @param sb String builder
+     * @param form Form builder
+     * @param ulazno Brojač
+     * @param kolicineOtpada Količine otpada po vrsti
+     */
     private void ispisiPodrucja(Ispisivanje ispis, StringBuilder sb, Formatter form, float[] ulazno, float[] kolicineOtpada)
     {
         resetirajRekurzivneBrojaceOtpada(ulazno);
@@ -180,8 +293,9 @@ public class Podrucje implements PodrucjeSucelje
         if(podPodrucja.size()>0)
             ispis.Ispisi("  "+String.join("", Collections.nCopies(124, "-")));
         boolean prvi = true;
-        for(PodrucjeSucelje p : podPodrucja)
+        for(String k : podPodrucja.keySet())
         {
+            PodrucjeSucelje p = podPodrucja.get(k);
             sb.setLength(0);
             resetirajRekurzivneBrojaceOtpada(ulazno);
             kolicineOtpada = p.DajKolicineOtpada(ulazno);
@@ -192,6 +306,13 @@ public class Podrucje implements PodrucjeSucelje
             prvi=false;
         }
     }
+    /**
+     * Ispisivanje ulica
+     * @param ispis Referenca ispisivača
+     * @param sb String Builder
+     * @param form Form builder
+     * @param ulazno količine otpada po vrsti
+     */
     private void ispisiUlice(Ispisivanje ispis, StringBuilder sb, Formatter form, float[] ulazno)
     {
         boolean prvi = true;
@@ -216,7 +337,16 @@ public class Podrucje implements PodrucjeSucelje
             prvi=false;
         }
     }
-    
+    /**
+     * Ispisuje se pojedini redak tablice
+     * @param naziv Naziv entiteta u tablici, ime ulice ili područja
+     * @param uloga String koji pokazuje što je taj entitet: npr ulica
+     * @param ispis Referenca ispisivača
+     * @param sb String builder
+     * @param form Form builder
+     * @param prvi oznaka za prvi red
+     * @param kolicine količine
+     */
     private void ispisiRed(String naziv, String uloga, Ispisivanje ispis, 
     StringBuilder sb, Formatter form,boolean prvi, float[] kolicine)
     {
@@ -224,11 +354,13 @@ public class Podrucje implements PodrucjeSucelje
         int brojDecimala = parametri.DajVrijednost("brojDecimala");
         sb.setLength(0);
         if(prvi==true)
-            form.format("%13s |%30s |%12."+brojDecimala+"f |%11."+brojDecimala+"f |%11."+brojDecimala+"f |%10."+brojDecimala+"f |%13."+brojDecimala+"f |%12."+brojDecimala+"f",
+            form.format("%13s |%30s |%12."+brojDecimala+"f |%11."+brojDecimala+"f |%11."+
+                    brojDecimala+"f |%10."+brojDecimala+"f |%13."+brojDecimala+"f |%12."+brojDecimala+"f",
             uloga,naziv,kolicine[0],kolicine[1],kolicine[2],kolicine[3],
             kolicine[4], kolicine[5]);
         else
-            form.format("%13s |%30s |%12."+brojDecimala+"f |%11."+brojDecimala+"f |%11."+brojDecimala+"f |%10."+brojDecimala+"f |%13."+brojDecimala+"f |%12."+brojDecimala+"f","",
+            form.format("%13s |%30s |%12."+brojDecimala+"f |%11."+brojDecimala+"f |%11."+brojDecimala+
+                    "f |%10."+brojDecimala+"f |%13."+brojDecimala+"f |%12."+brojDecimala+"f","",
             naziv,kolicine[0],kolicine[1],kolicine[2],kolicine[3],
             kolicine[4], kolicine[5]);
         ispis.Ispisi(sb.toString());

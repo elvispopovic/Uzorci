@@ -21,7 +21,7 @@ public class ProblemskiProductBezPodrucja extends ProblemskiAbstractProduct
     public ProblemskiProductBezPodrucja(InicijalizacijaPodatakaProduct podaci) 
     {
         super(podaci);
-        kreirajSpremistaZaUliceIPodrucja();
+        ulice = new ArrayList<>();
         ispis.Ispisi("Poziva se problem iz DZ_1.");
     }
 
@@ -34,12 +34,6 @@ public class ProblemskiProductBezPodrucja extends ProblemskiAbstractProduct
         return null;
     }
 
-    
-    @Override
-    void kreirajSpremistaZaUliceIPodrucja()
-    {
-        ulice = new ArrayList<>();
-    }
     @Override
     void kreirajUlicu(String[] shema, int i)
     {
@@ -56,7 +50,7 @@ public class ProblemskiProductBezPodrucja extends ProblemskiAbstractProduct
             for(int i=0; i<5; i++)
                 zbrojKolicinaOtpada[i]=0.0f;
             for(int i=0; i<3; i++)
-                prototipovi[i] = new Korisnik(ulica,i,podaci.dajSpremnike().BrojZapisa());
+                prototipovi[i] = new Korisnik(ulica,i);
             for(int j=0; j<mjesta.length; j++) //j= mali, srednji, veliki 
                 for(int i=0; i<mjesta[j]; i++)
                 {   

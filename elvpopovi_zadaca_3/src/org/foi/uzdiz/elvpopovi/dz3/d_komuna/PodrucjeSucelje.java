@@ -20,11 +20,10 @@ public interface PodrucjeSucelje
     String dajNaziv();
     String[] dajDijelove();
     PodrucjeSucelje PronadjiPodrucje(String id, boolean rekurzivno);
-    void NapuniListuPodrucja(ArrayList<PodrucjeSucelje> lista, boolean rekurzivno);
-    void NapuniListuPodrucja(HashMap<String,PodrucjeSucelje> lista, boolean rekurzivno);
+    void NapuniMapuPodrucja(HashMap<String,PodrucjeSucelje> lista, boolean rekurzivno);
     Ulica PronadjiUlicu(String id, boolean rekurzivno);
     void NapuniListuUlica(ArrayList<Ulica> lista, boolean rekurzivno);
-    void NapuniListuUlica(HashMap<String,Ulica> lista, boolean rekurzivno);
+    void NapuniMapuUlica(HashMap<String,Ulica> lista, boolean rekurzivno);
     float[] DajKolicineOtpada(float[] ulazno);
     void IspisiKolicineOtpada();
 }

@@ -6,9 +6,7 @@ Pročitano je 10 redaka podataka iz DZ_2_ulice.txt
 Prilikom čitanja podataka iz DZ_2_spremnici.txt otkriven neispravan redak 5.
 Pročitano je 5 redaka podataka iz DZ_2_spremnici.txt
 Pročitano je 7 redaka podataka iz DZ_2_vozila.txt
-Pročitano je 7 redaka podataka iz DZ_2_dispecer.txt
-Zbog unešenih argumenata --brg i/ili --brd radi se o DZ_3.
-Brg: 20, brd: 10
+Pročitano je 8 redaka podataka iz DZ_2_dispecer.txt
 Init: sjeme generatora: 17153
 Init: izlazna datoteka: DZ2_elvpopovic.txt
 Poziva se problem iz DZ_2.
@@ -81,7 +79,7 @@ Status vozila prikazan je tablično:
   Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
   Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
   Prikupljanje |  v5 | mješanko 1  |      diesel |   mješano |    4000 |     213,96 |      213,96
-      Kontrola |  v6 | mješanko 2  |      diesel |   mješano |    5000 |     331,25 |      331,25
+  Prikupljanje |  v6 | mješanko 2  |      diesel |   mješano |    5000 |     331,25 |      331,25
   Prikupljanje |  v7 | mješanko 3  |      diesel |   mješano |    3000 |     295,65 |      295,65
 ********************************************************************************
 *                                                                              *
@@ -95,24 +93,9 @@ Status vozila prikazan je tablično:
   Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
   Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
   Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-  Prikupljanje |  v5 | mješanko 1  |      diesel |   mješano |    4000 |     649,48 |      649,48
-      Kontrola |  v6 | mješanko 2  |      diesel |   mješano |    5000 |     331,25 |      331,25
-  Prikupljanje |  v7 | mješanko 3  |      diesel |   mješano |    3000 |     894,15 |      894,15
-********************************************************************************
-*                                                                              *
-*                           Prijelaz u komandni mod                            *
-*                                                                              *
-********************************************************************************
-********************************************************************************
-*                                                                              *
-*                 Isključeno je ispisivanje poslova odvoza...                  *
-*                                                                              *
-********************************************************************************
-********************************************************************************
-*                                                                              *
-*                 Isključeno je ispisivanje poslova odvoza...                  *
-*                                                                              *
-********************************************************************************
+      Zavrseno |  v5 | mješanko 1  |      diesel |   mješano |    4000 |       0,00 |     3885,12
+      Zavrseno |  v6 | mješanko 2  |      diesel |   mješano |    5000 |       0,00 |     4856,83
+      Zavrseno |  v7 | mješanko 3  |      diesel |   mješano |    3000 |       0,00 |     2996,36
 STATISTIKA PREUZIMANJA OTPADA
        Vrsta |    količina |
       otpada |        [kg] |
@@ -121,9 +104,9 @@ STATISTIKA PREUZIMANJA OTPADA
        papir |        0,00 |
        metal |        0,00 |
          bio |        0,00 |
-     mješano |        0,00 |
+     mješano |    11738,31 |
 ============================
-      UKUPNO |        0,00 |
+      UKUPNO |    11738,31 |
 
 STATISTIKA VOZILA
      |             |     Broj |     Broj |    Ukupna |     Broj |
@@ -133,8 +116,8 @@ STATISTIKA VOZILA
   v2 | papirko 1   |        0 |        0 |      0,00 |        0 |
   v3 | metalko 1   |        0 |        0 |      0,00 |        0 |
   v4 | biotko 1    |        0 |        0 |      0,00 |        0 |
-  v5 | mješanko 1  |       50 |       54 |   1754,40 |        0 |
-  v6 | mješanko 2  |       10 |       11 |    331,25 |        0 |
-  v7 | mješanko 3  |       50 |       56 |   2146,27 |        0 |
+  v5 | mješanko 1  |       65 |       76 |   3885,12 |        2 |
+  v6 | mješanko 2  |       70 |       79 |   4856,83 |        2 |
+  v7 | mješanko 3  |       57 |       64 |   2996,36 |        2 |
 ================================================================
-     |      UKUPNO |      110 |      121 |   4231,92 |        0 |
+     |      UKUPNO |      192 |      219 |  11738,31 |        6 |

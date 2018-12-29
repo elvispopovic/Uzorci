@@ -30,7 +30,27 @@ import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.ZbrinjavanjeFactory;
  */
 public abstract class ProblemskiAbstractProduct 
 {
+    protected final Ispisivanje ispis;
+    protected final RandomGenerator rnd;
+    protected final InicijalizacijaPodatakaProduct podaci;
     
+    protected ArrayList<Spremnik> protoSpremnici;
+    private ArrayList<Spremnik> spremnici;  
+    private ArrayList<VoziloSucelje> protoVozila;
+    private ArrayList<ArrayList<VoziloSucelje>> vozila;
+    
+    protected int brojDecimala;
+    protected int[] rasponiMin;
+    protected int[][] rasponiMax;
+    protected Raspon[] rasponi;
+    protected float[] kolicineOtpada;
+    protected float[] zbrojKolicinaOtpada;
+    
+    ZbrinjavanjeFactory stakloKreator;
+    ZbrinjavanjeFactory papirKreator;
+    ZbrinjavanjeFactory metalKreator;
+    ZbrinjavanjeFactory bioKreator;
+    ZbrinjavanjeFactory mjesanoKreator;
 
     public ArrayList<Spremnik> dajSpremnike() 
     {
@@ -45,7 +65,6 @@ public abstract class ProblemskiAbstractProduct
     abstract void MultiplicirajKorisnike(Korisnik[] prototipovi);
     public abstract void KreirajPodrucja();
     abstract void kreirajUlicu(String[] shema, int i);
-    abstract void kreirajSpremistaZaUliceIPodrucja();
     abstract void IspisiUlice();
     public abstract void IspisiUlice(String podrucjeId);
     abstract void podijeliSpremnike();
@@ -140,9 +159,8 @@ public abstract class ProblemskiAbstractProduct
         }
 
         //testiranje
-        //ispisiUlice();
+        //ispisiVozila();
         //ispisiSpremnike();
-        //ispisiKorisnike();
     }
       
     final protected void PostaviSpremnik(int vrstaOtpada, ArrayList<Korisnik> korisniciKategorija)
@@ -324,26 +342,6 @@ public abstract class ProblemskiAbstractProduct
         System.out.println("Ukupni broj spremnika: "+spremnici.size());
     }
     
-    protected final Ispisivanje ispis;
-    protected final RandomGenerator rnd;
-    protected final InicijalizacijaPodatakaProduct podaci;
     
-    protected ArrayList<Spremnik> protoSpremnici;
-    private ArrayList<Spremnik> spremnici;  
-    private ArrayList<VoziloSucelje> protoVozila;
-    private ArrayList<ArrayList<VoziloSucelje>> vozila;
-    
-    protected int brojDecimala;
-    protected int[] rasponiMin;
-    protected int[][] rasponiMax;
-    protected Raspon[] rasponi;
-    protected float[] kolicineOtpada;
-    protected float[] zbrojKolicinaOtpada;
-    
-    ZbrinjavanjeFactory stakloKreator;
-    ZbrinjavanjeFactory papirKreator;
-    ZbrinjavanjeFactory metalKreator;
-    ZbrinjavanjeFactory bioKreator;
-    ZbrinjavanjeFactory mjesanoKreator;
     
 }
