@@ -5,7 +5,7 @@
  */
 package org.foi.uzdiz.elvpopovi.dz3.b_buideri;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.PodaciSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCView;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCView;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 
 /**

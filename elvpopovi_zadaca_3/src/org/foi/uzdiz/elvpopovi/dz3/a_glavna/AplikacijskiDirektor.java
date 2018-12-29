@@ -15,7 +15,7 @@ import org.foi.uzdiz.elvpopovi.dz3.b_buideri.ProblemskiAbstractProduct;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.SimulacijaAbstractBuilder;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.SimulacijaBuilder;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCView;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCView;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 
 /**

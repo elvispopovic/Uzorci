@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Korisnik;
+import org.foi.uzdiz.elvpopovi.dz3.d_komuna.PodrucjeSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
@@ -29,7 +30,7 @@ import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.ZbrinjavanjeFactory;
  */
 public abstract class ProblemskiAbstractProduct 
 {
-
+    
 
     public ArrayList<Spremnik> dajSpremnike() 
     {
@@ -37,15 +38,24 @@ public abstract class ProblemskiAbstractProduct
     }
 
     //hook metode za prototype uzorak
-    public abstract ArrayList<Ulica> dajListuUlica();
+    //public abstract ArrayList<Ulica> dajListuUlica();
+    protected ArrayList<PodrucjeSucelje> ishodistaSustava;
+    public abstract PodrucjeSucelje nadjiIshodiste(String podrucjeId);
+    public abstract ArrayList<Ulica> dajListuUlica(String podrucjeId);
     abstract void MultiplicirajKorisnike(Korisnik[] prototipovi);
     public abstract void KreirajPodrucja();
     abstract void kreirajUlicu(String[] shema, int i);
     abstract void kreirajSpremistaZaUliceIPodrucja();
-    public abstract void IspisiUlice();
+    abstract void IspisiUlice();
+    public abstract void IspisiUlice(String podrucjeId);
     abstract void podijeliSpremnike();
-    abstract void ispisiKorisnikeStat();
+    abstract void ispisiKorisnikeStat(String podrucjeId);
 
+    public ArrayList<PodrucjeSucelje> DajIshodistaSustava()
+    {
+        return ishodistaSustava;
+    }
+    
     public ArrayList<VoziloSucelje> dajListuVozila() 
     {
         if(vozila==null)
@@ -90,7 +100,7 @@ public abstract class ProblemskiAbstractProduct
                     if(zapis.length<shema.length)
                         throw new Exception("Premalo parametara u retku.");
                     for(int j=0; j<4; j++)
-                        Integer.parseInt(zapis[numerickiIndeks+j].replaceAll("\\p{Z}",""));                  
+                        Integer.parseInt(zapis[numerickiIndeks+j].replaceAll("\\p{Z}","")); 
                     kreirajUlicu(shema, i);
                 }
                 catch(Exception e)

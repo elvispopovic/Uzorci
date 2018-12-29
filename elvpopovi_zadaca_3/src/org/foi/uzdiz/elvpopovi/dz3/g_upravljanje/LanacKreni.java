@@ -5,6 +5,7 @@
  */
 package org.foi.uzdiz.elvpopovi.dz3.g_upravljanje;
 
+import java.util.Collections;
 import java.util.regex.Pattern;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
@@ -34,12 +35,15 @@ public class LanacKreni implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String[] komanda)
     {
+        Parametri parametri = Parametri.getInstance();
         String[] komandaRazdvojeno = komanda[0].split(Pattern.quote(" "));
         if(komandaRazdvojeno[0].equals("KRENI"))
         {
             if(parametri.DajVrijednost("ispis")==0)
                 simulacija.Ispisi("Komanda KRENI");
             obradiKreni(komandaRazdvojeno);
+            if(parametri.DajVrijednost("ispis")==1)
+                porukaOIskljucenomPrikazu();
         }
         else if(sljedbenik!=null)
             sljedbenik.ObradiKomandu(komanda);       
@@ -73,5 +77,14 @@ public class LanacKreni implements LanacKomandiApstraktni
                 if(simulacija.provjeriZavrsetak()==true)
                     break;
         }
+    }
+    private void porukaOIskljucenomPrikazu()
+    {
+        simulacija.Ispisi(String.join("", Collections.nCopies(80, "*")));
+        simulacija.Ispisi("*"+String.join("", Collections.nCopies(78, " "))+"*");
+        simulacija.Ispisi("*"+String.join("", Collections.nCopies(17, " "))+"Isključeno je ispisivanje poslova odvoza..."+
+                String.join("", Collections.nCopies(18, " "))+"*");
+        simulacija.Ispisi("*"+String.join("", Collections.nCopies(78, " "))+"*");
+        simulacija.Ispisi(String.join("", Collections.nCopies(80, "*")));
     }
 }

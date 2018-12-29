@@ -12,9 +12,10 @@ import java.util.ArrayList;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.ProblemskiAbstractProduct;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.SimulacijaAbstractProduct;
+import org.foi.uzdiz.elvpopovi.dz3.d_komuna.PodrucjeSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCObserver;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCObserver;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloStanjeSucelje;
@@ -57,7 +58,11 @@ public class Simulacija implements SimulacijaSucelje
             if(vozilo != null && vozilo.dajKontekst() != null && simulacijske != null)
                 vozilo.dajKontekst().InjektirajSimulacijske(simulacijske);
         }
-        PostaviListeUlica();
+        ArrayList<PodrucjeSucelje> ishodista = problemske.DajIshodistaSustava();
+        if(ishodista!=null)
+            PostaviListeUlica(ishodista.get(0).dajId());
+        else
+            PostaviListeUlica("");
     }
  
     @Override
@@ -104,14 +109,13 @@ public class Simulacija implements SimulacijaSucelje
     @Override
     public void Pokreni()
     {
-        
         for(int i=0; i<listaPrikupljanje.Velicina(); i++)
         {
             VoziloSucelje vozilo = listaPrikupljanje.DajVozilo(i);
             VoziloStanjeSucelje stanje = vozilo.dajKontekst().DajStanje();
             stanje.Prijelaz("PRIKUPLJANJE");
+            System.out.println("Vozilo "+vozilo.dajId()+": "+vozilo.dajNaziv()+" podaci: "+vozilo.dajDodijeljeneUlice().size());
         }
-        
         //IspisiListuUlica();
         glavnaPetlja(); 
     }
@@ -128,17 +132,24 @@ public class Simulacija implements SimulacijaSucelje
         if(parametri.DajVrijednost("ispis")==0)
             Ispisi("Sva vozila su odvezla otpad. Simulacija je završena.");
     }
-
-    private void PostaviListeUlica()
+    
+    private void PostaviListeUlica(String podrucjeId)
     {
         int i, j;
         int[] redoslijed;
-        ArrayList<Ulica> listaUlica = problemske.dajListuUlica();
+        PodrucjeSucelje ishodiste = null;
+        if(!podrucjeId.equals(""))
+        {
+            ishodiste = problemske.nadjiIshodiste(podrucjeId);
+            if(ishodiste == null)
+                return;
+        }
+        ArrayList<Ulica> listaUlica = problemske.dajListuUlica(podrucjeId);
         redoslijed = kreirajRedoslijed(listaUlica.size());
         ArrayList<Ulica> ulice = null;
         for(j=0; j<listaPrikupljanje.Velicina(); j++)
         {
-            ulice = napraviPlanUlica(redoslijed);
+            ulice = napraviPlanUlica(podrucjeId, redoslijed);
             VoziloSucelje v = listaPrikupljanje.DajVozilo(j);
             ArrayList<ArrayList<Spremnik>> spremniciPoUlicama = new ArrayList<>();
             for(Ulica u:ulice)
@@ -153,9 +164,9 @@ public class Simulacija implements SimulacijaSucelje
         if(ulice != null)
             pronadjiSpremnike(ulice.get(0),0);                  
     }
-    private ArrayList<Ulica> napraviPlanUlica(int[] redoslijed)
+    private ArrayList<Ulica> napraviPlanUlica(String podrucjeId, int[] redoslijed)
     {
-        ArrayList<Ulica> listaUlica = problemske.dajListuUlica();
+        ArrayList<Ulica> listaUlica = problemske.dajListuUlica(podrucjeId);
         ArrayList<Ulica> ulice = new ArrayList<>(); 
         if(preuzimanje>0)
         {

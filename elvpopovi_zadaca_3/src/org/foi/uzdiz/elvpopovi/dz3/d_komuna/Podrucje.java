@@ -118,6 +118,15 @@ public class Podrucje implements PodrucjeSucelje
         for(PodrucjeSucelje p : podPodrucja)
             p.NapuniListuUlica(lista, rekurzivno);
     }
+    public void NapuniListuUlica(HashMap<String,Ulica> lista, boolean rekurzivno)
+    {
+        for(Ulica u : ulice)
+            lista.put(u.Id(), u);
+        if(rekurzivno == false)
+            return;
+        for(PodrucjeSucelje p : podPodrucja)
+            p.NapuniListuUlica(lista, rekurzivno);
+    }
     @Override
     public float[] DajKolicineOtpada(float[] ulazno)
     {

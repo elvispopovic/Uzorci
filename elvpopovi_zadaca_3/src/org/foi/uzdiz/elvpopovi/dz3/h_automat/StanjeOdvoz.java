@@ -9,7 +9,7 @@ import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloStatistika;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.StatistikaSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCModelSucelje;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
 

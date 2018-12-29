@@ -5,12 +5,9 @@
  */
 package org.foi.uzdiz.elvpopovi.dz3.g_upravljanje;
 
-import java.io.StringWriter;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCModelSucelje;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.regex.Pattern;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.ProblemskiAbstractProduct;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.SimulacijaAbstractProduct;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
@@ -20,7 +17,7 @@ import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.Statistika;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCObserver;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCObserver;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 
 /**
@@ -117,10 +114,14 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
             lanacPripremi.ObradiKomandu(komanda);
         }
         ObavijestiMVC();
-        komandniModIntro();
+        
         //prijelaz u korisničke komande
-        for(MVCObserver o:observers)
-            o.KomandniMod();
+        if(brg>0&&brd>0)
+        {
+            komandniModIntro();
+            for(MVCObserver o:observers)
+                o.KomandniMod();
+        }
     }
 
     @Override

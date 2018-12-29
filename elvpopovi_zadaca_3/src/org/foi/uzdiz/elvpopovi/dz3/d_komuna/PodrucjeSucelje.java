@@ -24,6 +24,7 @@ public interface PodrucjeSucelje
     void NapuniListuPodrucja(HashMap<String,PodrucjeSucelje> lista, boolean rekurzivno);
     Ulica PronadjiUlicu(String id, boolean rekurzivno);
     void NapuniListuUlica(ArrayList<Ulica> lista, boolean rekurzivno);
+    void NapuniListuUlica(HashMap<String,Ulica> lista, boolean rekurzivno);
     float[] DajKolicineOtpada(float[] ulazno);
     void IspisiKolicineOtpada();
 }

@@ -7,7 +7,7 @@ package org.foi.uzdiz.elvpopovi.dz3.h_automat;
 
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCModelSucelje;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 
 /**

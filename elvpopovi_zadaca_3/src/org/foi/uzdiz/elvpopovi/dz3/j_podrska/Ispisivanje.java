@@ -13,8 +13,8 @@ import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCObserver;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCModelSucelje;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCObserver;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 
 /**
  *

@@ -13,7 +13,7 @@ import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.Statistika;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.StatistikaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.StatistikaTablicno;
-import org.foi.uzdiz.elvpopovi.dz3.i_view_control.MVCView;
+import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCView;
 
 /**
  *

@@ -24,8 +24,9 @@ import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
  */
 public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
 {  
-    Podrucje ishodisteSustava;
+    //Podrucje ishodisteSustava;
     
+    /*
     @Override
     public ArrayList<Ulica> dajListuUlica() 
     {
@@ -34,11 +35,37 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
             ishodisteSustava.NapuniListuUlica(rezultat, true);
         return rezultat;
     }
+    */
+    public ArrayList<Ulica> dajListuUlica(String podrucjeId)
+    {
+        PodrucjeSucelje ishodiste = null;
+        ArrayList<Ulica> listaUlica = new ArrayList<>();
+        ishodiste = nadjiIshodiste(podrucjeId);
+        if(ishodiste != null)
+            ishodiste.NapuniListuUlica(listaUlica, true);
+        return listaUlica;
+    }
+    
+    public PodrucjeSucelje nadjiIshodiste(String podrucjeId)
+    {
+        PodrucjeSucelje ishodiste = null;
+        if(ishodistaSustava == null || ishodistaSustava.size() == 0)
+            return null;
+        for(PodrucjeSucelje p:ishodistaSustava)
+            if(p.dajId().equals(podrucjeId))
+            {
+                ishodiste = p;
+                break;
+            }
+        return ishodiste;
+    }
+    
 
     public ProblemskiProductPodrucja(InicijalizacijaPodatakaProduct podaci)
     {
         super(podaci);
-        ishodisteSustava = null;
+        //ishodisteSustava = null;
+        ishodistaSustava = new ArrayList<>();
         ispis.Ispisi("Poziva se problem iz DZ_2.");
     }
     
@@ -50,42 +77,59 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
     @Override
     void kreirajUlicu(String[] shema, int i)
     {  
-        ArrayList<PodrucjeSucelje> listaPodrucja = new ArrayList<>();
-        ishodisteSustava.NapuniListuPodrucja(listaPodrucja, true);
+        HashMap<String,PodrucjeSucelje> mapaPodrucja = new HashMap<>();
         
+        for(PodrucjeSucelje ishodiste:ishodistaSustava)
+            ishodiste.NapuniListuPodrucja(mapaPodrucja, true);
+
         Ulica ulica = new Ulica(shema);
         ulica.Inicijaliziraj(podaci.dajUlice().DajPodatak(i));
-        for(PodrucjeSucelje p : listaPodrucja)
+        for(String k : mapaPodrucja.keySet())
         {
+            PodrucjeSucelje p = mapaPodrucja.get(k);
             for( String k2 : p.dajDijelove())
                 if(k2.equals(ulica.Id()))
                     p.DodajUlicu(ulica);   
         }
     }
-    @Override
     public void IspisiUlice()
     {
         ispis.prikaziRetke();
+        for(PodrucjeSucelje p:ishodistaSustava)
+        {
+            ispis.Ispisi("Ishodiste sustava: "+p.dajId()+": "+p.dajNaziv());
+            IspisiUlice(p.dajId());
+        }
+    }
+    
+    @Override
+    public void IspisiUlice(String podrucjeId)
+    {
+        PodrucjeSucelje ishodiste = null;
         ispis.Ispisi("Ispisuje se tablica otpada u pojedinim područjima i ulicama:");
         ArrayList<PodrucjeSucelje> listaPodrucja = new ArrayList<>();
-        ishodisteSustava.NapuniListuPodrucja(listaPodrucja, true);
+        ishodiste = nadjiIshodiste(podrucjeId);
+        if(ishodiste == null)
+            return;
+        ishodiste.NapuniListuPodrucja(listaPodrucja, true);
         StringBuilder sb = new StringBuilder();
         Formatter form = new Formatter(sb);
         form.format("%13s |%30s |%12s |%11s |%11s |%10s |%13s |%12s","Opis","Naziv", 
         "staklo [kg]","papir [kg]","metal [kg]","bio [kg]","mješano [kg]","ukupno [kg]");
         ispis.Ispisi(sb.toString());
         ispis.Ispisi(" "+String.join("", Collections.nCopies(125, "=")));
-        ishodisteSustava.IspisiKolicineOtpada();
-
+        ishodiste.IspisiKolicineOtpada();
     }
     
     @Override
-    void MultiplicirajKorisnike(Korisnik[] prototipovi)
+    public void MultiplicirajKorisnike(Korisnik[] prototipovi)
     {
-        ArrayList<Ulica> listaUlica = new ArrayList<>();
-        ishodisteSustava.NapuniListuUlica(listaUlica, true);
-        for (Ulica ulica : listaUlica) 
+        HashMap<String, Ulica> mapaUlica = new HashMap<>();
+        for(PodrucjeSucelje ishodiste:ishodistaSustava)
+            ishodiste.NapuniListuUlica(mapaUlica, true);
+        for(String k : mapaUlica.keySet())
         {
+            Ulica ulica = mapaUlica.get(k);
             int[] mjesta = ulica.dajMjesta();
             for(int i=0; i<5; i++)
                 zbrojKolicinaOtpada[i]=0.0f;
@@ -111,19 +155,18 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
         ispis.Ispisi("Kreiraju se područja.");
         ArrayList<String> dijelovi = new ArrayList<>();
         PodaciSucelje podaciPodrucja = podaci.dajPodrucja();
-        HashMap<String,Podrucje> listaPodrucja = parsirajPodrucja(podaciPodrucja, dijelovi);
-        popuniPodrucja(listaPodrucja);
-        for(String k : listaPodrucja.keySet())
+        HashMap<String,PodrucjeSucelje> mapaPodrucja = parsirajPodrucja(podaciPodrucja, dijelovi);
+        popuniPodrucja(mapaPodrucja);
+        for(String k : mapaPodrucja.keySet())
             if(dijelovi.contains(k)==false)
             {
-                ishodisteSustava = listaPodrucja.get(k);
-                break;
+                ishodistaSustava.add(mapaPodrucja.get(k));
             }
     }
     
-    private HashMap<String,Podrucje> parsirajPodrucja(PodaciSucelje podaciPodrucja, ArrayList<String> dijelovi)
+    private HashMap<String,PodrucjeSucelje> parsirajPodrucja(PodaciSucelje podaciPodrucja, ArrayList<String> dijelovi)
     {
-        HashMap<String,Podrucje> listaPodrucja = new HashMap<>();
+        HashMap<String,PodrucjeSucelje> listaPodrucja = new HashMap<>();
         String[] shema = podaciPodrucja.DajShemu();
         int idIndex = Arrays.asList(shema).indexOf("id");
             if(idIndex==-1)
@@ -144,25 +187,29 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
         return listaPodrucja;
     }
    
-    private void popuniPodrucja(HashMap<String,Podrucje> listaPodrucja)
+    private void popuniPodrucja(HashMap<String,PodrucjeSucelje> mapaPodrucja)
     {
-        for(String k : listaPodrucja.keySet())
+        for(String k : mapaPodrucja.keySet())
         {
-            Podrucje p = listaPodrucja.get(k);
+            PodrucjeSucelje p = mapaPodrucja.get(k);
             String[] dijelovi = p.dajDijelove();
             for(String d : dijelovi)
             {
-                if(d.charAt(0)=='p' && listaPodrucja.get(d)!=null)
-                    p.DodajPodrucje(listaPodrucja.get(d));
+                if(d.charAt(0)=='p' && mapaPodrucja.get(d)!=null)
+                    p.DodajPodrucje(mapaPodrucja.get(d));
             }
         }
     }
     
     @Override
-    void ispisiKorisnikeStat()
+    void ispisiKorisnikeStat(String podrucjeId)
     {
         ArrayList<Ulica> listaUlica = new ArrayList<>();
-        ishodisteSustava.NapuniListuUlica(listaUlica, true);
+        PodrucjeSucelje ishodiste = null;
+        ishodiste = nadjiIshodiste(podrucjeId);
+        if(ishodiste == null)
+            return;
+        ishodiste.NapuniListuUlica(listaUlica, true);
         for(Ulica ulica : listaUlica)
         {
             ispis.Ispisi(ulica.Naziv()+", broj korisnika: "+(ulica.dajMjesta()[0]+ulica.dajMjesta()[1]+
@@ -189,10 +236,12 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
    @Override
     void podijeliSpremnike()
     {
-        ArrayList<Ulica> listaUlica = new ArrayList<>();
-        ishodisteSustava.NapuniListuUlica(listaUlica, true);
-        for(Ulica ulica : listaUlica)
+        HashMap<String,Ulica> mapaUlica = new HashMap<>();
+        for(PodrucjeSucelje p:ishodistaSustava)
+            p.NapuniListuUlica(mapaUlica, true);
+        for(String k : mapaUlica.keySet())
         {
+            Ulica ulica = mapaUlica.get(k);
             ArrayList<ArrayList<Korisnik>> korisnici = ulica.dajKorisnike();
             for(int s = 0; s < protoSpremnici.size(); s++)
                 for(int kategorija = 0; kategorija < 3; kategorija++)
@@ -208,15 +257,18 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
     void ispisiPodrucja()
     {
         ArrayList<PodrucjeSucelje> podrucja = new ArrayList<>();
-        ishodisteSustava.NapuniListuPodrucja(podrucja, true);
-        System.out.println("Ishodiste sustava "+ishodisteSustava.dajId()+": "+ishodisteSustava.dajNaziv());
-        for(PodrucjeSucelje p : podrucja)
+        for(PodrucjeSucelje ishodiste:ishodistaSustava)
         {
-            System.out.println("Podrucje "+p.dajId()+": "+p.dajNaziv());
-            ArrayList<Ulica> listaUlica = new ArrayList<>();
-            p.NapuniListuUlica(listaUlica, false);
-            for(Ulica ulica : listaUlica)
-                System.out.println("   Ulica "+ulica.Id()+": "+ulica.Naziv());
+            ishodiste.NapuniListuPodrucja(podrucja, true);
+            System.out.println("Ishodiste sustava "+ishodiste.dajId()+": "+ishodiste.dajNaziv());
+            for(PodrucjeSucelje p : podrucja)
+            {
+                System.out.println("Podrucje "+p.dajId()+": "+p.dajNaziv());
+                ArrayList<Ulica> listaUlica = new ArrayList<>();
+                p.NapuniListuUlica(listaUlica, false);
+                for(Ulica ulica : listaUlica)
+                    System.out.println("   Ulica "+ulica.Id()+": "+ulica.Naziv());
+            }
         }
     }
      
