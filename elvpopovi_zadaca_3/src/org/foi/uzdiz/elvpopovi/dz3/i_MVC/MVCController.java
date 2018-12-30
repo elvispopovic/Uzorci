@@ -67,7 +67,7 @@ public class MVCController extends MVCObserver
         komandniMod=true;
         do
         {
-            view.prikaziKomandniDio("Unesi naredbu...");
+            view.prikaziKomandniDio("Unesi naredbu... (za izlaz koristite IZLAZ;)");
             komanda = inScan.nextLine(); 
             view.prikaziKomandniDio(komanda);
             razdvojeno = komanda.split(Pattern.quote(";"));

@@ -1,4 +1,8 @@
 komanda;lista vozila;
+OBRADI;p2;v1,v2,v3,v4,v5,v6,v7;
+PRIPREMI;v1,v2,v3,v4,v5,v6,v7;
+KRENI;
+STATUS;
 OBRADI;p3;v1,v2,v3,v4,v5,v6,v7;
-PRIPREMI;v1,v2,v3,v4;
+PRIPREMI;v1,v2,v3,v4,v5,v6,v7;
 STATUS;

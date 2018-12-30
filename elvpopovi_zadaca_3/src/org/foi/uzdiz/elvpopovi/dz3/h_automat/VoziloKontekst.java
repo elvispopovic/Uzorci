@@ -124,7 +124,12 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         this.simulacijske = null; //bit će injektirana
         ResetAll();
     }
-    
+    /**
+     * Kontekst vozila kreira se prije statistike i drugih dijelova sadržanih u
+     * SimulacijaProduct objektu. Zato je potreno naknadno injektirati simulacijski 
+     * objekt budući ga nije moguće dodati u konstruktoru (tada je još uvijek null)
+     * @param simulacijske Referenca na SimulacijaAbstractProduct objekt koji se injektira
+     */
     @Override
     public void InjektirajSimulacijske(SimulacijaAbstractProduct simulacijske)
     {
@@ -180,11 +185,16 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         popunjenost+=dopuna;
         preuzetoSpremnika++;
     }
-           
+    /**
+     * Koristi se pri promjeni sustava. Vozilo koje je završilo prikupljanje u
+     * starom sustavu, mora poništiti završetak u novom, i postaviti ulice i
+     * spremnike na nulu, zadržavajući stanje o prikupljenom otpadu iz starog sustava.
+     */  
     public void ResetUliceISpremnici()
     {
         trenutnaUlica = 0;
         trenutniSpremnik = 0;
+        zavrsenoPrikupljanje = false;
     }
     
     @Override

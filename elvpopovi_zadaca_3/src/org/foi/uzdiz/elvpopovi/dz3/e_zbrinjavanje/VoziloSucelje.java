@@ -17,6 +17,7 @@ public interface VoziloSucelje
 {
     String dajId();
     ArrayList<Ulica> dajDodijeljeneUlice();
+    int dajBrojSpremnika();
     ArrayList<ArrayList<Spremnik>> dajDodijeljeneSpremnike();
     void postaviDodijeljeneUlice(ArrayList<Ulica> ulice);
     void postaviDodijeljeneSpremnike(ArrayList<ArrayList<Spremnik>> spremnici);

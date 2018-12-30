@@ -112,7 +112,6 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
         while(iterator.imaLiSlijedeceg())
         {
             String[] komanda=(iterator.slijedeci());
-            Ispisi("Procitana komanda: "+komanda[0]);
             lanacObradi.ObradiKomandu(komanda);
         }
         ObavijestiMVC();

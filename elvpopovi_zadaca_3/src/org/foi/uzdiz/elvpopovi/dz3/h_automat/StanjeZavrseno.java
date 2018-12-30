@@ -40,7 +40,7 @@ public class StanjeZavrseno implements VoziloStanjeSucelje
             ispisiZavrseno();
         }
     }
-    
+
     @Override
     public boolean Prijelaz(String novoStanje)
     {

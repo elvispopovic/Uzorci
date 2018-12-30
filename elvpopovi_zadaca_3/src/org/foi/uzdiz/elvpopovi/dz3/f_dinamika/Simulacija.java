@@ -15,7 +15,7 @@ import org.foi.uzdiz.elvpopovi.dz3.b_buideri.ProblemskiAbstractProduct;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.SimulacijaAbstractProduct;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.PodrucjeSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
-import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozilo;
+import org.foi.uzdiz.elvpopovi.dz3.h_automat.StanjePrikupljanje;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCObserver;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
@@ -158,14 +158,11 @@ public class Simulacija implements SimulacijaSucelje
     
     private void promijeniIshodisteZaListuVozila(String ishodisteId, ArrayList<VoziloSucelje> listaVozila, ArrayList<Ulica> listaUlica)
     {
-        
         int[] redoslijed = kreirajRedoslijed(listaUlica.size());
         ArrayList<Ulica> ulice = null;
-        StringBuilder sb = new StringBuilder();
-        sb.append("Vozilo ");
+        ispisVozilaKojaMijenjajuIshodiste(listaVozila);
         for(VoziloSucelje v:listaVozila)
         {
-            sb.append(v.dajId()+": "+v.dajNaziv().replaceAll("\\p{Z}","")+", ");
             v.dajDodijeljeneSpremnike().clear();
             v.dajDodijeljeneUlice().clear();
             v.dajKontekst().ResetUliceISpremnici();
@@ -178,9 +175,27 @@ public class Simulacija implements SimulacijaSucelje
             }
             v.postaviDodijeljeneUlice(ulice);
             v.postaviDodijeljeneSpremnike(spremniciPoUlicama);
+            v.dajKontekst().PostaviStanje(new StanjePrikupljanje(v.dajKontekst()));
+            Ispisi("Vozilo: "+v.dajId()+": "+v.dajNaziv()+", broj ulica: "+v.dajDodijeljeneUlice().size()+", broj spremnika: "+v.dajBrojSpremnika());
         }
-        sb.append(" mijenja ishodište sustava i područje djelovanja.");
-        Ispisi(sb.toString());
+        
+    }
+    
+    private void ispisVozilaKojaMijenjajuIshodiste(ArrayList<VoziloSucelje> listaVozila)
+    {
+        StringBuilder sb = new StringBuilder();
+        if(listaVozila.size()==1)
+            Ispisi("Vozilo "+listaVozila.get(0)+" mijenja ishodište sustava i područje djelovanja.");
+        else
+        {
+            Ispisi("Vozila ");
+            sb.append("   ");
+            for(VoziloSucelje v:listaVozila)
+                sb.append(v.dajId()).append(": ").append(v.dajNaziv().replaceAll("\\p{Z}","")).append(", ");
+            Ispisi(sb.toString());
+            Ispisi("mijenjaju ishodište sustava i područje djelovanja.");
+        }
+        
     }
     
     private void PostaviListeUlica(String ishodisteId)

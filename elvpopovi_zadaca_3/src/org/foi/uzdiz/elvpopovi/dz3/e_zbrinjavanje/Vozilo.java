@@ -22,7 +22,21 @@ import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
  */
 public class Vozilo implements VoziloSucelje
 {
-
+    Parametri parametri;
+    RandomGenerator rnd;
+    Ispisivanje ispisivanje;
+    private String id;
+    String naziv;
+    int vrsta, tip, ciklusaOdvoz;
+    private String[] vozaci;
+    VoziloKontekstSucelje kontekst;
+    VoziloStatistika statistikaVozila;
+    private int nosivost;
+    private int brojSpremnika;
+    private ArrayList<Ulica> dodijeljeneUlice;
+    private ArrayList<ArrayList<Spremnik>> dodijeljeniSpremnici;
+    private Ispisivanje ispis;
+    
     @Override
     public String dajId()
     {
@@ -35,6 +49,10 @@ public class Vozilo implements VoziloSucelje
         return dodijeljeneUlice;
     }
 
+    public int dajBrojSpremnika()
+    {
+        return brojSpremnika;
+    }
     @Override
     public ArrayList<ArrayList<Spremnik>> dajDodijeljeneSpremnike() 
     {
@@ -161,18 +179,5 @@ public class Vozilo implements VoziloSucelje
                 System.out.println("      Spremnik: "+i.dajId()+", vrsta: "+i.dajVrstuOtpada()+", tip: "+i.dajVrstuSpremnika()+", kolicina otpada: "+i.dajKolicinuOtpada());
         }     
     }
-    Parametri parametri;
-    RandomGenerator rnd;
-    Ispisivanje ispisivanje;
-    private String id;
-    String naziv;
-    int vrsta, tip, ciklusaOdvoz;
-    private String[] vozaci;
-    VoziloKontekstSucelje kontekst;
-    VoziloStatistika statistikaVozila;
-    private int nosivost;
-    private int brojSpremnika;
-    private ArrayList<Ulica> dodijeljeneUlice;
-    private ArrayList<ArrayList<Spremnik>> dodijeljeniSpremnici;
-    private Ispisivanje ispis;
+
 }
