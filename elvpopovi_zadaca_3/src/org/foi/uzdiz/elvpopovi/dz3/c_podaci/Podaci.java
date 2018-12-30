@@ -89,6 +89,7 @@ public class Podaci implements PodaciSucelje
     }
     private void procitajPodatke(BufferedReader citac, String staza)
     {
+        Parametri parametri = Parametri.getInstance();
         String[] razdvojeno;
         shema = procitajRedak(citac, staza);
         for(int i=0; i<shema.length; i++)
@@ -98,6 +99,8 @@ public class Podaci implements PodaciSucelje
         while((razdvojeno = procitajRedak(citac, staza))!=null)
         {
             if((razdvojeno.length==shema.length)||((shema.length-razdvojeno.length)==1))
+                listaPodataka.add(razdvojeno);
+            else if(parametri.DajDatoteku("dispečer").equals(new File(staza).getName()))
                 listaPodataka.add(razdvojeno);
             else
                 ispis.Ispisi("Prilikom čitanja podataka iz "+new File(staza).getName()+

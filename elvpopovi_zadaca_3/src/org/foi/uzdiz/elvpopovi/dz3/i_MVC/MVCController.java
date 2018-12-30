@@ -6,7 +6,6 @@
 package org.foi.uzdiz.elvpopovi.dz3.i_MVC;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 

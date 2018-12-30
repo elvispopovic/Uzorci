@@ -39,6 +39,7 @@ public interface VoziloKontekstSucelje
     void PovecajTrenutniSpremnik();
     void Isprazni();
     void PovecajPopunjenost(float dopuna);
+    void ResetUliceISpremnici();
     void ResetAll();
     int  DajBrojacOdvoza();
     void postaviBrojacOdvoza(int brojOdvoza);

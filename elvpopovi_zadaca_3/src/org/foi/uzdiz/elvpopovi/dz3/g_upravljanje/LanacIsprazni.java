@@ -45,11 +45,14 @@ public class LanacIsprazni implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String[] komanda)
     {
-        if(komanda[0].equals("ISPRAZNI"))
+        if(komanda[0].toUpperCase().equals("ISPRAZNI"))
         {
             if(parametri.DajVrijednost("ispis")==0)
                 simulacija.Ispisi("Komanda ISPRAZNI");
-            obradiIsprazni(komanda);
+            if(komanda.length>1)
+                obradiIsprazni(komanda);
+            else
+                simulacija.Ispisi("Neispravna komanda. Komanda treba biti oblika ISPRAZNI;lista_vozila");
         }
         else if(sljedbenik!=null)
             sljedbenik.ObradiKomandu(komanda);   

@@ -5,8 +5,6 @@
  */
 package org.foi.uzdiz.elvpopovi.dz3.g_upravljanje;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author elvis

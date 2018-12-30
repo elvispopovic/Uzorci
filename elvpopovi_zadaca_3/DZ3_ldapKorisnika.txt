@@ -1,28 +1,22 @@
 Kreiran je ispisivač.
 Kreiran je generator identifikatora
 Kreiran je random generator sa sjemenom 17153
-Pročitano je 8 redaka podataka iz DZ_2_podrucja.txt
-Pročitano je 10 redaka podataka iz DZ_2_ulice.txt
-Prilikom čitanja podataka iz DZ_2_spremnici.txt otkriven neispravan redak 5.
-Pročitano je 5 redaka podataka iz DZ_2_spremnici.txt
-Pročitano je 7 redaka podataka iz DZ_2_vozila.txt
-Pročitano je 8 redaka podataka iz DZ_2_dispecer.txt
+Pročitano je 8 redaka podataka iz DZ_3_podrucja.txt
+Pročitano je 10 redaka podataka iz DZ_3_ulice.txt
+Pročitano je 6 redaka podataka iz DZ_3_spremnici.txt
+Pročitano je 7 redaka podataka iz DZ_3_vozila.txt
+Pročitano je 3 redaka podataka iz DZ_3_dispecer.txt
 Zbog unešenih argumenata --brg i/ili --brd radi se o DZ_3.
 Brg: 20, brd: 10
 Init: sjeme generatora: 17153
-Init: izlazna datoteka: DZ2_elvpopovic.txt
+Init: izlazna datoteka: DZ3_ldapKorisnika.txt
 Poziva se problem iz DZ_3.
 Kreiraju se područja.
 Kreiraju se ulice.
 Pogreška u zapisu 9 u podacima o ulicama: Premalo parametara u retku.
-Ishodiste sustava: p1: EZO Aglomeracija Varaždin
+Ishodiste sustava: p2: Varaždin grad
 Ispisuje se tablica otpada u pojedinim područjima i ulicama:
          Opis |                         Naziv | staklo [kg] | papir [kg] | metal [kg] |  bio [kg] | mješano [kg] | ukupno [kg]
- =============================================================================================================================
-     područje |     EZO Aglomeracija Varaždin |     2333,30 |    4337,81 |    1109,98 |   8570,77 |     11738,31 |    28090,16
-  ----------------------------------------------------------------------------------------------------------------------------
-  potpodručja |                 Varaždin grad |     2150,56 |    4204,20 |    1050,57 |   8238,87 |     10991,37 |    26635,57
-              |              Varaždin okolica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
  =============================================================================================================================
      područje |                 Varaždin grad |     2150,56 |    4204,20 |    1050,57 |   8238,87 |     10991,37 |    26635,57
   ----------------------------------------------------------------------------------------------------------------------------
@@ -47,6 +41,10 @@ Ispisuje se tablica otpada u pojedinim područjima i ulicama:
               |              Krešimira Filića |      595,25 |    1449,32 |     309,44 |   2506,11 |      3023,65 |     7883,77
               |                  Tina Ujevića |      137,35 |      92,54 |      41,34 |    224,00 |       534,47 |     1029,70
  =============================================================================================================================
+Ishodiste sustava: p3: Varaždin okolica
+Ispisuje se tablica otpada u pojedinim područjima i ulicama:
+         Opis |                         Naziv | staklo [kg] | papir [kg] | metal [kg] |  bio [kg] | mješano [kg] | ukupno [kg]
+ =============================================================================================================================
      područje |              Varaždin okolica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
   ----------------------------------------------------------------------------------------------------------------------------
   potpodručje |                      Hrašcica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
@@ -58,57 +56,26 @@ Ispisuje se tablica otpada u pojedinim područjima i ulicama:
 Kreirano je statističko praćenje simulacije.
 Kreiran je dispečer.
 Izvršavanje zapisanih komandi
+Procitana komanda: OBRADI
+Komanda: OBRADI
+Vozilo v1: staklarko1, v2: papirko1, v3: metalko1, v4: biotko1, v5: mješanko1, v6: mješanko2, v7: mješanko3,  mijenja ishodište sustava i područje djelovanja.
+Novo ishodište je p3.
 Procitana komanda: PRIPREMI
-Procitana komanda: KRENI 10
-********************************************************************************
-*                                                                              *
-*                 Isključeno je ispisivanje poslova odvoza...                  *
-*                                                                              *
-********************************************************************************
+Komanda: PRIPREMI
 Procitana komanda: STATUS
+Komanda STATUS
 Status vozila prikazan je tablično:
         Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
 ==================================================================================================
-  Parkiraliste |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
-  Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
-  Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
-  Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-  Prikupljanje |  v5 | mješanko 1  |      diesel |   mješano |    4000 |     213,96 |      213,96
-  Prikupljanje |  v6 | mješanko 2  |      diesel |   mješano |    5000 |     331,25 |      331,25
-  Prikupljanje |  v7 | mješanko 3  |      diesel |   mješano |    3000 |     295,65 |      295,65
-Procitana komanda: KONTROLA
-Procitana komanda: PRIPREMI
-Procitana komanda: STATUS
-Status vozila prikazan je tablično:
-        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
-==================================================================================================
-  Parkiraliste |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
-  Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
-  Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
-  Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-  Prikupljanje |  v5 | mješanko 1  |      diesel |   mješano |    4000 |     213,96 |      213,96
-  Prikupljanje |  v6 | mješanko 2  |      diesel |   mješano |    5000 |     331,25 |      331,25
-  Prikupljanje |  v7 | mješanko 3  |      diesel |   mješano |    3000 |     295,65 |      295,65
-Procitana komanda: KRENI
-********************************************************************************
-*                                                                              *
-*                 Isključeno je ispisivanje poslova odvoza...                  *
-*                                                                              *
-********************************************************************************
-Procitana komanda: STATUS
-Status vozila prikazan je tablično:
-        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
-==================================================================================================
-  Parkiraliste |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
-  Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
-  Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
-  Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-      Zavrseno |  v5 | mješanko 1  |      diesel |   mješano |    4000 |       0,00 |     3885,12
-      Zavrseno |  v6 | mješanko 2  |      diesel |   mješano |    5000 |       0,00 |     4856,83
-      Zavrseno |  v7 | mješanko 3  |      diesel |   mješano |    3000 |       0,00 |     2996,36
+  Prikupljanje |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
+  Prikupljanje |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
+  Prikupljanje |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
+  Prikupljanje |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
+  Parkiraliste |  v5 | mješanko 1  |      diesel |   mješano |    4000 |       0,00 |        0,00
+  Parkiraliste |  v6 | mješanko 2  |      diesel |   mješano |    5000 |       0,00 |        0,00
+  Parkiraliste |  v7 | mješanko 3  |      diesel |   mješano |    3000 |       0,00 |        0,00
 ********************************************************************************
 *                                                                              *
 *                           Prijelaz u komandni mod                            *
 *                                                                              *
 ********************************************************************************
-Neispravna komanda. Komanda treba biti oblika PRIPREMI;lista_vozila

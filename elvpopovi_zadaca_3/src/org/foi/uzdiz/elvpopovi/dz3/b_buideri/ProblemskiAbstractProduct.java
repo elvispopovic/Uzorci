@@ -16,6 +16,7 @@ import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.MetalKreator;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozilo;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Korisnik;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.PodrucjeSucelje;
@@ -61,7 +62,7 @@ public abstract class ProblemskiAbstractProduct
     //public abstract ArrayList<Ulica> dajListuUlica();
     protected ArrayList<PodrucjeSucelje> ishodistaSustava;
     public abstract PodrucjeSucelje nadjiIshodiste(String podrucjeId);
-    public abstract ArrayList<Ulica> dajListuUlica(String podrucjeId);
+    public abstract ArrayList<Ulica> dajListuUlicaIshodista(String ishodisteId);
     abstract void MultiplicirajKorisnike(Korisnik[] prototipovi);
     public abstract void KreirajPodrucja();
     abstract void kreirajUlicu(String[] shema, int i);
@@ -84,6 +85,17 @@ public abstract class ProblemskiAbstractProduct
             for(VoziloSucelje v:vrsta)
                 transformacija.add(v);
         return transformacija;
+    }
+    
+    public HashMap<String,VoziloSucelje> dajMapuVozila()
+    {
+        if(vozila==null)
+            return null;
+        HashMap<String,VoziloSucelje> mapaVozila = new HashMap<>();
+        for(ArrayList<VoziloSucelje> vrsta:vozila)
+            for(VoziloSucelje v:vrsta)
+                mapaVozila.put(v.dajId(),v);
+        return mapaVozila;
     }
 
     public ProblemskiAbstractProduct(InicijalizacijaPodatakaProduct podaci) 

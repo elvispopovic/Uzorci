@@ -42,11 +42,14 @@ public class LanacPripremi implements LanacKomandiApstraktni
     {
         if(listaPrikupljanje == null)
             return;
-        if(komanda[0].equals("PRIPREMI"))
+        if(komanda[0].toUpperCase().equals("PRIPREMI"))
         {
             if(parametri.DajVrijednost("ispis")==0)
                 simulacija.Ispisi("Komanda: PRIPREMI");
-            obradiPripremi(komanda);
+            if(komanda.length>1)
+                obradiPripremi(komanda);
+            else
+                simulacija.Ispisi("Neispravna komanda. Komanda treba biti oblika PRIPREMI;lista_vozila");
         }
         else if(sljedbenik!=null)
             sljedbenik.ObradiKomandu(komanda);       

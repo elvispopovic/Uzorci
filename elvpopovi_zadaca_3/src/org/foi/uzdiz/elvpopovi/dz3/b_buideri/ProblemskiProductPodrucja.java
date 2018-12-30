@@ -37,19 +37,20 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
     }
     */
     /**
-     * Traži ulice u određenom području i vraća listu ulica
+     * Traži ulice u određenom ishodištu i vraća listu svih ulica u tom sustavu
      * @param podrucjeId Sifra određenog područja
      * @return Lista pronađenih ulica
      */
-    public ArrayList<Ulica> dajListuUlica(String podrucjeId)
+    public ArrayList<Ulica> dajListuUlicaIshodista(String ishodisteId)
     {
         PodrucjeSucelje ishodiste = null;
         ArrayList<Ulica> listaUlica = new ArrayList<>();
-        ishodiste = nadjiIshodiste(podrucjeId);
+        ishodiste = nadjiIshodiste(ishodisteId);
         if(ishodiste != null)
             ishodiste.NapuniListuUlica(listaUlica, true);
         return listaUlica;
     }
+    
     /**
      * Na osnovu Sifre koja se daje kao string, u listi ishodišta sustava
      * pretražuje se određeno ishodište sustava

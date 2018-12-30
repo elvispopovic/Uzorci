@@ -6,6 +6,7 @@
 package org.foi.uzdiz.elvpopovi.dz3.b_buideri;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Korisnik;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.PodrucjeSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
@@ -25,10 +26,11 @@ public class ProblemskiProductBezPodrucja extends ProblemskiAbstractProduct
         ispis.Ispisi("Poziva se problem iz DZ_1.");
     }
 
-    public ArrayList<Ulica> dajListuUlica(String podrucjeId)
+    public ArrayList<Ulica> dajListuUlicaIshodista(String ishodisteId)
     {
         return ulice;
     }
+    
     public PodrucjeSucelje nadjiIshodiste(String podrucjeId)
     {
         return null;

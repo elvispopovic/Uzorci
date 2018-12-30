@@ -167,7 +167,8 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         if(trenutniSpremnik>=brojSpremnikaUUlici)
             PovecajTrenutnuUlicu();
     }
-
+    
+    
     @Override
     public void Isprazni()
     {
@@ -179,7 +180,13 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         popunjenost+=dopuna;
         preuzetoSpremnika++;
     }
-            
+           
+    public void ResetUliceISpremnici()
+    {
+        trenutnaUlica = 0;
+        trenutniSpremnik = 0;
+    }
+    
     @Override
     public void ResetAll()
     {

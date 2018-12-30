@@ -41,7 +41,7 @@ public class LanacStatus implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String[] komanda)
     {
-        if(komanda[0].equals("STATUS"))
+        if(komanda[0].toUpperCase().equals("STATUS"))
         {
             if(parametri.DajVrijednost("ispis")==0)
                 simulacija.Ispisi("Komanda STATUS");

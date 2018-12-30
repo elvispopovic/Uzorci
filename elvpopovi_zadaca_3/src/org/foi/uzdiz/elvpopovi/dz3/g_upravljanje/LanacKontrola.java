@@ -43,11 +43,14 @@ public class LanacKontrola implements LanacKomandiApstraktni
     public void ObradiKomandu(String[] komanda)
     {
         
-        if(komanda[0].equals("KONTROLA"))
+        if(komanda[0].toUpperCase().equals("KONTROLA"))
         {
             if(parametri.DajVrijednost("ispis")==0)
                 simulacija.Ispisi("Komanda KONTROLA");
-            obradiKontrola(komanda);
+            if(komanda.length>1)
+                obradiKontrola(komanda);
+            else
+                simulacija.Ispisi("Neispravna komanda. Komanda treba biti oblika KONTROLA;lista_vozila");
         }
         else if(sljedbenik!=null)
             sljedbenik.ObradiKomandu(komanda);       

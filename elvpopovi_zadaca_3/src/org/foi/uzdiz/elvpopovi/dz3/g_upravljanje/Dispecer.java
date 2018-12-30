@@ -28,7 +28,7 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
 {
     protected SimulacijaSucelje simulacija;
     protected ArrayList<MVCObserver> observers;
-    protected LanacKomandiApstraktni lanacPripremi;
+    protected LanacKomandiApstraktni lanacObradi;
     protected final PodaciSucelje podaciDispecer;
     protected final Ispisivanje ispis;
     protected int brg, brd;
@@ -82,20 +82,21 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
         }
         else
         {
-            lanacPripremi.ObradiKomandu(komanda);
+            lanacObradi.ObradiKomandu(komanda);
             ObavijestiMVC();
         }
     }
     
     private void inicijalizirajLanacKomandi()
     {
-        LanacKomandiApstraktni lanacKreni, lanacKvar, lanacIsprazni, lanacStatus, lanacKontrola;
+        LanacKomandiApstraktni lanacPripremi, lanacKreni, lanacKvar, lanacIsprazni, lanacStatus, lanacKontrola;
          lanacKontrola   = new LanacKontrola(simulacija);
         (lanacStatus     = new LanacStatus(simulacija)).DodajSljedbenika(lanacKontrola);
         (lanacIsprazni   = new LanacIsprazni(simulacija)).DodajSljedbenika(lanacStatus);
         (lanacKvar       = new LanacKvar(simulacija)).DodajSljedbenika(lanacIsprazni);
         (lanacKreni      = new LanacKreni(simulacija)).DodajSljedbenika(lanacKvar);
         (lanacPripremi   = new LanacPripremi(simulacija)).DodajSljedbenika(lanacKreni);
+        (lanacObradi     = new LanacObradi(simulacija)).DodajSljedbenika(lanacPripremi);
     }
     
     public void Pokreni(SimulacijaSucelje simulacija, Statistika statistika)
@@ -111,7 +112,8 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
         while(iterator.imaLiSlijedeceg())
         {
             String[] komanda=(iterator.slijedeci());
-            lanacPripremi.ObradiKomandu(komanda);
+            Ispisi("Procitana komanda: "+komanda[0]);
+            lanacObradi.ObradiKomandu(komanda);
         }
         ObavijestiMVC();
         
@@ -147,6 +149,11 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
     public boolean ObradiStanjaVozila()
     { 
         return false;
+    }
+    
+    public boolean PromijeniIshodisteSustava(ArrayList<String> vozila, String ishodiste)
+    {
+        return simulacija.PromijeniIshodisteSustava(vozila,ishodiste);
     }
 
     @Override

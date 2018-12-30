@@ -35,9 +35,8 @@ public class LanacKreni implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String[] komanda)
     {
-        Parametri parametri = Parametri.getInstance();
         String[] komandaRazdvojeno = komanda[0].split(Pattern.quote(" "));
-        if(komandaRazdvojeno[0].equals("KRENI"))
+        if(komandaRazdvojeno[0].toUpperCase().equals("KRENI"))
         {
             if(parametri.DajVrijednost("ispis")==0)
                 simulacija.Ispisi("Komanda KRENI");

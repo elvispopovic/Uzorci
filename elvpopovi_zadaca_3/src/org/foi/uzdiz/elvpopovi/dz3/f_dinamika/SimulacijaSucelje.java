@@ -23,6 +23,7 @@ public interface SimulacijaSucelje
     //ListaVozila DajListaOdvoz();
     boolean ProvjeriParametre();
     void Pokreni();
+    boolean PromijeniIshodisteSustava(ArrayList<String> vozila, String ishodisteId);
     boolean ObradiStanjaVozila();
     boolean provjeriZavrsetak();
     

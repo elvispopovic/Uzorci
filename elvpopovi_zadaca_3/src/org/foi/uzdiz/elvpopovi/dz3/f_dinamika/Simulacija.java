@@ -9,11 +9,13 @@ import java.io.BufferedWriter;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Spremnik;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import java.util.ArrayList;
+import java.util.HashMap;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.ProblemskiAbstractProduct;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.SimulacijaAbstractProduct;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.PodrucjeSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
+import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozilo;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCObserver;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
@@ -133,23 +135,71 @@ public class Simulacija implements SimulacijaSucelje
             Ispisi("Sva vozila su odvezla otpad. Simulacija je završena.");
     }
     
-    private void PostaviListeUlica(String podrucjeId)
+    public boolean PromijeniIshodisteSustava(ArrayList<String> vozila, String ishodisteId)
+    {
+        HashMap<String,VoziloSucelje> mapaVozila = problemske.dajMapuVozila();
+        ArrayList<Ulica> listaUlica = problemske.dajListuUlicaIshodista(ishodisteId);
+        ArrayList<VoziloSucelje> listaVozila = new ArrayList<>();
+        for(String v:vozila)
+            if(mapaVozila.containsKey(v))
+                listaVozila.add(mapaVozila.get(v));
+        if(listaVozila.size()==0)
+        {
+            Ispisi("Niti jedno od upisanih vozila ne postoji.");
+            return false;
+        }
+        else
+        {
+            promijeniIshodisteZaListuVozila(ishodisteId, listaVozila, listaUlica);
+            Ispisi("Novo ishodište je "+ishodisteId+".");
+            return true;
+        }
+    }
+    
+    private void promijeniIshodisteZaListuVozila(String ishodisteId, ArrayList<VoziloSucelje> listaVozila, ArrayList<Ulica> listaUlica)
+    {
+        
+        int[] redoslijed = kreirajRedoslijed(listaUlica.size());
+        ArrayList<Ulica> ulice = null;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Vozilo ");
+        for(VoziloSucelje v:listaVozila)
+        {
+            sb.append(v.dajId()+": "+v.dajNaziv().replaceAll("\\p{Z}","")+", ");
+            v.dajDodijeljeneSpremnike().clear();
+            v.dajDodijeljeneUlice().clear();
+            v.dajKontekst().ResetUliceISpremnici();
+            ulice = napraviPlanUlica(ishodisteId, redoslijed);
+            ArrayList<ArrayList<Spremnik>> spremniciPoUlicama = new ArrayList<>();
+            for(Ulica u:ulice)
+            {
+                ArrayList<Spremnik> pronadjeno = pronadjiSpremnike(u, v.dajVrstu());
+                spremniciPoUlicama.add(pronadjeno);
+            }
+            v.postaviDodijeljeneUlice(ulice);
+            v.postaviDodijeljeneSpremnike(spremniciPoUlicama);
+        }
+        sb.append(" mijenja ishodište sustava i područje djelovanja.");
+        Ispisi(sb.toString());
+    }
+    
+    private void PostaviListeUlica(String ishodisteId)
     {
         int i, j;
         int[] redoslijed;
         PodrucjeSucelje ishodiste = null;
-        if(!podrucjeId.equals(""))
+        if(!ishodisteId.equals(""))
         {
-            ishodiste = problemske.nadjiIshodiste(podrucjeId);
+            ishodiste = problemske.nadjiIshodiste(ishodisteId);
             if(ishodiste == null)
                 return;
         }
-        ArrayList<Ulica> listaUlica = problemske.dajListuUlica(podrucjeId);
+        ArrayList<Ulica> listaUlica = problemske.dajListuUlicaIshodista(ishodisteId);
         redoslijed = kreirajRedoslijed(listaUlica.size());
         ArrayList<Ulica> ulice = null;
         for(j=0; j<listaPrikupljanje.Velicina(); j++)
         {
-            ulice = napraviPlanUlica(podrucjeId, redoslijed);
+            ulice = napraviPlanUlica(ishodisteId, redoslijed);
             VoziloSucelje v = listaPrikupljanje.DajVozilo(j);
             ArrayList<ArrayList<Spremnik>> spremniciPoUlicama = new ArrayList<>();
             for(Ulica u:ulice)
@@ -157,16 +207,13 @@ public class Simulacija implements SimulacijaSucelje
                 ArrayList<Spremnik> pronadjeno = pronadjiSpremnike(u, v.dajVrstu());
                 spremniciPoUlicama.add(pronadjeno);
             }
-            
             v.postaviDodijeljeneUlice(ulice);
             v.postaviDodijeljeneSpremnike(spremniciPoUlicama);
-        }
-        if(ulice != null)
-            pronadjiSpremnike(ulice.get(0),0);                  
+        }                 
     }
     private ArrayList<Ulica> napraviPlanUlica(String podrucjeId, int[] redoslijed)
     {
-        ArrayList<Ulica> listaUlica = problemske.dajListuUlica(podrucjeId);
+        ArrayList<Ulica> listaUlica = problemske.dajListuUlicaIshodista(podrucjeId);
         ArrayList<Ulica> ulice = new ArrayList<>(); 
         if(preuzimanje>0)
         {
