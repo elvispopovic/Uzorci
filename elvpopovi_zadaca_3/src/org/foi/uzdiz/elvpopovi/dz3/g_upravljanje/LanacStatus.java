@@ -5,6 +5,7 @@
  */
 package org.foi.uzdiz.elvpopovi.dz3.g_upravljanje;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Formatter;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
@@ -55,10 +56,14 @@ public class LanacStatus implements LanacKomandiApstraktni
         StringBuilder sb = new StringBuilder();
         Formatter form = new Formatter(sb);
         simulacija.Ispisi("Status vozila prikazan je tablično:");
-        form.format("%14s |%4s |%12s |%12s |%10s |%8s |%11s |%12s","Status","ID","Naziv","Tip",
-                "Vrsta","Nosivost","Popunjenost","Ukupno otpada");
+        form.format("%14s |%3s |%12s |%11s |%8s |%8s |%8s |%14s |%5s |%5s |%23s |","Status","","Naziv","Tip",
+                "Vrsta","Nosivost","Popunje-","Ukupno otpada","Kapa-","Punj-","Popis");
         simulacija.Ispisi(sb.toString());
-        simulacija.Ispisi(String.join("", Collections.nCopies(98, "=")));
+        sb.setLength(0);
+        form.format("%14s |%3s |%12s |%11s |%8s |%8s |%8s |%14s |%5s |%5s |%23s |","vozila","ID","vozila","pogona",
+                "otpada","[kg]","nost [%]","[kg]","citet","enje","vozača");
+        simulacija.Ispisi(sb.toString());
+        simulacija.Ispisi(String.join("", Collections.nCopies(133, "=")));
         ispisiStatusVozila(sb,form);
     }
     
@@ -91,6 +96,7 @@ public class LanacStatus implements LanacKomandiApstraktni
     {
         String tip, otpad, vozaci;
         float popunjenost, ukupnoOtpada;
+        int kapacitet, punjenje;
         Parametri param = Parametri.getInstance();
         int brojDecimala = param.DajVrijednost("brojDecimala");
         if(vozilo.dajTip()==0)
@@ -102,9 +108,23 @@ public class LanacStatus implements LanacKomandiApstraktni
         int nosivost = vozilo.dajNosivost();
         popunjenost = vozilo.dajKontekst().dajPopunjenost();
         ukupnoOtpada = vozilo.dajStatistikuVozila().dajUkupnuKolicinuOtpada();
-        form.format("%14s |%4s |%12s |%12s |%10s |%8d |%11."+brojDecimala+"f |%12."+brojDecimala+"f",
+        form.format("%14s |%3s |%12s |%11s |%8s |%8d |%8."+brojDecimala+"f |%14."+brojDecimala+"f |%5d |%5d |%23s |",
                 status,vozilo.dajId(),vozilo.dajNaziv(),tip,otpad,nosivost, 
-                (float)popunjenost, ukupnoOtpada);
+                (float)popunjenost, ukupnoOtpada,vozilo.dajKapacitet(),vozilo.dajPunjenje(),
+                kreirajPopisVozaca(vozilo,", "));
         simulacija.Ispisi(sb.toString());
+    }
+    private String kreirajPopisVozaca(VoziloSucelje vozilo, String delimiter)
+    {
+        int i;
+        StringBuilder sb = new StringBuilder();
+        ArrayList<String> listaVozaca = vozilo.dajVozace();
+        for(i=0; i<listaVozaca.size()-1; i++)
+        {
+            sb.append(listaVozaca.get(i));
+            sb.append(delimiter);
+        }
+        sb.append(listaVozaca.get(i));
+        return sb.toString();
     }
 }

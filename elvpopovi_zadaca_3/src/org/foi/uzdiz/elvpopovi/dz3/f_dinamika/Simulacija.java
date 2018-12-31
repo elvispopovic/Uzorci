@@ -176,7 +176,8 @@ public class Simulacija implements SimulacijaSucelje
             v.postaviDodijeljeneUlice(ulice);
             v.postaviDodijeljeneSpremnike(spremniciPoUlicama);
             v.dajKontekst().PostaviStanje(new StanjePrikupljanje(v.dajKontekst()));
-            Ispisi("Vozilo: "+v.dajId()+": "+v.dajNaziv()+", broj ulica: "+v.dajDodijeljeneUlice().size()+", broj spremnika: "+v.dajBrojSpremnika());
+            if(parametri.DajVrijednost("ispis")==0)
+                Ispisi("Vozilo: "+v.dajId()+": "+v.dajNaziv()+", broj ulica: "+v.dajDodijeljeneUlice().size()+", broj spremnika: "+v.dajBrojSpremnika());
         }
         
     }

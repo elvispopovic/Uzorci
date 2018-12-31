@@ -24,9 +24,11 @@ public interface VoziloSucelje
    
     String dajNaziv();
     int dajNosivost();
-    String[] dajVozace();
+    ArrayList<String> dajVozace() ;
     VoziloKontekstSucelje dajKontekst();
     VoziloStatistika dajStatistikuVozila();
     int dajVrstu();
     int dajTip();
+    int dajKapacitet();
+    int dajPunjenje();
 }

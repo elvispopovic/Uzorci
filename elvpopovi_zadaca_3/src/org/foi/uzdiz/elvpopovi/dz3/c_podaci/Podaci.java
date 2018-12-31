@@ -98,9 +98,9 @@ public class Podaci implements PodaciSucelje
         shema[0]=shema[0].substring(1); //prvi znak moze biti korumpiran
         while((razdvojeno = procitajRedak(citac, staza))!=null)
         {
-            if((razdvojeno.length==shema.length)||((shema.length-razdvojeno.length)==1))
+            if((shema.length-razdvojeno.length)<=1)
                 listaPodataka.add(razdvojeno);
-            else if(parametri.DajDatoteku("dispečer").equals(new File(staza).getName()))
+            else if(parametri.DajDatoteku("dispečer").equals(new File(staza).getName())&&(shema.length-razdvojeno.length)<=2)
                 listaPodataka.add(razdvojeno);
             else
                 ispis.Ispisi("Prilikom čitanja podataka iz "+new File(staza).getName()+

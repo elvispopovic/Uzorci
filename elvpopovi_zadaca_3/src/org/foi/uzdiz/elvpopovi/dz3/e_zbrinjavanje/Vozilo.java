@@ -27,8 +27,8 @@ public class Vozilo implements VoziloSucelje
     Ispisivanje ispisivanje;
     private String id;
     String naziv;
-    int vrsta, tip, ciklusaOdvoz;
-    private String[] vozaci;
+    int vrsta, tip, ciklusaOdvoz, kapacitet, punjenje;
+    private ArrayList<String> vozaci;
     VoziloKontekstSucelje kontekst;
     VoziloStatistika statistikaVozila;
     private int nosivost;
@@ -85,7 +85,7 @@ public class Vozilo implements VoziloSucelje
     }
 
     @Override
-    public String[] dajVozace() 
+    public ArrayList<String> dajVozace() 
     {
         return vozaci;
     }
@@ -117,6 +117,16 @@ public class Vozilo implements VoziloSucelje
     {
         return tip;
     }
+    @Override
+    public int dajKapacitet()
+    {
+        return kapacitet;
+    }
+    @Override
+    public int dajPunjenje()
+    {
+        return punjenje;
+    }
     
     public Vozilo(int vrsta)
     {
@@ -124,6 +134,7 @@ public class Vozilo implements VoziloSucelje
         parametri = Parametri.getInstance();
         ispis = Ispisivanje.getInstance();
         rnd = RandomGenerator.getInstance();
+        vozaci = new ArrayList<>();
     }
     
     public Vozilo(ArrayList<VoziloSucelje> protoVozila, String[] shema, String[] podaciZapis)
@@ -141,24 +152,37 @@ public class Vozilo implements VoziloSucelje
             tip = Integer.parseInt(podaciZapis[Arrays.asList(shema).indexOf("tip")].replaceAll("\\p{Z}",""));
             vrsta = Integer.parseInt(podaciZapis[Arrays.asList(shema).indexOf("vrsta")].replaceAll("\\p{Z}",""));
             nosivost = Integer.parseInt(podaciZapis[Arrays.asList(shema).indexOf("vrsta")+1].replaceAll("\\p{Z}",""));
-            vozaci = podaciZapis[Arrays.asList(shema).indexOf("vozači")].split(Pattern.quote(",")); 
         }
         catch(NumberFormatException e)
         {
             ispis.Ispisi("Greška prilikom parsiranja podatka o vozilu za "+naziv+".");
         }
-        Kopiraj(protoVozila.get(vrsta));
+        Kopiraj(protoVozila.get(vrsta), shema, podaciZapis);
     }
  
  
-    private void Kopiraj(VoziloSucelje original)
+    private void Kopiraj(VoziloSucelje original, String[] shema, String[] podaciZapis)
     {
-        this.vrsta = original.dajVrstu(); //za sada se samo to preuzima iz originala
+        this.vrsta = original.dajVrstu(); 
         parametri = Parametri.getInstance();
         ispis = Ispisivanje.getInstance();
         rnd = RandomGenerator.getInstance();
         statistikaVozila = new VoziloStatistika();
         kontekst = new VoziloKontekst(this);
+        if(tip==0) //diesel
+        {
+            kapacitet = parametri.DajVrijednost("kapacitetDizelVozila");
+            punjenje  = parametri.DajVrijednost("punjenjeDizelVozila");
+        }
+        else //elektricni
+        {
+            kapacitet = parametri.DajVrijednost("kapacitetElektroVozila");
+            punjenje  = parametri.DajVrijednost("punjenjeElektroVozila");
+        }
+        this.vozaci = new ArrayList<>();
+        String[] vozaciPopis = podaciZapis[Arrays.asList(shema).indexOf("vozači")].split(Pattern.quote(",")); 
+            for(String v:vozaciPopis)
+                this.vozaci.add(v);
     }
     
     //testiranje

@@ -1,26 +1,22 @@
 Kreiran je ispisivač.
 Kreiran je generator identifikatora
 Kreiran je random generator sa sjemenom 17153
-Pročitano je 8 redaka podataka iz DZ_2_podrucja.txt
-Pročitano je 10 redaka podataka iz DZ_2_ulice.txt
-Prilikom čitanja podataka iz DZ_2_spremnici.txt otkriven neispravan redak 5.
-Pročitano je 5 redaka podataka iz DZ_2_spremnici.txt
-Pročitano je 7 redaka podataka iz DZ_2_vozila.txt
-Pročitano je 8 redaka podataka iz DZ_2_dispecer.txt
+Pročitano je 8 redaka podataka iz DZ_3_podrucja.txt
+Pročitano je 10 redaka podataka iz DZ_3_ulice.txt
+Pročitano je 6 redaka podataka iz DZ_3_spremnici.txt
+Pročitano je 7 redaka podataka iz DZ_3_vozila.txt
+Pročitano je 25 redaka podataka iz DZ_3_dispecer.txt
+Zbog unešenih argumenata --brg i/ili --brd radi se o DZ_3.
+Brg: 20, brd: 10
 Init: sjeme generatora: 17153
 Init: izlazna datoteka: DZ2_ldapKorisnika.txt
-Poziva se problem iz DZ_2.
+Poziva se problem iz DZ_3.
 Kreiraju se područja.
 Kreiraju se ulice.
 Pogreška u zapisu 9 u podacima o ulicama: Premalo parametara u retku.
-Ishodiste sustava: p1: EZO Aglomeracija Varaždin
+Ishodiste sustava: p2: Varaždin grad
 Ispisuje se tablica otpada u pojedinim područjima i ulicama:
          Opis |                         Naziv | staklo [kg] | papir [kg] | metal [kg] |  bio [kg] | mješano [kg] | ukupno [kg]
- =============================================================================================================================
-     područje |     EZO Aglomeracija Varaždin |     2333,30 |    4337,81 |    1109,98 |   8570,77 |     11738,31 |    28090,16
-  ----------------------------------------------------------------------------------------------------------------------------
-  potpodručja |                 Varaždin grad |     2150,56 |    4204,20 |    1050,57 |   8238,87 |     10991,37 |    26635,57
-              |              Varaždin okolica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
  =============================================================================================================================
      područje |                 Varaždin grad |     2150,56 |    4204,20 |    1050,57 |   8238,87 |     10991,37 |    26635,57
   ----------------------------------------------------------------------------------------------------------------------------
@@ -45,6 +41,10 @@ Ispisuje se tablica otpada u pojedinim područjima i ulicama:
               |              Krešimira Filića |      595,25 |    1449,32 |     309,44 |   2506,11 |      3023,65 |     7883,77
               |                  Tina Ujevića |      137,35 |      92,54 |      41,34 |    224,00 |       534,47 |     1029,70
  =============================================================================================================================
+Ishodiste sustava: p3: Varaždin okolica
+Ispisuje se tablica otpada u pojedinim područjima i ulicama:
+         Opis |                         Naziv | staklo [kg] | papir [kg] | metal [kg] |  bio [kg] | mješano [kg] | ukupno [kg]
+ =============================================================================================================================
      područje |              Varaždin okolica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
   ----------------------------------------------------------------------------------------------------------------------------
   potpodručje |                      Hrašcica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
@@ -56,520 +56,118 @@ Ispisuje se tablica otpada u pojedinim područjima i ulicama:
 Kreirano je statističko praćenje simulacije.
 Kreiran je dispečer.
 Izvršavanje zapisanih komandi
-Komanda: PRIPREMI
-Komanda KRENI
-Vozilo v5, mješanko 1  preuzima 21.46 kg otpada iz spremnika 478
-   Popunjenost: 0.54%, preuzeto 1 spremnika.
-Vozilo v6, mješanko 2  preuzima 23.42 kg otpada iz spremnika 479
-   Popunjenost: 0.47%, preuzeto 1 spremnika.
-Vozilo v7, mješanko 3  preuzima 24.4 kg otpada iz spremnika 480
-   Popunjenost: 0.81%, preuzeto 1 spremnika.
-Vozilo v5, mješanko 1  preuzima 12.43 kg otpada iz spremnika 481
-   Popunjenost: 0.85%, preuzeto 2 spremnika.
-Vozilo v6, mješanko 2  preuzima 6.66 kg otpada iz spremnika 482
-   Popunjenost: 0.6%, preuzeto 2 spremnika.
-Vozilo v7, mješanko 3  preuzima 16.27 kg otpada iz spremnika 483
-   Popunjenost: 1.36%, preuzeto 2 spremnika.
-Vozilo v5, mješanko 1  preuzima 20.97 kg otpada iz spremnika 484
-   Popunjenost: 1.37%, preuzeto 3 spremnika.
-Vozilo v6, mješanko 2  preuzima 164.73 kg otpada iz spremnika 485
-   Popunjenost: 3.9%, preuzeto 3 spremnika.
-Vozilo v7, mješanko 3  preuzima 145.79 kg otpada iz spremnika 486
-   Popunjenost: 6.22%, preuzeto 3 spremnika.
-Vozilo v5, mješanko 1  preuzima 10.72 kg otpada iz spremnika 441
-   Popunjenost: 1.64%, preuzeto 4 spremnika.
-Vozilo v6, mješanko 2  preuzima 9.09 kg otpada iz spremnika 442
-   Popunjenost: 4.08%, preuzeto 4 spremnika.
-Vozilo v7, mješanko 3  preuzima 17.08 kg otpada iz spremnika 443
-   Popunjenost: 6.78%, preuzeto 4 spremnika.
-Vozilo v5, mješanko 1  preuzima 28.66 kg otpada iz spremnika 444
-   Popunjenost: 2.36%, preuzeto 5 spremnika.
-Vozilo v6, mješanko 2  preuzima 22.87 kg otpada iz spremnika 445
-   Popunjenost: 4.54%, preuzeto 5 spremnika.
-Vozilo v7, mješanko 3  preuzima 13.99 kg otpada iz spremnika 446
-   Popunjenost: 7.25%, preuzeto 5 spremnika.
-Vozilo v5, mješanko 1  preuzima 15.65 kg otpada iz spremnika 447
-   Popunjenost: 2.75%, preuzeto 6 spremnika.
-Vozilo v6, mješanko 2  preuzima 21.86 kg otpada iz spremnika 448
-   Popunjenost: 4.97%, preuzeto 6 spremnika.
-Vozilo v7, mješanko 3  preuzima 10.73 kg otpada iz spremnika 449
-   Popunjenost: 7.61%, preuzeto 6 spremnika.
-Vozilo v5, mješanko 1  preuzima 24.84 kg otpada iz spremnika 450
-   Popunjenost: 3.37%, preuzeto 7 spremnika.
-Vozilo v6, mješanko 2  preuzima 14.09 kg otpada iz spremnika 451
-   Popunjenost: 5.25%, preuzeto 7 spremnika.
-Vozilo v7, mješanko 3  preuzima 29.6 kg otpada iz spremnika 452
-   Popunjenost: 8.6%, preuzeto 7 spremnika.
-Vozilo v5, mješanko 1  preuzima 28.0 kg otpada iz spremnika 453
-   Popunjenost: 4.07%, preuzeto 8 spremnika.
-Vozilo v6, mješanko 2  preuzima 16.09 kg otpada iz spremnika 454
-   Popunjenost: 5.58%, preuzeto 8 spremnika.
-Vozilo v7, mješanko 3  preuzima 10.49 kg otpada iz spremnika 455
-   Popunjenost: 8.94%, preuzeto 8 spremnika.
-Vozilo v5, mješanko 1  preuzima 28.28 kg otpada iz spremnika 456
-   Popunjenost: 4.78%, preuzeto 9 spremnika.
-Vozilo v6, mješanko 2  preuzima 22.64 kg otpada iz spremnika 457
-   Popunjenost: 6.03%, preuzeto 9 spremnika.
-Vozilo v7, mješanko 3  preuzima 11.45 kg otpada iz spremnika 458
-   Popunjenost: 9.33%, preuzeto 9 spremnika.
-Vozilo v5, mješanko 1  preuzima 22.95 kg otpada iz spremnika 459
-   Popunjenost: 5.35%, preuzeto 10 spremnika.
-Vozilo v6, mješanko 2  preuzima 29.8 kg otpada iz spremnika 460
-   Popunjenost: 6.62%, preuzeto 10 spremnika.
-Vozilo v7, mješanko 3  preuzima 15.85 kg otpada iz spremnika 461
-   Popunjenost: 9.85%, preuzeto 10 spremnika.
-Komanda STATUS
+Komanda: OBRADI
+Vozila 
+   v1: staklarko1, v2: papirko1, v3: metalko1, v4: biotko1, v5: mješanko1, v6: mješanko2, v7: mješanko3, 
+mijenjaju ishodište sustava i područje djelovanja.
+Novo ishodište je p2.
 Status vozila prikazan je tablično:
-        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
-==================================================================================================
-  Parkiraliste |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
-  Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
-  Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
-  Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-  Prikupljanje |  v5 | mješanko 1  |      diesel |   mješano |    4000 |     213,96 |      213,96
-  Prikupljanje |  v6 | mješanko 2  |      diesel |   mješano |    5000 |     331,25 |      331,25
-  Prikupljanje |  v7 | mješanko 3  |      diesel |   mješano |    3000 |     295,65 |      295,65
-Komanda KONTROLA
-Vozilo v6, mješanko 2  je na kontroli. Do sada preuzeto 10 spremnika.
-Komanda: PRIPREMI
-Komanda STATUS
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- | Ukupno otpada |Kapa- |Punj- |                  Popis |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |          [kg] |citet | enje |                 vozača |
+=====================================================================================================================================
+  Prikupljanje | v1 | staklarko 1 | električni |  staklo |    4000 |    0,00 |          0,00 |   30 |   20 |             pero,  ivo |
+  Prikupljanje | v2 | papirko 1   | električni |   papir |    3000 |    0,00 |          0,00 |   30 |   20 |           jura,  borko |
+  Prikupljanje | v3 | metalko 1   | električni |   metal |    5000 |    0,00 |          0,00 |   30 |   20 |          tvrtko,  kiki |
+  Prikupljanje | v4 | biotko 1    | električni |     bio |    3000 |    0,00 |          0,00 |   30 |   20 |          vesna,  rajka |
+  Prikupljanje | v5 | mješanko 1  |     diesel | mješano |    4000 |    0,00 |          0,00 |   50 |    7 |     zoki,  sven,  luka |
+  Prikupljanje | v6 | mješanko 2  |     diesel | mješano |    5000 |    0,00 |          0,00 |   50 |    7 |    hinko,  blaž,  fran |
+  Prikupljanje | v7 | mješanko 3  |     diesel | mješano |    3000 |    0,00 |          0,00 |   50 |    7 |     dudo,  viki,  miki |
+********************************************************************************
+*                                                                              *
+*                 Isključeno je ispisivanje poslova odvoza...                  *
+*                                                                              *
+********************************************************************************
+********************************************************************************
+*                                                                              *
+*                 Isključeno je ispisivanje poslova odvoza...                  *
+*                                                                              *
+********************************************************************************
 Status vozila prikazan je tablično:
-        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
-==================================================================================================
-  Parkiraliste |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
-  Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
-  Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
-  Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-  Prikupljanje |  v5 | mješanko 1  |      diesel |   mješano |    4000 |     213,96 |      213,96
-  Prikupljanje |  v6 | mješanko 2  |      diesel |   mješano |    5000 |     331,25 |      331,25
-  Prikupljanje |  v7 | mješanko 3  |      diesel |   mješano |    3000 |     295,65 |      295,65
-Komanda KRENI
-Vozilo v5, mješanko 1  preuzima 18.07 kg otpada iz spremnika 462
-   Popunjenost: 5.8%, preuzeto 11 spremnika.
-Vozilo v6, mješanko 2  preuzima 5.83 kg otpada iz spremnika 463
-   Popunjenost: 6.74%, preuzeto 11 spremnika.
-Vozilo v7, mješanko 3  preuzima 23.84 kg otpada iz spremnika 464
-   Popunjenost: 10.65%, preuzeto 11 spremnika.
-Vozilo v5, mješanko 1  preuzima 147.37 kg otpada iz spremnika 465
-   Popunjenost: 9.48%, preuzeto 12 spremnika.
-Vozilo v6, mješanko 2  preuzima 147.1 kg otpada iz spremnika 466
-   Popunjenost: 9.68%, preuzeto 12 spremnika.
-Vozilo v7, mješanko 3  preuzima 10.41 kg otpada iz spremnika 314
-   Popunjenost: 11.0%, preuzeto 12 spremnika.
-Vozilo v5, mješanko 1  preuzima 7.65 kg otpada iz spremnika 315
-   Popunjenost: 9.68%, preuzeto 13 spremnika.
-Vozilo v6, mješanko 2  preuzima 7.95 kg otpada iz spremnika 316
-   Popunjenost: 9.84%, preuzeto 13 spremnika.
-Vozilo v7, mješanko 3  preuzima 6.84 kg otpada iz spremnika 317
-   Popunjenost: 11.22%, preuzeto 13 spremnika.
-Vozilo v5, mješanko 1  preuzima 29.05 kg otpada iz spremnika 318
-   Popunjenost: 10.4%, preuzeto 14 spremnika.
-Vozilo v6, mješanko 2  preuzima 4.6 kg otpada iz spremnika 319
-   Popunjenost: 9.93%, preuzeto 14 spremnika.
-Vozilo v7, mješanko 3  preuzima 11.74 kg otpada iz spremnika 320
-   Popunjenost: 11.62%, preuzeto 14 spremnika.
-Vozilo v5, mješanko 1  preuzima 12.31 kg otpada iz spremnika 321
-   Popunjenost: 10.71%, preuzeto 15 spremnika.
-Vozilo v6, mješanko 2  preuzima 25.59 kg otpada iz spremnika 322
-   Popunjenost: 10.45%, preuzeto 15 spremnika.
-Vozilo v7, mješanko 3  preuzima 28.95 kg otpada iz spremnika 323
-   Popunjenost: 12.58%, preuzeto 15 spremnika.
-Vozilo v5, mješanko 1  preuzima 19.35 kg otpada iz spremnika 324
-   Popunjenost: 11.19%, preuzeto 16 spremnika.
-Vozilo v6, mješanko 2  preuzima 8.91 kg otpada iz spremnika 325
-   Popunjenost: 10.62%, preuzeto 16 spremnika.
-Vozilo v7, mješanko 3  preuzima 26.73 kg otpada iz spremnika 326
-   Popunjenost: 13.47%, preuzeto 16 spremnika.
-Vozilo v5, mješanko 1  preuzima 21.8 kg otpada iz spremnika 327
-   Popunjenost: 11.74%, preuzeto 17 spremnika.
-Vozilo v6, mješanko 2  preuzima 4.55 kg otpada iz spremnika 328
-   Popunjenost: 10.72%, preuzeto 17 spremnika.
-Vozilo v7, mješanko 3  preuzima 3.72 kg otpada iz spremnika 329
-   Popunjenost: 13.6%, preuzeto 17 spremnika.
-Vozilo v5, mješanko 1  preuzima 22.05 kg otpada iz spremnika 330
-   Popunjenost: 12.29%, preuzeto 18 spremnika.
-Vozilo v6, mješanko 2  preuzima 5.48 kg otpada iz spremnika 331
-   Popunjenost: 10.83%, preuzeto 18 spremnika.
-Vozilo v7, mješanko 3  preuzima 9.91 kg otpada iz spremnika 332
-   Popunjenost: 13.93%, preuzeto 18 spremnika.
-Vozilo v5, mješanko 1  preuzima 26.66 kg otpada iz spremnika 333
-   Popunjenost: 12.96%, preuzeto 19 spremnika.
-Vozilo v6, mješanko 2  preuzima 6.63 kg otpada iz spremnika 334
-   Popunjenost: 10.96%, preuzeto 19 spremnika.
-Vozilo v7, mješanko 3  preuzima 17.68 kg otpada iz spremnika 335
-   Popunjenost: 14.52%, preuzeto 19 spremnika.
-Vozilo v5, mješanko 1  preuzima 9.47 kg otpada iz spremnika 336
-   Popunjenost: 13.19%, preuzeto 20 spremnika.
-Vozilo v6, mješanko 2  preuzima 5.87 kg otpada iz spremnika 337
-   Popunjenost: 11.08%, preuzeto 20 spremnika.
-Vozilo v7, mješanko 3  preuzima 200.57 kg otpada iz spremnika 338
-   Popunjenost: 21.2%, preuzeto 20 spremnika.
-Vozilo v5, mješanko 1  preuzima 4.63 kg otpada iz spremnika 376
-   Popunjenost: 13.31%, preuzeto 21 spremnika.
-Vozilo v6, mješanko 2  preuzima 8.64 kg otpada iz spremnika 377
-   Popunjenost: 11.25%, preuzeto 21 spremnika.
-Vozilo v7, mješanko 3  preuzima 29.1 kg otpada iz spremnika 378
-   Popunjenost: 22.17%, preuzeto 21 spremnika.
-Vozilo v5, mješanko 1  preuzima 11.47 kg otpada iz spremnika 379
-   Popunjenost: 13.6%, preuzeto 22 spremnika.
-Vozilo v6, mješanko 2  preuzima 29.41 kg otpada iz spremnika 380
-   Popunjenost: 11.84%, preuzeto 22 spremnika.
-Vozilo v7, mješanko 3  preuzima 4.34 kg otpada iz spremnika 381
-   Popunjenost: 22.32%, preuzeto 22 spremnika.
-Vozilo v5, mješanko 1  preuzima 3.1 kg otpada iz spremnika 382
-   Popunjenost: 13.67%, preuzeto 23 spremnika.
-Vozilo v6, mješanko 2  preuzima 15.63 kg otpada iz spremnika 383
-   Popunjenost: 12.15%, preuzeto 23 spremnika.
-Vozilo v7, mješanko 3  preuzima 29.8 kg otpada iz spremnika 384
-   Popunjenost: 23.31%, preuzeto 23 spremnika.
-Vozilo v5, mješanko 1  preuzima 21.22 kg otpada iz spremnika 385
-   Popunjenost: 14.2%, preuzeto 24 spremnika.
-Vozilo v6, mješanko 2  preuzima 27.46 kg otpada iz spremnika 386
-   Popunjenost: 12.7%, preuzeto 24 spremnika.
-Vozilo v7, mješanko 3  preuzima 11.24 kg otpada iz spremnika 387
-   Popunjenost: 23.68%, preuzeto 24 spremnika.
-Vozilo v5, mješanko 1  preuzima 24.66 kg otpada iz spremnika 388
-   Popunjenost: 14.82%, preuzeto 25 spremnika.
-Vozilo v6, mješanko 2  preuzima 3.59 kg otpada iz spremnika 389
-   Popunjenost: 12.77%, preuzeto 25 spremnika.
-Vozilo v7, mješanko 3  preuzima 157.81 kg otpada iz spremnika 390
-   Popunjenost: 28.94%, preuzeto 25 spremnika.
-Vozilo v5, mješanko 1  preuzima 240.09 kg otpada iz spremnika 391
-   Popunjenost: 20.82%, preuzeto 26 spremnika.
-Vozilo v6, mješanko 2  preuzima 189.0 kg otpada iz spremnika 392
-   Popunjenost: 16.55%, preuzeto 26 spremnika.
-Vozilo v7, mješanko 3  preuzima 190.44 kg otpada iz spremnika 393
-   Popunjenost: 35.29%, preuzeto 26 spremnika.
-Vozilo v5, mješanko 1  preuzima 145.21 kg otpada iz spremnika 394
-   Popunjenost: 24.45%, preuzeto 27 spremnika.
-Vozilo v6, mješanko 2  preuzima 135.5 kg otpada iz spremnika 395
-   Popunjenost: 19.26%, preuzeto 27 spremnika.
-Vozilo v7, mješanko 3  preuzima 189.53 kg otpada iz spremnika 396
-   Popunjenost: 41.61%, preuzeto 27 spremnika.
-Vozilo v5, mješanko 1  preuzima 178.08 kg otpada iz spremnika 397
-   Popunjenost: 28.9%, preuzeto 28 spremnika.
-Vozilo v6, mješanko 2  preuzima 176.7 kg otpada iz spremnika 398
-   Popunjenost: 22.79%, preuzeto 28 spremnika.
-Vozilo v7, mješanko 3  preuzima 254.18 kg otpada iz spremnika 399
-   Popunjenost: 50.08%, preuzeto 28 spremnika.
-Vozilo v5, mješanko 1  preuzima 3.06 kg otpada iz spremnika 494
-   Popunjenost: 28.98%, preuzeto 29 spremnika.
-Vozilo v6, mješanko 2  preuzima 28.57 kg otpada iz spremnika 495
-   Popunjenost: 23.37%, preuzeto 29 spremnika.
-Vozilo v7, mješanko 3  preuzima 4.55 kg otpada iz spremnika 496
-   Popunjenost: 50.23%, preuzeto 29 spremnika.
-Vozilo v5, mješanko 1  preuzima 19.78 kg otpada iz spremnika 497
-   Popunjenost: 29.48%, preuzeto 30 spremnika.
-Vozilo v6, mješanko 2  preuzima 16.14 kg otpada iz spremnika 498
-   Popunjenost: 23.69%, preuzeto 30 spremnika.
-Vozilo v7, mješanko 3  preuzima 24.68 kg otpada iz spremnika 499
-   Popunjenost: 51.06%, preuzeto 30 spremnika.
-Vozilo v5, mješanko 1  preuzima 17.3 kg otpada iz spremnika 500
-   Popunjenost: 29.91%, preuzeto 31 spremnika.
-Vozilo v6, mješanko 2  preuzima 6.24 kg otpada iz spremnika 501
-   Popunjenost: 23.81%, preuzeto 31 spremnika.
-Vozilo v7, mješanko 3  preuzima 13.28 kg otpada iz spremnika 502
-   Popunjenost: 51.5%, preuzeto 31 spremnika.
-Vozilo v5, mješanko 1  preuzima 4.1 kg otpada iz spremnika 503
-   Popunjenost: 30.01%, preuzeto 32 spremnika.
-Vozilo v6, mješanko 2  preuzima 16.32 kg otpada iz spremnika 504
-   Popunjenost: 24.14%, preuzeto 32 spremnika.
-Vozilo v7, mješanko 3  preuzima 25.49 kg otpada iz spremnika 505
-   Popunjenost: 52.35%, preuzeto 32 spremnika.
-Vozilo v5, mješanko 1  preuzima 28.73 kg otpada iz spremnika 506
-   Popunjenost: 30.73%, preuzeto 33 spremnika.
-Vozilo v6, mješanko 2  preuzima 8.3 kg otpada iz spremnika 507
-   Popunjenost: 24.31%, preuzeto 33 spremnika.
-Vozilo v7, mješanko 3  preuzima 22.49 kg otpada iz spremnika 508
-   Popunjenost: 53.1%, preuzeto 33 spremnika.
-Vozilo v5, mješanko 1  preuzima 28.73 kg otpada iz spremnika 624
-   Popunjenost: 31.45%, preuzeto 34 spremnika.
-Vozilo v6, mješanko 2  preuzima 12.88 kg otpada iz spremnika 625
-   Popunjenost: 24.56%, preuzeto 34 spremnika.
-Vozilo v7, mješanko 3  preuzima 15.69 kg otpada iz spremnika 626
-   Popunjenost: 53.62%, preuzeto 34 spremnika.
-Vozilo v5, mješanko 1  preuzima 27.5 kg otpada iz spremnika 627
-   Popunjenost: 32.13%, preuzeto 35 spremnika.
-Vozilo v6, mješanko 2  preuzima 3.94 kg otpada iz spremnika 628
-   Popunjenost: 24.64%, preuzeto 35 spremnika.
-Vozilo v7, mješanko 3  preuzima 15.85 kg otpada iz spremnika 629
-   Popunjenost: 54.15%, preuzeto 35 spremnika.
-Vozilo v5, mješanko 1  preuzima 20.69 kg otpada iz spremnika 630
-   Popunjenost: 32.65%, preuzeto 36 spremnika.
-Vozilo v6, mješanko 2  preuzima 5.86 kg otpada iz spremnika 631
-   Popunjenost: 24.76%, preuzeto 36 spremnika.
-Vozilo v7, mješanko 3  preuzima 28.43 kg otpada iz spremnika 632
-   Popunjenost: 55.1%, preuzeto 36 spremnika.
-Vozilo v5, mješanko 1  preuzima 10.59 kg otpada iz spremnika 633
-   Popunjenost: 32.92%, preuzeto 37 spremnika.
-Vozilo v6, mješanko 2  preuzima 24.36 kg otpada iz spremnika 634
-   Popunjenost: 25.25%, preuzeto 37 spremnika.
-Vozilo v7, mješanko 3  preuzima 14.25 kg otpada iz spremnika 635
-   Popunjenost: 55.57%, preuzeto 37 spremnika.
-Vozilo v5, mješanko 1  preuzima 180.68 kg otpada iz spremnika 636
-   Popunjenost: 37.43%, preuzeto 38 spremnika.
-Vozilo v6, mješanko 2  preuzima 211.93 kg otpada iz spremnika 637
-   Popunjenost: 29.48%, preuzeto 38 spremnika.
-Vozilo v7, mješanko 3  preuzima 85.67 kg otpada iz spremnika 638
-   Popunjenost: 58.43%, preuzeto 38 spremnika.
-Vozilo v5, mješanko 1  preuzima 136.73 kg otpada iz spremnika 639
-   Popunjenost: 40.85%, preuzeto 39 spremnika.
-Vozilo v6, mješanko 2  preuzima 226.44 kg otpada iz spremnika 640
-   Popunjenost: 34.01%, preuzeto 39 spremnika.
-Vozilo v7, mješanko 3  preuzima 273.34 kg otpada iz spremnika 641
-   Popunjenost: 67.54%, preuzeto 39 spremnika.
-Vozilo v5, mješanko 1  preuzima 173.42 kg otpada iz spremnika 642
-   Popunjenost: 45.19%, preuzeto 40 spremnika.
-Vozilo v6, mješanko 2  preuzima 220.73 kg otpada iz spremnika 643
-   Popunjenost: 38.43%, preuzeto 40 spremnika.
-Vozilo v7, mješanko 3  preuzima 187.23 kg otpada iz spremnika 644
-   Popunjenost: 73.78%, preuzeto 40 spremnika.
-Vozilo v5, mješanko 1  preuzima 103.01 kg otpada iz spremnika 645
-   Popunjenost: 47.76%, preuzeto 41 spremnika.
-Vozilo v6, mješanko 2  preuzima 291.8 kg otpada iz spremnika 646
-   Popunjenost: 44.26%, preuzeto 41 spremnika.
-Vozilo v7, mješanko 3  preuzima 10.38 kg otpada iz spremnika 554
-   Popunjenost: 74.13%, preuzeto 41 spremnika.
-Vozilo v5, mješanko 1  preuzima 11.33 kg otpada iz spremnika 555
-   Popunjenost: 48.05%, preuzeto 42 spremnika.
-Vozilo v6, mješanko 2  preuzima 4.71 kg otpada iz spremnika 556
-   Popunjenost: 44.36%, preuzeto 42 spremnika.
-Vozilo v7, mješanko 3  preuzima 13.45 kg otpada iz spremnika 557
-   Popunjenost: 74.58%, preuzeto 42 spremnika.
-Vozilo v5, mješanko 1  preuzima 22.75 kg otpada iz spremnika 558
-   Popunjenost: 48.61%, preuzeto 43 spremnika.
-Vozilo v6, mješanko 2  preuzima 29.35 kg otpada iz spremnika 559
-   Popunjenost: 44.95%, preuzeto 43 spremnika.
-Vozilo v7, mješanko 3  preuzima 22.76 kg otpada iz spremnika 560
-   Popunjenost: 75.33%, preuzeto 43 spremnika.
-Vozilo v5, mješanko 1  preuzima 18.76 kg otpada iz spremnika 561
-   Popunjenost: 49.08%, preuzeto 44 spremnika.
-Vozilo v6, mješanko 2  preuzima 19.24 kg otpada iz spremnika 562
-   Popunjenost: 45.33%, preuzeto 44 spremnika.
-Vozilo v7, mješanko 3  preuzima 14.57 kg otpada iz spremnika 563
-   Popunjenost: 75.82%, preuzeto 44 spremnika.
-Vozilo v5, mješanko 1  preuzima 9.06 kg otpada iz spremnika 564
-   Popunjenost: 49.31%, preuzeto 45 spremnika.
-Vozilo v6, mješanko 2  preuzima 11.96 kg otpada iz spremnika 565
-   Popunjenost: 45.57%, preuzeto 45 spremnika.
-Vozilo v7, mješanko 3  preuzima 4.33 kg otpada iz spremnika 566
-   Popunjenost: 75.96%, preuzeto 45 spremnika.
-Vozilo v5, mješanko 1  preuzima 11.47 kg otpada iz spremnika 567
-   Popunjenost: 49.6%, preuzeto 46 spremnika.
-Vozilo v6, mješanko 2  preuzima 21.31 kg otpada iz spremnika 568
-   Popunjenost: 46.0%, preuzeto 46 spremnika.
-Vozilo v7, mješanko 3  preuzima 5.76 kg otpada iz spremnika 569
-   Popunjenost: 76.16%, preuzeto 46 spremnika.
-Vozilo v5, mješanko 1  preuzima 21.09 kg otpada iz spremnika 570
-   Popunjenost: 50.12%, preuzeto 47 spremnika.
-Vozilo v6, mješanko 2  preuzima 6.88 kg otpada iz spremnika 571
-   Popunjenost: 46.13%, preuzeto 47 spremnika.
-Vozilo v7, mješanko 3  preuzima 6.37 kg otpada iz spremnika 572
-   Popunjenost: 76.37%, preuzeto 47 spremnika.
-Vozilo v5, mješanko 1  preuzima 218.05 kg otpada iz spremnika 573
-   Popunjenost: 55.58%, preuzeto 48 spremnika.
-Vozilo v6, mješanko 2  preuzima 190.92 kg otpada iz spremnika 574
-   Popunjenost: 49.95%, preuzeto 48 spremnika.
-Vozilo v7, mješanko 3  preuzima 166.08 kg otpada iz spremnika 575
-   Popunjenost: 81.9%, preuzeto 48 spremnika.
-Vozilo v5, mješanko 1  preuzima 119.59 kg otpada iz spremnika 576
-   Popunjenost: 58.57%, preuzeto 49 spremnika.
-Vozilo v6, mješanko 2  preuzima 141.62 kg otpada iz spremnika 577
-   Popunjenost: 52.78%, preuzeto 49 spremnika.
-Vozilo v7, mješanko 3  preuzima 100.86 kg otpada iz spremnika 578
-   Popunjenost: 85.27%, preuzeto 49 spremnika.
-Vozilo v5, mješanko 1  preuzima 128.07 kg otpada iz spremnika 579
-   Popunjenost: 61.77%, preuzeto 50 spremnika.
-Vozilo v6, mješanko 2  preuzima 290.5 kg otpada iz spremnika 580
-   Popunjenost: 58.59%, preuzeto 50 spremnika.
-Vozilo v7, mješanko 3  preuzima 293.99 kg otpada iz spremnika 581
-   Popunjenost: 95.07%, preuzeto 50 spremnika.
-Vozilo v5, mješanko 1  preuzima 137.51 kg otpada iz spremnika 582
-   Popunjenost: 65.2%, preuzeto 51 spremnika.
-Vozilo v6, mješanko 2  preuzima 150.5 kg otpada iz spremnika 583
-   Popunjenost: 61.6%, preuzeto 51 spremnika.
-Vozilo v7, mješanko 3  preuzima 21.76 kg otpada iz spremnika 407
-   Popunjenost: 95.79%, preuzeto 51 spremnika.
-Vozilo v5, mješanko 1  preuzima 28.83 kg otpada iz spremnika 408
-   Popunjenost: 65.93%, preuzeto 52 spremnika.
-Vozilo v6, mješanko 2  preuzima 14.81 kg otpada iz spremnika 409
-   Popunjenost: 61.9%, preuzeto 52 spremnika.
-Vozilo v7, mješanko 3  preuzima 24.06 kg otpada iz spremnika 410
-   Popunjenost: 96.59%, preuzeto 52 spremnika.
-Vozilo v5, mješanko 1  preuzima 24.61 kg otpada iz spremnika 411
-   Popunjenost: 66.54%, preuzeto 53 spremnika.
-Vozilo v6, mješanko 2  preuzima 14.31 kg otpada iz spremnika 412
-   Popunjenost: 62.19%, preuzeto 53 spremnika.
-Vozilo v7, mješanko 3  preuzima 11.86 kg otpada iz spremnika 413
-   Popunjenost: 96.99%, preuzeto 53 spremnika.
-Vozilo v5, mješanko 1  preuzima 4.37 kg otpada iz spremnika 414
-   Popunjenost: 66.65%, preuzeto 54 spremnika.
-Vozilo v6, mješanko 2  preuzima 3.32 kg otpada iz spremnika 415
-   Popunjenost: 62.25%, preuzeto 54 spremnika.
-Vozilo v7, mješanko 3  preuzima 15.25 kg otpada iz spremnika 416
-   Popunjenost: 97.5%, preuzeto 54 spremnika.
-Vozilo v5, mješanko 1  preuzima 6.27 kg otpada iz spremnika 417
-   Popunjenost: 66.81%, preuzeto 55 spremnika.
-Vozilo v6, mješanko 2  preuzima 4.84 kg otpada iz spremnika 418
-   Popunjenost: 62.35%, preuzeto 55 spremnika.
-Vozilo v7, mješanko 3  preuzima 28.83 kg otpada iz spremnika 269
-   Popunjenost: 98.46%, preuzeto 55 spremnika.
-Vozilo v5, mješanko 1  preuzima 21.41 kg otpada iz spremnika 270
-   Popunjenost: 67.34%, preuzeto 56 spremnika.
-Vozilo v6, mješanko 2  preuzima 17.49 kg otpada iz spremnika 271
-   Popunjenost: 62.7%, preuzeto 56 spremnika.
-Vozilo v7, mješanko 3  preuzima 12.91 kg otpada iz spremnika 272
-   Popunjenost: 98.89%, preuzeto 56 spremnika.
-Vozilo v5, mješanko 1  preuzima 28.69 kg otpada iz spremnika 273
-   Popunjenost: 68.06%, preuzeto 57 spremnika.
-Vozilo v6, mješanko 2  preuzima 11.6 kg otpada iz spremnika 274
-   Popunjenost: 62.93%, preuzeto 57 spremnika.
-Vozilo v7, mješanko 3  preuzima 29.71 kg otpada iz spremnika 275
-   Popunjenost: 99.88%, preuzeto 57 spremnika.
-Vozilo v5, mješanko 1  preuzima 18.2 kg otpada iz spremnika 276
-   Popunjenost: 68.51%, preuzeto 58 spremnika.
-Vozilo v6, mješanko 2  preuzima 7.51 kg otpada iz spremnika 277
-   Popunjenost: 63.08%, preuzeto 58 spremnika.
-Vozilo v7, mješanko 3  odvozi otpad uz popunjenostod 99.88%.
-Vozilo v5, mješanko 1  preuzima 29.14 kg otpada iz spremnika 278
-   Popunjenost: 69.24%, preuzeto 59 spremnika.
-Vozilo v6, mješanko 2  preuzima 3.06 kg otpada iz spremnika 279
-   Popunjenost: 63.14%, preuzeto 59 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 20.
-Vozilo v5, mješanko 1  preuzima 27.73 kg otpada iz spremnika 280
-   Popunjenost: 69.94%, preuzeto 60 spremnika.
-Vozilo v6, mješanko 2  preuzima 21.45 kg otpada iz spremnika 281
-   Popunjenost: 63.57%, preuzeto 60 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 19.
-Vozilo v5, mješanko 1  preuzima 167.04 kg otpada iz spremnika 282
-   Popunjenost: 74.11%, preuzeto 61 spremnika.
-Vozilo v6, mješanko 2  preuzima 183.47 kg otpada iz spremnika 283
-   Popunjenost: 67.24%, preuzeto 61 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 18.
-Vozilo v5, mješanko 1  preuzima 272.06 kg otpada iz spremnika 284
-   Popunjenost: 80.91%, preuzeto 62 spremnika.
-Vozilo v6, mješanko 2  preuzima 145.15 kg otpada iz spremnika 285
-   Popunjenost: 70.14%, preuzeto 62 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 17.
-Vozilo v5, mješanko 1  preuzima 179.02 kg otpada iz spremnika 286
-   Popunjenost: 85.39%, preuzeto 63 spremnika.
-Vozilo v6, mješanko 2  preuzima 93.06 kg otpada iz spremnika 287
-   Popunjenost: 72.01%, preuzeto 63 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 16.
-Vozilo v5, mješanko 1  preuzima 214.5 kg otpada iz spremnika 288
-   Popunjenost: 90.75%, preuzeto 64 spremnika.
-Vozilo v6, mješanko 2  preuzima 255.64 kg otpada iz spremnika 289
-   Popunjenost: 77.12%, preuzeto 64 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 15.
-Vozilo v5, mješanko 1  preuzima 255.05 kg otpada iz spremnika 290
-   Popunjenost: 97.13%, preuzeto 65 spremnika.
-Vozilo v6, mješanko 2  preuzima 93.7 kg otpada iz spremnika 291
-   Popunjenost: 78.99%, preuzeto 65 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 14.
-Vozilo v5, mješanko 1  odvozi otpad uz popunjenostod 97.13%.
-Vozilo v6, mješanko 2  preuzima 215.87 kg otpada iz spremnika 292
-   Popunjenost: 83.31%, preuzeto 66 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 13.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 20.
-Vozilo v6, mješanko 2  preuzima 117.48 kg otpada iz spremnika 293
-   Popunjenost: 85.66%, preuzeto 67 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 12.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 19.
-Vozilo v6, mješanko 2  preuzima 197.36 kg otpada iz spremnika 294
-   Popunjenost: 89.61%, preuzeto 68 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 11.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 18.
-Vozilo v6, mješanko 2  preuzima 274.95 kg otpada iz spremnika 295
-   Popunjenost: 95.11%, preuzeto 69 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 10.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 17.
-Vozilo v6, mješanko 2  preuzima 101.57 kg otpada iz spremnika 296
-   Popunjenost: 97.14%, preuzeto 70 spremnika.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 9.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 16.
-Vozilo v6, mješanko 2  odvozi otpad uz popunjenostod 97.14%.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 8.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 15.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 20.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 7.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 14.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 19.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 6.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 13.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 18.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 5.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 12.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 17.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 4.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 11.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 16.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 3.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 10.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 15.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 2.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 9.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 14.
-Vozilo v7, mješanko 3  je u odvozu. Preostalo je 1.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 8.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 13.
-Vozilo v7, mješanko 3  je završilo odvoz i vraća se u prikupljanje.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 7.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 12.
-Vozilo v7, mješanko 3  je završilo. Preuzeto 57 spremnika.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 6.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 11.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 5.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 10.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 4.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 9.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 3.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 8.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 2.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 7.
-Vozilo v5, mješanko 1  je u odvozu. Preostalo je 1.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 6.
-Vozilo v5, mješanko 1  je završilo odvoz i vraća se u prikupljanje.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 5.
-Vozilo v5, mješanko 1  je završilo. Preuzeto 65 spremnika.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 4.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 3.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 2.
-Vozilo v6, mješanko 2  je u odvozu. Preostalo je 1.
-Vozilo v6, mješanko 2  je završilo odvoz i vraća se u prikupljanje.
-Vozilo v6, mješanko 2  je završilo. Preuzeto 70 spremnika.
-Komanda STATUS
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- | Ukupno otpada |Kapa- |Punj- |                  Popis |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |          [kg] |citet | enje |                 vozača |
+=====================================================================================================================================
+  Prikupljanje | v1 | staklarko 1 | električni |  staklo |    4000 |  210,11 |        210,11 |   30 |   20 |             pero,  ivo |
+          Kvar | v2 | papirko 1   | električni |   papir |    3000 |   64,85 |         64,85 |   30 |   20 |           jura,  borko |
+  Prikupljanje | v3 | metalko 1   | električni |   metal |    5000 |  267,04 |        267,04 |   30 |   20 |          tvrtko,  kiki |
+  Prikupljanje | v4 | biotko 1    | električni |     bio |    3000 |   64,54 |         64,54 |   30 |   20 |          vesna,  rajka |
+  Prikupljanje | v5 | mješanko 1  |     diesel | mješano |    4000 |  694,78 |        694,78 |   50 |    7 |     zoki,  sven,  luka |
+  Prikupljanje | v6 | mješanko 2  |     diesel | mješano |    5000 |  714,50 |        714,50 |   50 |    7 |    hinko,  blaž,  fran |
+  Prikupljanje | v7 | mješanko 3  |     diesel | mješano |    3000 |  898,53 |        898,53 |   50 |    7 |     dudo,  viki,  miki |
+********************************************************************************
+*                                                                              *
+*                 Isključeno je ispisivanje poslova odvoza...                  *
+*                                                                              *
+********************************************************************************
 Status vozila prikazan je tablično:
-        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
-==================================================================================================
-  Parkiraliste |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
-  Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
-  Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
-  Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-      Zavrseno |  v5 | mješanko 1  |      diesel |   mješano |    4000 |       0,00 |     3885,12
-      Zavrseno |  v6 | mješanko 2  |      diesel |   mješano |    5000 |       0,00 |     4856,83
-      Zavrseno |  v7 | mješanko 3  |      diesel |   mješano |    3000 |       0,00 |     2996,36
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- | Ukupno otpada |Kapa- |Punj- |                  Popis |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |          [kg] |citet | enje |                 vozača |
+=====================================================================================================================================
+  Prikupljanje | v1 | staklarko 1 | električni |  staklo |    4000 |  359,51 |        359,51 |   30 |   20 |             pero,  ivo |
+          Kvar | v2 | papirko 1   | električni |   papir |    3000 |   64,85 |         64,85 |   30 |   20 |           jura,  borko |
+  Prikupljanje | v3 | metalko 1   | električni |   metal |    5000 |  437,76 |        437,76 |   30 |   20 |          tvrtko,  kiki |
+  Prikupljanje | v4 | biotko 1    | električni |     bio |    3000 |   90,04 |         90,04 |   30 |   20 |          vesna,  rajka |
+  Prikupljanje | v5 | mješanko 1  |     diesel | mješano |    4000 | 1216,89 |       1216,89 |   50 |    7 |     zoki,  sven,  luka |
+  Prikupljanje | v6 | mješanko 2  |     diesel | mješano |    5000 | 1403,82 |       1403,82 |   50 |    7 |    hinko,  blaž,  fran |
+  Prikupljanje | v7 | mješanko 3  |     diesel | mješano |    3000 | 1487,45 |       1487,45 |   50 |    7 |     dudo,  viki,  miki |
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- | Ukupno otpada |Kapa- |Punj- |                  Popis |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |          [kg] |citet | enje |                 vozača |
+=====================================================================================================================================
+         Odvoz | v1 | staklarko 1 | električni |  staklo |    4000 |  359,51 |        359,51 |   30 |   20 |             pero,  ivo |
+         Odvoz | v2 | papirko 1   | električni |   papir |    3000 |   64,85 |         64,85 |   30 |   20 |           jura,  borko |
+  Prikupljanje | v3 | metalko 1   | električni |   metal |    5000 |  437,76 |        437,76 |   30 |   20 |          tvrtko,  kiki |
+         Odvoz | v4 | biotko 1    | električni |     bio |    3000 |   90,04 |         90,04 |   30 |   20 |          vesna,  rajka |
+  Prikupljanje | v5 | mješanko 1  |     diesel | mješano |    4000 | 1216,89 |       1216,89 |   50 |    7 |     zoki,  sven,  luka |
+  Prikupljanje | v6 | mješanko 2  |     diesel | mješano |    5000 | 1403,82 |       1403,82 |   50 |    7 |    hinko,  blaž,  fran |
+  Prikupljanje | v7 | mješanko 3  |     diesel | mješano |    3000 | 1487,45 |       1487,45 |   50 |    7 |     dudo,  viki,  miki |
+********************************************************************************
+*                                                                              *
+*                 Isključeno je ispisivanje poslova odvoza...                  *
+*                                                                              *
+********************************************************************************
+********************************************************************************
+*                                                                              *
+*                 Isključeno je ispisivanje poslova odvoza...                  *
+*                                                                              *
+********************************************************************************
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- | Ukupno otpada |Kapa- |Punj- |                  Popis |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |          [kg] |citet | enje |                 vozača |
+=====================================================================================================================================
+      Zavrseno | v1 | staklarko 1 | električni |  staklo |    4000 |    0,00 |       2150,56 |   30 |   20 |             pero,  ivo |
+      Zavrseno | v2 | papirko 1   | električni |   papir |    3000 |    0,00 |       4204,20 |   30 |   20 |           jura,  borko |
+      Zavrseno | v3 | metalko 1   | električni |   metal |    5000 |    0,00 |       1050,57 |   30 |   20 |          tvrtko,  kiki |
+      Zavrseno | v4 | biotko 1    | električni |     bio |    3000 |    0,00 |       6030,82 |   30 |   20 |          vesna,  rajka |
+      Zavrseno | v5 | mješanko 1  |     diesel | mješano |    4000 |    0,00 |       3650,88 |   50 |    7 |     zoki,  sven,  luka |
+      Zavrseno | v6 | mješanko 2  |     diesel | mješano |    5000 |    0,00 |       4370,96 |   50 |    7 |    hinko,  blaž,  fran |
+      Zavrseno | v7 | mješanko 3  |     diesel | mješano |    3000 |    0,00 |       2969,53 |   50 |    7 |     dudo,  viki,  miki |
+********************************************************************************
+*                                                                              *
+*                           Prijelaz u komandni mod                            *
+*                                                                              *
+********************************************************************************
 STATISTIKA PREUZIMANJA OTPADA
        Vrsta |    količina |
       otpada |        [kg] |
 ============================
-      staklo |        0,00 |
-       papir |        0,00 |
-       metal |        0,00 |
-         bio |        0,00 |
-     mješano |    11738,31 |
+      staklo |     2150,56 |
+       papir |     4204,20 |
+       metal |     1050,57 |
+         bio |     6030,82 |
+     mješano |    10991,37 |
 ============================
-      UKUPNO |    11738,31 |
+      UKUPNO |    24427,52 |
 
 STATISTIKA VOZILA
      |             |     Broj |     Broj |    Ukupna |     Broj |
   ID |       Naziv |spremnika |   mjesta |  količina |   odvoza |
 ================================================================
-  v1 | staklarko 1 |        0 |        0 |      0,00 |        0 |
-  v2 | papirko 1   |        0 |        0 |      0,00 |        0 |
-  v3 | metalko 1   |        0 |        0 |      0,00 |        0 |
-  v4 | biotko 1    |        0 |        0 |      0,00 |        0 |
-  v5 | mješanko 1  |       65 |       76 |   3885,12 |        2 |
-  v6 | mješanko 2  |       70 |       79 |   4856,83 |        2 |
-  v7 | mješanko 3  |       57 |       64 |   2996,36 |        2 |
+  v1 | staklarko 1 |       89 |      189 |   2150,56 |        4 |
+  v2 | papirko 1   |       82 |      189 |   4204,20 |        5 |
+  v3 | metalko 1   |       42 |      189 |   1050,57 |        2 |
+  v4 | biotko 1    |      189 |      189 |   6030,82 |        6 |
+  v5 | mješanko 1  |       59 |       63 |   3650,88 |        2 |
+  v6 | mješanko 2  |       58 |       68 |   4370,96 |        2 |
+  v7 | mješanko 3  |       49 |       58 |   2969,53 |        2 |
 ================================================================
-     |      UKUPNO |      192 |      219 |  11738,31 |        6 |
+     |      UKUPNO |      568 |      945 |  24427,52 |       23 |
