@@ -29,6 +29,9 @@ public interface VoziloKontekstSucelje
     boolean DajKvar();
     void PostaviKvar();
     void UkloniKvar();
+    int DajKolicinuPogonskog();
+    void ObnoviKolicinuPogonskog();
+    void SmanjiKolicinuPogonskog();
     int DajTrenutnuUlicu();
     int DajTrenutniSpremnik();
     int DajBrojDodijeljenihSpremnika();
@@ -41,7 +44,4 @@ public interface VoziloKontekstSucelje
     void PovecajPopunjenost(float dopuna);
     void ResetUliceISpremnici();
     void ResetAll();
-    int  DajBrojacOdvoza();
-    void postaviBrojacOdvoza(int brojOdvoza);
-    void SmanjiBrojacOdvoza();
 }

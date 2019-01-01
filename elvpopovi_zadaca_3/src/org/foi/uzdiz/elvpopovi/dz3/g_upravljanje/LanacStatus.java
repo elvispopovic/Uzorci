@@ -56,14 +56,14 @@ public class LanacStatus implements LanacKomandiApstraktni
         StringBuilder sb = new StringBuilder();
         Formatter form = new Formatter(sb);
         simulacija.Ispisi("Status vozila prikazan je tablično:");
-        form.format("%14s |%3s |%12s |%11s |%8s |%8s |%8s |%14s |%5s |%5s |%23s |","Status","","Naziv","Tip",
-                "Vrsta","Nosivost","Popunje-","Ukupno otpada","Kapa-","Punj-","Popis");
+        form.format("%14s |%3s |%12s |%11s |%8s |%8s |%8s |%10s |%8s |%24s |","Status","","Naziv","Tip",
+                "Vrsta","Nosivost","Popunje-","Ukupno ","Pogonski","Popis");
         simulacija.Ispisi(sb.toString());
         sb.setLength(0);
-        form.format("%14s |%3s |%12s |%11s |%8s |%8s |%8s |%14s |%5s |%5s |%23s |","vozila","ID","vozila","pogona",
-                "otpada","[kg]","nost [%]","[kg]","citet","enje","vozača");
+        form.format("%14s |%3s |%12s |%11s |%8s |%8s |%8s |%10s |%8s |%24s |","vozila","ID","vozila","pogona",
+                "otpada","[kg]","nost [%]","otpada[kg]","sustav ","vozača");
         simulacija.Ispisi(sb.toString());
-        simulacija.Ispisi(String.join("", Collections.nCopies(133, "=")));
+        simulacija.Ispisi(String.join("", Collections.nCopies(126, "=")));
         ispisiStatusVozila(sb,form);
     }
     
@@ -108,10 +108,11 @@ public class LanacStatus implements LanacKomandiApstraktni
         int nosivost = vozilo.dajNosivost();
         popunjenost = vozilo.dajKontekst().dajPopunjenost();
         ukupnoOtpada = vozilo.dajStatistikuVozila().dajUkupnuKolicinuOtpada();
-        form.format("%14s |%3s |%12s |%11s |%8s |%8d |%8."+brojDecimala+"f |%14."+brojDecimala+"f |%5d |%5d |%23s |",
+        form.format("%14s |%3s |%12s |%11s |%8s |%8d |%8."+brojDecimala+"f |%10."+brojDecimala+"f |%3d /%3d |%24s |",
                 status,vozilo.dajId(),vozilo.dajNaziv(),tip,otpad,nosivost, 
-                (float)popunjenost, ukupnoOtpada,vozilo.dajKapacitet(),vozilo.dajPunjenje(),
-                kreirajPopisVozaca(vozilo,", "));
+                (float)popunjenost, ukupnoOtpada,
+                vozilo.dajKontekst().DajKolicinuPogonskog(),vozilo.dajKapacitetPogona(),
+                kreirajPopisVozaca(vozilo,","));
         simulacija.Ispisi(sb.toString());
     }
     private String kreirajPopisVozaca(VoziloSucelje vozilo, String delimiter)

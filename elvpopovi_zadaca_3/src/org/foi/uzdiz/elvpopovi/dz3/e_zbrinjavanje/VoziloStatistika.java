@@ -38,6 +38,14 @@ public class VoziloStatistika
     {
         this.brojOdlazakaNaDeponij++;
     }
+    public int dajBrojPunjenjaPogona()
+    {
+        return brojPunjenjaPogona;
+    }
+    public void PovecajBrojPunjenjaPogona()
+    {
+        this.brojPunjenjaPogona++;
+    }
 
     public float dajUkupnuKolicinuOtpada()
     {
@@ -49,7 +57,7 @@ public class VoziloStatistika
     }
     
     
-    private int brojSpremnika, brojMjesta, brojOdlazakaNaDeponij;
+    private int brojSpremnika, brojMjesta, brojOdlazakaNaDeponij, brojPunjenjaPogona;
     private float ukupnaKolicinaOtpada;
     
     
@@ -58,6 +66,7 @@ public class VoziloStatistika
         brojSpremnika=0;
         brojMjesta=0;
         brojOdlazakaNaDeponij = 0;
+        brojPunjenjaPogona = 0;
         ukupnaKolicinaOtpada=(float) 0.0;
     }
     public VoziloStatistika()

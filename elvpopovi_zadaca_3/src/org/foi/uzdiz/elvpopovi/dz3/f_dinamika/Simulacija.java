@@ -317,7 +317,8 @@ public class Simulacija implements SimulacijaSucelje
             if(vozilo!=null)
             {
                 String nazivStanja = vozilo.dajKontekst().DajStanje().DajNaziv();
-                if(nazivStanja.equals("PRIKUPLJANJE") || nazivStanja.equals("ODVOZ"))
+                if(nazivStanja.equals("PRIKUPLJANJE") || nazivStanja.equals("ODVOZ") 
+                        || nazivStanja.equals("PUNJENJE"))
                     rezultat = false;
             }
         }

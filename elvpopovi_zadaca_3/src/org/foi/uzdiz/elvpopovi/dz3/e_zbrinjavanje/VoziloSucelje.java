@@ -29,6 +29,6 @@ public interface VoziloSucelje
     VoziloStatistika dajStatistikuVozila();
     int dajVrstu();
     int dajTip();
-    int dajKapacitet();
-    int dajPunjenje();
+    int dajKapacitetPogona();
+    int dajPunjenjePogona();
 }

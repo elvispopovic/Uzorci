@@ -13,8 +13,6 @@ import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloStatistika;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
-import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
 
 /**
  *
@@ -54,10 +52,10 @@ public class StatistikaTablicno implements StatistikaSucelje
         MVCmodel.ObavijestiMVC();
         MVCmodel.Ispisi("STATISTIKA VOZILA");
         sb.setLength(0);
-        form.format("%4s |%12s |%9s |%9s |%10s |%9s |","","","  Broj","  Broj","Ukupna","Broj");
+        form.format("%4s |%12s |%9s |%9s |%10s |%7s |%9s |","","","  Broj","  Broj","Ukupna","Broj","Broj ");
         MVCmodel.Ispisi(sb.toString());
         sb.setLength(0);
-        form.format("%4s |%12s |%9s |%9s |%10s |%9s |","ID","Naziv","spremnika","mjesta","količina","odvoza");
+        form.format("%4s |%12s |%9s |%9s |%10s |%7s |%9s |","ID","Naziv","spremnika","mjesta","količina","odvoza","punjenja");
         MVCmodel.Ispisi(sb.toString());
         ispisiVozila(vozila);
         MVCmodel.ObavijestiMVC();
@@ -85,14 +83,12 @@ public class StatistikaTablicno implements StatistikaSucelje
     
     private void ispisiVozila(ArrayList<VoziloSucelje> vozila)
     {
-        int ukSpremnika=0, ukMjesta=0, ukBrojOdvoza=0;
+        int ukSpremnika=0, ukMjesta=0, ukBrojOdvoza=0, ukBrojPunjenja=0;
         float ukKolicina =(float)0.0;
-        RandomGenerator rnd = RandomGenerator.getInstance();
-        Parametri parametri = Parametri.getInstance();
-        int brojDecimala = parametri.DajVrijednost("brojDecimala");
+        
         VoziloSucelje vozilo;
         VoziloStatistika statistikaVozila;
-        MVCmodel.Ispisi(String.join("", Collections.nCopies(64, "=")));
+        MVCmodel.Ispisi(String.join("", Collections.nCopies(74, "=")));
         for(int i=0; i<vozila.size(); i++)
         {
             vozilo = vozila.get(i);
@@ -104,20 +100,28 @@ public class StatistikaTablicno implements StatistikaSucelje
             ukMjesta+=statistikaVozila.dajBrojMjesta();
             ukKolicina+=statistikaVozila.dajUkupnuKolicinuOtpada();
             ukBrojOdvoza+=statistikaVozila.dajBrojOdlazakaNaDeponij();
-            form.format("%4s |%12s |%9d |%9d |%10."+brojDecimala+"f |%9d |",vozilo.dajId(),vozilo.dajNaziv(),
-                    statistikaVozila.dajBrojSpremnika(),statistikaVozila.dajBrojMjesta(),
-                    statistikaVozila.dajUkupnuKolicinuOtpada(), statistikaVozila.dajBrojOdlazakaNaDeponij());
-            MVCmodel.Ispisi(sb.toString());
+            ukBrojPunjenja+=statistikaVozila.dajBrojPunjenjaPogona();
+            ispisiRedakVozila(vozilo, statistikaVozila);
         }
-        ispisiUkupno(ukSpremnika, ukMjesta, ukBrojOdvoza, ukKolicina);
+        ispisiUkupno(ukSpremnika, ukMjesta, ukBrojOdvoza, ukKolicina, ukBrojPunjenja);
     }
-    private void ispisiUkupno(int ukSpremnika, int ukMjesta, int ukBrojOdvoza, float ukKolicina)
+    private void ispisiRedakVozila(VoziloSucelje vozilo, VoziloStatistika statistikaVozila)
+    {
+        Parametri parametri = Parametri.getInstance();
+        int brojDecimala = parametri.DajVrijednost("brojDecimala");
+        form.format("%4s |%12s |%9d |%9d |%10."+brojDecimala+"f |%7d |%9d |",vozilo.dajId(),vozilo.dajNaziv(),
+                    statistikaVozila.dajBrojSpremnika(),statistikaVozila.dajBrojMjesta(),
+                    statistikaVozila.dajUkupnuKolicinuOtpada(), statistikaVozila.dajBrojOdlazakaNaDeponij(), 
+                    statistikaVozila.dajBrojPunjenjaPogona());
+            MVCmodel.Ispisi(sb.toString());
+    }
+    private void ispisiUkupno(int ukSpremnika, int ukMjesta, int ukBrojOdvoza, float ukKolicina, int ukBrojPunjenja)
     {
         sb.setLength(0);
-        MVCmodel.Ispisi(String.join("", Collections.nCopies(64, "=")));
+        MVCmodel.Ispisi(String.join("", Collections.nCopies(74, "=")));
         sb.setLength(0);
-        form.format("%4s |%12s |%9d |%9s |%10.2f |%9d |","","UKUPNO",ukSpremnika,ukMjesta,
-                ukKolicina,ukBrojOdvoza);
+        form.format("%4s |%12s |%9d |%9s |%10.2f |%7d |%9d |","","UKUPNO",ukSpremnika,ukMjesta,
+                ukKolicina,ukBrojOdvoza, ukBrojPunjenja);
         MVCmodel.Ispisi(sb.toString());
     }
 

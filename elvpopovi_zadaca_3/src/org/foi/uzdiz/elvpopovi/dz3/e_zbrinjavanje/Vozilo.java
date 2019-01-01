@@ -27,7 +27,7 @@ public class Vozilo implements VoziloSucelje
     Ispisivanje ispisivanje;
     private String id;
     String naziv;
-    int vrsta, tip, ciklusaOdvoz, kapacitet, punjenje;
+    int vrsta, tip, ciklusaOdvoz, kapacitetPogona, punjenjePogona;
     private ArrayList<String> vozaci;
     VoziloKontekstSucelje kontekst;
     VoziloStatistika statistikaVozila;
@@ -118,14 +118,14 @@ public class Vozilo implements VoziloSucelje
         return tip;
     }
     @Override
-    public int dajKapacitet()
+    public int dajKapacitetPogona()
     {
-        return kapacitet;
+        return kapacitetPogona;
     }
     @Override
-    public int dajPunjenje()
+    public int dajPunjenjePogona()
     {
-        return punjenje;
+        return punjenjePogona;
     }
     
     public Vozilo(int vrsta)
@@ -168,21 +168,21 @@ public class Vozilo implements VoziloSucelje
         ispis = Ispisivanje.getInstance();
         rnd = RandomGenerator.getInstance();
         statistikaVozila = new VoziloStatistika();
-        kontekst = new VoziloKontekst(this);
         if(tip==0) //diesel
         {
-            kapacitet = parametri.DajVrijednost("kapacitetDizelVozila");
-            punjenje  = parametri.DajVrijednost("punjenjeDizelVozila");
+            kapacitetPogona = parametri.DajVrijednost("kapacitetDizelVozila");
+            punjenjePogona  = parametri.DajVrijednost("punjenjeDizelVozila");
         }
         else //elektricni
         {
-            kapacitet = parametri.DajVrijednost("kapacitetElektroVozila");
-            punjenje  = parametri.DajVrijednost("punjenjeElektroVozila");
+            kapacitetPogona = parametri.DajVrijednost("kapacitetElektroVozila");
+            punjenjePogona  = parametri.DajVrijednost("punjenjeElektroVozila");
         }
-        this.vozaci = new ArrayList<>();
-        String[] vozaciPopis = podaciZapis[Arrays.asList(shema).indexOf("vozači")].split(Pattern.quote(",")); 
+        this.vozaci = new ArrayList<>(); //lista se ne smije kopirati, mora se napraviti nova
+        String[] vozaciPopis = podaciZapis[Arrays.asList(shema).indexOf("vozači")].split(Pattern.quote(",").replaceAll("\\p{Z}","")); 
             for(String v:vozaciPopis)
                 this.vozaci.add(v);
+        kontekst = new VoziloKontekst(this);
     }
     
     //testiranje

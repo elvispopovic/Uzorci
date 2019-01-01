@@ -23,11 +23,11 @@ public class VoziloKontekst implements VoziloKontekstSucelje
     //private StatistikaSucelje statistikaOtpada;
     private SimulacijaAbstractProduct simulacijske;
     private VoziloStanjeSucelje stanje;
-    private int trenutnaUlica, trenutniSpremnik, brojSpremnika;
+    private int trenutnaUlica, trenutniSpremnik, brojSpremnika, kolicinaPogonskog;
     private boolean kvar, zavrsenoPrikupljanje;
     private int preuzetoSpremnika;
     private float popunjenost;
-    private int brojacOdvoza;
+    private int brojacPunjenjaPogona1;
     
     @Override
     public VoziloSucelje DajVozilo()
@@ -72,6 +72,21 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         kvar = false;
     }
     
+    public int DajKolicinuPogonskog()
+    {
+        return kolicinaPogonskog;
+    }
+    public void SmanjiKolicinuPogonskog()
+    {
+        if(kolicinaPogonskog>0)
+            kolicinaPogonskog--;
+    }
+    public void ObnoviKolicinuPogonskog()
+    {
+        kolicinaPogonskog = vozilo.dajKapacitetPogona();
+    }
+    
+    
     @Override
     public int DajTrenutnuUlicu()
     {
@@ -106,18 +121,7 @@ public class VoziloKontekst implements VoziloKontekstSucelje
     {
         return preuzetoSpremnika;
     }
-    
-    @Override
-    public int DajBrojacOdvoza()
-    {
-        return brojacOdvoza;
-    }
-    @Override
-    public void postaviBrojacOdvoza(int brojOdvoza)
-    {
-        this.brojacOdvoza = brojOdvoza;
-    }
-    
+
     public VoziloKontekst(VoziloSucelje vozilo)
     {
         this.vozilo = vozilo;
@@ -202,19 +206,12 @@ public class VoziloKontekst implements VoziloKontekstSucelje
     {
         zavrsenoPrikupljanje = false;
         kvar = false;
-        brojacOdvoza=0;
+        kolicinaPogonskog = vozilo.dajKapacitetPogona();
         trenutnaUlica = 0;
         trenutniSpremnik = 0;
         preuzetoSpremnika = 0;
         popunjenost = 0.0f;
     }
-    
-    @Override
-    public void SmanjiBrojacOdvoza()
-    {
-        this.brojacOdvoza--;
-    }
-
 
     private void prebrojiSpremnike()
     {

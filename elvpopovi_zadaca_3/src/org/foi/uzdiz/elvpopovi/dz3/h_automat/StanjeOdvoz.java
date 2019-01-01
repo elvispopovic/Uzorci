@@ -78,7 +78,6 @@ public class StanjeOdvoz implements VoziloStanjeSucelje
                     case 4: statistikaOtpada.DodajMjesano(popunjenost); break;
                 }
             kontekst.Isprazni();
-            kontekst.postaviBrojacOdvoza(0);
             if(kontekst.DajKvar())
             {
                 kontekst.PostaviStanje(new StanjeParkiraliste(kontekst));
@@ -97,7 +96,6 @@ public class StanjeOdvoz implements VoziloStanjeSucelje
     
     private void ispisiOdvoz(int mod)
     {
-        Ispisivanje ispis = Ispisivanje.getInstance();
         RandomGenerator rnd = RandomGenerator.getInstance();
         Parametri parametri = Parametri.getInstance();
         if(parametri.DajVrijednost("ispis")!=0)

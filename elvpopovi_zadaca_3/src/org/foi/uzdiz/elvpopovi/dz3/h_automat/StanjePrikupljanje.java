@@ -61,7 +61,7 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
     @Override
     public void Napredovanje()
     {
-        preskociPrazne();
+        preskociPrazne(); 
         if(!kontekst.JeLiZavrsenoPrikupljanje())
             obradiSpremnik();
         else
@@ -77,10 +77,13 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
         while(kolicina==0.0 && !kontekst.JeLiZavrsenoPrikupljanje())
         {
             kontekst.PovecajTrenutniSpremnik();
+            kontekst.SmanjiKolicinuPogonskog();
             kolicina = (float)0.0;
             spremnik = dajTrenutniSpremnik();
             if(spremnik != null)
                 kolicina = spremnik.dajKolicinuOtpada(); 
+            if(kontekst.DajKolicinuPogonskog()<=0)
+                kontekst.PostaviStanje(new StanjePunjenjePogonskog(kontekst));
         };
     }
     
@@ -98,15 +101,23 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
                 statistikaVozilo.PovecajUkupnuKolicinuOtpada(spremnik.dajKolicinuOtpada());
                 spremnik.IsprazniSpremnik();
                 kontekst.PovecajTrenutniSpremnik();
+                if(kontekst.DajKolicinuPogonskog()<=0)
+                    kontekst.PostaviStanje(new StanjePunjenjePogonskog(kontekst));
             }
             else
             {
                 kontekst.PostaviStanje(new StanjeOdvoz(kontekst));
                 statistikaVozilo.PovecajBrojOdlazakaNaDeponij();
+                kontekst.SmanjiKolicinuPogonskog();
             }
         }
         else
+        {
             kontekst.PovecajTrenutniSpremnik();
+            if(kontekst.DajKolicinuPogonskog()<=0)
+                kontekst.PostaviStanje(new StanjePunjenjePogonskog(kontekst));
+        }
+        kontekst.SmanjiKolicinuPogonskog();
     }
     
     private void ispisiPreuzimanje()
@@ -123,7 +134,8 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
                     rnd.round(spremnik.dajKolicinuOtpada(),brojDecimala)+
                     " kg otpada iz spremnika "+spremnik.dajId());
             MVCmodel.Ispisi("   Popunjenost: "+rnd.round(popunjenost, brojDecimala)+
-                    "%, preuzeto "+kontekst.dajPreuzetoSpremnika()+" spremnika.");
+                    "%, preuzeto "+kontekst.dajPreuzetoSpremnika()+
+                    " spremnika, stanje pogona: "+kontekst.DajKolicinuPogonskog()+"/"+vozilo.dajKapacitetPogona());
     }
     
     private void posaljiZadnjePraznjenje()
