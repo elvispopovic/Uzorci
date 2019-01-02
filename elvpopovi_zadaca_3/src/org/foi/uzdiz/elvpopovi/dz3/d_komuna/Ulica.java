@@ -81,6 +81,7 @@ public class Ulica
         ispis = Ispisivanje.getInstance();
         this.shema = shema;
         rnd = RandomGenerator.getInstance();
+        id = new String("");
         mjesta = new int[3];
         korisnici = new ArrayList<>();
         for(int i=0; i<3; i++)

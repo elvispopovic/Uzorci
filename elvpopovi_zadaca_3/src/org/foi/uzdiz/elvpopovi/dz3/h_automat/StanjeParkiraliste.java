@@ -5,6 +5,9 @@
  */
 package org.foi.uzdiz.elvpopovi.dz3.h_automat;
 
+import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
+import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
+
 /**
  *
  * @author elvis
@@ -13,6 +16,7 @@ public class StanjeParkiraliste implements VoziloStanjeSucelje
 {
     public final String naziv;
     protected VoziloKontekstSucelje kontekst;
+    protected SimulacijaSucelje simulacija;
     
     @Override
     public String DajNaziv()
@@ -24,17 +28,34 @@ public class StanjeParkiraliste implements VoziloStanjeSucelje
     {
         this.kontekst = kontekst;
         naziv = "PARKIRALISTE";
-        kontekst.UkloniKvar();
+        if(kontekst!=null)
+        {
+            kontekst.UkloniKvar();
+        }
     }
     
     @Override
-    public boolean Prijelaz(String novoStanje)
+    public void Prijelaz(String novoStanje)
     {
-        if(novoStanje.equals("PRIKUPLJANJE"))
+        if(kontekst == null)
+            return;
+        simulacija = kontekst.DajSimulacijske().DajSimulacija();
+        simulacija.Ispisi("Prijelaz u stanju parkiralista na "+novoStanje);
+        switch(novoStanje)
         {
-            kontekst.PostaviStanje(new StanjePrikupljanje(kontekst));
-            return true;
+            case "PRIKUPLJANJE": kontekst.PostaviStanje(new StanjePrikupljanje(kontekst));
+                break;
+            case "KONTROLA": kontekst.PostaviStanje(new StanjeKontrola(kontekst));
+                break;
+            case "KVAR": kontekst.PostaviStanje(new StanjeKvar(kontekst));
+                break;
         }
+    }
+    private boolean provjeriPrijelazCekanje()
+    {
+        Ulica ulica = kontekst.DajTrenutnuUlicu();
+        if(ulica!=null && simulacija.BrojNecekajucihVozilaUUlici(ulica.Id())>2)
+            return true;
         return false;
     }
     

@@ -27,6 +27,7 @@ public class StanjeKvar implements VoziloStanjeSucelje
         naziv = "KVAR";
         if(kontekst!=null)
         {
+            kontekst.PostaviKvar();
             vozilo = kontekst.DajVozilo();
             MVCmodel = kontekst.DajMVCModel();
             ispisiKvar();
@@ -46,14 +47,12 @@ public class StanjeKvar implements VoziloStanjeSucelje
     }
 
     @Override
-    public boolean Prijelaz(String novoStanje)
+    public void Prijelaz(String novoStanje)
     {
         if(novoStanje.equals("ODVOZ"))
         {
             kontekst.PostaviStanje(new StanjeOdvoz(kontekst));
-            return true;
         }
-        return false;
     }
     private void ispisiKvar()
     {

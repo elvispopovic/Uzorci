@@ -4,7 +4,7 @@ spremnici:DZ_3_spremnici.txt
 vozila:DZ_3_vozila.txt
 izlaz:DZ2_ldapKorisnika.txt
 dispečer:DZ_3_dispecer.txt
-ispis:0
+ispis:1
 sjemeGeneratora:17153
 brojDecimala:2
 brojRadnihCiklusaZaOdvoz:20

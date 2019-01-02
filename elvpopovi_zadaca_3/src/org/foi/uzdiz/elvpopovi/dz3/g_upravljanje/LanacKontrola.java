@@ -30,7 +30,7 @@ public class LanacKontrola implements LanacKomandiApstraktni
     {
         this.simulacija = simulacija;
         parametri = Parametri.getInstance();
-        listaPrikupljanje = this.simulacija.DajListaPrikupljanje();
+        listaPrikupljanje = this.simulacija.DajListaVozilaSimulacija();
         sljedbenik = null;
     }
     
@@ -42,7 +42,6 @@ public class LanacKontrola implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String[] komanda)
     {
-        
         if(komanda[0].toUpperCase().equals("KONTROLA"))
         {
             if(parametri.DajVrijednost("ispis")==0)
@@ -67,8 +66,9 @@ public class LanacKontrola implements LanacKomandiApstraktni
             VoziloSucelje vozilo = listaPrikupljanje.DajVozilo(s);
             if(vozilo!=null)
             {
+                
                 kontekst = vozilo.dajKontekst();
-                kontekst.PostaviStanje(new StanjeKontrola(kontekst));
+                kontekst.DajStanje().Prijelaz("KONTROLA");
             }
         }
     }

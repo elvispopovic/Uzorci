@@ -16,15 +16,17 @@ import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
  */
 public interface SimulacijaSucelje
 {
-    ArrayList<VoziloSucelje> DajListuVozila();
+    ArrayList<VoziloSucelje> DajListuVozilaPodaci();
     ProblemskiAbstractProduct DajProblemske();
     SimulacijaAbstractProduct DajSimulacijske();
-    ListaVozila DajListaPrikupljanje();
+    ListaVozila DajListaVozilaSimulacija();
     //ListaVozila DajListaOdvoz();
     boolean ProvjeriParametre();
     void Pokreni();
     boolean PromijeniIshodisteSustava(ArrayList<String> vozila, String ishodisteId);
     boolean ObradiStanjaVozila();
+    int BrojNecekajucihVozilaUUlici(String ulicaId);
+    ArrayList<VoziloSucelje> NecekajucaVozilaUUlici(String ulicaId);
     boolean provjeriZavrsetak();
     
     void Ispisi(String ispis);

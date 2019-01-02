@@ -56,9 +56,15 @@ public class StanjeOdvoz implements VoziloStanjeSucelje
     }
     
     @Override
-    public boolean Prijelaz(String novoStanje)
+    public void Prijelaz(String novoStanje)
     {
-        return false;
+        switch(novoStanje)
+        {
+            case "KONTROLA": kontekst.PostaviStanje(new StanjeKontrola(kontekst));
+                    break;
+            case "KVAR": kontekst.PostaviStanje(new StanjeKvar(kontekst));
+                    break;
+        }
     }
     
     @Override

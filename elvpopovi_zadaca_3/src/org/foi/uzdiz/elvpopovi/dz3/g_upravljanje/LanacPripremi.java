@@ -29,7 +29,7 @@ public class LanacPripremi implements LanacKomandiApstraktni
     {
         this.simulacija = simulacija;
         parametri = Parametri.getInstance();
-        listaPrikupljanje = simulacija.DajListaPrikupljanje();
+        listaPrikupljanje = simulacija.DajListaVozilaSimulacija();
         sljedbenik = null;
     }
     @Override

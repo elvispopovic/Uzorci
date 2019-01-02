@@ -13,5 +13,5 @@ public interface VoziloStanjeSucelje
 {
     void Napredovanje();
     String DajNaziv();
-    boolean Prijelaz(String novoStanje);
+    void Prijelaz(String novoStanje);
 }

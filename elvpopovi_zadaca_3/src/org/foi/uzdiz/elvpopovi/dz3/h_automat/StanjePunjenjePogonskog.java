@@ -62,9 +62,9 @@ public class StanjePunjenjePogonskog implements VoziloStanjeSucelje
     }
 
     @Override
-    public boolean Prijelaz(String novoStanje)
+    public void Prijelaz(String novoStanje)
     {
-        return false;
+        return;
     }
     
     private void ispisiPunjenje(int mod)

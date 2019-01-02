@@ -79,7 +79,7 @@ public class SimulacijaProduct implements SimulacijaAbstractProduct
     public void IspisiStatistiku()
     {
         StatistikaSucelje statistikaTablicno = new StatistikaTablicno(statistika);
-        ArrayList<VoziloSucelje> vozila = simulacija.DajListuVozila();
+        ArrayList<VoziloSucelje> vozila = simulacija.DajListuVozilaPodaci();
         statistikaTablicno.IspisiStatistiku(vozila);
     }
 }

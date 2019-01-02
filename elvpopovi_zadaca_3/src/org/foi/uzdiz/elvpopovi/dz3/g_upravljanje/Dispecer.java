@@ -126,9 +126,9 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
     }
 
     @Override
-    public ArrayList<VoziloSucelje> DajListuVozila()
+    public ArrayList<VoziloSucelje> DajListuVozilaPodaci()
     {
-        return simulacija.DajListuVozila();
+        return simulacija.DajListuVozilaPodaci();
     }
 
     @Override
@@ -138,9 +138,9 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
     }
 
     @Override
-    public ListaVozila DajListaPrikupljanje()
+    public ListaVozila DajListaVozilaSimulacija()
     {
-        return simulacija.DajListaPrikupljanje();
+        return simulacija.DajListaVozilaSimulacija();
     }
 
 
@@ -148,6 +148,17 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
     public boolean ObradiStanjaVozila()
     { 
         return false;
+    }
+    
+    @Override
+    public int BrojNecekajucihVozilaUUlici(String ulicaId)
+    {
+        return simulacija.BrojNecekajucihVozilaUUlici(ulicaId);
+    }
+    @Override
+    public ArrayList<VoziloSucelje> NecekajucaVozilaUUlici(String ulicaId)
+    {
+        return simulacija.NecekajucaVozilaUUlici(ulicaId);
     }
     
     public boolean PromijeniIshodisteSustava(ArrayList<String> vozila, String ishodiste)
@@ -195,5 +206,7 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
         Ispisi("*"+String.join("", Collections.nCopies(78, " "))+"*");
         Ispisi(String.join("", Collections.nCopies(80, "*")));
     }
+
+    
 
 }

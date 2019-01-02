@@ -30,7 +30,7 @@ public class LanacKvar implements LanacKomandiApstraktni
     {
         this.simulacija = simulacija;
         parametri = Parametri.getInstance();
-        listaPrikupljanje = simulacija.DajListaPrikupljanje();
+        listaPrikupljanje = simulacija.DajListaVozilaSimulacija();
         //listaKvar         = simulacija.DajListaKvar();
         sljedbenik = null;
     }
@@ -67,8 +67,7 @@ public class LanacKvar implements LanacKomandiApstraktni
             if(vozilo!=null)
             {
                 kontekst = vozilo.dajKontekst();
-                kontekst.PostaviKvar();
-                kontekst.PostaviStanje(new StanjeKvar(kontekst));
+                kontekst.DajStanje().Prijelaz("KVAR");
             }
         }
     }

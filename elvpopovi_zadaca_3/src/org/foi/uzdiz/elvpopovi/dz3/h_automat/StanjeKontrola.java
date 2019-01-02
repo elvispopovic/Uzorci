@@ -40,14 +40,10 @@ public class StanjeKontrola implements VoziloStanjeSucelje
     }
     
     @Override
-    public boolean Prijelaz(String novoStanje)
+    public void Prijelaz(String novoStanje)
     {
         if(novoStanje.equals("PRIKUPLJANJE"))
-        {
             kontekst.PostaviStanje(new StanjePrikupljanje(kontekst));
-            return true;
-        }
-        return false;
     }
     
     @Override

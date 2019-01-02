@@ -31,8 +31,8 @@ public class LanacIsprazni implements LanacKomandiApstraktni
     {
         this.simulacija = simulacija;
         parametri = Parametri.getInstance();
-        listaVozila = this.simulacija.DajListuVozila();
-        listaPrikupljanje = simulacija.DajListaPrikupljanje();
+        listaVozila = this.simulacija.DajListuVozilaPodaci();
+        listaPrikupljanje = simulacija.DajListaVozilaSimulacija();
         //listaKvar = simulacija.DajListaKvar();
         sljedbenik = null;
     }
@@ -72,7 +72,7 @@ public class LanacIsprazni implements LanacKomandiApstraktni
                 int indeks = listaPrikupljanje.DajIndeksVozila(s);
                 if(indeks>=0)
                 {
-                    kontekst.PostaviStanje(new StanjeOdvoz(kontekst));
+                    kontekst.DajStanje().Prijelaz("ODVOZ");
                 }
             }
         }

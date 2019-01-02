@@ -3,112 +3,14 @@ Kreiran je generator identifikatora
 Kreiran je random generator sa sjemenom 17153
 Pročitano je 8 redaka podataka iz DZ_2_podrucja.txt
 Pročitano je 10 redaka podataka iz DZ_2_ulice.txt
-Prilikom čitanja podataka iz DZ_2_spremnici.txt otkriven neispravan redak 5.
-Pročitano je 5 redaka podataka iz DZ_2_spremnici.txt
+Pročitano je 6 redaka podataka iz DZ_2_spremnici.txt
 Pročitano je 7 redaka podataka iz DZ_2_vozila.txt
 Pročitano je 8 redaka podataka iz DZ_2_dispecer.txt
 Zbog unešenih argumenata --brg i/ili --brd radi se o DZ_3.
-Brg: 20, brd: 10
+Brg: 20, brd: 5
 Init: sjeme generatora: 17153
 Init: izlazna datoteka: DZ2_elvpopovic.txt
 Poziva se problem iz DZ_3.
 Kreiraju se područja.
 Kreiraju se ulice.
 Pogreška u zapisu 9 u podacima o ulicama: Premalo parametara u retku.
-Ishodiste sustava: p1: EZO Aglomeracija Varaždin
-Ispisuje se tablica otpada u pojedinim područjima i ulicama:
-         Opis |                         Naziv | staklo [kg] | papir [kg] | metal [kg] |  bio [kg] | mješano [kg] | ukupno [kg]
- =============================================================================================================================
-     područje |     EZO Aglomeracija Varaždin |     2333,30 |    4337,81 |    1109,98 |   8570,77 |     11738,31 |    28090,16
-  ----------------------------------------------------------------------------------------------------------------------------
-  potpodručja |                 Varaždin grad |     2150,56 |    4204,20 |    1050,57 |   8238,87 |     10991,37 |    26635,57
-              |              Varaždin okolica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
- =============================================================================================================================
-     područje |                 Varaždin grad |     2150,56 |    4204,20 |    1050,57 |   8238,87 |     10991,37 |    26635,57
-  ----------------------------------------------------------------------------------------------------------------------------
-  potpodručja |                        Centar |      597,19 |    1099,92 |     274,91 |   2139,91 |      2878,38 |     6990,31
-              |                       Banfica |      437,56 |     856,47 |     225,74 |   1747,60 |      2255,12 |     5522,49
-              |                         Đurek |     1115,81 |    2247,81 |     549,92 |   4351,36 |      5857,87 |    14122,78
- =============================================================================================================================
-     područje |                        Centar |      597,19 |    1099,92 |     274,91 |   2139,91 |      2878,38 |     6990,31
-  ----------------------------------------------------------------------------------------------------------------------------
-        ulice |                     Pavlinska |       70,26 |     105,01 |      36,29 |    299,31 |       436,13 |      947,00
-              |             Alojzija Stepinca |       64,74 |      34,59 |      18,83 |     73,03 |       239,03 |      430,22
-              |            Petra Krešimira IV |      462,19 |     960,32 |     219,79 |   1767,57 |      2203,22 |     5613,09
- =============================================================================================================================
-     područje |                       Banfica |      437,56 |     856,47 |     225,74 |   1747,60 |      2255,12 |     5522,49
-  ----------------------------------------------------------------------------------------------------------------------------
-        ulice |              Ruđera Boškovića |      386,42 |     824,66 |     205,22 |   1676,75 |      2080,83 |     5173,88
-              |                       Dravska |       51,14 |      31,81 |      20,52 |     70,85 |       174,29 |      348,61
- =============================================================================================================================
-     područje |                         Đurek |     1115,81 |    2247,81 |     549,92 |   4351,36 |      5857,87 |    14122,78
-  ----------------------------------------------------------------------------------------------------------------------------
-        ulice |         Zrinskih i Frankopana |      383,21 |     705,95 |     199,14 |   1621,25 |      2299,75 |     5209,30
-              |              Krešimira Filića |      595,25 |    1449,32 |     309,44 |   2506,11 |      3023,65 |     7883,77
-              |                  Tina Ujevića |      137,35 |      92,54 |      41,34 |    224,00 |       534,47 |     1029,70
- =============================================================================================================================
-     područje |              Varaždin okolica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
-  ----------------------------------------------------------------------------------------------------------------------------
-  potpodručje |                      Hrašcica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
- =============================================================================================================================
-     područje |                      Hrašcica |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
-  ----------------------------------------------------------------------------------------------------------------------------
-        ulica |                   Varaždinska |      182,74 |     133,61 |      59,41 |    331,90 |       746,94 |     1454,60
- =============================================================================================================================
-Kreirano je statističko praćenje simulacije.
-Kreiran je dispečer.
-Izvršavanje zapisanih komandi
-Procitana komanda: PRIPREMI
-Procitana komanda: KRENI 10
-********************************************************************************
-*                                                                              *
-*                 Isključeno je ispisivanje poslova odvoza...                  *
-*                                                                              *
-********************************************************************************
-Procitana komanda: STATUS
-Status vozila prikazan je tablično:
-        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
-==================================================================================================
-  Parkiraliste |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
-  Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
-  Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
-  Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-  Prikupljanje |  v5 | mješanko 1  |      diesel |   mješano |    4000 |     213,96 |      213,96
-  Prikupljanje |  v6 | mješanko 2  |      diesel |   mješano |    5000 |     331,25 |      331,25
-  Prikupljanje |  v7 | mješanko 3  |      diesel |   mješano |    3000 |     295,65 |      295,65
-Procitana komanda: KONTROLA
-Procitana komanda: PRIPREMI
-Procitana komanda: STATUS
-Status vozila prikazan je tablično:
-        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
-==================================================================================================
-  Parkiraliste |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
-  Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
-  Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
-  Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-  Prikupljanje |  v5 | mješanko 1  |      diesel |   mješano |    4000 |     213,96 |      213,96
-  Prikupljanje |  v6 | mješanko 2  |      diesel |   mješano |    5000 |     331,25 |      331,25
-  Prikupljanje |  v7 | mješanko 3  |      diesel |   mješano |    3000 |     295,65 |      295,65
-Procitana komanda: KRENI
-********************************************************************************
-*                                                                              *
-*                 Isključeno je ispisivanje poslova odvoza...                  *
-*                                                                              *
-********************************************************************************
-Procitana komanda: STATUS
-Status vozila prikazan je tablično:
-        Status |  ID |       Naziv |         Tip |     Vrsta |Nosivost |Popunjenost |Ukupno otpada
-==================================================================================================
-  Parkiraliste |  v1 | staklarko 1 |  električni |    staklo |    4000 |       0,00 |        0,00
-  Parkiraliste |  v2 | papirko 1   |  električni |     papir |    3000 |       0,00 |        0,00
-  Parkiraliste |  v3 | metalko 1   |  električni |     metal |    5000 |       0,00 |        0,00
-  Parkiraliste |  v4 | biotko 1    |  električni |       bio |    3000 |       0,00 |        0,00
-      Zavrseno |  v5 | mješanko 1  |      diesel |   mješano |    4000 |       0,00 |     3885,12
-      Zavrseno |  v6 | mješanko 2  |      diesel |   mješano |    5000 |       0,00 |     4856,83
-      Zavrseno |  v7 | mješanko 3  |      diesel |   mješano |    3000 |       0,00 |     2996,36
-********************************************************************************
-*                                                                              *
-*                           Prijelaz u komandni mod                            *
-*                                                                              *
-********************************************************************************
-Neispravna komanda. Komanda treba biti oblika PRIPREMI;lista_vozila

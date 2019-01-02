@@ -42,9 +42,9 @@ public class StanjeZavrseno implements VoziloStanjeSucelje
     }
 
     @Override
-    public boolean Prijelaz(String novoStanje)
+    public void Prijelaz(String novoStanje)
     {
-        return false;
+        return;
     }
     
     @Override

@@ -32,7 +32,7 @@ public class LanacObradi implements LanacKomandiApstraktni
     {
         this.simulacija = dispecer;
         parametri = Parametri.getInstance();
-        listaPrikupljanje = dispecer.DajListaPrikupljanje();
+        listaPrikupljanje = dispecer.DajListaVozilaSimulacija();
         sljedbenik = null;
     }
     

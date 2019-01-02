@@ -6,8 +6,8 @@
 package org.foi.uzdiz.elvpopovi.dz3.h_automat;
 
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.SimulacijaAbstractProduct;
+import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.Statistika;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.StatistikaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 
@@ -20,6 +20,7 @@ public interface VoziloKontekstSucelje
 
     
     void InjektirajSimulacijske(SimulacijaAbstractProduct simulacijske);
+    SimulacijaAbstractProduct DajSimulacijske();
     StatistikaSucelje DajStatistikuOtpada();
     MVCModelSucelje DajMVCModel();
     VoziloSucelje DajVozilo();
@@ -32,7 +33,9 @@ public interface VoziloKontekstSucelje
     int DajKolicinuPogonskog();
     void ObnoviKolicinuPogonskog();
     void SmanjiKolicinuPogonskog();
-    int DajTrenutnuUlicu();
+    int DajBrojTrenutneUlice();
+    Ulica DajTrenutnuUlicu();
+    boolean JeLiObrnutoKretanje();
     int DajTrenutniSpremnik();
     int DajBrojDodijeljenihSpremnika();
     boolean JeLiZavrsenoPrikupljanje();

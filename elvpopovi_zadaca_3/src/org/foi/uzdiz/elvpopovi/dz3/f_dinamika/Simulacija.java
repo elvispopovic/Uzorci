@@ -37,7 +37,7 @@ public class Simulacija implements SimulacijaSucelje
     protected int preuzimanje;
     protected Ispisivanje ispis;
     protected BufferedWriter pisacDatoteka;
-    protected ListaVozila listaPrikupljanje;
+    protected ListaVozila listaVozilaSimulacija;
     protected int brojRadnihCiklusaZaOdvoz;
     
     public Simulacija(ProblemskiAbstractProduct problemske, SimulacijaAbstractProduct simulacijske)
@@ -53,8 +53,8 @@ public class Simulacija implements SimulacijaSucelje
         preuzimanje = parametri.DajVrijednost("preuzimanje");
         brg = parametri.DajVrijednost("brg");
         brd = parametri.DajVrijednost("brd");
-        listaPrikupljanje = new ListaVozila(problemske.dajListuVozila());
-        for(ListaVozila.Iterator iterator = listaPrikupljanje.DajIterator(); iterator.imaLiSlijedeceg();)
+        listaVozilaSimulacija = new ListaVozila(problemske.dajListuVozila());
+        for(ListaVozila.Iterator iterator = listaVozilaSimulacija.DajIterator(); iterator.imaLiSlijedeceg();)
         {
             VoziloSucelje vozilo = iterator.slijedeci();
             if(vozilo != null && vozilo.dajKontekst() != null && simulacijske != null)
@@ -68,14 +68,14 @@ public class Simulacija implements SimulacijaSucelje
     }
  
     @Override
-    public ListaVozila DajListaPrikupljanje()
+    public ListaVozila DajListaVozilaSimulacija()
     {
-        return listaPrikupljanje;
+        return listaVozilaSimulacija;
     }
 
     
     @Override
-    public ArrayList<VoziloSucelje> DajListuVozila()
+    public ArrayList<VoziloSucelje> DajListuVozilaPodaci()
     {
         return problemske.dajListuVozila();
     }
@@ -111,12 +111,11 @@ public class Simulacija implements SimulacijaSucelje
     @Override
     public void Pokreni()
     {
-        for(int i=0; i<listaPrikupljanje.Velicina(); i++)
+        for(int i=0; i<listaVozilaSimulacija.Velicina(); i++)
         {
-            VoziloSucelje vozilo = listaPrikupljanje.DajVozilo(i);
+            VoziloSucelje vozilo = listaVozilaSimulacija.DajVozilo(i);
             VoziloStanjeSucelje stanje = vozilo.dajKontekst().DajStanje();
             stanje.Prijelaz("PRIKUPLJANJE");
-            System.out.println("Vozilo "+vozilo.dajId()+": "+vozilo.dajNaziv()+" podaci: "+vozilo.dajDodijeljeneUlice().size());
         }
         //IspisiListuUlica();
         glavnaPetlja(); 
@@ -213,10 +212,10 @@ public class Simulacija implements SimulacijaSucelje
         ArrayList<Ulica> listaUlica = problemske.dajListuUlicaIshodista(ishodisteId);
         redoslijed = kreirajRedoslijed(listaUlica.size());
         ArrayList<Ulica> ulice = null;
-        for(j=0; j<listaPrikupljanje.Velicina(); j++)
+        for(j=0; j<listaVozilaSimulacija.Velicina(); j++)
         {
             ulice = napraviPlanUlica(ishodisteId, redoslijed);
-            VoziloSucelje v = listaPrikupljanje.DajVozilo(j);
+            VoziloSucelje v = listaVozilaSimulacija.DajVozilo(j);
             ArrayList<ArrayList<Spremnik>> spremniciPoUlicama = new ArrayList<>();
             for(Ulica u:ulice)
             {
@@ -289,7 +288,7 @@ public class Simulacija implements SimulacijaSucelje
     {        
         VoziloSucelje vozilo;
         VoziloKontekstSucelje kontekst;
-        ListaVozila.Iterator iterator = listaPrikupljanje.DajIterator();
+        ListaVozila.Iterator iterator = listaVozilaSimulacija.DajIterator();
         while(iterator.imaLiSlijedeceg())
         {
             vozilo = iterator.slijedeci();
@@ -302,6 +301,41 @@ public class Simulacija implements SimulacijaSucelje
         return true;
     }
 
+    public int BrojNecekajucihVozilaUUlici(String ulicaId)
+    {
+        if(ulicaId.equals(""))
+            return 0;
+        int brojVozila=0;
+        ArrayList<VoziloSucelje> listaVozila = problemske.dajListuVozila();
+        for(VoziloSucelje vozilo:listaVozila)
+        {
+            if(vozilo.dajKontekst().DajStanje().DajNaziv().equals("PRIKUPLJANJE"))
+            {
+                Ulica ulica = vozilo.dajKontekst().DajTrenutnuUlicu();
+                if(ulica != null && ulica.Id().equals(ulicaId))
+                    brojVozila++;
+            }
+        }
+        return brojVozila;
+    }
+    
+    public ArrayList<VoziloSucelje> NecekajucaVozilaUUlici(String ulicaId)
+    {
+        ArrayList<VoziloSucelje> izlaznaLista = new ArrayList<>();
+        if(ulicaId.equals(""))
+            return izlaznaLista;
+        ArrayList<VoziloSucelje> listaVozila = problemske.dajListuVozila();
+        for(VoziloSucelje vozilo:listaVozila)
+        {
+            if(vozilo.dajKontekst().DajStanje().DajNaziv().equals("PRIKUPLJANJE"))
+            {
+                Ulica ulica = vozilo.dajKontekst().DajTrenutnuUlicu();
+                if(ulica != null && ulica.Id().equals(ulicaId))
+                    izlaznaLista.add(vozilo);
+            }
+        }
+        return izlaznaLista;
+    }
     
     @Override
     public boolean provjeriZavrsetak()
@@ -309,7 +343,7 @@ public class Simulacija implements SimulacijaSucelje
         boolean rezultat;
         VoziloSucelje vozilo;
         VoziloKontekstSucelje kontekst;
-        ListaVozila.Iterator iterator = listaPrikupljanje.DajIterator();
+        ListaVozila.Iterator iterator = listaVozilaSimulacija.DajIterator();
         rezultat = true;
         while(iterator.imaLiSlijedeceg())
         {
@@ -318,7 +352,7 @@ public class Simulacija implements SimulacijaSucelje
             {
                 String nazivStanja = vozilo.dajKontekst().DajStanje().DajNaziv();
                 if(nazivStanja.equals("PRIKUPLJANJE") || nazivStanja.equals("ODVOZ") 
-                        || nazivStanja.equals("PUNJENJE"))
+                        || nazivStanja.equals("PUNJENJE") || nazivStanja.equals("CEKANJE"))
                     rezultat = false;
             }
         }
@@ -349,10 +383,10 @@ public class Simulacija implements SimulacijaSucelje
     
     /*********** testiranje ***********/
     private void IspisiListuUlica()
-    {   if(listaPrikupljanje!=null)
-            for(int i=0; i<listaPrikupljanje.Velicina(); i++)
+    {   if(listaVozilaSimulacija!=null)
+            for(int i=0; i<listaVozilaSimulacija.Velicina(); i++)
             {
-                VoziloSucelje v = listaPrikupljanje.DajVozilo(i);
+                VoziloSucelje v = listaVozilaSimulacija.DajVozilo(i);
                 System.out.println("Vozilo: "+v.dajNaziv()+", vrsta: "+v.dajVrstu());
                 if(v.dajDodijeljeneUlice().size()>0)
                     for(int j=0; j<v.dajDodijeljeneUlice().size(); j++)

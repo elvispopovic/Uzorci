@@ -7,9 +7,11 @@ package org.foi.uzdiz.elvpopovi.dz3.h_automat;
 
 import java.util.ArrayList;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.SimulacijaAbstractProduct;
+import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Spremnik;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
+import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.StatistikaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 
@@ -27,7 +29,7 @@ public class VoziloKontekst implements VoziloKontekstSucelje
     private boolean kvar, zavrsenoPrikupljanje;
     private int preuzetoSpremnika;
     private float popunjenost;
-    private int brojacPunjenjaPogona1;
+    private boolean obrnutoKretanje;
     
     @Override
     public VoziloSucelje DajVozilo()
@@ -88,9 +90,23 @@ public class VoziloKontekst implements VoziloKontekstSucelje
     
     
     @Override
-    public int DajTrenutnuUlicu()
+    public int DajBrojTrenutneUlice()
     {
         return trenutnaUlica;
+    }
+    
+    @Override
+    public Ulica DajTrenutnuUlicu()
+    {
+        ArrayList<Ulica> listaUlica = vozilo.dajDodijeljeneUlice();
+        if(listaUlica == null || listaUlica.size()==0 || listaUlica.size()<=trenutnaUlica)
+            return null;
+        return listaUlica.get(trenutnaUlica);
+    }
+    @Override
+    public boolean JeLiObrnutoKretanje()
+    {
+        return obrnutoKretanje;
     }
 
     @Override
@@ -140,6 +156,11 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         this.simulacijske = simulacijske;
     }
     
+    public SimulacijaAbstractProduct DajSimulacijske()
+    {
+        return simulacijske;
+    }
+    
     @Override
     public StatistikaSucelje DajStatistikuOtpada()
     {
@@ -160,10 +181,27 @@ public class VoziloKontekst implements VoziloKontekstSucelje
     public void PovecajTrenutnuUlicu()
     {
         int brojUlica = vozilo.dajDodijeljeneUlice().size();
+        Parametri parametri = Parametri.getInstance();
+        SimulacijaSucelje simulacija = simulacijske.DajSimulacija();
+        obrnutoKretanje = false;
         trenutniSpremnik = 0;
         trenutnaUlica++;
         if(trenutnaUlica>=brojUlica)
             zavrsenoPrikupljanje = true;
+        else
+        {
+            int aktivnih = simulacija.BrojNecekajucihVozilaUUlici(DajTrenutnuUlicu().Id());
+            if(aktivnih==1) //okrece se smjer
+            {
+                trenutniSpremnik = vozilo.dajDodijeljeneSpremnike().get(trenutnaUlica).size()-1;
+                obrnutoKretanje = true;
+                VoziloSucelje vozilo = simulacija.NecekajucaVozilaUUlici(DajTrenutnuUlicu().Id()).get(0);
+                if(parametri.DajVrijednost("ispis")==0)
+                    simulacija.Ispisi(vozilo.dajNaziv()+" je naišlo na drugo vozilo u ulici i okreće smjer prikupljanja.");
+            }
+            else
+                DajStanje().Prijelaz("CEKANJE");
+        } 
     }
     @Override
     public void PovecajTrenutniSpremnik()
@@ -172,8 +210,11 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         if(zavrsenoPrikupljanje == true)
             return;
         brojSpremnikaUUlici = vozilo.dajDodijeljeneSpremnike().get(trenutnaUlica).size();
-        trenutniSpremnik++;
-        if(trenutniSpremnik>=brojSpremnikaUUlici)
+        if(!obrnutoKretanje)
+            trenutniSpremnik++;
+        else
+            trenutniSpremnik--;
+        if(trenutniSpremnik>=brojSpremnikaUUlici || trenutniSpremnik<0)
             PovecajTrenutnuUlicu();
     }
     
@@ -211,6 +252,7 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         trenutniSpremnik = 0;
         preuzetoSpremnika = 0;
         popunjenost = 0.0f;
+        obrnutoKretanje = false;
     }
 
     private void prebrojiSpremnike()
