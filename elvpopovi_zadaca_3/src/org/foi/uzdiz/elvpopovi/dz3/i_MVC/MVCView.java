@@ -53,6 +53,7 @@ public class MVCView extends MVCObserver
             return 0;
         if(brg!=-1&&brd!=-1)
             ObrisiPrezentacijskiDio();
+        System.out.print("\033[1;32m");
         for(j=0; j<brg && i<redciIspisa.size(); j++,i++)
         {
             String s = redciIspisa.get(i);
@@ -60,11 +61,13 @@ public class MVCView extends MVCObserver
                 s = s.substring(0, 135);
             System.out.println(s);
         }
+        System.out.print("\033[0m");
         return j;
     }
     
     public void prikaziKomandniDio(String upit)
     {
+        System.out.print("\033[1;34m");
         System.out.print("\033["+(brg+1)+";0H");
         System.out.println(String.join("", Collections.nCopies(80, "-")));
         obrisiKomandniDio();
@@ -72,17 +75,20 @@ public class MVCView extends MVCObserver
         if(redciUnosa.size()>(brd-1))
             redciUnosa.removeFirst();
         for(String s:redciUnosa)
-            System.out.println(s);
+        {
+            System.out.println(s+"\033[34m");
+        }
+        System.out.print("\033[0m");
     }
     @Override
-    public void Osvjezi()
+    public void Osvjezi(boolean cekanje)
     {
         redciIspisa = model.DohvatiPodatkeMVC();
     }  
     
     public void KomandniMod()
     {
-        Osvjezi();
+        Osvjezi(true);
     }
     
     public void ObrisiPrezentacijskiDio()

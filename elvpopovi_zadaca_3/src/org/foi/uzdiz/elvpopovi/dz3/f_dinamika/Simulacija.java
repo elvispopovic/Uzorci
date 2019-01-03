@@ -29,7 +29,6 @@ import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloStanjeSucelje;
 public class Simulacija implements SimulacijaSucelje
 {
     protected int brg, brd;
-    protected ArrayList<String> redciIspisa;
     protected ArrayList<MVCObserver> mvc;
     protected Parametri parametri;
     protected ProblemskiAbstractProduct problemske;
@@ -370,14 +369,15 @@ public class Simulacija implements SimulacijaSucelje
         if(brg==-1||brd==-1)
             ispisivanje.ispisiNaEkran(ispis, novaLinija);
         else 
-            redciIspisa = ispisivanje.ispisiUString(ispis); 
+            ispisivanje.ispisiUString(ispis); 
         if(aktivan)
             ispisivanje.ispisiUDatoteku(ispis, novaLinija);
     }
 
     public ArrayList<String> DajRetkeIspisa()
     {
-        return redciIspisa;
+        Ispisivanje ispisivanje = Ispisivanje.getInstance();
+        return ispisivanje.DohvatiPodatkeMVC();
     }
 
     

@@ -69,10 +69,10 @@ public class Ispisivanje  implements MVCModelSucelje
         this.observers.remove(observer);
     }
     @Override
-    public void ObavijestiMVC()
+    public void ObavijestiMVC(boolean cekanje)
     {
         for(MVCObserver o:observers)
-            o.Osvjezi();
+            o.Osvjezi(cekanje);
     }
 
     @Override
@@ -111,7 +111,7 @@ public class Ispisivanje  implements MVCModelSucelje
     
     public void prikaziRetke()
     {
-        ObavijestiMVC();
+        ObavijestiMVC(true);
     }
  
     public void ispisiNaEkran(String ispis, boolean novaLinija)
@@ -122,12 +122,11 @@ public class Ispisivanje  implements MVCModelSucelje
             System.out.print(ispis+" ");
     }
     
-    public ArrayList<String> ispisiUString(String ispis)
+    public void ispisiUString(String ispis)
     {
         StringWriter pisacString = new StringWriter();
         pisacString.write(ispis); 
         redciIspisa.add(pisacString.toString());
-        return redciIspisa;
     }
     
     public void ispisiUDatoteku(String ispis, boolean novaLinija)

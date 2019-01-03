@@ -41,7 +41,7 @@ public class StatistikaTablicno implements StatistikaSucelje
     @Override
     public void IspisiStatistiku(ArrayList<VoziloSucelje> vozila)
     {
-        MVCmodel.ObavijestiMVC();
+        MVCmodel.ObavijestiMVC(true);
         MVCmodel.Ispisi("STATISTIKA PREUZIMANJA OTPADA");
         form.format("%12s |%12s |","Vrsta","količina");
         MVCmodel.Ispisi(sb.toString());
@@ -49,7 +49,7 @@ public class StatistikaTablicno implements StatistikaSucelje
         form.format("%12s |%12s |","otpada"," [kg]");
         MVCmodel.Ispisi(sb.toString());
         ispisiOtpad();
-        MVCmodel.ObavijestiMVC();
+        MVCmodel.ObavijestiMVC(true);
         MVCmodel.Ispisi("STATISTIKA VOZILA");
         sb.setLength(0);
         form.format("%4s |%12s |%9s |%9s |%10s |%7s |%9s |","","","  Broj","  Broj","Ukupna","Broj","Broj ");
@@ -58,7 +58,8 @@ public class StatistikaTablicno implements StatistikaSucelje
         form.format("%4s |%12s |%9s |%9s |%10s |%7s |%9s |","ID","Naziv","spremnika","mjesta","količina","odvoza","punjenja");
         MVCmodel.Ispisi(sb.toString());
         ispisiVozila(vozila);
-        MVCmodel.ObavijestiMVC();
+        MVCmodel.ObavijestiMVC(true);
+        epilog();
     }
     private void ispisiOtpad()
     {
@@ -165,6 +166,20 @@ public class StatistikaTablicno implements StatistikaSucelje
     public float[] UkupneKolicine()
     {
        return statistika.UkupneKolicine();
+    }
+    
+    private void epilog()
+    {
+        Parametri parametri = Parametri.getInstance();
+        if(parametri.DajVrijednost("brg")<0 || parametri.DajVrijednost("brd")<0)
+            return;
+        MVCmodel.Ispisi(String.join("", Collections.nCopies(80, "*")));
+        MVCmodel.Ispisi("*"+String.join("", Collections.nCopies(78, " "))+"*");
+        MVCmodel.Ispisi("*"+String.join("", Collections.nCopies(29, " "))+"Program je završio."+
+                String.join("", Collections.nCopies(30, " "))+"*");
+        MVCmodel.Ispisi("*"+String.join("", Collections.nCopies(78, " "))+"*");
+        MVCmodel.Ispisi(String.join("", Collections.nCopies(80, "*")));
+        MVCmodel.ObavijestiMVC(false);
     }
 
     

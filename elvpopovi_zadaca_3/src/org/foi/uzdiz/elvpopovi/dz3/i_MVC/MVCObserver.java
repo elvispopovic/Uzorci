@@ -11,7 +11,7 @@ package org.foi.uzdiz.elvpopovi.dz3.i_MVC;
  */
 public abstract class MVCObserver
 {
-    public void Osvjezi()
+    public void Osvjezi(boolean cekanje)
     {
         
     }

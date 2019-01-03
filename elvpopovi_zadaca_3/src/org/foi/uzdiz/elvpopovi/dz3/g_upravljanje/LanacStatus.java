@@ -76,24 +76,7 @@ public class LanacStatus implements LanacKomandiApstraktni
         {
             vozilo = listaPrikupljanje.DajVozilo(obrada);
             VoziloStanjeSucelje stanje = vozilo.dajKontekst().DajStanje();
-            if(stanje.DajNaziv().equals("KONTROLA"))
-                ispisiRedakVozila(sb,form, vozilo,"Kontrola");
-            else if(stanje.DajNaziv().equals("PARKIRALISTE"))
-                ispisiRedakVozila(sb,form, vozilo,"Parkiraliste");
-            else if(stanje.DajNaziv().equals("PRIKUPLJANJE"))
-                ispisiRedakVozila(sb,form, vozilo,"Prikupljanje");
-            else if(stanje.DajNaziv().equals("ODVOZ"))
-                ispisiRedakVozila(sb,form, vozilo,"Odvoz");
-            else if(stanje.DajNaziv().equals("PUNJENJE"))
-                ispisiRedakVozila(sb,form, vozilo,"Punjenje");
-            else if(stanje.DajNaziv().equals("CEKANJE"))
-                ispisiRedakVozila(sb,form, vozilo,"Čekanje");
-            else if(stanje.DajNaziv().equals("KVAR"))
-                ispisiRedakVozila(sb,form, vozilo,"Kvar");
-            else if(stanje.DajNaziv().equals("ZAVRSENO"))
-                ispisiRedakVozila(sb,form, vozilo,"Zavrseno");
-            else
-                ispisiRedakVozila(sb,form, vozilo,"Prikupljanje");
+            ispisiRedakVozila(sb,form, vozilo,stanje.DajNaziv());
         }
     }
     

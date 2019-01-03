@@ -59,10 +59,10 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
         this.observers.remove(observer);
     }
     @Override
-    public void ObavijestiMVC()
+    public void ObavijestiMVC(boolean cekanje)
     {
         for(MVCObserver o:observers)
-            o.Osvjezi();
+            o.Osvjezi(cekanje);
     }
 
     @Override
@@ -80,17 +80,18 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
             if(redci != null)
                 redci.clear();
         }
-        else
+        else if(!komanda[0].toUpperCase().equals("IZLAZ"))
         {
             lanacObradi.ObradiKomandu(komanda);
-            ObavijestiMVC();
+            ObavijestiMVC(true);
         }
     }
     
     private void inicijalizirajLanacKomandi()
     {
-        LanacKomandiApstraktni lanacPripremi, lanacKreni, lanacKvar, lanacIsprazni, lanacStatus, lanacKontrola;
-         lanacKontrola   = new LanacKontrola(simulacija);
+        LanacKomandiApstraktni lanacPripremi, lanacKreni, lanacKvar, lanacIsprazni, lanacStatus, lanacKontrola, lanacTerminalni;
+         lanacTerminalni = new LanacTerminalni(simulacija);
+        (lanacKontrola   = new LanacKontrola(simulacija)).DodajSljedbenika(lanacTerminalni);
         (lanacStatus     = new LanacStatus(simulacija)).DodajSljedbenika(lanacKontrola);
         (lanacIsprazni   = new LanacIsprazni(simulacija)).DodajSljedbenika(lanacStatus);
         (lanacKvar       = new LanacKvar(simulacija)).DodajSljedbenika(lanacIsprazni);
@@ -114,7 +115,7 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
             String[] komanda=(iterator.slijedeci());
             lanacObradi.ObradiKomandu(komanda);
         }
-        ObavijestiMVC();
+        ObavijestiMVC(true);
         
         //prijelaz u korisničke komande
         if(brg>0&&brd>0)

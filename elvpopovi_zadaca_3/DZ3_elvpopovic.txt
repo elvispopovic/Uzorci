@@ -9,7 +9,7 @@ Pročitano je 7 redaka podataka iz DZ_3_dispecer.txt
 Zbog unešenih argumenata --brg i/ili --brd radi se o DZ_3.
 Brg: 10, brd: 10
 Init: sjeme generatora: 17153
-Init: izlazna datoteka: DZ2_ldapKorisnika.txt
+Init: izlazna datoteka: DZ3_elvpopovic.txt
 Poziva se problem iz DZ_3.
 Kreiraju se područja.
 Kreiraju se ulice.
@@ -65,13 +65,13 @@ Status vozila prikazan je tablično:
         Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski |Smjer|                  Popis |
         vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prik.|                 vozača |
 ===================================================================================================================================
-  Prikupljanje | v1 | staklarko 1 | električni |  staklo |    4000 |    0,00 |      0,00 | 30 / 30 |   + |              pero, ivo |
-  Prikupljanje | v2 | papirko 1   | električni |   papir |    3000 |    0,00 |      0,00 | 30 / 30 |   + |            jura, borko |
-  Prikupljanje | v3 | metalko 1   | električni |   metal |    5000 |    0,00 |      0,00 | 30 / 30 |   + |           tvrtko, kiki |
-  Prikupljanje | v4 | biotko 1    | električni |     bio |    3000 |    0,00 |      0,00 | 30 / 30 |   + |           vesna, rajka |
-  Prikupljanje | v5 | mješanko 1  |     diesel | mješano |    4000 |    0,00 |      0,00 | 50 / 50 |   + |       zoki, sven, luka |
-  Prikupljanje | v6 | mješanko 2  |     diesel | mješano |    5000 |    0,00 |      0,00 | 50 / 50 |   + |      hinko, blaž, fran |
-  Prikupljanje | v7 | mješanko 3  |     diesel | mješano |    3000 |    0,00 |      0,00 | 50 / 50 |   + |       dudo, viki, miki |
+  PRIKUPLJANJE | v1 | staklarko 1 | električni |  staklo |    4000 |    0,00 |      0,00 | 30 / 30 |   + |              pero, ivo |
+  PRIKUPLJANJE | v2 | papirko 1   | električni |   papir |    3000 |    0,00 |      0,00 | 30 / 30 |   + |            jura, borko |
+  PRIKUPLJANJE | v3 | metalko 1   | električni |   metal |    5000 |    0,00 |      0,00 | 30 / 30 |   + |           tvrtko, kiki |
+  PRIKUPLJANJE | v4 | biotko 1    | električni |     bio |    3000 |    0,00 |      0,00 | 30 / 30 |   + |           vesna, rajka |
+  PRIKUPLJANJE | v5 | mješanko 1  |     diesel | mješano |    4000 |    0,00 |      0,00 | 50 / 50 |   + |       zoki, sven, luka |
+  PRIKUPLJANJE | v6 | mješanko 2  |     diesel | mješano |    5000 |    0,00 |      0,00 | 50 / 50 |   + |      hinko, blaž, fran |
+  PRIKUPLJANJE | v7 | mješanko 3  |     diesel | mješano |    3000 |    0,00 |      0,00 | 50 / 50 |   + |       dudo, viki, miki |
 ********************************************************************************
 *                                                                              *
 *                 Isključeno je ispisivanje poslova odvoza...                  *
@@ -81,13 +81,13 @@ Status vozila prikazan je tablično:
         Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski |Smjer|                  Popis |
         vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prik.|                 vozača |
 ===================================================================================================================================
-  Prikupljanje | v1 | staklarko 1 | električni |  staklo |    4000 |  210,11 |    210,11 | 18 / 30 |   + |              pero, ivo |
-  Prikupljanje | v2 | papirko 1   | električni |   papir |    3000 |  416,77 |    416,77 | 18 / 30 |   + |            jura, borko |
-  Prikupljanje | v3 | metalko 1   | električni |   metal |    5000 |  384,50 |    384,50 | 18 / 30 |   - |           tvrtko, kiki |
-  Prikupljanje | v4 | biotko 1    | električni |     bio |    3000 |   64,54 |     64,54 | 18 / 30 |   + |           vesna, rajka |
-       Čekanje | v5 | mješanko 1  |     diesel | mješano |    4000 |  667,28 |    667,28 | 19 / 50 |   + |       zoki, sven, luka |
-       Čekanje | v6 | mješanko 2  |     diesel | mješano |    5000 |  710,56 |    710,56 | 18 / 50 |   + |      hinko, blaž, fran |
-  Prikupljanje | v7 | mješanko 3  |     diesel | mješano |    3000 |  910,18 |    910,18 | 16 / 50 |   + |       dudo, viki, miki |
+  PRIKUPLJANJE | v1 | staklarko 1 | električni |  staklo |    4000 |  210,11 |    210,11 | 18 / 30 |   + |              pero, ivo |
+  PRIKUPLJANJE | v2 | papirko 1   | električni |   papir |    3000 |  416,77 |    416,77 | 18 / 30 |   + |            jura, borko |
+  PRIKUPLJANJE | v3 | metalko 1   | električni |   metal |    5000 |  384,50 |    384,50 | 18 / 30 |   - |           tvrtko, kiki |
+  PRIKUPLJANJE | v4 | biotko 1    | električni |     bio |    3000 |   64,54 |     64,54 | 18 / 30 |   + |           vesna, rajka |
+       CEKANJE | v5 | mješanko 1  |     diesel | mješano |    4000 |  667,28 |    667,28 | 19 / 50 |   + |       zoki, sven, luka |
+       CEKANJE | v6 | mješanko 2  |     diesel | mješano |    5000 |  710,56 |    710,56 | 18 / 50 |   + |      hinko, blaž, fran |
+  PRIKUPLJANJE | v7 | mješanko 3  |     diesel | mješano |    3000 |  910,18 |    910,18 | 16 / 50 |   + |       dudo, viki, miki |
 ********************************************************************************
 *                                                                              *
 *                 Isključeno je ispisivanje poslova odvoza...                  *
@@ -97,26 +97,45 @@ Status vozila prikazan je tablično:
         Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski |Smjer|                  Popis |
         vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prik.|                 vozača |
 ===================================================================================================================================
-      Punjenje | v1 | staklarko 1 | električni |  staklo |    4000 |  612,33 |    612,33 |  0 / 30 |   + |              pero, ivo |
-      Punjenje | v2 | papirko 1   | električni |   papir |    3000 | 1607,93 |   1607,93 |  0 / 30 |   + |            jura, borko |
-      Punjenje | v3 | metalko 1   | električni |   metal |    5000 |  724,87 |    724,87 |  0 / 30 |   - |           tvrtko, kiki |
-      Punjenje | v4 | biotko 1    | električni |     bio |    3000 |  604,83 |    604,83 |  0 / 30 |   + |           vesna, rajka |
-  Prikupljanje | v5 | mješanko 1  |     diesel | mješano |    4000 | 2805,25 |   2805,25 | 28 / 50 |   - |       zoki, sven, luka |
-  Prikupljanje | v6 | mješanko 2  |     diesel | mješano |    5000 | 1135,68 |   1135,68 | 28 / 50 |   + |      hinko, blaž, fran |
-       Čekanje | v7 | mješanko 3  |     diesel | mješano |    3000 | 1970,96 |   1970,96 | 31 / 50 |   + |       dudo, viki, miki |
+      PUNJENJE | v1 | staklarko 1 | električni |  staklo |    4000 |  612,33 |    612,33 |  0 / 30 |   + |              pero, ivo |
+      PUNJENJE | v2 | papirko 1   | električni |   papir |    3000 | 1607,93 |   1607,93 |  0 / 30 |   + |            jura, borko |
+      PUNJENJE | v3 | metalko 1   | električni |   metal |    5000 |  724,87 |    724,87 |  0 / 30 |   - |           tvrtko, kiki |
+      PUNJENJE | v4 | biotko 1    | električni |     bio |    3000 |  604,83 |    604,83 |  0 / 30 |   + |           vesna, rajka |
+  PRIKUPLJANJE | v5 | mješanko 1  |     diesel | mješano |    4000 | 2805,25 |   2805,25 | 28 / 50 |   - |       zoki, sven, luka |
+  PRIKUPLJANJE | v6 | mješanko 2  |     diesel | mješano |    5000 | 1135,68 |   1135,68 | 28 / 50 |   + |      hinko, blaž, fran |
+       CEKANJE | v7 | mješanko 3  |     diesel | mješano |    3000 | 1970,96 |   1970,96 | 31 / 50 |   + |       dudo, viki, miki |
 ********************************************************************************
 *                                                                              *
 *                           Prijelaz u komandni mod                            *
 *                                                                              *
 ********************************************************************************
-Status vozila prikazan je tablično:
-        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski |Smjer|                  Popis |
-        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prik.|                 vozača |
-===================================================================================================================================
-      Punjenje | v1 | staklarko 1 | električni |  staklo |    4000 |  612,33 |    612,33 |  0 / 30 |   + |              pero, ivo |
-      Punjenje | v2 | papirko 1   | električni |   papir |    3000 | 1607,93 |   1607,93 |  0 / 30 |   + |            jura, borko |
-      Punjenje | v3 | metalko 1   | električni |   metal |    5000 |  724,87 |    724,87 |  0 / 30 |   - |           tvrtko, kiki |
-      Punjenje | v4 | biotko 1    | električni |     bio |    3000 |  604,83 |    604,83 |  0 / 30 |   + |           vesna, rajka |
-  Prikupljanje | v5 | mješanko 1  |     diesel | mješano |    4000 | 2805,25 |   2805,25 | 28 / 50 |   - |       zoki, sven, luka |
-  Prikupljanje | v6 | mješanko 2  |     diesel | mješano |    5000 | 1135,68 |   1135,68 | 28 / 50 |   + |      hinko, blaž, fran |
-       Čekanje | v7 | mješanko 3  |     diesel | mješano |    3000 | 1970,96 |   1970,96 | 31 / 50 |   + |       dudo, viki, miki |
+STATISTIKA PREUZIMANJA OTPADA
+       Vrsta |    količina |
+      otpada |        [kg] |
+============================
+      staklo |        0,00 |
+       papir |        0,00 |
+       metal |        0,00 |
+         bio |        0,00 |
+     mješano |        0,00 |
+============================
+      UKUPNO |        0,00 |
+
+STATISTIKA VOZILA
+     |             |     Broj |     Broj |    Ukupna |   Broj |    Broj  |
+  ID |       Naziv |spremnika |   mjesta |  količina | odvoza | punjenja |
+==========================================================================
+  v1 | staklarko 1 |       31 |       58 |    612,33 |      0 |        1 |
+  v2 | papirko 1   |       31 |       64 |   1607,93 |      0 |        1 |
+  v3 | metalko 1   |       31 |      148 |    724,87 |      0 |        1 |
+  v4 | biotko 1    |       31 |       31 |    604,83 |      0 |        1 |
+  v5 | mješanko 1  |       30 |       34 |   2805,25 |      0 |        2 |
+  v6 | mješanko 2  |       22 |       25 |   1135,68 |      0 |        4 |
+  v7 | mješanko 3  |       29 |       34 |   1970,96 |      0 |        2 |
+==========================================================================
+     |      UKUPNO |      205 |      394 |   9461,85 |      0 |       12 |
+********************************************************************************
+*                                                                              *
+*                             Program je završio.                              *
+*                                                                              *
+********************************************************************************

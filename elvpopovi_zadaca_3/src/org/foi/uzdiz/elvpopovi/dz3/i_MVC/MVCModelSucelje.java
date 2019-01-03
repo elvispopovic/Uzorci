@@ -17,7 +17,7 @@ public interface MVCModelSucelje
     void OdjaviMVC(MVCObserver observer);
     void Ispisi(String ispis);
     void Ispisi(String ispis, boolean novaLinija);
-    void ObavijestiMVC();
+    void ObavijestiMVC(boolean cekanje);
     ArrayList<String> DohvatiPodatkeMVC();
     void KomandaMVC(String[] komanda);
 }

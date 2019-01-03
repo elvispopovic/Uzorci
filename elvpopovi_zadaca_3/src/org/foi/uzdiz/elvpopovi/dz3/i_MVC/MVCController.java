@@ -16,15 +16,15 @@ public class MVCController extends MVCObserver
     private int brg, brd;
     private int brojRedakaIspisa;
     private Scanner inScan;
-    boolean komandniMod;
+    private boolean komandniMod;
     
     public MVCController(int brg, int brd)
     {
         inScan = new Scanner(System.in); 
         brojRedakaIspisa = 0;
-        komandniMod=false;
         this.brg = brg;
         this.brd = brd;
+        komandniMod = false;
     }
     
     public void InicijalizirajMV(MVCModelSucelje model, MVCView view)
@@ -42,12 +42,14 @@ public class MVCController extends MVCObserver
     }
     
     @Override
-    public void Osvjezi()
+    public void Osvjezi(boolean cekanje)
     {
         ArrayList<String> redciIspisa = model.DohvatiPodatkeMVC();
         if(redciIspisa != null)
             brojRedakaIspisa = redciIspisa.size();
-        Prikazi(true);
+        Prikazi(cekanje);
+        if(cekanje == false)
+            view.prikaziKomandniDio("");
     }  
     
     public void KomandniMod()
@@ -64,16 +66,18 @@ public class MVCController extends MVCObserver
             else
                 Prikazi(false);
         }
-        komandniMod=true;
+        komandniMod = true;
         do
         {
-            view.prikaziKomandniDio("Unesi naredbu... (za izlaz koristite IZLAZ;)");
+            view.prikaziKomandniDio("Unesite naredbu... (za izlaz koristite IZLAZ;)");
+            System.out.print("\033[1;36m");
             komanda = inScan.nextLine(); 
-            view.prikaziKomandniDio(komanda);
+            System.out.print("\033[0m");
+            view.prikaziKomandniDio("\033[1;36m"+komanda);
             razdvojeno = komanda.split(Pattern.quote(";"));
             model.KomandaMVC(razdvojeno);
         }while(!razdvojeno[0].toUpperCase().equals("IZLAZ"));
-        komandniMod=false;
+        komandniMod = false;
     }
     
     private void Prikazi(boolean cekanje)
@@ -93,19 +97,23 @@ public class MVCController extends MVCObserver
         brojRedakaIspisa = 0;
     }
     
-    
     private boolean nastavak(int ostatak)
     {
         String s;
-        if(komandniMod && ostatak<brg)
+        if((ostatak<=0 || brojRedakaIspisa<brg) && komandniMod)
             return true;
         do
         {
-            view.prikaziKomandniDio("Za nastavak unesi N ili n, za preskakanje ispisa P ili p.");
+            view.prikaziKomandniDio("\033[1;34mZa nastavak unesite \033[1;33mN\033[1;34m ili \033[1;33mn\033[1;34m,"
+                    + " za preskakanje ispisa \033[1;33mP\033[1;34m ili \033[1;33mp\033[1;34m.");
+            System.out.print("\033[1;34m");
             s = inScan.nextLine(); 
+            System.out.print("\033[0m");
             view.prikaziKomandniDio(s);
             if(!s.toUpperCase().equals("P")&&!s.toUpperCase().equals("N"))
-                view.prikaziKomandniDio("Neispravan unos.");
+            {
+                view.prikaziKomandniDio("\033[1;31mNeispravan unos.");
+            }
         } while(!s.toUpperCase().equals("P")&&!s.toUpperCase().equals("N"));
         if(s.toUpperCase().equals("P"))
         {
