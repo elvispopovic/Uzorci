@@ -63,7 +63,7 @@ public class LanacPreuzmi implements LanacKomandiApstraktni
         for(Integer k:mapaVozaca.keySet())
         {
             Vozac vozac = mapaVozaca.get(k);
-            if(vozac.DajIme().equals(komanda[1]))
+            if(vozac.DajIme().equals(komanda[1].replaceAll("\\p{Z}","")))
             {
                 VoziloSucelje trenutnoVozilo = vozac.DajPridruzenoVozilo();
                 if(trenutnoVozilo != null)
@@ -74,7 +74,7 @@ public class LanacPreuzmi implements LanacKomandiApstraktni
                 while(listaVozilaIterator.imaLiSlijedeceg())
                 {
                     VoziloSucelje vozilo = listaVozilaIterator.slijedeci();
-                    if(vozilo.dajId().equals(parametriKomande.get(0)))
+                    if(vozilo.dajId().equals(parametriKomande.get(0).replaceAll("\\p{Z}","")))
                     {
                         vozilo.DodajVozaca(vozac);
                         return;

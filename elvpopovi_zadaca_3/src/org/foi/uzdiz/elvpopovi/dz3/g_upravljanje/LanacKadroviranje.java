@@ -8,9 +8,11 @@ package org.foi.uzdiz.elvpopovi.dz3.g_upravljanje;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Set;
 import java.util.regex.Pattern;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozac;
+import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 
@@ -50,7 +52,10 @@ public class LanacKadroviranje implements LanacKomandiApstraktni
                 break;
             case "BOLOVANJE": obradiGodisnjiBolovanje(komanda,2);
                 break;
-                
+            case "NOVI": obradiNovi(komanda);
+                break;
+            case "OTKAZ": obradiOtkaz(komanda);
+                break;
             default: sljedbenik.ObradiKomandu(komanda);   
         }     
     } 
@@ -66,6 +71,7 @@ public class LanacKadroviranje implements LanacKomandiApstraktni
             Vozac vozac = mapaVozaca.get(vozacId);
             for(String p:parametriVozaca)
             {
+                p=p.replaceAll("\\p{Z}","");
                 if(vozac != null && vozac.DajIme().equals(p))
                 {
                     if(godisnjiBolovanje == 1)
@@ -77,13 +83,46 @@ public class LanacKadroviranje implements LanacKomandiApstraktni
         }
     }
     
-    private void obradiBolovanje(Vozac vozac)
+    private void obradiNovi(String[] komanda)
     {
-        vozac.PostaviBolovanje();  
+        ListaVozila listaVozila = simulacija.DajListaVozilaSimulacija();
+        HashMap<Integer,Vozac> mapaVozaca = listaVozila.DajMapuVozaca();
+        if(komanda.length<2)
+            return;
+        if(parametri.DajVrijednost("ispis")==0)
+                simulacija.Ispisi("Komanda NOVI");
+        ArrayList<String> parametriKomande = new ArrayList<>(Arrays.asList(komanda[1].split(Pattern.quote(",")))); 
+        for(String vozacIme:parametriKomande)
+        {
+            Vozac vozac = new Vozac(vozacIme.replaceAll("\\p{Z}",""));
+            mapaVozaca.put(vozac.DajId(), vozac);
+        }
     }
-    
-    private void obradiGodisnji(Vozac vozac)
+    private void obradiOtkaz(String[] komanda)
     {
-        vozac.PostaviGodisnji();  
+        ListaVozila listaVozila = simulacija.DajListaVozilaSimulacija();
+        HashMap<Integer,Vozac> mapaVozaca = listaVozila.DajMapuVozaca();
+        if(komanda.length<2)
+            return;
+        if(parametri.DajVrijednost("ispis")==0)
+                simulacija.Ispisi("Komanda OTKAZ");
+        ArrayList<String> parametriKomande = new ArrayList<>(Arrays.asList(komanda[1].split(Pattern.quote(",")))); 
+        for(String vozacIme:parametriKomande)
+        {
+            vozacIme = vozacIme.replaceAll("\\p{Z}","");
+            for(Integer k:mapaVozaca.keySet())
+            {
+                Vozac vozac = mapaVozaca.get(k);
+                VoziloSucelje vozilo = vozac.DajPridruzenoVozilo();
+                if(vozac.DajIme().equals(vozacIme) && vozilo!=null)
+                {
+                    vozilo.UkloniVozaca(vozac);
+                    mapaVozaca.remove(k);
+                    break;
+                }
+
+            }
+
+        }
     }
 }

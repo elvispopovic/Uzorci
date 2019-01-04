@@ -62,6 +62,7 @@ public class LanacPripremi implements LanacKomandiApstraktni
             return;
         for(String s : parametriVozila)
         {
+            s=s.replaceAll("^\\s+","");
             VoziloSucelje vozilo = listaPrikupljanje.DajVozilo(s);
             if(vozilo!=null)
             {

@@ -139,8 +139,11 @@ public class Simulacija implements SimulacijaSucelje
         ArrayList<Ulica> listaUlica = problemske.dajListuUlicaIshodista(ishodisteId);
         ArrayList<VoziloSucelje> listaVozila = new ArrayList<>();
         for(String v:vozila)
+        {
+            v=v.replaceAll("\\p{Z}","");
             if(mapaVozila.containsKey(v))
                 listaVozila.add(mapaVozila.get(v));
+        }
         if(listaVozila.size()==0)
         {
             Ispisi("Niti jedno od upisanih vozila ne postoji.");

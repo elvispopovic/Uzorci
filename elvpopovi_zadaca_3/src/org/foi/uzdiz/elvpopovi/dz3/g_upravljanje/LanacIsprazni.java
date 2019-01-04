@@ -66,6 +66,7 @@ public class LanacIsprazni implements LanacKomandiApstraktni
             return;
         for(String s : parametriVozila)
         {
+            s = s.replaceAll("\\p{Z}","");
             VoziloSucelje vozilo = listaPrikupljanje.DajVozilo(s);
             if(vozilo!=null)
             {
