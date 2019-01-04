@@ -7,6 +7,9 @@ package org.foi.uzdiz.elvpopovi.dz3.f_dinamika;
 
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozac;
 
 /**
  *
@@ -14,20 +17,31 @@ import java.util.ArrayList;
  */
 public class ListaVozila 
 {
+    private ArrayList<VoziloSucelje> mjesta;
+    HashMap<Integer,Vozac> mapaVozaca;
     public ListaVozila(ArrayList<VoziloSucelje> vozila)
     {
-        mjesta = new ArrayList<VoziloSucelje>();
+        mjesta = new ArrayList<>();
+        mapaVozaca = new HashMap<>();
         if(vozila!=null)
             for(VoziloSucelje v:vozila)
             {
                 v.dajKontekst().PostaviPocetnoStanje();
                 mjesta.add(v);
+                LinkedHashMap<Integer,Vozac> mapa = v.DajMapuVozaca();
+                for(Integer kljuc:mapa.keySet())
+                    mapaVozaca.put(kljuc, mapa.get(kljuc));
             }
     }
     public ListaVozila()
     {
         mjesta = new ArrayList<>();
     }
+    public HashMap<Integer,Vozac> DajMapuVozaca()
+    {
+        return mapaVozaca;
+    }
+    
     public VoziloSucelje IzdvojiVozilo(int v)
     {
         if(v>=mjesta.size())
@@ -137,5 +151,5 @@ public class ListaVozila
         System.out.println("Broj vozila: "+mjesta.size());
         
     }
-    private ArrayList<VoziloSucelje> mjesta;
+    
 }

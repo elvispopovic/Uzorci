@@ -47,6 +47,7 @@ public class StanjePunjenjePogonskog implements VoziloStanjeSucelje
         if(ciklusaPunjenjaPogona<=0)
         {
             kontekst.ObnoviKolicinuPogonskog();
+            vozilo.RotirajVozace();
             kontekst.PostaviStanje(new StanjePrikupljanje(kontekst));
             ispisiPunjenje(2);
         }

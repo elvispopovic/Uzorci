@@ -28,12 +28,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/f_dinamika/Simulacija.java</file>
-            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/f_dinamika/StatistikaTablicno.java</file>
-            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/g_upravljanje/Dispecer.java</file>
-            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/i_MVC/MVCController.java</file>
-            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/j_podrska/Ispisivanje.java</file>
-            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/i_MVC/MVCObserver.java</file>
+            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/g_upravljanje/LanacStatus.java</file>
+            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/e_zbrinjavanje/Vozac.java</file>
+            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/e_zbrinjavanje/Vozilo.java</file>
+            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/e_zbrinjavanje/VoziloSucelje.java</file>
+            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/g_upravljanje/LanacVozaci.java</file>
+            <file>file:/D:/FOI/Uzorci%20dizajna/Zadaća3/Projekt/elvpopovi_zadaca_3/src/org/foi/uzdiz/elvpopovi/dz3/f_dinamika/ListaVozila.java</file>
         </group>
     </open-files>
 </project-private>

@@ -21,7 +21,6 @@ import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 public class LanacObradi implements LanacKomandiApstraktni
 {
     private final SimulacijaSucelje simulacija;
-    private final Parametri parametri;
     private final ListaVozila listaPrikupljanje;
     private LanacKomandiApstraktni sljedbenik;
     /**
@@ -31,7 +30,6 @@ public class LanacObradi implements LanacKomandiApstraktni
     public LanacObradi(SimulacijaSucelje dispecer)
     {
         this.simulacija = dispecer;
-        parametri = Parametri.getInstance();
         listaPrikupljanje = dispecer.DajListaVozilaSimulacija();
         sljedbenik = null;
     }

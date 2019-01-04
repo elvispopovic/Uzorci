@@ -15,6 +15,10 @@ public class IdGenerator
     private Ispisivanje ispis;
     private int id;
     private IdGenerator(){}
+    /**
+     * Vraća jedinstvenu instancu (singleton)
+     * @return instanca klase IdGenerator
+     */
     public static IdGenerator  getInstance()
     {
         if (INSTANCA == null) 
@@ -30,6 +34,10 @@ public class IdGenerator
             } 
         return INSTANCA; 
     }
+    /**
+     * Generira jedinstveni id
+     * @return šifra (identifikator) 
+     */
     public int dajId()
     {
         return ++id;

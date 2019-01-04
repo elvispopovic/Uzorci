@@ -192,7 +192,7 @@ public class Simulacija implements SimulacijaSucelje
             for(VoziloSucelje v:listaVozila)
                 sb.append(v.dajId()).append(": ").append(v.dajNaziv().replaceAll("\\p{Z}","")).append(", ");
             Ispisi(sb.toString());
-            Ispisi("mijenjaju ishodište sustava i područje djelovanja.");
+            Ispisi("   mijenjaju ishodište sustava i područje djelovanja.");
         }
         
     }
@@ -341,7 +341,6 @@ public class Simulacija implements SimulacijaSucelje
     {
         boolean rezultat;
         VoziloSucelje vozilo;
-        VoziloKontekstSucelje kontekst;
         ListaVozila.Iterator iterator = listaVozilaSimulacija.DajIterator();
         rezultat = true;
         while(iterator.imaLiSlijedeceg())
@@ -350,7 +349,8 @@ public class Simulacija implements SimulacijaSucelje
             if(vozilo!=null)
             {
                 String nazivStanja = vozilo.dajKontekst().DajStanje().DajNaziv();
-                if(nazivStanja.equals("PRIKUPLJANJE") || nazivStanja.equals("ODVOZ") 
+                if((nazivStanja.equals("PRIKUPLJANJE") &&vozilo.DajTrenutnogVozaca()!=null) 
+                        || nazivStanja.equals("ODVOZ") 
                         || nazivStanja.equals("PUNJENJE") || nazivStanja.equals("CEKANJE"))
                     rezultat = false;
             }

@@ -18,6 +18,11 @@ public class RandomGenerator
     private static volatile RandomGenerator  INSTANCA;
     private Ispisivanje ispis;
     private RandomGenerator () {}
+    /**
+     * vraća jedinstveni (singleton) instancu klase RandomGenerator
+     * @param sjeme sjeme generatora
+     * @return vraća jedinstveni (singleton) instancu klase RandomGenerator
+     */
     public static RandomGenerator  getInstance(long sjeme) 
     { 
         RandomGenerator INSTANCA_LOC = RandomGenerator.INSTANCA;
@@ -35,10 +40,20 @@ public class RandomGenerator
             } 
         return INSTANCA_LOC; 
     }
+    /**
+     * vraća jedinstveni (singleton) instancu klase RandomGenerator
+     * @return vraća jedinstveni (singleton) instancu klase RandomGenerator
+     */
     public static RandomGenerator getInstance()
     {
         return INSTANCA;
     }
+    /**
+     * vraća slučajni cijeli broj od param_od do param_do
+     * @param _od donja granica
+     * @param _do gornja granica
+     * @return vraćeni slučajni broj
+     */
     public int dajRandomInt(int _od, int _do)
     {
         int tmp;
@@ -53,6 +68,12 @@ public class RandomGenerator
         tmp=_do-_od;
         return _od+(random.nextInt(tmp+1));
     }
+    /**
+     * vraća slučajni veliki cijeli broj od param_od do param_do
+     * @param _od donja granica
+     * @param _do gornja granica
+     * @return vraćeni slučajni broj
+     */
     public long dajRandomLong(long _od, long _do)
     {
         long tmp;
@@ -67,6 +88,12 @@ public class RandomGenerator
         tmp=_do-_od;
         return _od+(Math.abs(random.nextLong())%(tmp+1));
     }
+    /**
+     * vraća slučajni broj dvostruke preciznosti od param_od do param_do
+     * @param _od donja granica
+     * @param _do gornja granica
+     * @return vraćeni slučajni broj
+     */
     public double dajRandomDouble(double _od, double _do, int brojDecimala)
     {
         double tmp;
@@ -85,6 +112,12 @@ public class RandomGenerator
             brojDecimala=7;
         return round(_od+random.nextFloat()*tmp,brojDecimala);
     }
+    /**
+     * vraća slučajni broj jednostruke preciznosti od param_od do param_do
+     * @param _od donja granica
+     * @param _do gornja granica
+     * @return vraćeni slučajni broj
+     */
     public float dajRandomFloat(float _od, float _do, int brojDecimala)
     {
         float tmp;
@@ -103,6 +136,12 @@ public class RandomGenerator
             brojDecimala=7;
         return round(_od+random.nextFloat()*tmp,brojDecimala);
     }
+    /**
+     * vraća minimum od dva broja unešena kao argumenti
+     * @param a prvi argument
+     * @param b drugi argument
+     * @return vraćeni minimum argumenata
+     */
     public int dajMin(int a, int b)
     {
         if(a<b)
@@ -110,6 +149,12 @@ public class RandomGenerator
         else
             return b;
     }
+    /**
+     * vraća maksimum od dva broja unešena kao argumenti
+     * @param a prvi argument
+     * @param b drugi argument
+     * @return vraćeni maksimum argumenata
+     */
     public int dajMax(int a, int b)
     {
         if(a>b)
@@ -117,6 +162,12 @@ public class RandomGenerator
         else
             return b;
     }
+    /**
+     * Zaokružuje decimalni broj jednostruke preciznosti na određeni broj decimala
+     * @param a broj koji se zaokružuje
+     * @param brojDecimala broj decimala na koji se broj zaokružuje
+     * @return vraćeni zaokruženi decimalni broj
+     */
     public float round(float a, int brojDecimala)
     {
         if(brojDecimala<0)
@@ -127,6 +178,12 @@ public class RandomGenerator
         bd = bd.setScale(brojDecimala, RoundingMode.HALF_UP);
         return bd.floatValue();
     }
+    /**
+     * Zaokružuje decimalni broj dvostruke preciznosti na određeni broj decimala
+     * @param a broj koji se zaokružuje
+     * @param brojDecimala broj decimala na koji se broj zaokružuje
+     * @return vraćeni zaokruženi decimalni broj
+     */
     public double round(double a, int brojDecimala)
     {
         if(brojDecimala<0)

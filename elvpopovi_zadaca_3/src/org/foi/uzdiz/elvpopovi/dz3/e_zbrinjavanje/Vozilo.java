@@ -8,7 +8,8 @@ package org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekst;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.regex.Pattern;
+import java.util.LinkedHashMap;
+import java.util.Set;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
@@ -28,7 +29,10 @@ public class Vozilo implements VoziloSucelje
     private String id;
     String naziv;
     int vrsta, tip, ciklusaOdvoz, kapacitetPogona, punjenjePogona;
-    private ArrayList<String> vozaci;
+    
+    private LinkedHashMap<Integer,Vozac> mapaVozaca;
+    private Integer trenutniVozac;
+    
     VoziloKontekstSucelje kontekst;
     VoziloStatistika statistikaVozila;
     private int nosivost;
@@ -83,12 +87,76 @@ public class Vozilo implements VoziloSucelje
     {
         return naziv;
     }
-
+    
     @Override
-    public ArrayList<String> dajVozace() 
+    public void DodajVozaca(Vozac vozac)
     {
-        return vozaci;
+        mapaVozaca.put(vozac.DajId(),vozac);
+        vozac.PridruziVozilo(this);
+        if(trenutniVozac==null)
+            trenutniVozac = vozac.DajId();
     }
+    
+    @Override
+    public void UkloniVozaca(Vozac vozac)
+    {
+        if(vozac != null)
+        {
+            //ako je aktivan 
+            if(trenutniVozac==vozac.DajId())
+                RotirajVozace(); //probamo rotirati
+            if(trenutniVozac==vozac.DajId()) //ako se nije imalo što rotirati
+                trenutniVozac = null;
+            mapaVozaca.remove(vozac.DajId());
+            vozac.UkloniPridruzenoVozilo();
+        }
+    }
+    @Override
+    public boolean PostaviTrenutnogVozaca(Integer id)
+    {
+        if(mapaVozaca.containsKey(id))
+        {
+            Vozac vozac = mapaVozaca.get(id);
+            if(vozac!=null&&!vozac.JeLiBolovanje()&&!vozac.JeLiGodisnji())
+                trenutniVozac = id;
+            return true;
+        }
+        return false;
+    }
+    public void RotirajVozace()
+    {
+        int i, duljina;
+        Integer[] kljucevi = mapaVozaca.keySet().toArray(new Integer[0]);
+        duljina = kljucevi.length;
+        if(duljina<2) //nema se što rotirati
+            return;
+        for(i=0; i<duljina; i++) //dolazi na poziciju trenutnog vozaca
+            if(mapaVozaca.get(kljucevi[i]).DajId()==trenutniVozac)
+                break;
+        Integer vozacId;
+        Vozac vozac;
+        for(int j=1; j<duljina; j++)
+        {
+            vozacId = mapaVozaca.get(kljucevi[(i+j)%duljina]).DajId();
+            vozac = mapaVozaca.get(vozacId);
+            if(!vozac.JeLiBolovanje() && !vozac.JeLiGodisnji())
+                trenutniVozac = vozacId;
+        }
+    }
+    
+    
+    @Override
+    public LinkedHashMap<Integer,Vozac> DajMapuVozaca()
+    {
+        return mapaVozaca;
+    }
+    @Override
+    public Vozac DajTrenutnogVozaca()
+    {
+       Vozac vozac = mapaVozaca.get(trenutniVozac);
+       return vozac;
+    }
+    
 
     @Override
     public int dajNosivost() 
@@ -134,7 +202,7 @@ public class Vozilo implements VoziloSucelje
         parametri = Parametri.getInstance();
         ispis = Ispisivanje.getInstance();
         rnd = RandomGenerator.getInstance();
-        vozaci = new ArrayList<>();
+        mapaVozaca = new LinkedHashMap<>();
     }
     
     public Vozilo(ArrayList<VoziloSucelje> protoVozila, String[] shema, String[] podaciZapis)
@@ -178,10 +246,7 @@ public class Vozilo implements VoziloSucelje
             kapacitetPogona = parametri.DajVrijednost("kapacitetElektroVozila");
             punjenjePogona  = parametri.DajVrijednost("punjenjeElektroVozila");
         }
-        this.vozaci = new ArrayList<>(); //lista se ne smije kopirati, mora se napraviti nova
-        String[] vozaciPopis = podaciZapis[Arrays.asList(shema).indexOf("vozači")].split(Pattern.quote(",").replaceAll("\\p{Z}","")); 
-            for(String v:vozaciPopis)
-                this.vozaci.add(v);
+        this.mapaVozaca = new LinkedHashMap<>();
         kontekst = new VoziloKontekst(this);
     }
     

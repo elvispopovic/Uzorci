@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 
 public class MVCController extends MVCObserver
 {
+    private final String codepage = "CP852";
     private MVCView view;
     private MVCModelSucelje model; //model je dispecer
     private int brg, brd;
@@ -20,7 +21,8 @@ public class MVCController extends MVCObserver
     
     public MVCController(int brg, int brd)
     {
-        inScan = new Scanner(System.in); 
+        //DOS CP852 kodna stranica za centralnu i istočnu europu
+        inScan = new Scanner(System.in,codepage); 
         brojRedakaIspisa = 0;
         this.brg = brg;
         this.brd = brd;

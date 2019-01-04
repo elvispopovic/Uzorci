@@ -68,6 +68,7 @@ public class ProblemskiBuilder implements ProblemskiAbstractBuilder
            product.KreirajVozila();
         return this;
     }
+
     public InicijalizacijaAbstractProduct DajPodatke()
     {
         return podaci;

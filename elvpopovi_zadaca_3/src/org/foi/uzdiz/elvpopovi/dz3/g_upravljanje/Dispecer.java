@@ -90,8 +90,12 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
     private void inicijalizirajLanacKomandi()
     {
         LanacKomandiApstraktni lanacPripremi, lanacKreni, lanacKvar, lanacIsprazni, lanacStatus, lanacKontrola, lanacTerminalni;
+        LanacKomandiApstraktni lanacVozaci, lanacPreuzmi, lanacKadroviranje;
          lanacTerminalni = new LanacTerminalni(simulacija);
-        (lanacKontrola   = new LanacKontrola(simulacija)).DodajSljedbenika(lanacTerminalni);
+        (lanacVozaci     = new LanacVozaci(simulacija)).DodajSljedbenika(lanacTerminalni);
+        (lanacPreuzmi    = new LanacPreuzmi(simulacija)).DodajSljedbenika(lanacVozaci);
+        (lanacKadroviranje = new LanacKadroviranje(simulacija)).DodajSljedbenika(lanacPreuzmi);
+        (lanacKontrola   = new LanacKontrola(simulacija)).DodajSljedbenika(lanacKadroviranje);
         (lanacStatus     = new LanacStatus(simulacija)).DodajSljedbenika(lanacKontrola);
         (lanacIsprazni   = new LanacIsprazni(simulacija)).DodajSljedbenika(lanacStatus);
         (lanacKvar       = new LanacKvar(simulacija)).DodajSljedbenika(lanacIsprazni);

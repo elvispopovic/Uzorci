@@ -17,10 +17,12 @@ import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozilo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Korisnik;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.PodrucjeSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
+import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozac;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.ZbrinjavanjeFactory;
@@ -59,7 +61,6 @@ public abstract class ProblemskiAbstractProduct
     }
 
     //hook metode za prototype uzorak
-    //public abstract ArrayList<Ulica> dajListuUlica();
     protected ArrayList<PodrucjeSucelje> ishodistaSustava;
     public abstract PodrucjeSucelje nadjiIshodiste(String podrucjeId);
     public abstract ArrayList<Ulica> dajListuUlicaIshodista(String ishodisteId);
@@ -86,6 +87,7 @@ public abstract class ProblemskiAbstractProduct
                 transformacija.add(v);
         return transformacija;
     }
+
     
     public HashMap<String,VoziloSucelje> dajMapuVozila()
     {
@@ -212,12 +214,13 @@ public abstract class ProblemskiAbstractProduct
             }
             String[] shema = podaci.dajVozila().DajShemu();
             int tipIndeks = Arrays.asList(shema).indexOf("tip");
-            popuniListuVozila(shema, tipIndeks);
+            int tipVozaci = Arrays.asList(shema).indexOf("vozači");
+            popuniListuVozila(shema, tipIndeks, tipVozaci);
         }
         //ispisiVozila();
     }
-    
-    private void popuniListuVozila(String[] shema, int tipIndeks)
+
+    private void popuniListuVozila(String[] shema, int tipIndeks, int tipVozaci)
     {
         for(int v = 0; v < podaci.dajVozila().BrojZapisa(); v++)
         {
@@ -229,6 +232,7 @@ public abstract class ProblemskiAbstractProduct
                 for(int i=0; i<3; i++)
                     Integer.parseInt(zapis[i+tipIndeks].replaceAll("\\p{Z}",""));
                 VoziloSucelje vozilo= new Vozilo(protoVozila,shema,zapis);
+                postaviVozace(vozilo, zapis, tipVozaci);
                 vozila.get(vozilo.dajVrstu()).add(vozilo);
             }
             catch(NumberFormatException e)
@@ -239,6 +243,22 @@ public abstract class ProblemskiAbstractProduct
             {
                 ispis.Ispisi(e.getMessage());
             }
+        }
+    }
+    
+    private void postaviVozace(VoziloSucelje vozilo, String[] zapis, int tipVozaci)
+    {
+        String[] vozaciPopis = zapis[tipVozaci].split(Pattern.quote(",")); 
+        for(int i=0; i<vozaciPopis.length; i++)
+            vozaciPopis[i]=vozaciPopis[i].replaceAll("\\p{Z}","");
+        boolean prvi = true;
+        for(String vozacIme:vozaciPopis)
+        {
+            Vozac vozac = new Vozac(vozacIme);
+            vozilo.DodajVozaca(vozac);
+            if(prvi)
+                vozilo.PostaviTrenutnogVozaca(vozac.DajId());
+            prvi = false;
         }
     }
     

@@ -6,6 +6,7 @@
 package org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
 
@@ -24,7 +25,12 @@ public interface VoziloSucelje
    
     String dajNaziv();
     int dajNosivost();
-    ArrayList<String> dajVozace() ;
+    void DodajVozaca(Vozac vozac);
+    void UkloniVozaca(Vozac vozac);
+    boolean PostaviTrenutnogVozaca(Integer id);
+    void RotirajVozace();
+    LinkedHashMap<Integer,Vozac> DajMapuVozaca();
+    Vozac DajTrenutnogVozaca();
     VoziloKontekstSucelje dajKontekst();
     VoziloStatistika dajStatistikuVozila();
     int dajVrstu();

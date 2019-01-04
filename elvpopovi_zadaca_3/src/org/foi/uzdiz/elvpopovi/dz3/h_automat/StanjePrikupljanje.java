@@ -6,9 +6,11 @@
 package org.foi.uzdiz.elvpopovi.dz3.h_automat;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Spremnik;
+import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozac;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloStatistika;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
@@ -78,11 +80,44 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
     @Override
     public void Napredovanje()
     {
+        Parametri parametri = Parametri.getInstance();
+        if(provjeriVozaca() == false)
+        {
+            if(parametri.DajVrijednost("ispis")!=0)
+                MVCmodel.Ispisi("Vozilo "+vozilo.dajId()+": "+vozilo.dajNaziv()+" nema raspoloživog vozača.");
+            return;
+        }
         preskociPrazne(); 
         if(!kontekst.JeLiZavrsenoPrikupljanje())
             obradiSpremnik();
         else
             posaljiZadnjePraznjenje();
+    }
+    
+    private boolean provjeriVozaca()
+    {
+        Vozac vozac = vozilo.DajTrenutnogVozaca();
+        if(vozac == null)
+        {
+            vozilo.RotirajVozace(); //pokusava se rotirati
+            if(vozilo.DajTrenutnogVozaca() == null) //i dalje nema
+            {
+                HashMap<Integer,Vozac> mapaVozaca = simulacija.DajListaVozilaSimulacija().DajMapuVozaca();
+                for(Integer k:mapaVozaca.keySet())
+                {
+                    Vozac v = mapaVozaca.get(k);
+                    if(v != null && v.DajPridruzenoVozilo()==null)
+                    {
+                        vozilo.DodajVozaca(v); //sustav dodaje vozača koji nema dodijeljeno vozilo
+                        vozilo.PostaviTrenutnogVozaca(v.DajId());
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        else
+            return true;
     }
     
     private void preskociPrazne()
