@@ -8,10 +8,8 @@ package org.foi.uzdiz.elvpopovi.dz3.g_upravljanje;
 import java.util.Collections;
 import java.util.Formatter;
 import java.util.HashMap;
-import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozac;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 
 /**
@@ -37,7 +35,7 @@ public class LanacVozaci implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String[] komanda)
     {
-        if(komanda[0].toUpperCase().equals("VOZAČI"))
+        if(komanda[0].replaceAll("\\p{Z}","").toUpperCase().equals("VOZAČI"))
         {
             simulacija.Ispisi("Komanda VOZAČI");
             obradiVozaci();
@@ -80,8 +78,7 @@ public class LanacVozaci implements LanacKomandiApstraktni
                 pridruzenoId = vozilo.dajId();
                 pridruzenoNaziv = vozilo.dajNaziv();
                 Vozac trenutniVozac = vozilo.DajTrenutnogVozaca();
-                trenutniId = trenutniVozac.DajId();
-                if(trenutniVozac != null && (trenutniId == vozac.DajId()))
+                if(trenutniVozac != null && (trenutniVozac.DajId() == vozac.DajId()))
                     aktivan = true;
             }
             sb.setLength(0);

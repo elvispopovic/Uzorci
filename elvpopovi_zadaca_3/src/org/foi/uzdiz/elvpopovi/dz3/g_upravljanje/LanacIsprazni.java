@@ -12,7 +12,6 @@ import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.h_automat.StanjeOdvoz;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
 
 /**
@@ -45,7 +44,7 @@ public class LanacIsprazni implements LanacKomandiApstraktni
     @Override
     public void ObradiKomandu(String[] komanda)
     {
-        if(komanda[0].toUpperCase().equals("ISPRAZNI"))
+        if(komanda[0].replaceAll("\\p{Z}","").toUpperCase().equals("ISPRAZNI"))
         {
             if(parametri.DajVrijednost("ispis")==0)
                 simulacija.Ispisi("Komanda ISPRAZNI");
@@ -61,6 +60,8 @@ public class LanacIsprazni implements LanacKomandiApstraktni
     private void obradiIsprazni(String[] komanda)
     {
         ArrayList<String> parametriVozila = new ArrayList<>(Arrays.asList(komanda[1].split(Pattern.quote(",")))); 
+        
+        
         if(parametriVozila.isEmpty())
             return;
         for(String s : parametriVozila)

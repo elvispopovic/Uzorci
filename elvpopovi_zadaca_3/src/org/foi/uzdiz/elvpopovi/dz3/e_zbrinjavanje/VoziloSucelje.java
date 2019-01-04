@@ -28,6 +28,7 @@ public interface VoziloSucelje
     void DodajVozaca(Vozac vozac);
     void UkloniVozaca(Vozac vozac);
     boolean PostaviTrenutnogVozaca(Integer id);
+    void UkloniTrenutnogVozaca();
     void RotirajVozace();
     LinkedHashMap<Integer,Vozac> DajMapuVozaca();
     Vozac DajTrenutnogVozaca();

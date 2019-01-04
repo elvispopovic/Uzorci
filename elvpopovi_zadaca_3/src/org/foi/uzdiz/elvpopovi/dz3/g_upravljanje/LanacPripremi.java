@@ -42,7 +42,7 @@ public class LanacPripremi implements LanacKomandiApstraktni
     {
         if(listaPrikupljanje == null)
             return;
-        if(komanda[0].toUpperCase().equals("PRIPREMI"))
+        if(komanda[0].replaceAll("\\p{Z}","").toUpperCase().equals("PRIPREMI"))
         {
             if(parametri.DajVrijednost("ispis")==0)
                 simulacija.Ispisi("Komanda: PRIPREMI");

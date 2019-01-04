@@ -9,7 +9,6 @@ import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekst;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
-import java.util.Set;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
@@ -123,12 +122,20 @@ public class Vozilo implements VoziloSucelje
         }
         return false;
     }
+    @Override
+    public void UkloniTrenutnogVozaca()
+    {
+        Integer vozacIdStari = trenutniVozac;
+        RotirajVozace();
+        if(vozacIdStari == trenutniVozac)
+            trenutniVozac = null;
+    }
     public void RotirajVozace()
     {
         int i, duljina;
         Integer[] kljucevi = mapaVozaca.keySet().toArray(new Integer[0]);
         duljina = kljucevi.length;
-        if(duljina<2) //nema se što rotirati
+        if(duljina<2 || trenutniVozac == null) //nema se što rotirati
             return;
         for(i=0; i<duljina; i++) //dolazi na poziciju trenutnog vozaca
             if(mapaVozaca.get(kljucevi[i]).DajId()==trenutniVozac)

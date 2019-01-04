@@ -46,11 +46,22 @@ public class Vozac
     public void PostaviGodisnji()
     {
         godisnjiBolovanje = 1;
+        nadomjestiTrenutnogVozaca();
     }
     public void PostaviBolovanje()
     {
         godisnjiBolovanje = 2;
+        nadomjestiTrenutnogVozaca();
     }
+    private void nadomjestiTrenutnogVozaca()
+    {
+        if(pridruzenoVozilo!=null && pridruzenoVozilo.DajTrenutnogVozaca()!=null)
+        {
+            if(pridruzenoVozilo.DajTrenutnogVozaca().DajId()==this.id)
+                pridruzenoVozilo.UkloniTrenutnogVozaca();
+        }
+    }
+    
     public void PostaviRadno()
     {
         godisnjiBolovanje = 0;

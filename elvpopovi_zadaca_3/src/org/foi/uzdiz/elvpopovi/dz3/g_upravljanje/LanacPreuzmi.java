@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.regex.Pattern;
-import org.foi.uzdiz.elvpopovi.dz3.b_buideri.ProblemskiAbstractProduct;
-import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozac;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
@@ -45,7 +43,7 @@ public class LanacPreuzmi implements LanacKomandiApstraktni
     {
         if(listaPrikupljanje == null)
             return;
-        if(komanda[0].toUpperCase().equals("PREUZMI"))
+        if(komanda[0].replaceAll("\\p{Z}","").toUpperCase().equals("PREUZMI"))
         {
             simulacija.Ispisi("Komanda: PREUZMI");
             if(komanda.length>1)

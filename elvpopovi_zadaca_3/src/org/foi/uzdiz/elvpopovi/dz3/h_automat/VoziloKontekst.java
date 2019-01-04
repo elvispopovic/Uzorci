@@ -197,7 +197,7 @@ public class VoziloKontekst implements VoziloKontekstSucelje
                 obrnutoKretanje = true;
                 VoziloSucelje vozilo = simulacija.NecekajucaVozilaUUlici(DajTrenutnuUlicu().Id()).get(0);
                 if(parametri.DajVrijednost("ispis")==0)
-                    simulacija.Ispisi(vozilo.dajNaziv()+" je naišlo na drugo vozilo u ulici i okreće smjer prikupljanja.");
+                    simulacija.Ispisi("Vozilo "+vozilo.dajId()+": "+vozilo.dajNaziv()+" je naišlo na drugo vozilo u ulici i okreće smjer prikupljanja.");
             }
             else
                 DajStanje().Prijelaz("CEKANJE");

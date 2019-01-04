@@ -5,7 +5,12 @@
  */
 package org.foi.uzdiz.elvpopovi.dz3.g_upravljanje;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.regex.Pattern;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
+import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozac;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 
@@ -37,17 +42,48 @@ public class LanacKadroviranje implements LanacKomandiApstraktni
     {
         if(listaPrikupljanje == null)
             return;
-        switch(komanda[0].toUpperCase())
+        switch(komanda[0].replaceAll("\\p{Z}","").toUpperCase())
         {
-            case "GODIŠNJI ODMOR": obradiGodisnji(komanda);
+            case "GODIŠNJIODMOR": obradiGodisnjiBolovanje(komanda,1);
+                break;
+            case "GODISNJIODMOR": obradiGodisnjiBolovanje(komanda,1);
+                break;
+            case "BOLOVANJE": obradiGodisnjiBolovanje(komanda,2);
                 break;
                 
             default: sljedbenik.ObradiKomandu(komanda);   
         }     
     } 
     
-    private void obradiGodisnji(String komanda[])
+    private void obradiGodisnjiBolovanje(String komanda[], int godisnjiBolovanje)
     {
-        
+        HashMap<Integer,Vozac> mapaVozaca = simulacija.DajListaVozilaSimulacija().DajMapuVozaca();
+        ArrayList<String> parametriVozaca = new ArrayList<>(Arrays.asList(komanda[1].split(Pattern.quote(",")))); 
+        if(parametri.DajVrijednost("ispis")==0)
+                simulacija.Ispisi("Komanda "+komanda[0]);
+        for(Integer vozacId:mapaVozaca.keySet())
+        {
+            Vozac vozac = mapaVozaca.get(vozacId);
+            for(String p:parametriVozaca)
+            {
+                if(vozac != null && vozac.DajIme().equals(p))
+                {
+                    if(godisnjiBolovanje == 1)
+                        vozac.PostaviGodisnji();
+                    else if(godisnjiBolovanje == 2)
+                        vozac.PostaviBolovanje();
+                }
+            }
+        }
+    }
+    
+    private void obradiBolovanje(Vozac vozac)
+    {
+        vozac.PostaviBolovanje();  
+    }
+    
+    private void obradiGodisnji(Vozac vozac)
+    {
+        vozac.PostaviGodisnji();  
     }
 }

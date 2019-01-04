@@ -83,7 +83,7 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
         Parametri parametri = Parametri.getInstance();
         if(provjeriVozaca() == false)
         {
-            if(parametri.DajVrijednost("ispis")!=0)
+            if(parametri.DajVrijednost("ispis")==0)
                 MVCmodel.Ispisi("Vozilo "+vozilo.dajId()+": "+vozilo.dajNaziv()+" nema raspoloživog vozača.");
             return;
         }
@@ -102,6 +102,7 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
             vozilo.RotirajVozace(); //pokusava se rotirati
             if(vozilo.DajTrenutnogVozaca() == null) //i dalje nema
             {
+                
                 HashMap<Integer,Vozac> mapaVozaca = simulacija.DajListaVozilaSimulacija().DajMapuVozaca();
                 for(Integer k:mapaVozaca.keySet())
                 {
@@ -109,7 +110,6 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
                     if(v != null && v.DajPridruzenoVozilo()==null)
                     {
                         vozilo.DodajVozaca(v); //sustav dodaje vozača koji nema dodijeljeno vozilo
-                        vozilo.PostaviTrenutnogVozaca(v.DajId());
                         return true;
                     }
                 }

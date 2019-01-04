@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 import org.foi.uzdiz.elvpopovi.dz3.b_buideri.ProblemskiAbstractProduct;
-import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.d_komuna.PodrucjeSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.ListaVozila;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
@@ -45,7 +44,7 @@ public class LanacObradi implements LanacKomandiApstraktni
     {
         if(listaPrikupljanje == null)
             return;
-        if(komanda[0].toUpperCase().equals("OBRADI"))
+        if(komanda[0].replaceAll("\\p{Z}","").toUpperCase().equals("OBRADI"))
         {
             simulacija.Ispisi("Komanda: OBRADI");
             if(komanda.length>2)
