@@ -8,11 +8,10 @@ package org.foi.uzdiz.elvpopovi.dz3.i_MVC;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 
 public class MVCController extends MVCObserver
 {
-    private final String codepage = "CP852";
-    //private final String codepage = "UTF-8";
     private MVCView view;
     private MVCModelSucelje model; //model je dispecer
     private int brg, brd;
@@ -22,8 +21,8 @@ public class MVCController extends MVCObserver
     
     public MVCController(int brg, int brd)
     {
-        //DOS CP852 kodna stranica za centralnu i istočnu europu
-        inScan = new Scanner(System.in,codepage); 
+        Parametri parametri = Parametri.getInstance();
+        inScan = new Scanner(System.in,"CP"+parametri.DajVrijednost("kodnaStranica")); 
         brojRedakaIspisa = 0;
         this.brg = brg;
         this.brd = brd;

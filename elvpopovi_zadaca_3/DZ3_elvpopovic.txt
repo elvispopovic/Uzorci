@@ -655,12 +655,138 @@ Status vozila prikazan je tablično:
 *                           Prijelaz u komandni mod                            *
 *                                                                              *
 ********************************************************************************
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski | Smjer |   Popis vozača |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prikup.|(A) za aktivnog |
+=============================================================================================================================
+      PUNJENJE | v1 | staklarko 1 | električni |  staklo |    4000 |   15,31 |    612,33 |  0 / 30 |     + |       pero (A) |
+               |    |             |            |         |         |         |           |         |       |            ivo |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v2 | papirko 1   | električni |   papir |    3000 |   53,60 |   1607,93 |  0 / 30 |     + |       jura (A) |
+               |    |             |            |         |         |         |           |         |       |          borko |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v3 | metalko 1   | električni |   metal |    5000 |   14,50 |    724,87 |  0 / 30 |     - |     tvrtko (A) |
+               |    |             |            |         |         |         |           |         |       |           kiki |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v4 | biotko 1    | električni |     bio |    3000 |   20,16 |    604,83 |  0 / 30 |     + |      vesna (A) |
+               |    |             |            |         |         |         |           |         |       |          rajka |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v5 | mješanko 1  |     diesel | mješano |    4000 |   70,13 |   2805,25 | 28 / 50 |     - |       luka (A) |
+               |    |             |            |         |         |         |           |         |       |           zoki |
+               |    |             |            |         |         |         |           |         |       |           sven |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v6 | mješanko 2  |     diesel | mješano |    5000 |   22,71 |   1135,68 | 28 / 50 |     + |       fran (A) |
+               |    |             |            |         |         |         |           |         |       |          hinko |
+               |    |             |            |         |         |         |           |         |       |           blaž |
+-----------------------------------------------------------------------------------------------------------------------------
+       CEKANJE | v7 | mješanko 3  |     diesel | mješano |    3000 |   65,70 |   1970,96 | 31 / 50 |     + |       miki (A) |
+               |    |             |            |         |         |         |           |         |       |           dudo |
+               |    |             |            |         |         |         |           |         |       |           viki |
+-----------------------------------------------------------------------------------------------------------------------------
+[1;35mNaredba "n" nije prepoznata.
+[1;32mNaredbe:
+  OBRADI;podrucje;lista_vozla
+  PRIPREMI;lista_vozla
+  KRENI [broj];
+  KVAR;lista_vozila
+  KONTROLA;lista_vozila
+  ISPRAZNI;lista_vozila
+  STATUS;
+  GODIŠNJI ODMOR;lista_vozača
+  BOLOVANJE;lista_vozača
+  OTKAZ;lista_vozača
+  PREUZMI;vozač;[vozilo;]
+  NOVI;lista_vozača
+  VOZAČI;
+  IZLAZ;
+Program radi sa kodnom stranicom unosa CP1250
+Kodnu stranicu možete promijeniti naredbom chcp 1250
+Također možete koristiti unos naredbi bez hrvatskih znakova, npr. GODISNJI ODMOR
+Komanda godišnji odmor
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski | Smjer |   Popis vozača |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prikup.|(A) za aktivnog |
+=============================================================================================================================
+      PUNJENJE | v1 | staklarko 1 | električni |  staklo |    4000 |   15,31 |    612,33 |  0 / 30 |     + |       pero (A) |
+               |    |             |            |         |         |         |           |         |       |            ivo |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v2 | papirko 1   | električni |   papir |    3000 |   53,60 |   1607,93 |  0 / 30 |     + |       jura (A) |
+               |    |             |            |         |         |         |           |         |       |          borko |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v3 | metalko 1   | električni |   metal |    5000 |   14,50 |    724,87 |  0 / 30 |     - |     tvrtko (A) |
+               |    |             |            |         |         |         |           |         |       |           kiki |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v4 | biotko 1    | električni |     bio |    3000 |   20,16 |    604,83 |  0 / 30 |     + |      vesna (A) |
+               |    |             |            |         |         |         |           |         |       |          rajka |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v5 | mješanko 1  |     diesel | mješano |    4000 |   70,13 |   2805,25 | 28 / 50 |     - |       luka (A) |
+               |    |             |            |         |         |         |           |         |       |           zoki |
+               |    |             |            |         |         |         |           |         |       |           sven |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v6 | mješanko 2  |     diesel | mješano |    5000 |   22,71 |   1135,68 | 28 / 50 |     + |       fran (A) |
+               |    |             |            |         |         |         |           |         |       |          hinko |
+               |    |             |            |         |         |         |           |         |       |           blaž |
+-----------------------------------------------------------------------------------------------------------------------------
+       CEKANJE | v7 | mješanko 3  |     diesel | mješano |    3000 |   65,70 |   1970,96 | 31 / 50 |     + |       miki (A) |
+               |    |             |            |         |         |         |           |         |       |           dudo |
+               |    |             |            |         |         |         |           |         |       |           viki |
+-----------------------------------------------------------------------------------------------------------------------------
+[1;35mNaredba "ggf" nije prepoznata.
+[1;32mNaredbe:
+  OBRADI;podrucje;lista_vozla
+  PRIPREMI;lista_vozla
+  KRENI [broj];
+  KVAR;lista_vozila
+  KONTROLA;lista_vozila
+  ISPRAZNI;lista_vozila
+  STATUS;
+  GODIŠNJI ODMOR;lista_vozača
+  BOLOVANJE;lista_vozača
+  OTKAZ;lista_vozača
+  PREUZMI;vozač;[vozilo;]
+  NOVI;lista_vozača
+  VOZAČI;
+  IZLAZ;
+Program radi sa kodnom stranicom unosa CP1250
+Kodnu stranicu možete promijeniti naredbom chcp 1250
+Također možete koristiti unos naredbi bez hrvatskih znakova, npr. GODISNJI ODMOR
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski | Smjer |   Popis vozača |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prikup.|(A) za aktivnog |
+=============================================================================================================================
+      PUNJENJE | v1 | staklarko 1 | električni |  staklo |    4000 |   15,31 |    612,33 |  0 / 30 |     + |       pero (A) |
+               |    |             |            |         |         |         |           |         |       |            ivo |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v2 | papirko 1   | električni |   papir |    3000 |   53,60 |   1607,93 |  0 / 30 |     + |       jura (A) |
+               |    |             |            |         |         |         |           |         |       |          borko |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v3 | metalko 1   | električni |   metal |    5000 |   14,50 |    724,87 |  0 / 30 |     - |     tvrtko (A) |
+               |    |             |            |         |         |         |           |         |       |           kiki |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v4 | biotko 1    | električni |     bio |    3000 |   20,16 |    604,83 |  0 / 30 |     + |      vesna (A) |
+               |    |             |            |         |         |         |           |         |       |          rajka |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v5 | mješanko 1  |     diesel | mješano |    4000 |   70,13 |   2805,25 | 28 / 50 |     - |       luka (A) |
+               |    |             |            |         |         |         |           |         |       |           zoki |
+               |    |             |            |         |         |         |           |         |       |           sven |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v6 | mješanko 2  |     diesel | mješano |    5000 |   22,71 |   1135,68 | 28 / 50 |     + |       fran (A) |
+               |    |             |            |         |         |         |           |         |       |          hinko |
+               |    |             |            |         |         |         |           |         |       |           blaž |
+-----------------------------------------------------------------------------------------------------------------------------
+       CEKANJE | v7 | mješanko 3  |     diesel | mješano |    3000 |   65,70 |   1970,96 | 31 / 50 |     + |       miki (A) |
+               |    |             |            |         |         |         |           |         |       |           dudo |
+               |    |             |            |         |         |         |           |         |       |           viki |
+-----------------------------------------------------------------------------------------------------------------------------
 Komanda VOZAČI
 Status vozila prikazan je tablično:
        Vozač | Pridruženo vozilo | Aktivan | Godišnji | Bolovanje |
 =========================================================================
         pero |  v1:  staklarko 1 |     DA  |      NE  |       NE  |
-         ivo |  v1:  staklarko 1 |     NE  |      NE  |       NE  |
+         ivo |  v1:  staklarko 1 |     NE  |      DA  |       NE  |
         jura |  v2:  papirko 1   |     DA  |      NE  |       NE  |
        borko |  v2:  papirko 1   |     NE  |      NE  |       NE  |
       tvrtko |  v3:  metalko 1   |     DA  |      NE  |       NE  |
@@ -676,35 +802,385 @@ Status vozila prikazan je tablično:
         dudo |  v7:  mješanko 3  |     NE  |      NE  |       NE  |
         viki |  v7:  mješanko 3  |     NE  |      NE  |       NE  |
         miki |  v7:  mješanko 3  |     DA  |      NE  |       NE  |
-[1;35mNaredba "p" nije prepoznata.
-[1;32mNaredbe:
-  OBRADI;podrucje;lista_vozla
-  PRIPREMI;lista_vozla
-  KRENI [broj];
-  KVAR;lista_vozila
-  KONTROLA;lista_vozila
-  ISPRAZNI;lista_vozila
-  STATUS;
-  GODIŠNJI ODMOR;lista_vozača
-  BOLOVANJE;lista_vozača
-  OTKAZ;lista_vozača
-  PREUZMI;vozač;[vozilo;]
-  NOVI;lista_vozača
-  VOZAČI;
-  IZLAZ;
-[1;35mNaredba "p" nije prepoznata.
-[1;32mNaredbe:
-  OBRADI;podrucje;lista_vozla
-  PRIPREMI;lista_vozla
-  KRENI [broj];
-  KVAR;lista_vozila
-  KONTROLA;lista_vozila
-  ISPRAZNI;lista_vozila
-  STATUS;
-  GODIŠNJI ODMOR;lista_vozača
-  BOLOVANJE;lista_vozača
-  OTKAZ;lista_vozača
-  PREUZMI;vozač;[vozilo;]
-  NOVI;lista_vozača
-  VOZAČI;
-  IZLAZ;
+Komanda: PREUZMI
+Komanda VOZAČI
+Status vozila prikazan je tablično:
+       Vozač | Pridruženo vozilo | Aktivan | Godišnji | Bolovanje |
+=========================================================================
+        pero |  v1:  staklarko 1 |     DA  |      NE  |       NE  |
+         ivo |  --:  --------- - |     NE  |      DA  |       NE  |
+        jura |  v2:  papirko 1   |     DA  |      NE  |       NE  |
+       borko |  v2:  papirko 1   |     NE  |      NE  |       NE  |
+      tvrtko |  v3:  metalko 1   |     DA  |      NE  |       NE  |
+        kiki |  v3:  metalko 1   |     NE  |      NE  |       NE  |
+       vesna |  v4:  biotko 1    |     DA  |      NE  |       NE  |
+       rajka |  v4:  biotko 1    |     NE  |      NE  |       NE  |
+        zoki |  v5:  mješanko 1  |     NE  |      NE  |       NE  |
+        sven |  v5:  mješanko 1  |     NE  |      NE  |       NE  |
+        luka |  v5:  mješanko 1  |     DA  |      NE  |       NE  |
+       hinko |  v6:  mješanko 2  |     NE  |      NE  |       NE  |
+        blaž |  v6:  mješanko 2  |     NE  |      NE  |       NE  |
+        fran |  v6:  mješanko 2  |     DA  |      NE  |       NE  |
+        dudo |  v7:  mješanko 3  |     NE  |      NE  |       NE  |
+        viki |  v7:  mješanko 3  |     NE  |      NE  |       NE  |
+        miki |  v7:  mješanko 3  |     DA  |      NE  |       NE  |
+Komanda: PREUZMI
+Komanda VOZAČI
+Status vozila prikazan je tablično:
+       Vozač | Pridruženo vozilo | Aktivan | Godišnji | Bolovanje |
+=========================================================================
+        pero |  --:  --------- - |     NE  |      NE  |       NE  |
+         ivo |  --:  --------- - |     NE  |      DA  |       NE  |
+        jura |  v2:  papirko 1   |     DA  |      NE  |       NE  |
+       borko |  v2:  papirko 1   |     NE  |      NE  |       NE  |
+      tvrtko |  v3:  metalko 1   |     DA  |      NE  |       NE  |
+        kiki |  v3:  metalko 1   |     NE  |      NE  |       NE  |
+       vesna |  v4:  biotko 1    |     DA  |      NE  |       NE  |
+       rajka |  v4:  biotko 1    |     NE  |      NE  |       NE  |
+        zoki |  v5:  mješanko 1  |     NE  |      NE  |       NE  |
+        sven |  v5:  mješanko 1  |     NE  |      NE  |       NE  |
+        luka |  v5:  mješanko 1  |     DA  |      NE  |       NE  |
+       hinko |  v6:  mješanko 2  |     NE  |      NE  |       NE  |
+        blaž |  v6:  mješanko 2  |     NE  |      NE  |       NE  |
+        fran |  v6:  mješanko 2  |     DA  |      NE  |       NE  |
+        dudo |  v7:  mješanko 3  |     NE  |      NE  |       NE  |
+        viki |  v7:  mješanko 3  |     NE  |      NE  |       NE  |
+        miki |  v7:  mješanko 3  |     DA  |      NE  |       NE  |
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski | Smjer |   Popis vozača |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prikup.|(A) za aktivnog |
+=============================================================================================================================
+      PUNJENJE | v1 | staklarko 1 | električni |  staklo |    4000 |   15,31 |    612,33 |  0 / 30 |     + |            --- |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v2 | papirko 1   | električni |   papir |    3000 |   53,60 |   1607,93 |  0 / 30 |     + |       jura (A) |
+               |    |             |            |         |         |         |           |         |       |          borko |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v3 | metalko 1   | električni |   metal |    5000 |   14,50 |    724,87 |  0 / 30 |     - |     tvrtko (A) |
+               |    |             |            |         |         |         |           |         |       |           kiki |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v4 | biotko 1    | električni |     bio |    3000 |   20,16 |    604,83 |  0 / 30 |     + |      vesna (A) |
+               |    |             |            |         |         |         |           |         |       |          rajka |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v5 | mješanko 1  |     diesel | mješano |    4000 |   70,13 |   2805,25 | 28 / 50 |     - |       luka (A) |
+               |    |             |            |         |         |         |           |         |       |           zoki |
+               |    |             |            |         |         |         |           |         |       |           sven |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v6 | mješanko 2  |     diesel | mješano |    5000 |   22,71 |   1135,68 | 28 / 50 |     + |       fran (A) |
+               |    |             |            |         |         |         |           |         |       |          hinko |
+               |    |             |            |         |         |         |           |         |       |           blaž |
+-----------------------------------------------------------------------------------------------------------------------------
+       CEKANJE | v7 | mješanko 3  |     diesel | mješano |    3000 |   65,70 |   1970,96 | 31 / 50 |     + |       miki (A) |
+               |    |             |            |         |         |         |           |         |       |           dudo |
+               |    |             |            |         |         |         |           |         |       |           viki |
+-----------------------------------------------------------------------------------------------------------------------------
+Komanda KRENI
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 12.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 17.
+Vozilo v3, metalko 1   je na punjenju. Preostalo je 9.
+Vozilo v4, biotko 1    je na punjenju. Preostalo je 9.
+Vozilo v5, mješanko 1  preuzima 190.44 kg otpada iz spremnika 480
+   Popunjenost: 74.89%, preuzeto 31 spremnika, stanje pogona: 28/50
+Vozilo v6, mješanko 2  preuzima 15.63 kg otpada iz spremnika 470
+   Popunjenost: 23.03%, preuzeto 23 spremnika, stanje pogona: 28/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 11.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 16.
+Vozilo v3, metalko 1   je na punjenju. Preostalo je 8.
+Vozilo v4, biotko 1    je na punjenju. Preostalo je 8.
+Vozilo v5, mješanko 1  preuzima 189.0 kg otpada iz spremnika 479
+   Popunjenost: 79.62%, preuzeto 32 spremnika, stanje pogona: 27/50
+Vozilo v6, mješanko 2  preuzima 29.8 kg otpada iz spremnika 471
+   Popunjenost: 23.62%, preuzeto 24 spremnika, stanje pogona: 27/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 10.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 15.
+Vozilo v3, metalko 1   je na punjenju. Preostalo je 7.
+Vozilo v4, biotko 1    je na punjenju. Preostalo je 7.
+Vozilo v5, mješanko 1  preuzima 240.09 kg otpada iz spremnika 478
+   Popunjenost: 85.62%, preuzeto 33 spremnika, stanje pogona: 26/50
+Vozilo v6, mješanko 2  preuzima 21.22 kg otpada iz spremnika 472
+   Popunjenost: 24.05%, preuzeto 25 spremnika, stanje pogona: 26/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 9.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 14.
+Vozilo v3, metalko 1   je na punjenju. Preostalo je 6.
+Vozilo v4, biotko 1    je na punjenju. Preostalo je 6.
+Vozilo v5, mješanko 1  preuzima 157.81 kg otpada iz spremnika 477
+   Popunjenost: 89.56%, preuzeto 34 spremnika, stanje pogona: 25/50
+Vozilo v6, mješanko 2  preuzima 27.46 kg otpada iz spremnika 473
+   Popunjenost: 24.6%, preuzeto 26 spremnika, stanje pogona: 25/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 8.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 13.
+Vozilo v3, metalko 1   je na punjenju. Preostalo je 5.
+Vozilo v4, biotko 1    je na punjenju. Preostalo je 5.
+Vozilo v5, mješanko 1  preuzima 3.59 kg otpada iz spremnika 476
+   Popunjenost: 89.65%, preuzeto 35 spremnika, stanje pogona: 24/50
+Vozilo v6, mješanko 2  preuzima 11.24 kg otpada iz spremnika 474
+   Popunjenost: 24.82%, preuzeto 27 spremnika, stanje pogona: 24/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 7.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 12.
+Vozilo v3, metalko 1   je na punjenju. Preostalo je 4.
+Vozilo v4, biotko 1    je na punjenju. Preostalo je 4.
+Vozilo v5, mješanko 1  preuzima 24.66 kg otpada iz spremnika 475
+   Popunjenost: 90.27%, preuzeto 36 spremnika, stanje pogona: 23/50
+Vozilo v6: mješanko 2  je naišlo na drugo vozilo u ulici i okreće smjer prikupljanja.
+Vozilo v6, mješanko 2  preuzima 200.57 kg otpada iz spremnika 397
+   Popunjenost: 28.83%, preuzeto 28 spremnika, stanje pogona: 11/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 6.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 11.
+Vozilo v3, metalko 1   je na punjenju. Preostalo je 3.
+Vozilo v4, biotko 1    je na punjenju. Preostalo je 3.
+Vozilo v5, mješanko 1  preuzima 10.41 kg otpada iz spremnika 373
+   Popunjenost: 90.53%, preuzeto 37 spremnika, stanje pogona: 10/50
+Vozilo v6, mješanko 2  preuzima 5.87 kg otpada iz spremnika 396
+   Popunjenost: 28.95%, preuzeto 29 spremnika, stanje pogona: 10/50
+Vozilo v7, mješanko 3  je ušlo u Tina Ujevića, i zateklo 2 vozila u aktivnom prikupljanju te čeka da završe.
+Vozilo v7, mješanko 3  preuzima 7.65 kg otpada iz spremnika 374
+   Popunjenost: 65.95%, preuzeto 30 spremnika, stanje pogona: 8/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 5.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 10.
+Vozilo v3, metalko 1   je na punjenju. Preostalo je 2.
+Vozilo v4, biotko 1    je na punjenju. Preostalo je 2.
+Vozilo v5, mješanko 1  preuzima 7.95 kg otpada iz spremnika 375
+   Popunjenost: 90.73%, preuzeto 38 spremnika, stanje pogona: 8/50
+Vozilo v6, mješanko 2  preuzima 9.47 kg otpada iz spremnika 395
+   Popunjenost: 29.14%, preuzeto 30 spremnika, stanje pogona: 9/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 4.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 9.
+Vozilo v3, metalko 1   je na punjenju. Preostalo je 1.
+Vozilo v4, biotko 1    je na punjenju. Preostalo je 1.
+Vozilo v5, mješanko 1  preuzima 6.84 kg otpada iz spremnika 376
+   Popunjenost: 90.9%, preuzeto 39 spremnika, stanje pogona: 7/50
+Vozilo v6, mješanko 2  preuzima 17.68 kg otpada iz spremnika 394
+   Popunjenost: 29.49%, preuzeto 31 spremnika, stanje pogona: 8/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 3.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 8.
+Vozilo v3, metalko 1   je završilo punjenje i vraća se u prikupljanje.
+Vozilo v4, biotko 1    je završilo punjenje i vraća se u prikupljanje.
+Vozilo v5, mješanko 1  preuzima 29.05 kg otpada iz spremnika 377
+   Popunjenost: 91.63%, preuzeto 40 spremnika, stanje pogona: 6/50
+Vozilo v6, mješanko 2  preuzima 6.63 kg otpada iz spremnika 393
+   Popunjenost: 29.63%, preuzeto 32 spremnika, stanje pogona: 7/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 2.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 7.
+Vozilo v3, metalko 1   preuzima 63.7 kg otpada iz spremnika 267
+   Popunjenost: 15.77%, preuzeto 32 spremnika, stanje pogona: 30/30
+Vozilo v4, biotko 1    preuzima 120.0 kg otpada iz spremnika 739
+   Popunjenost: 24.16%, preuzeto 32 spremnika, stanje pogona: 30/30
+Vozilo v5, mješanko 1  preuzima 4.6 kg otpada iz spremnika 378
+   Popunjenost: 91.74%, preuzeto 41 spremnika, stanje pogona: 5/50
+Vozilo v6, mješanko 2  preuzima 26.66 kg otpada iz spremnika 392
+   Popunjenost: 30.16%, preuzeto 33 spremnika, stanje pogona: 6/50
+Vozilo v1, staklarko 1 je na punjenju. Preostalo je 1.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 6.
+Vozilo v3, metalko 1   preuzima 61.05 kg otpada iz spremnika 266
+   Popunjenost: 16.99%, preuzeto 33 spremnika, stanje pogona: 29/30
+Vozilo v4, biotko 1    preuzima 98.39 kg otpada iz spremnika 740
+   Popunjenost: 27.44%, preuzeto 33 spremnika, stanje pogona: 29/30
+Vozilo v5, mješanko 1  preuzima 11.74 kg otpada iz spremnika 379
+   Popunjenost: 92.04%, preuzeto 42 spremnika, stanje pogona: 4/50
+Vozilo v6, mješanko 2  preuzima 9.91 kg otpada iz spremnika 391
+   Popunjenost: 30.36%, preuzeto 34 spremnika, stanje pogona: 5/50
+Vozilo v1, staklarko 1 je završilo punjenje i vraća se u prikupljanje.
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 5.
+Vozilo v3, metalko 1   preuzima 71.11 kg otpada iz spremnika 265
+   Popunjenost: 18.41%, preuzeto 34 spremnika, stanje pogona: 28/30
+Vozilo v4, biotko 1    preuzima 85.14 kg otpada iz spremnika 741
+   Popunjenost: 30.28%, preuzeto 34 spremnika, stanje pogona: 28/30
+Vozilo v5, mješanko 1  preuzima 12.31 kg otpada iz spremnika 380
+   Popunjenost: 92.34%, preuzeto 43 spremnika, stanje pogona: 3/50
+Vozilo v6, mješanko 2  preuzima 5.48 kg otpada iz spremnika 390
+   Popunjenost: 30.47%, preuzeto 35 spremnika, stanje pogona: 4/50
+Vozilo v1, staklarko 1 preuzima 37.82 kg otpada iz spremnika 786
+   Popunjenost: 16.25%, preuzeto 32 spremnika, stanje pogona: 30/30
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 4.
+Vozilo v3, metalko 1   preuzima 59.57 kg otpada iz spremnika 264
+   Popunjenost: 19.61%, preuzeto 35 spremnika, stanje pogona: 27/30
+Vozilo v4, biotko 1    preuzima 120.0 kg otpada iz spremnika 742
+   Popunjenost: 34.28%, preuzeto 35 spremnika, stanje pogona: 27/30
+Vozilo v5, mješanko 1  preuzima 25.59 kg otpada iz spremnika 381
+   Popunjenost: 92.98%, preuzeto 44 spremnika, stanje pogona: 2/50
+Vozilo v6, mješanko 2  preuzima 22.05 kg otpada iz spremnika 389
+   Popunjenost: 30.91%, preuzeto 36 spremnika, stanje pogona: 3/50
+Vozilo v1, staklarko 1 preuzima 15.97 kg otpada iz spremnika 787
+   Popunjenost: 16.65%, preuzeto 33 spremnika, stanje pogona: 29/30
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 3.
+Vozilo v3, metalko 1   preuzima 2.1 kg otpada iz spremnika 263
+   Popunjenost: 19.65%, preuzeto 36 spremnika, stanje pogona: 26/30
+Vozilo v4, biotko 1    preuzima 120.0 kg otpada iz spremnika 743
+   Popunjenost: 38.28%, preuzeto 36 spremnika, stanje pogona: 26/30
+Vozilo v5, mješanko 1  preuzima 28.95 kg otpada iz spremnika 382
+   Popunjenost: 93.71%, preuzeto 45 spremnika, stanje pogona: 1/50
+Vozilo v6, mješanko 2  preuzima 3.72 kg otpada iz spremnika 388
+   Popunjenost: 30.98%, preuzeto 37 spremnika, stanje pogona: 2/50
+Vozilo v1, staklarko 1 preuzima 29.02 kg otpada iz spremnika 788
+   Popunjenost: 17.38%, preuzeto 34 spremnika, stanje pogona: 28/30
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 2.
+Vozilo v3, metalko 1   preuzima 15.66 kg otpada iz spremnika 262
+   Popunjenost: 19.96%, preuzeto 37 spremnika, stanje pogona: 25/30
+Vozilo v4, biotko 1    preuzima 120.0 kg otpada iz spremnika 744
+   Popunjenost: 42.28%, preuzeto 37 spremnika, stanje pogona: 25/30
+Vozilo v5, mješanko 1  preuzima 19.35 kg otpada iz spremnika 383
+   Popunjenost: 94.19%, preuzeto 46 spremnika, stanje pogona: 0/50
+Vozilo v5, mješanko 1  puni pogonski sustav.
+Vozilo v6, mješanko 2  preuzima 4.55 kg otpada iz spremnika 387
+   Popunjenost: 31.07%, preuzeto 38 spremnika, stanje pogona: 1/50
+Vozilo v1, staklarko 1 preuzima 32.68 kg otpada iz spremnika 789
+   Popunjenost: 18.2%, preuzeto 35 spremnika, stanje pogona: 27/30
+Vozilo v2, papirko 1   je na punjenju. Preostalo je 1.
+Vozilo v3, metalko 1   preuzima 4.39 kg otpada iz spremnika 261
+   Popunjenost: 20.05%, preuzeto 38 spremnika, stanje pogona: 24/30
+Vozilo v4, biotko 1    preuzima 7.17 kg otpada iz spremnika 815
+   Popunjenost: 42.52%, preuzeto 38 spremnika, stanje pogona: 24/30
+Vozilo v5, mješanko 1  je na punjenju. Preostalo je 7.
+Vozilo v6, mješanko 2  preuzima 21.8 kg otpada iz spremnika 386
+   Popunjenost: 31.51%, preuzeto 39 spremnika, stanje pogona: 0/50
+Vozilo v6, mješanko 2  puni pogonski sustav.
+Vozilo v7, mješanko 3  puni pogonski sustav.
+Vozilo v7, mješanko 3  puni pogonski sustav.
+Vozilo v7, mješanko 3  puni pogonski sustav.
+Vozilo v7, mješanko 3  preuzima 8.91 kg otpada iz spremnika 384
+   Popunjenost: 66.25%, preuzeto 31 spremnika, stanje pogona: 0/50
+Vozilo v7, mješanko 3  puni pogonski sustav.
+Vozilo v1, staklarko 1 preuzima 43.71 kg otpada iz spremnika 790
+   Popunjenost: 19.29%, preuzeto 36 spremnika, stanje pogona: 26/30
+Vozilo v2, papirko 1   je završilo punjenje i vraća se u prikupljanje.
+Vozilo v3, metalko 1   preuzima 11.83 kg otpada iz spremnika 260
+   Popunjenost: 20.29%, preuzeto 39 spremnika, stanje pogona: 23/30
+Vozilo v3: metalko 1   je naišlo na drugo vozilo u ulici i okreće smjer prikupljanja.
+Vozilo v4, biotko 1    preuzima 4.44 kg otpada iz spremnika 816
+   Popunjenost: 42.67%, preuzeto 39 spremnika, stanje pogona: 23/30
+Vozilo v5, mješanko 1  je na punjenju. Preostalo je 6.
+Vozilo v6, mješanko 2  je na punjenju. Preostalo je 7.
+Vozilo v7, mješanko 3  je na punjenju. Preostalo je 7.
+Vozilo v1, staklarko 1 preuzima 25.54 kg otpada iz spremnika 791
+   Popunjenost: 19.93%, preuzeto 37 spremnika, stanje pogona: 25/30
+Vozilo v2, papirko 1   preuzima 58.34 kg otpada iz spremnika 807
+   Popunjenost: 55.54%, preuzeto 32 spremnika, stanje pogona: 30/30
+Vozilo v2: papirko 1   je naišlo na drugo vozilo u ulici i okreće smjer prikupljanja.
+Vozilo v3, metalko 1   preuzima 21.34 kg otpada iz spremnika 606
+   Popunjenost: 20.71%, preuzeto 40 spremnika, stanje pogona: 22/30
+Vozilo v4, biotko 1    preuzima 8.32 kg otpada iz spremnika 817
+   Popunjenost: 42.94%, preuzeto 40 spremnika, stanje pogona: 22/30
+Vozilo v5, mješanko 1  je na punjenju. Preostalo je 5.
+Vozilo v6, mješanko 2  je na punjenju. Preostalo je 6.
+Vozilo v7, mješanko 3  je na punjenju. Preostalo je 6.
+Vozilo v1, staklarko 1 preuzima 48.33 kg otpada iz spremnika 792
+   Popunjenost: 21.14%, preuzeto 38 spremnika, stanje pogona: 24/30
+Vozilo v2, papirko 1   preuzima 16.31 kg otpada iz spremnika 630
+   Popunjenost: 56.09%, preuzeto 33 spremnika, stanje pogona: 29/30
+Vozilo v3, metalko 1   preuzima 4.87 kg otpada iz spremnika 605
+   Popunjenost: 20.81%, preuzeto 41 spremnika, stanje pogona: 21/30
+Vozilo v4, biotko 1    preuzima 4.21 kg otpada iz spremnika 818
+   Popunjenost: 43.08%, preuzeto 41 spremnika, stanje pogona: 21/30
+Vozilo v5, mješanko 1  je na punjenju. Preostalo je 4.
+Vozilo v6, mješanko 2  je na punjenju. Preostalo je 5.
+Vozilo v7, mješanko 3  je na punjenju. Preostalo je 5.
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski | Smjer |   Popis vozača |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prikup.|(A) za aktivnog |
+=============================================================================================================================
+  PRIKUPLJANJE | v1 | staklarko 1 | električni |  staklo |    4000 |   21,14 |    845,40 | 23 / 30 |     + |       pero (A) |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v2 | papirko 1   | električni |   papir |    3000 |   56,09 |   1682,58 | 28 / 30 |     - |      borko (A) |
+               |    |             |            |         |         |         |           |         |       |           jura |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v3 | metalko 1   | električni |   metal |    5000 |   20,81 |   1040,49 | 20 / 30 |     - |       kiki (A) |
+               |    |             |            |         |         |         |           |         |       |         tvrtko |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v4 | biotko 1    | električni |     bio |    3000 |   43,08 |   1292,50 | 20 / 30 |     + |      rajka (A) |
+               |    |             |            |         |         |         |           |         |       |          vesna |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v5 | mješanko 1  |     diesel | mješano |    4000 |   94,19 |   3767,63 |  0 / 50 |     + |       luka (A) |
+               |    |             |            |         |         |         |           |         |       |           zoki |
+               |    |             |            |         |         |         |           |         |       |           sven |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v6 | mješanko 2  |     diesel | mješano |    5000 |   31,51 |   1575,42 |  0 / 50 |     - |       fran (A) |
+               |    |             |            |         |         |         |           |         |       |          hinko |
+               |    |             |            |         |         |         |           |         |       |           blaž |
+-----------------------------------------------------------------------------------------------------------------------------
+      PUNJENJE | v7 | mješanko 3  |     diesel | mješano |    3000 |   66,25 |   1987,52 |  0 / 50 |     + |       miki (A) |
+               |    |             |            |         |         |         |           |         |       |           dudo |
+               |    |             |            |         |         |         |           |         |       |           viki |
+-----------------------------------------------------------------------------------------------------------------------------
+Komanda KRENI
+Vozilo v1, staklarko 1 preuzima 46.55 kg otpada iz spremnika 626
+   Popunjenost: 22.3%, preuzeto 39 spremnika, stanje pogona: 23/30
+Vozilo v2, papirko 1   preuzima 5.78 kg otpada iz spremnika 629
+   Popunjenost: 56.28%, preuzeto 34 spremnika, stanje pogona: 28/30
+Vozilo v3, metalko 1   preuzima 10.08 kg otpada iz spremnika 604
+   Popunjenost: 21.01%, preuzeto 42 spremnika, stanje pogona: 20/30
+Vozilo v4, biotko 1    preuzima 2.49 kg otpada iz spremnika 819
+   Popunjenost: 43.17%, preuzeto 42 spremnika, stanje pogona: 20/30
+Vozilo v5, mješanko 1  je na punjenju. Preostalo je 3.
+Vozilo v6, mješanko 2  je na punjenju. Preostalo je 4.
+Vozilo v7, mješanko 3  je na punjenju. Preostalo je 4.
+Vozilo v1, staklarko 1 preuzima 18.19 kg otpada iz spremnika 627
+   Popunjenost: 22.75%, preuzeto 40 spremnika, stanje pogona: 22/30
+Vozilo v1: staklarko 1 je naišlo na drugo vozilo u ulici i okreće smjer prikupljanja.
+Vozilo v2, papirko 1   preuzima 12.5 kg otpada iz spremnika 628
+   Popunjenost: 56.7%, preuzeto 35 spremnika, stanje pogona: 27/30
+Vozilo v3, metalko 1   odvozi otpad uz popunjenostod 21.01%.
+Vozilo v4, biotko 1    preuzima 8.53 kg otpada iz spremnika 820
+   Popunjenost: 43.45%, preuzeto 43 spremnika, stanje pogona: 19/30
+Vozilo v5, mješanko 1  je na punjenju. Preostalo je 2.
+Vozilo v6, mješanko 2  je na punjenju. Preostalo je 3.
+Vozilo v7, mješanko 3  je na punjenju. Preostalo je 3.
+Vozilo v1, staklarko 1 preuzima 22.14 kg otpada iz spremnika 413
+   Popunjenost: 23.31%, preuzeto 41 spremnika, stanje pogona: 21/30
+Vozilo v2, papirko 1   preuzima 17.6 kg otpada iz spremnika 414
+   Popunjenost: 57.28%, preuzeto 36 spremnika, stanje pogona: 26/30
+Vozilo v3, metalko 1   je u odvozu. Preostalo je 20.
+Vozilo v4, biotko 1    preuzima 8.32 kg otpada iz spremnika 821
+   Popunjenost: 43.73%, preuzeto 44 spremnika, stanje pogona: 18/30
+Vozilo v5, mješanko 1  je na punjenju. Preostalo je 1.
+Vozilo v6, mješanko 2  je na punjenju. Preostalo je 2.
+Vozilo v7, mješanko 3  je na punjenju. Preostalo je 2.
+Vozilo v1, staklarko 1 preuzima 43.99 kg otpada iz spremnika 412
+   Popunjenost: 24.41%, preuzeto 42 spremnika, stanje pogona: 20/30
+Vozilo v2, papirko 1   preuzima 17.59 kg otpada iz spremnika 415
+   Popunjenost: 57.87%, preuzeto 37 spremnika, stanje pogona: 25/30
+Vozilo v3, metalko 1   je u odvozu. Preostalo je 19.
+Vozilo v4, biotko 1    preuzima 8.59 kg otpada iz spremnika 822
+   Popunjenost: 44.01%, preuzeto 45 spremnika, stanje pogona: 17/30
+Vozilo v5, mješanko 1  je završilo punjenje i vraća se u prikupljanje.
+Vozilo v6, mješanko 2  je na punjenju. Preostalo je 1.
+Vozilo v7, mješanko 3  je na punjenju. Preostalo je 1.
+Vozilo v1, staklarko 1 preuzima 47.12 kg otpada iz spremnika 411
+   Popunjenost: 25.58%, preuzeto 43 spremnika, stanje pogona: 19/30
+Vozilo v2, papirko 1   preuzima 11.38 kg otpada iz spremnika 416
+   Popunjenost: 58.25%, preuzeto 38 spremnika, stanje pogona: 24/30
+Vozilo v3, metalko 1   je u odvozu. Preostalo je 18.
+Vozilo v4, biotko 1    preuzima 5.75 kg otpada iz spremnika 823
+   Popunjenost: 44.21%, preuzeto 46 spremnika, stanje pogona: 16/30
+Vozilo v5, mješanko 1  preuzima 26.73 kg otpada iz spremnika 385
+   Popunjenost: 94.86%, preuzeto 47 spremnika, stanje pogona: 49/50
+Vozilo v6, mješanko 2  je završilo punjenje i vraća se u prikupljanje.
+Vozilo v7, mješanko 3  je završilo punjenje i vraća se u prikupljanje.
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski | Smjer |   Popis vozača |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prikup.|(A) za aktivnog |
+=============================================================================================================================
+  PRIKUPLJANJE | v1 | staklarko 1 | električni |  staklo |    4000 |   25,58 |   1023,39 | 18 / 30 |     - |       pero (A) |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v2 | papirko 1   | električni |   papir |    3000 |   58,25 |   1747,43 | 23 / 30 |     + |      borko (A) |
+               |    |             |            |         |         |         |           |         |       |           jura |
+-----------------------------------------------------------------------------------------------------------------------------
+         ODVOZ | v3 | metalko 1   | električni |   metal |    5000 |   21,01 |   1050,57 | 19 / 30 |     + |       kiki (A) |
+               |    |             |            |         |         |         |           |         |       |         tvrtko |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v4 | biotko 1    | električni |     bio |    3000 |   44,21 |   1326,18 | 15 / 30 |     + |      rajka (A) |
+               |    |             |            |         |         |         |           |         |       |          vesna |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v5 | mješanko 1  |     diesel | mješano |    4000 |   94,86 |   3794,36 | 48 / 50 |     + |       sven (A) |
+               |    |             |            |         |         |         |           |         |       |           zoki |
+               |    |             |            |         |         |         |           |         |       |           luka |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v6 | mješanko 2  |     diesel | mješano |    5000 |   31,51 |   1575,42 | 50 / 50 |     - |       blaž (A) |
+               |    |             |            |         |         |         |           |         |       |          hinko |
+               |    |             |            |         |         |         |           |         |       |           fran |
+-----------------------------------------------------------------------------------------------------------------------------
+  PRIKUPLJANJE | v7 | mješanko 3  |     diesel | mješano |    3000 |   66,25 |   1987,52 | 50 / 50 |     + |       viki (A) |
+               |    |             |            |         |         |         |           |         |       |           dudo |
+               |    |             |            |         |         |         |           |         |       |           miki |
+-----------------------------------------------------------------------------------------------------------------------------

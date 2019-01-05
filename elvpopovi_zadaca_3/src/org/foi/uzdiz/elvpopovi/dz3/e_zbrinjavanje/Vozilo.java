@@ -92,7 +92,7 @@ public class Vozilo implements VoziloSucelje
     {
         mapaVozaca.put(vozac.DajId(),vozac);
         vozac.PridruziVozilo(this);
-        if(trenutniVozac==null)
+        if(trenutniVozac == null)
             trenutniVozac = vozac.DajId();
     }
     
@@ -102,9 +102,14 @@ public class Vozilo implements VoziloSucelje
         if(vozac != null)
         {
             //ako je aktivan 
-            if(trenutniVozac==vozac.DajId())
-                RotirajVozace(); //probamo rotirati
-            if(trenutniVozac==vozac.DajId()) //ako se nije imalo što rotirati
+            if(trenutniVozac != null)
+            {
+                if(trenutniVozac==vozac.DajId())
+                    RotirajVozace(); //probamo rotirati
+                if(trenutniVozac==vozac.DajId()) //ako se nije imalo što rotirati
+                    trenutniVozac = null;
+            }
+            else
                 trenutniVozac = null;
             mapaVozaca.remove(vozac.DajId());
             vozac.UkloniPridruzenoVozilo();

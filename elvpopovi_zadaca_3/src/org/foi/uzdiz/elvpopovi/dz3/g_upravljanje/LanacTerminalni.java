@@ -15,10 +15,12 @@ import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 public class LanacTerminalni implements LanacKomandiApstraktni
 {
     private final SimulacijaSucelje simulacija;
+    private Parametri parametri;
     
     public LanacTerminalni(SimulacijaSucelje simulacija)
     {
         this.simulacija = simulacija;
+        parametri = Parametri.getInstance();
     }
     
     @Override
@@ -40,6 +42,9 @@ public class LanacTerminalni implements LanacKomandiApstraktni
         simulacija.Ispisi("  NOVI;lista_vozača");
         simulacija.Ispisi("  VOZAČI;");
         simulacija.Ispisi("  IZLAZ;");
+        simulacija.Ispisi("Program radi sa kodnom stranicom unosa CP"+parametri.DajVrijednost("kodnaStranica"));
+        simulacija.Ispisi("Kodnu stranicu možete promijeniti naredbom chcp "+parametri.DajVrijednost("kodnaStranica"));
+        simulacija.Ispisi("Također možete koristiti unos naredbi bez hrvatskih znakova, npr. GODISNJI ODMOR");
     }
 
     @Override

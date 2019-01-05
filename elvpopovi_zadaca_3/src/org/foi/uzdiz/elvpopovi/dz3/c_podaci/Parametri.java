@@ -55,6 +55,7 @@ public class Parametri implements PodaciSucelje
         {
             BufferedReader citac = new BufferedReader(new InputStreamReader(new FileInputStream(staza), "UTF-8"));
             procitajZapise(citac);
+            dopuniZapise();
             generirajImenaVrstaotpada();
             citac.close();
         }
@@ -132,6 +133,12 @@ public class Parametri implements PodaciSucelje
             }
             else
                 System.err.print("Prilikom čitanja parametara pronađen je neispravni redak "+brojacRedaka+".");
+    }
+    
+    private void dopuniZapise()
+    {
+        //DOS CP 852, Windows CP 1250, UTF-8 65001
+        vrijednosti.put("kodnaStranica", 1250);
     }
 
     private String[] procitajRedak(BufferedReader citac)
