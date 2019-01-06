@@ -7,7 +7,6 @@ package org.foi.uzdiz.elvpopovi.dz1.c_komuna;
 
 import org.foi.uzdiz.elvpopovi.dz1.d_zbrinjavanje.MjesanoKreator;
 import org.foi.uzdiz.elvpopovi.dz1.d_zbrinjavanje.PapirKreator;
-import org.foi.uzdiz.elvpopovi.dz1.d_zbrinjavanje.ZbrinjavanjeFactoryMethod;
 import org.foi.uzdiz.elvpopovi.dz1.d_zbrinjavanje.Raspon;
 import org.foi.uzdiz.elvpopovi.dz1.d_zbrinjavanje.MetalKreator;
 import org.foi.uzdiz.elvpopovi.dz1.d_zbrinjavanje.BioKreator;
@@ -20,6 +19,7 @@ import org.foi.uzdiz.elvpopovi.dz1.a_glavna.InicijalizacijaPodatakaProduct;
 import org.foi.uzdiz.elvpopovi.dz1.b_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz1.f_podrska.Ispisivanje;
 import org.foi.uzdiz.elvpopovi.dz1.f_podrska.RandomGenerator;
+import org.foi.uzdiz.elvpopovi.dz1.d_zbrinjavanje.ZbrinjavanjeFactory;
 
 /**
  *
@@ -407,10 +407,10 @@ public class ProblemskiProduct implements ProblemskiAbstractProduct
     private int[] rasponiMin;
     private int[][] rasponiMax;
     
-    ZbrinjavanjeFactoryMethod stakloKreator;
-    ZbrinjavanjeFactoryMethod papirKreator;
-    ZbrinjavanjeFactoryMethod metalKreator;
-    ZbrinjavanjeFactoryMethod bioKreator;
-    ZbrinjavanjeFactoryMethod mjesanoKreator;
+    ZbrinjavanjeFactory stakloKreator;
+    ZbrinjavanjeFactory papirKreator;
+    ZbrinjavanjeFactory metalKreator;
+    ZbrinjavanjeFactory bioKreator;
+    ZbrinjavanjeFactory mjesanoKreator;
     
 }

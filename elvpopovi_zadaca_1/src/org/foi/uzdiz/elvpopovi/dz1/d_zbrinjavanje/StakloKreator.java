@@ -11,7 +11,7 @@ import org.foi.uzdiz.elvpopovi.dz1.a_glavna.InicijalizacijaPodatakaProduct;
  *
  * @author elvis
  */
-public class StakloKreator implements ZbrinjavanjeFactoryMethod
+public class StakloKreator implements ZbrinjavanjeFactory
 {
     @Override
     public Spremnik KreirajSpremnik(int tip, int[] naBroj, int nosivost) 

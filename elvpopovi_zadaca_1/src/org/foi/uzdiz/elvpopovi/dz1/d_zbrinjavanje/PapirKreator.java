@@ -11,7 +11,7 @@ import org.foi.uzdiz.elvpopovi.dz1.a_glavna.InicijalizacijaPodatakaProduct;
  *
  * @author elvis
  */
-public class PapirKreator implements ZbrinjavanjeFactoryMethod
+public class PapirKreator implements ZbrinjavanjeFactory
 {
     
 
