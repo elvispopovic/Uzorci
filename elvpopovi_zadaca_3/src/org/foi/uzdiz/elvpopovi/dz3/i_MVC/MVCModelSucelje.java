@@ -8,7 +8,7 @@ package org.foi.uzdiz.elvpopovi.dz3.i_MVC;
 import java.util.ArrayList;
 
 /**
- *
+ * Sučelje modula koje slijedi uzorak fasade prema modelima
  * @author elvis
  */
 public interface MVCModelSucelje

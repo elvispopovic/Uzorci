@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
-
+/**
+ * View klasa MVC uzorka
+ * @author elvis
+ */
 public class MVCView extends MVCObserver
 {
     private MVCController controller;
@@ -27,13 +30,20 @@ public class MVCView extends MVCObserver
         brg = parametri.DajVrijednost("brg");
         brd = parametri.DajVrijednost("brd");
     }
-    
+    /**
+     * Kreira kontroller
+     */
     public void KreirajController()
     {
         controller = new MVCController(brg, brd);
         inicijalizirajVT100();
     }
-    
+    /**
+     * Inicijalizira se model, preuzimaju se reference, a ako je prije bio priključen
+     * neki drugi model, on se odjavljuje
+     * Ova metoda traži i kreiranje Kontrolera
+     * @param model referenca na postojeći model
+     */
     public void InicijalizirajModel(MVCModelSucelje model)
     {
         
@@ -45,7 +55,12 @@ public class MVCView extends MVCObserver
             KreirajController();
         controller.InicijalizirajMV(model, this);
     }
-     
+    /**
+     * Prikazuje se gornji, prezentacijski dio ekrana
+     * @param i broj redova koji su do sada prikazani od ukupnog broja redaka koje treba u više
+     * navrata prikazati
+     * @return vraća broj redaka koji su u ovom prolazu prikazani
+     */
     public int prikaziPrezentacijskiDio(int i)
     {
         int j;
@@ -64,7 +79,10 @@ public class MVCView extends MVCObserver
         System.out.print("\033[0m");
         return j;
     }
-    
+    /**
+     * prikazuje donji, komandni dio ekrana
+     * @param upit upit, odnosno komanda koja se prikazuje u komandnom dijelu
+     */
     public void prikaziKomandniDio(String upit)
     {
         System.out.print("\033[1;34m");
@@ -80,24 +98,34 @@ public class MVCView extends MVCObserver
         }
         System.out.print("\033[0m");
     }
+    /**
+     * Osvježavanje prikaza
+     * @param cekanje da li se čeka potvrda korisnika
+     */
     @Override
     public void Osvjezi(boolean cekanje)
     {
         redciIspisa = model.DohvatiPodatkeMVC();
     }  
-    
+    /**
+     * Rad u komandnom modu
+     */
     public void KomandniMod()
     {
         Osvjezi(true);
     }
-    
+    /**
+     * Briše sve retke prezentacijskog dijela ekrana
+     */
     public void ObrisiPrezentacijskiDio()
     {
         System.out.print("\033["+brg+";135H");
         System.out.print("\033[1J");
         System.out.print("\033[0;0H");
     }
-    
+    /**
+     * Briše sve retke komandnog dijela ekrana
+     */
     public void obrisiKomandniDio()
     {
         if(brg>0&&brd>0)
@@ -107,7 +135,9 @@ public class MVCView extends MVCObserver
             System.out.print("\033["+(brg+2)+";0H");
         }
     }
-    
+    /**
+     * Eksperimentalno. Postavlja neke parametre VT 100 terminala, i briše terminal
+     */
     private void inicijalizirajVT100()
     {
         if(brg>0&&brd>0)

@@ -6,15 +6,22 @@
 package org.foi.uzdiz.elvpopovi.dz3.i_MVC;
 
 /**
- *
+ * Apstraktna klasa MVC modela koja funkcionira kao observer
  * @author elvis
  */
 public abstract class MVCObserver
 {
+    /**
+     * Metoda koja prihvaća događaj, prazna metoda
+     * @param cekanje 
+     */
     public void Osvjezi(boolean cekanje)
     {
         
     }
+    /**
+     * Rad u komandnom modu, prazna metoda
+     */
     public void KomandniMod()
     {
         

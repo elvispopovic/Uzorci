@@ -19,7 +19,7 @@ import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCView;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 
 /**
- *
+ * Aplikacijski direktor upravlja inicijalizacijom i pokretanjem svih dijelova aplikacije
  * @author elvis
  */
 public class AplikacijskiDirektor
@@ -29,6 +29,10 @@ public class AplikacijskiDirektor
         this.args = args;
         podatkovniBuilder = new InicijalizacijaPodatakaBuilder(args);
     }
+    /**
+     * Inicijaliziraju se svi parametri i čitaju podaci iz datoteka
+     * @return true ako je sve uspjelo
+     */
     public boolean InicijalizirajParametre()
     {
         try
@@ -51,6 +55,10 @@ public class AplikacijskiDirektor
         }
         return true;
     }
+    /**
+     * Provjeravaju se preklopnici --brg i --brd u DZ3
+     * @return 
+     */
     public boolean ProvjeriPreklopnike()
     {
         if(args.length>=3)
@@ -61,6 +69,10 @@ public class AplikacijskiDirektor
             }
         return true;
     }
+    /**
+     * Kreiraju se potrebni objekti za rad aplikacije na osnovu ranije učitanih podataka
+     * @return true ako je sve uspjelo
+     */
     public boolean InicijalizirajPodatke()
     {
         Parametri parametri = Parametri.getInstance();
@@ -73,16 +85,27 @@ public class AplikacijskiDirektor
         }
         ispis.Ispisi("Init: sjeme generatora: "+podaciProdukt.dajParametre().DajVrijednost("sjemeGeneratora"));
         ispis.Ispisi("Init: izlazna datoteka: "+podaciProdukt.dajParametre().DajDatoteku("izlaz"));
-        problemskiBuilder = new ProblemskiBuilder(podaciProdukt);
-        problemskiBuilder   .KreirajPodrucja()
-                            .KreirajUlice()
-                            .KreirajRaspone()
-                            .KreirajKorisnike()
-                            .IspisiUlice()
-                            .KreirajSpremnike()
-                            .KreirajVozila();
+        try
+        {
+            problemskiBuilder = new ProblemskiBuilder(podaciProdukt);
+            problemskiBuilder   .KreirajPodrucja()
+                                .KreirajUlice()
+                                .KreirajRaspone()
+                                .KreirajKorisnike()
+                                .IspisiUlice()
+                                .KreirajSpremnike()
+                                .KreirajVozila();
+        }
+        catch(Exception e)
+        {
+            ispis.Ispisi("Nije uspjelo kreiranje objekata potrebnih za rad aplikacije.");
+            return false;
+        }
         return true;
     }
+    /**
+     * Pokreće se simulacijski dio i statistike koje prate pojedina vozila i ukupni otpad
+     */
     public void IzvrsiSimulaciju()
     {
         
@@ -93,11 +116,18 @@ public class AplikacijskiDirektor
                             .PokreniSimulaciju()
                             .IspisiStatistiku();
     }
-
+    /**
+     * Vraća se objekt koji sadrži sve generirane podatke
+     * @return inicijalizirani podaci u zbirnom product objektu
+     */
     public InicijalizacijaAbstractProduct DajPodatke()
     {
         return problemskiBuilder.DajPodatke();
     }
+    /**
+     * Vraća se objekt koji sadrži sve generirane objekte koje koristi aplikacija
+     * @return inicijalizirani objekti u zbirnom product objektu
+     */
     public ProblemskiAbstractProduct DajProblemske()
     {
         return problemskiBuilder.DajProblemske();

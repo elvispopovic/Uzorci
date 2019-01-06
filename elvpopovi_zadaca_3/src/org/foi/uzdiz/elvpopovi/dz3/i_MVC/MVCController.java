@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
-
+/**
+ * Controller klasa MVC uzorka
+ * @author elvis
+ */
 public class MVCController extends MVCObserver
 {
     private MVCView view;
@@ -28,7 +31,11 @@ public class MVCController extends MVCObserver
         this.brd = brd;
         komandniMod = false;
     }
-    
+    /**
+     * Inicijalizra se kontroler MVC uzorka
+     * @param model model MVC uzorka 
+     * @param view view MVC uzorka
+     */
     public void InicijalizirajMV(MVCModelSucelje model, MVCView view)
     {
         if(this.model != null)
@@ -37,12 +44,17 @@ public class MVCController extends MVCObserver
         this.view  = view;
         this.model.PrikljuciMVC(this);
     }
-    
+    /**
+     * Prazna metoda, ovdje samo zbog kompatifilnosti sa MVCObserver sučeljem
+     */
     public void ObradiDogadjaj()
     {
         
     }
-    
+    /**
+     * Osvježavanje koje se jednako tako šalje i Viewu
+     * @param cekanje da li se čeka potvrda korisnika
+     */
     @Override
     public void Osvjezi(boolean cekanje)
     {
@@ -53,7 +65,11 @@ public class MVCController extends MVCObserver
         if(cekanje == false)
             view.prikaziKomandniDio("");
     }  
-    
+    /**
+     * Poziva se kada je MVC u stanju izvršavanja korisničkih komandi
+     * Tada nema logičkih podjela, već se izvršava sve što komanda radi bez da se konzultira korisnik 
+     * Kada se obavi sve, obavještava se korisnik da može pregledavati rezultat
+     */
     public void KomandniMod()
     {
         String komanda;
@@ -81,7 +97,11 @@ public class MVCController extends MVCObserver
         }while(!razdvojeno[0].toUpperCase().equals("IZLAZ"));
         komandniMod = false;
     }
-    
+    /**
+     * Prikazivanje obuhvaća poziv viewa da zaista sve prikaže na ekranu, red po red
+     * dok se ne popuni broj redaka određen sa --brg parametrom
+     * @param cekanje da li se čeka korisnički unos
+     */
     private void Prikazi(boolean cekanje)
     {
         int j;
@@ -98,7 +118,11 @@ public class MVCController extends MVCObserver
         model.KomandaMVC(komanda);
         brojRedakaIspisa = 0;
     }
-    
+    /**
+     * Čekanje korisničkog unosa
+     * @param ostatak koliko je preostalo redaka za ispis
+     * @return true ako se ispisuje dalje, false ako korisnik želi preskočiti ispis ili logičku cjelinu
+     */
     private boolean nastavak(int ostatak)
     {
         String s;

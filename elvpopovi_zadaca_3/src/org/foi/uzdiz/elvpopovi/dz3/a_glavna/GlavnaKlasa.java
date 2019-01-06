@@ -8,7 +8,7 @@ package org.foi.uzdiz.elvpopovi.dz3.a_glavna;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 
 /**
- *
+ * Glavna (main) klasa koja sadrži statičku metodu main
  * @author elvis
  */
 public class GlavnaKlasa 
