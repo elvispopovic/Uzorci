@@ -25,7 +25,6 @@ public class LanacStatus implements LanacKomandiApstraktni
     private final SimulacijaSucelje simulacija;
     private final Parametri parametri;
     private final ListaVozila listaPrikupljanje;
-    //private final ListaVozila listaOdvoz;
     private LanacKomandiApstraktni sljedbenik;
     
     public LanacStatus(SimulacijaSucelje simulacija)

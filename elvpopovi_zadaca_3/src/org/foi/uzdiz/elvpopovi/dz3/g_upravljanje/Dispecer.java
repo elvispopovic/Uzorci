@@ -30,14 +30,13 @@ public class Dispecer implements SimulacijaSucelje, MVCModelSucelje
     protected ArrayList<MVCObserver> observers;
     protected LanacKomandiApstraktni lanacObradi;
     protected final PodaciSucelje podaciDispecer;
-    protected final Ispisivanje ispis;
     protected int brg, brd;
     public  Dispecer(SimulacijaSucelje simulacija, PodaciSucelje podaci)
     {
         this.simulacija = simulacija;
         this.podaciDispecer = podaci;
         observers = new ArrayList<>();
-        ispis = Ispisivanje.getInstance();
+        Ispisivanje ispis = Ispisivanje.getInstance();
         Parametri parametri = Parametri.getInstance();
         brg = parametri.DajVrijednost("brg");
         brd = parametri.DajVrijednost("brd");

@@ -22,7 +22,6 @@ public class LanacIsprazni implements LanacKomandiApstraktni
 {
     private final SimulacijaSucelje simulacija;
     private final Parametri parametri;
-    private final ArrayList<VoziloSucelje> listaVozila;
     private final ListaVozila listaPrikupljanje;
     private LanacKomandiApstraktni sljedbenik;
     
@@ -30,9 +29,7 @@ public class LanacIsprazni implements LanacKomandiApstraktni
     {
         this.simulacija = simulacija;
         parametri = Parametri.getInstance();
-        listaVozila = this.simulacija.DajListuVozilaPodaci();
         listaPrikupljanje = simulacija.DajListaVozilaSimulacija();
-        //listaKvar = simulacija.DajListaKvar();
         sljedbenik = null;
     }
     
