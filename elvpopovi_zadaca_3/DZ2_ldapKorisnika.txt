@@ -7,7 +7,7 @@ Pročitano je 6 redaka podataka iz DZ_3_spremnici.txt
 Pročitano je 7 redaka podataka iz DZ_3_vozila.txt
 Pročitano je 25 redaka podataka iz DZ_3_dispecer.txt
 Zbog unešenih argumenata --brg i/ili --brd radi se o DZ_3.
-Brg: 20, brd: 10
+Brg: 20, brd: 8
 Init: sjeme generatora: 17153
 Init: izlazna datoteka: DZ2_ldapKorisnika.txt
 Poziva se problem iz DZ_3.
@@ -2123,6 +2123,54 @@ Status vozila prikazan je tablično:
       ZAVRSENO | v7 | mješanko 3  |     diesel | mješano |    3000 |    0,00 |   2338,42 | 42 / 50 |     + |       viki (A) |
                |    |             |            |         |         |         |           |         |       |           dudo |
 -----------------------------------------------------------------------------------------------------------------------------
+[1;35mNaredba "godi nji odmor" nije prepoznata.
+[1;32mNaredbe:
+  OBRADI;podrucje;lista_vozla
+  PRIPREMI;lista_vozla
+  KRENI [broj];
+  KVAR;lista_vozila
+  KONTROLA;lista_vozila
+  ISPRAZNI;lista_vozila
+  STATUS;
+  GODIŠNJI ODMOR;lista_vozača
+  BOLOVANJE;lista_vozača
+  OTKAZ;lista_vozača
+  PREUZMI;vozač;[vozilo;]
+  NOVI;lista_vozača
+  VOZAČI;
+  IZLAZ;
+Program radi sa kodnom stranicom unosa CP1250
+Kodnu stranicu možete promijeniti naredbom chcp 1250
+Također možete koristiti unos naredbi bez hrvatskih znakova, npr. GODISNJI ODMOR
+Komanda godisnji odmor
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski | Smjer |   Popis vozača |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prikup.|(A) za aktivnog |
+=============================================================================================================================
+      ZAVRSENO | v1 | staklarko 1 | električni |  staklo |    4000 |    0,00 |   2150,56 |  3 / 30 |     + |       nika (A) |
+               |    |             |            |         |         |         |           |         |       |           pero |
+               |    |             |            |         |         |         |           |         |       |            ivo |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v2 | papirko 1   | električni |   papir |    3000 |    0,00 |   4204,20 |  8 / 30 |     + |       jura (A) |
+               |    |             |            |         |         |         |           |         |       |          borko |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v3 | metalko 1   | električni |   metal |    5000 |    0,00 |   1050,57 | 19 / 30 |     + |       kiki (A) |
+               |    |             |            |         |         |         |           |         |       |         tvrtko |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v4 | biotko 1    | električni |     bio |    3000 |    0,00 |   6030,82 | 25 / 30 |     + |      vesna (A) |
+               |    |             |            |         |         |         |           |         |       |          rajka |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v5 | mješanko 1  |     diesel | mješano |    4000 |    0,00 |   3995,21 |  0 / 50 |     + |       zoki (A) |
+               |    |             |            |         |         |         |           |         |       |           sven |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v6 | mješanko 2  |     diesel | mješano |    5000 |    0,00 |   4657,74 | 43 / 50 |     + |       blaž (A) |
+               |    |             |            |         |         |         |           |         |       |          hinko |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v7 | mješanko 3  |     diesel | mješano |    3000 |    0,00 |   2338,42 | 42 / 50 |     + |       viki (A) |
+               |    |             |            |         |         |         |           |         |       |           dudo |
+-----------------------------------------------------------------------------------------------------------------------------
+Komanda KRENI
 [1;35mNaredba "n" nije prepoznata.
 [1;32mNaredbe:
   OBRADI;podrucje;lista_vozla
@@ -2142,6 +2190,33 @@ Status vozila prikazan je tablično:
 Program radi sa kodnom stranicom unosa CP1250
 Kodnu stranicu možete promijeniti naredbom chcp 1250
 Također možete koristiti unos naredbi bez hrvatskih znakova, npr. GODISNJI ODMOR
+Komanda STATUS
+Status vozila prikazan je tablično:
+        Status |    |       Naziv |        Tip |   Vrsta |Nosivost |Popunje- |   Ukupno  |Pogonski | Smjer |   Popis vozača |
+        vozila | ID |      vozila |     pogona |  otpada |    [kg] |nost [%] |otpada[kg] | sustav  |prikup.|(A) za aktivnog |
+=============================================================================================================================
+      ZAVRSENO | v1 | staklarko 1 | električni |  staklo |    4000 |    0,00 |   2150,56 |  3 / 30 |     + |       nika (A) |
+               |    |             |            |         |         |         |           |         |       |           pero |
+               |    |             |            |         |         |         |           |         |       |            ivo |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v2 | papirko 1   | električni |   papir |    3000 |    0,00 |   4204,20 |  8 / 30 |     + |       jura (A) |
+               |    |             |            |         |         |         |           |         |       |          borko |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v3 | metalko 1   | električni |   metal |    5000 |    0,00 |   1050,57 | 19 / 30 |     + |       kiki (A) |
+               |    |             |            |         |         |         |           |         |       |         tvrtko |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v4 | biotko 1    | električni |     bio |    3000 |    0,00 |   6030,82 | 25 / 30 |     + |      vesna (A) |
+               |    |             |            |         |         |         |           |         |       |          rajka |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v5 | mješanko 1  |     diesel | mješano |    4000 |    0,00 |   3995,21 |  0 / 50 |     + |       zoki (A) |
+               |    |             |            |         |         |         |           |         |       |           sven |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v6 | mješanko 2  |     diesel | mješano |    5000 |    0,00 |   4657,74 | 43 / 50 |     + |       blaž (A) |
+               |    |             |            |         |         |         |           |         |       |          hinko |
+-----------------------------------------------------------------------------------------------------------------------------
+      ZAVRSENO | v7 | mješanko 3  |     diesel | mješano |    3000 |    0,00 |   2338,42 | 42 / 50 |     + |       viki (A) |
+               |    |             |            |         |         |         |           |         |       |           dudo |
+-----------------------------------------------------------------------------------------------------------------------------
 STATISTIKA PREUZIMANJA OTPADA
        Vrsta |    količina |
       otpada |        [kg] |

@@ -23,7 +23,7 @@ import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
 import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloStanjeSucelje;
 
 /**
- *
+ * Simulacija je klasa poslovne logike EZO zbrinjavanja otpada
  * @author elvis
  */
 public class Simulacija implements SimulacijaSucelje
@@ -38,7 +38,11 @@ public class Simulacija implements SimulacijaSucelje
     protected BufferedWriter pisacDatoteka;
     protected ListaVozila listaVozilaSimulacija;
     protected int brojRadnihCiklusaZaOdvoz;
-    
+    /**
+     * Konstruktor
+     * @param problemske referenca na produkt problemskog buildera
+     * @param simulacijske  referenca na prokukt simulacijskog buildera
+     */
     public Simulacija(ProblemskiAbstractProduct problemske, SimulacijaAbstractProduct simulacijske)
     {
         if(problemske==null)
@@ -65,32 +69,47 @@ public class Simulacija implements SimulacijaSucelje
         else
             PostaviListeUlica("");
     }
- 
+    /**
+     * Dohvača listu vozila zapisanu u podacima (ne stvarnu listu vozila)
+     * @return lista zapisa vozila stvorena na osnovu datoteke Vozila.txt
+     */
     @Override
     public ListaVozila DajListaVozilaSimulacija()
     {
         return listaVozilaSimulacija;
     }
 
-    
+    /**
+     * Vraća listu vozila iz dekorirane simulacije
+     * @return lista vozila
+     */
     @Override
     public ArrayList<VoziloSucelje> DajListuVozilaPodaci()
     {
         return problemske.dajListuVozila();
     }
-    
+    /**
+     * Vraća produkt problemskog buildera
+     * @return produkt problemskog buildera
+     */
     @Override
     public ProblemskiAbstractProduct DajProblemske()
     {
         return problemske;
     }
-    
+    /**
+     * Dohvaća svoju referencu prema simulacija produktu
+     * @return što je produkt simulacijskog buildera
+     */
     @Override
     public SimulacijaAbstractProduct DajSimulacijske()
     {
         return simulacijske;
     }
-
+    /**
+     * provjera ispravnosti parametara
+     * @return uspješnost operacije promjene parametara
+     */
     @Override
     public boolean ProvjeriParametre()
     {   
@@ -106,7 +125,9 @@ public class Simulacija implements SimulacijaSucelje
         brojRadnihCiklusaZaOdvoz = parametri.DajVrijednost("brojRadnihCiklusaZaOdvoz");
         return true;
     }
-        
+    /**
+     * Pokreće simulaciju bez komandi. Kompatibilnost unazad sa DZ_1
+     */   
     @Override
     public void Pokreni()
     {
@@ -119,7 +140,10 @@ public class Simulacija implements SimulacijaSucelje
         //IspisiListuUlica();
         glavnaPetlja(); 
     }
-    
+    /**
+     * Glavna petlja simulacije, kada se pokreće bez komandi
+     * Kompatibilnost unazad sa DZ_1
+     */
     private void glavnaPetlja()
     {
         boolean zavrseno=false;
@@ -132,7 +156,11 @@ public class Simulacija implements SimulacijaSucelje
         if(parametri.DajVrijednost("ispis")==0)
             Ispisi("Sva vozila su odvezla otpad. Simulacija je završena.");
     }
-    
+    /**
+     * Mijenja se ishodište sustava.
+     * @param vozila lista vozila koja mijenjaju ishodište
+     * @return uspjeh promjene
+     */
     public boolean PromijeniIshodisteSustava(ArrayList<String> vozila, String ishodisteId)
     {
         HashMap<String,VoziloSucelje> mapaVozila = problemske.dajMapuVozila();
@@ -156,7 +184,12 @@ public class Simulacija implements SimulacijaSucelje
             return true;
         }
     }
-    
+    /**
+     * Privatna metoda koju koristi PromijeniIshodisteSustava
+     * @param ishodisteId
+     * @param listaVozila
+     * @param listaUlica 
+     */
     private void promijeniIshodisteZaListuVozila(String ishodisteId, ArrayList<VoziloSucelje> listaVozila, ArrayList<Ulica> listaUlica)
     {
         int[] redoslijed = kreirajRedoslijed(listaUlica.size());
@@ -182,7 +215,10 @@ public class Simulacija implements SimulacijaSucelje
         }
         
     }
-    
+    /**
+     * Stvara ispis vozila koja mijenjaju ishodište
+     * @param listaVozila vozila koja mijenjaju ishodište sustava
+     */
     private void ispisVozilaKojaMijenjajuIshodiste(ArrayList<VoziloSucelje> listaVozila)
     {
         StringBuilder sb = new StringBuilder();
@@ -199,7 +235,10 @@ public class Simulacija implements SimulacijaSucelje
         }
         
     }
-    
+    /**
+     * Postavlja listu ulica koju vozila obilaze
+     * @param ishodisteId identifikator područja koje je ishodište sustava
+     */
     private void PostaviListeUlica(String ishodisteId)
     {
         int i, j;
@@ -228,6 +267,12 @@ public class Simulacija implements SimulacijaSucelje
             v.postaviDodijeljeneSpremnike(spremniciPoUlicama);
         }                 
     }
+    /**
+     * Stvara plan ulica za pojedino vozilo. Privatna metoda
+     * @param podrucjeId identifikator ishodišta
+     * @param redoslijed redoslijed ulica na temelju generatora slučajnih brojeva
+     * @return 
+     */
     private ArrayList<Ulica> napraviPlanUlica(String podrucjeId, int[] redoslijed)
     {
         ArrayList<Ulica> listaUlica = problemske.dajListuUlicaIshodista(podrucjeId);
@@ -244,7 +289,11 @@ public class Simulacija implements SimulacijaSucelje
                 ulice.add(listaUlica.get(redoslijed[i]));
         return ulice;
     }
-
+    /**
+     * Kreira se redoslijed ulica prema generatoru slučajnih brojeva
+     * @param velicina veličina redoslijeda
+     * @return redoslijed koji je generiran
+     */
     protected int[] kreirajRedoslijed(int velicina)
     {
         int i;
@@ -267,7 +316,12 @@ public class Simulacija implements SimulacijaSucelje
         //IspisiRedoslijed(zavrsniNiz);
         return redoslijed;
     }
-
+    /**
+     * Dohvaća spremnike u ulici
+     * @param ulica ulica
+     * @param vrsta vrsta otpada
+     * @return 
+     */
     protected ArrayList<Spremnik> pronadjiSpremnike(Ulica ulica, int vrsta)
     {
         ArrayList<Spremnik> spremniciVrsteOtpada = new ArrayList<>();
@@ -302,7 +356,11 @@ public class Simulacija implements SimulacijaSucelje
         }
         return true;
     }
-
+    /**
+     * vraća broj vozila u ulici koja ne čekaju, tj. aktivno prikupljaju otpad
+     * @param ulicaId identifikator ulice
+     * @return broj vozila koja su u ulici i aktivno prikupljaju otpad
+     */
     public int BrojNecekajucihVozilaUUlici(String ulicaId)
     {
         if(ulicaId.equals(""))
@@ -320,7 +378,11 @@ public class Simulacija implements SimulacijaSucelje
         }
         return brojVozila;
     }
-    
+    /**
+     * Vraća listu vozila koja aktivno prikupljaju otpad u ulici
+     * @param ulicaId identifikator ulice
+     * @return lista vozila u ulici koja aktivno prikupljaju otpad
+     */
     public ArrayList<VoziloSucelje> NecekajucaVozilaUUlici(String ulicaId)
     {
         ArrayList<VoziloSucelje> izlaznaLista = new ArrayList<>();
@@ -338,7 +400,11 @@ public class Simulacija implements SimulacijaSucelje
         }
         return izlaznaLista;
     }
-    
+    /**
+     * Provjerava mogućnost završetka simulacije: ako su sva vozila prikupila otpad ili ostala čekati, 
+     * ostala u kvaru, bez vozača ili na kontroli
+     * @return 
+     */
     @Override
     public boolean provjeriZavrsetak()
     {
@@ -360,11 +426,21 @@ public class Simulacija implements SimulacijaSucelje
         }
         return rezultat;
     }
-    
+    /**
+     * Simulacija je povezana sa MVC-om kao njegov model, pa ju View koristi kao ispisivač
+     * Ispisivač ne ispisuje u konzolu nego u memoriju koju preuzima MVC i ispisuje u prezentacijski dio ekrana
+     * ako je aktivan
+     * @param ispis tekst koji treba ispisati
+     */
     public void Ispisi(String ispis)
     {
         Ispisi(ispis,true);
     }
+    /**
+     * Ispis sa mogućnosti upravljanja prelaskom u novu liniju.
+     * @param ispis tekst koji treba ispisati
+     * @param novaLinija oznaka prelaska u novu liniju
+     */
     public void Ispisi(String ispis, boolean novaLinija)
     {
         Ispisivanje ispisivanje = Ispisivanje.getInstance();
@@ -376,35 +452,13 @@ public class Simulacija implements SimulacijaSucelje
         if(aktivan)
             ispisivanje.ispisiUDatoteku(ispis, novaLinija);
     }
-
+    /**
+     * Vraća zapisane retke ispisa koje će View u MVC-u zaista ispisati
+     * @return lista ispisanih redaka
+     */
     public ArrayList<String> DajRetkeIspisa()
     {
         Ispisivanje ispisivanje = Ispisivanje.getInstance();
         return ispisivanje.DohvatiPodatkeMVC();
     }
-
-    
-    /*********** testiranje ***********/
-    private void IspisiListuUlica()
-    {   if(listaVozilaSimulacija!=null)
-            for(int i=0; i<listaVozilaSimulacija.Velicina(); i++)
-            {
-                VoziloSucelje v = listaVozilaSimulacija.DajVozilo(i);
-                System.out.println("Vozilo: "+v.dajNaziv()+", vrsta: "+v.dajVrstu());
-                if(v.dajDodijeljeneUlice().size()>0)
-                    for(int j=0; j<v.dajDodijeljeneUlice().size(); j++)
-                    {
-                        System.out.println("   "+j+": "+"Ulica: "+v.dajDodijeljeneUlice().get(j).Naziv());
-                        if(v.dajDodijeljeneSpremnike().size()>0)
-                        {
-                            ArrayList<Spremnik> spremnici = v.dajDodijeljeneSpremnike().get(j);
-                            for(Spremnik s:spremnici)
-                               System.out.println("      "+j+": Spremnik "+
-                                       s.dajId()+": vrsta: "+s.dajVrstuOtpada()+
-                               ", tip: "+s.dajVrstuSpremnika());
-                        }
-                    }
-            }
-    }
-    
 }
