@@ -30,7 +30,7 @@ public class VoziloKontekst implements VoziloKontekstSucelje
     private int preuzetoSpremnika;
     private float popunjenost;
     private boolean obrnutoKretanje;
-    
+        
     @Override
     public VoziloSucelje DajVozilo()
     {

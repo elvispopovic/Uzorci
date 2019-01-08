@@ -17,6 +17,8 @@ import org.foi.uzdiz.elvpopovi.dz3.h_automat.VoziloKontekstSucelje;
 public interface VoziloSucelje
 {
     String dajId();
+    void PostaviIshodisteSustava(String ishodiste);
+    String DajIshodisteSustava();
     ArrayList<Ulica> dajDodijeljeneUlice();
     int dajBrojSpremnika();
     ArrayList<ArrayList<Spremnik>> dajDodijeljeneSpremnike();

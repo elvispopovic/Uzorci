@@ -20,6 +20,7 @@ public class MVCView extends MVCObserver
     
     private ArrayList<String> redciIspisa;
     private LinkedList<String> redciUnosa;
+    private int trenutnoIspisano, ukupnoIspisa;
     private int brg, brd;
     
     public MVCView()
@@ -29,6 +30,7 @@ public class MVCView extends MVCObserver
         controller = null;
         brg = parametri.DajVrijednost("brg");
         brd = parametri.DajVrijednost("brd");
+        trenutnoIspisano = 0;
     }
     /**
      * Kreira kontroller
@@ -68,14 +70,16 @@ public class MVCView extends MVCObserver
             return 0;
         if(brg!=-1&&brd!=-1)
             ObrisiPrezentacijskiDio();
+        ukupnoIspisa = redciIspisa.size();
         System.out.print("\033[1;32m");
-        for(j=0; j<brg && i<redciIspisa.size(); j++,i++)
+        for(j=0; j<brg && i<ukupnoIspisa; j++,i++)
         {
             String s = redciIspisa.get(i);
             if(s.length()>135)
                 s = s.substring(0, 135);
             System.out.println(s);
         }
+        trenutnoIspisano = i;
         System.out.print("\033[0m");
         return j;
     }
@@ -87,7 +91,10 @@ public class MVCView extends MVCObserver
     {
         System.out.print("\033[1;34m");
         System.out.print("\033["+(brg+1)+";0H");
-        System.out.println(String.join("", Collections.nCopies(80, "-")));
+        System.out.print(String.join("", Collections.nCopies(80, "-")));
+        System.out.print(String.join("", Collections.nCopies(16, " ")));
+        System.out.print("\033["+(brg+1)+";80H");
+        System.out.println(trenutnoIspisano+"/"+ukupnoIspisa);
         obrisiKomandniDio();
         redciUnosa.addLast(upit);
         if(redciUnosa.size()>(brd-1))

@@ -56,14 +56,14 @@ public class LanacStatus implements LanacKomandiApstraktni
         StringBuilder sb = new StringBuilder();
         Formatter form = new Formatter(sb);
         simulacija.Ispisi("Status vozila prikazan je tablično:");
-        form.format("%14s |%3s |%12s |%11s |%8s |%8s |%8s |%10s |%8s |%7s|%15s |","Status","","Naziv","Tip",
+        form.format("%14s |%5s |%3s |%12s |%11s |%8s |%8s |%8s |%10s |%8s |%7s|%15s |","Status","Isho-","","Naziv","Tip",
                 "Vrsta","Nosivost","Popunje-","Ukupno ","Pogonski","Smjer ","Popis vozača");
         simulacija.Ispisi(sb.toString());
         sb.setLength(0);
-        form.format("%14s |%3s |%12s |%11s |%8s |%8s |%8s |%10s |%8s |%7s|%15s |","vozila","ID","vozila","pogona",
+        form.format("%14s |%5s |%3s |%12s |%11s |%8s |%8s |%8s |%10s |%8s |%7s|%15s |","vozila","dište","ID","vozila","pogona",
                 "otpada","[kg]","nost [%]","otpada[kg]","sustav ","prikup.","(A) za aktivnog");
         simulacija.Ispisi(sb.toString());
-        simulacija.Ispisi(String.join("", Collections.nCopies(125, "=")));
+        simulacija.Ispisi(String.join("", Collections.nCopies(132, "=")));
         ispisiStatusVozila(sb,form);
     }
     
@@ -98,8 +98,8 @@ public class LanacStatus implements LanacKomandiApstraktni
         VoziloKontekstSucelje kontekst = vozilo.dajKontekst();
         popunjenost = kontekst.dajPopunjenost();
         ukupnoOtpada = vozilo.dajStatistikuVozila().dajUkupnuKolicinuOtpada();
-        form.format("%14s |%3s |%12s |%11s |%8s |%8d |%8."+brojDecimala+"f |%10."+brojDecimala+"f |%3d /%3d |%7s|%15s |",
-                status,vozilo.dajId(),vozilo.dajNaziv(),tip,otpad,nosivost, 
+        form.format("%14s |%5s |%3s |%12s |%11s |%8s |%8d |%8."+brojDecimala+"f |%10."+brojDecimala+"f |%3d /%3d |%7s|%15s |",
+                status,vozilo.DajIshodisteSustava(),vozilo.dajId(),vozilo.dajNaziv(),tip,otpad,nosivost, 
                 (float)popunjenost/(float)nosivost*(float)100.0, ukupnoOtpada,kontekst.DajKolicinuPogonskog(),vozilo.dajKapacitetPogona(),
                 (kontekst.JeLiObrnutoKretanje()?" - ":" + "),dodajTrenutnogVozaca(vozilo));
         simulacija.Ispisi(sb.toString());
@@ -127,11 +127,11 @@ public class LanacStatus implements LanacKomandiApstraktni
             if(trenutni==null || vozac.DajId()!=trenutni.DajId())
             {
                 sb.setLength(0);
-                form.format("%14s |%3s |%12s |%11s |%8s |%8s |%8s |%10s |%8s |%7s|%15s |","","","","",
-                    "","","","","","",vozac.DajIme());
+                form.format("%14s |%5s |%3s |%12s |%11s |%8s |%8s |%8s |%10s |%8s |%7s|%15s |","","","","","","",
+                    "","","","","",vozac.DajIme());
                 simulacija.Ispisi(sb.toString());
             }
         }
-        simulacija.Ispisi(String.join("", Collections.nCopies(125, "-")));
+        simulacija.Ispisi(String.join("", Collections.nCopies(132, "-")));
     }
 }

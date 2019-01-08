@@ -113,9 +113,10 @@ public class LanacKadroviranje implements LanacKomandiApstraktni
             {
                 Vozac vozac = mapaVozaca.get(k);
                 VoziloSucelje vozilo = vozac.DajPridruzenoVozilo();
-                if(vozac.DajIme().equals(vozacIme) && vozilo!=null)
+                if(vozac.DajIme().equals(vozacIme))
                 {
-                    vozilo.UkloniVozaca(vozac);
+                    if(vozilo!=null)
+                        vozilo.UkloniVozaca(vozac);
                     mapaVozaca.remove(k);
                     break;
                 }

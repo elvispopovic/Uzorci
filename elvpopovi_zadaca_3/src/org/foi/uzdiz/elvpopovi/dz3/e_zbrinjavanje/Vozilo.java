@@ -36,6 +36,7 @@ public class Vozilo implements VoziloSucelje
     VoziloStatistika statistikaVozila;
     private int nosivost;
     private int brojSpremnika;
+    private String ishodisteSustava;
     private ArrayList<Ulica> dodijeljeneUlice;
     private ArrayList<ArrayList<Spremnik>> dodijeljeniSpremnici;
     private Ispisivanje ispis;
@@ -44,6 +45,16 @@ public class Vozilo implements VoziloSucelje
     public String dajId()
     {
         return id;
+    }
+    @Override
+    public void PostaviIshodisteSustava(String ishodiste)
+    {
+        this.ishodisteSustava = new String(ishodiste);
+    }
+    @Override
+    public String DajIshodisteSustava()
+    {
+        return ishodisteSustava;
     }
     
     @Override

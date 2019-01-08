@@ -207,6 +207,7 @@ public class Simulacija implements SimulacijaSucelje
                 ArrayList<Spremnik> pronadjeno = pronadjiSpremnike(u, v.dajVrstu());
                 spremniciPoUlicama.add(pronadjeno);
             }
+            v.PostaviIshodisteSustava(ishodisteId);
             v.postaviDodijeljeneUlice(ulice);
             v.postaviDodijeljeneSpremnike(spremniciPoUlicama);
             v.dajKontekst().PostaviStanje(new StanjePrikupljanje(v.dajKontekst()));
