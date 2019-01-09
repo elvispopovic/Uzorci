@@ -96,11 +96,15 @@ public class ProblemskiProductPodrucja extends ProblemskiAbstractProduct
     void kreirajUlicu(String[] shema, int i)
     {  
         HashMap<String,PodrucjeSucelje> mapaPodrucja = new HashMap<>();
-        for(PodrucjeSucelje ishodiste:ishodistaSustava)
-            ishodiste.NapuniMapuPodrucja(mapaPodrucja, true);
-
         Ulica ulica = new Ulica(shema);
         ulica.Inicijaliziraj(podaci.dajUlice().DajPodatak(i));
+        for(PodrucjeSucelje ishodiste:ishodistaSustava)
+        {
+            ishodiste.NapuniMapuPodrucja(mapaPodrucja, true);
+            for( String k2 : ishodiste.dajDijelove())
+                if(k2.equals(ulica.Id()))
+                    ishodiste.DodajUlicu(ulica);  
+        }
         for(String k : mapaPodrucja.keySet())
         {
             PodrucjeSucelje p = mapaPodrucja.get(k);

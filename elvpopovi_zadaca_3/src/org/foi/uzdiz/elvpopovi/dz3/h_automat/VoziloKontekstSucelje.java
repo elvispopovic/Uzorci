@@ -27,7 +27,7 @@ public interface VoziloKontekstSucelje
     void PostaviPocetnoStanje();
     void PostaviStanje(VoziloStanjeSucelje stanje);
     VoziloStanjeSucelje DajStanje();
-    boolean DajKvar();
+    boolean JeLiKvar();
     void PostaviKvar();
     void UkloniKvar();
     int DajKolicinuPogonskog();

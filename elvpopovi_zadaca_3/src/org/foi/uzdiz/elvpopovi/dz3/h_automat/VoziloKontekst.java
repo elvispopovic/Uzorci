@@ -16,7 +16,8 @@ import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.StatistikaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 
 /**
- *
+ * Kontekst vozila. Pamti sve potrebne parametre odvoza.
+ * Povezano je i sa strojem stanja vozila
  * @author elvis
  */
 public class VoziloKontekst implements VoziloKontekstSucelje 
@@ -30,71 +31,105 @@ public class VoziloKontekst implements VoziloKontekstSucelje
     private int preuzetoSpremnika;
     private float popunjenost;
     private boolean obrnutoKretanje;
-        
+    /**
+     * Getter koji vraća objekt vozila
+     * @return 
+     */
     @Override
     public VoziloSucelje DajVozilo()
     {
         prebrojiSpremnike();
         return vozilo;
     }
-    
+    /**
+     * Postavlja početno stanje (koje je stanje PARKIRALIŠTE)
+     */
     @Override
     public void PostaviPocetnoStanje()
     {
         this.stanje = new StanjeParkiraliste(this);
     }
-    
+    /**
+     * postavlja proizvoljno stanje
+     * @param stanje 
+     */
     @Override
     public void PostaviStanje(VoziloStanjeSucelje stanje)
     {
         this.stanje = stanje;
     }
-    
+    /**
+     * Vraća trenutno stanje vozila
+     * @return 
+     */
     @Override
     public VoziloStanjeSucelje DajStanje()
     {
         return stanje;
     }
-    
+    /**
+     * Vraća varijablu kvara.
+     * Ova varijabla je dopunska varijabla uz samo stanje KVAR jer se koristi za dva prijelaza.
+     * Potrebno je vozilo isprazniti pa pripremiti da bi se poništio kvar
+     * @return stanje kvara
+     */
     @Override
-    public boolean DajKvar()
+    public boolean JeLiKvar()
     {
         return kvar;
     }
-    
+    /**
+     * Postavlja posebnu varijablu KVAR koja funkcionira uz stanje KVAR
+     */
     @Override
     public void PostaviKvar()
     {
         kvar = true;
     }
-    
+    /**
+     * Poništava se varijabla KVAR
+     */
     @Override
     public void UkloniKvar()
     {
         kvar = false;
     }
-    
+    /**
+     * Vraća količinu pogonskog goriva ili el. energije
+     * @return cjelobrojna količina
+     */
     public int DajKolicinuPogonskog()
     {
         return kolicinaPogonskog;
     }
+    /**
+     * Smanjuje količinu pogonskog sredstva
+     */
     public void SmanjiKolicinuPogonskog()
     {
         if(kolicinaPogonskog>0)
             kolicinaPogonskog--;
     }
+    /**
+     * Puni pogonsko sredstvo na maksimum
+     */
     public void ObnoviKolicinuPogonskog()
     {
         kolicinaPogonskog = vozilo.dajKapacitetPogona();
     }
-    
-    
+    /**
+     * Vraća indeks trenutne ulice iz liste ulica
+     * @return indeks ulice
+     */
     @Override
     public int DajBrojTrenutneUlice()
     {
         return trenutnaUlica;
     }
-    
+    /**
+     * Vraća objekt trenutne ulice
+     * @return trenutna ulica
+     */
     @Override
     public Ulica DajTrenutnuUlicu()
     {
@@ -103,41 +138,64 @@ public class VoziloKontekst implements VoziloKontekstSucelje
             return null;
         return listaUlica.get(trenutnaUlica);
     }
+    /**
+     * Vraća stanje kretanja. Vozilo može prikupljati otpad u ulici i obrnutim redoslijedom.
+     * @return true za normalno kretanje, false za obrnuto
+     */
     @Override
     public boolean JeLiObrnutoKretanje()
     {
         return obrnutoKretanje;
     }
-
+    /**
+     * Vraća indeks trenutnog spremnika iz liste spremnika
+     * @return trenutni spremnik
+     */
     @Override
     public int DajTrenutniSpremnik()
     {
         return trenutniSpremnik;
     }
-    
+    /**
+     * Vraća broj spremnika koji treba obraditi
+     * @return broj spremnika
+     */
     @Override
     public int DajBrojDodijeljenihSpremnika()
     {
         return brojSpremnika;
     }
-
+    /**
+     * Vraća završetak prikupljanja
+     * @return true ako je završeno, false inače
+     */
     @Override
     public boolean JeLiZavrsenoPrikupljanje()
     {
         return zavrsenoPrikupljanje;
     }
-    
+    /**
+     * vraća popunjenost vozila otpadom
+     * @return količina kao decimalni broj
+     */
     @Override
     public float dajPopunjenost()
     {
         return popunjenost;
     }
+    /**
+     * vraća broj preuzetih spremnika
+     * @return broj spremnika
+     */
     @Override
     public int dajPreuzetoSpremnika()
     {
         return preuzetoSpremnika;
     }
-
+    /**
+     * Konstruktor
+     * @param vozilo vozilo na koje će se kontekst odnositi
+     */
     public VoziloKontekst(VoziloSucelje vozilo)
     {
         this.vozilo = vozilo;
@@ -155,12 +213,18 @@ public class VoziloKontekst implements VoziloKontekstSucelje
     {
         this.simulacijske = simulacijske;
     }
-    
+    /**
+     * Vraća objekt produkta simulacijskog buildera. Tu su poveznice na statistiku i slično.
+     * @return 
+     */
     public SimulacijaAbstractProduct DajSimulacijske()
     {
         return simulacijske;
     }
-    
+    /**
+     * Vraća statistiku koristeći poveznicu sa produktom simulacijskog buildera
+     * @return 
+     */
     @Override
     public StatistikaSucelje DajStatistikuOtpada()
     {
@@ -169,6 +233,10 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         else 
             return null;
     }
+    /**
+     * Vraća MVC model koji se obično koristi za pristup ispisivanju
+     * @return 
+     */
     public MVCModelSucelje DajMVCModel()
     {
         if(simulacijske != null)
@@ -176,7 +244,9 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         else 
             return null;
     }
-    
+    /**
+     * Povećava se trenutna ulica nakon što su prikupljeni svi spremnici u prošloj
+     */
     @Override
     public void PovecajTrenutnuUlicu()
     {
@@ -203,6 +273,9 @@ public class VoziloKontekst implements VoziloKontekstSucelje
                 DajStanje().Prijelaz("CEKANJE");
         } 
     }
+    /**
+     * Jedan korak prikupljanja. Povećava se trenutni spremnik. Ako je to zadnji spremnik, povećava se i trenutna ulica.
+     */
     @Override
     public void PovecajTrenutniSpremnik()
     {
@@ -218,7 +291,9 @@ public class VoziloKontekst implements VoziloKontekstSucelje
             PovecajTrenutnuUlicu();
     }
     
-    
+    /**
+     * Pražnjenje vozila
+     */
     @Override
     public void Isprazni()
     {
@@ -241,7 +316,9 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         trenutniSpremnik = 0;
         zavrsenoPrikupljanje = false;
     }
-    
+    /**
+     * Resetira sve vrijednosti konteksta
+     */
     @Override
     public void ResetAll()
     {
@@ -254,7 +331,9 @@ public class VoziloKontekst implements VoziloKontekstSucelje
         popunjenost = 0.0f;
         obrnutoKretanje = false;
     }
-
+    /**
+     * Kreće se po područjima i broji dodijeljene spremnike
+     */
     private void prebrojiSpremnike()
     {
         ArrayList<ArrayList<Spremnik>> dodijeljeniSpremnici = vozilo.dajDodijeljeneSpremnike();

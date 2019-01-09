@@ -180,6 +180,7 @@ public class StatistikaTablicno implements StatistikaSucelje
         MVCmodel.Ispisi("*"+String.join("", Collections.nCopies(78, " "))+"*");
         MVCmodel.Ispisi(String.join("", Collections.nCopies(80, "*")));
         MVCmodel.ObavijestiMVC(false);
+        System.out.print("\033[30m");
     }
 
     

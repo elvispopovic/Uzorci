@@ -445,7 +445,7 @@ public class Simulacija implements SimulacijaSucelje
     public void Ispisi(String ispis, boolean novaLinija)
     {
         Ispisivanje ispisivanje = Ispisivanje.getInstance();
-        boolean aktivan = ispisivanje.isAktivan();
+        boolean aktivan = ispisivanje.JeLiAktivan();
         if(brg==-1||brd==-1)
             ispisivanje.ispisiNaEkran(ispis, novaLinija);
         else 

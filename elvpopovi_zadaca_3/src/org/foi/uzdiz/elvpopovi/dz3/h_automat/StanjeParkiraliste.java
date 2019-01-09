@@ -5,11 +5,10 @@
  */
 package org.foi.uzdiz.elvpopovi.dz3.h_automat;
 
-import org.foi.uzdiz.elvpopovi.dz3.d_komuna.Ulica;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.SimulacijaSucelje;
 
 /**
- *
+ * Upravljanje stanjem PARKIRALISTE
  * @author elvis
  */
 public class StanjeParkiraliste implements VoziloStanjeSucelje
@@ -17,13 +16,19 @@ public class StanjeParkiraliste implements VoziloStanjeSucelje
     public final String naziv;
     protected VoziloKontekstSucelje kontekst;
     protected SimulacijaSucelje simulacija;
-    
+    /**
+     * Getter koji vraća naziv stanja
+     * @return String koji je vraćeni naziv stanja
+     */
     @Override
     public String DajNaziv()
     {
         return naziv;
     }
-    
+    /**
+     * Konstruktor
+     * @param kontekst referenca konteksta
+     */
     StanjeParkiraliste(VoziloKontekstSucelje kontekst)
     {
         this.kontekst = kontekst;
@@ -33,7 +38,10 @@ public class StanjeParkiraliste implements VoziloStanjeSucelje
             kontekst.UkloniKvar();
         }
     }
-    
+    /**
+     * Metoda koja prima vanjski zahtijev za promjenom stanja
+     * @param novoStanje zatraženo novo stanje
+     */
     @Override
     public void Prijelaz(String novoStanje)
     {
@@ -51,18 +59,15 @@ public class StanjeParkiraliste implements VoziloStanjeSucelje
                 break;
         }
     }
-    private boolean provjeriPrijelazCekanje()
-    {
-        Ulica ulica = kontekst.DajTrenutnuUlicu();
-        if(ulica!=null && simulacija.BrojNecekajucihVozilaUUlici(ulica.Id())>2)
-            return true;
-        return false;
-    }
-    
+
+    /**
+     * Metoda koja se poziva u simulaciji za kretanje unaprijed. 
+     * Stanje PARKIRALISTE ne radi ništa.
+     */
     @Override
     public void Napredovanje()
     {
-        return;
+
     }
     
 }

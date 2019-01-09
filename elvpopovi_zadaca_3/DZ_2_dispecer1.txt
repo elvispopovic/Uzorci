@@ -1,9 +1,0 @@
-komanda;lista vozila
-PRIPREMI;v5,v6,v7
-KRENI 1;
-STATUS;
-KONTROLA;v6
-STATUS;
-PRIPREMI;v6
-KRENI;
-STATUS;

@@ -10,11 +10,10 @@ import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloStatistika;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.f_dinamika.StatistikaSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
 
 /**
- *
+ * Upravljanje stanjem ODVOZ
  * @author elvis
  */
 public class StanjeOdvoz implements VoziloStanjeSucelje
@@ -26,13 +25,19 @@ public class StanjeOdvoz implements VoziloStanjeSucelje
     protected MVCModelSucelje MVCmodel;
     protected int ciklusaOdvoz;
     int vrsta;
-    
+    /**
+     * Getter koji vraća naziv stanja
+     * @return String koji je vraćeni naziv stanja
+     */
     @Override
     public String DajNaziv()
     {
         return naziv;
     }
-    
+    /**
+     * Konstruktor
+     * @param kontekst referenca konteksta
+     */
     public StanjeOdvoz(VoziloKontekstSucelje kontekst)
     {
         naziv = "ODVOZ";
@@ -54,7 +59,10 @@ public class StanjeOdvoz implements VoziloStanjeSucelje
                 vrsta = -1;
         }
     }
-    
+    /**
+     * Metoda koja prima vanjski zahtijev za promjenom stanja
+     * @param novoStanje zatraženo novo stanje
+     */
     @Override
     public void Prijelaz(String novoStanje)
     {
@@ -66,7 +74,10 @@ public class StanjeOdvoz implements VoziloStanjeSucelje
                     break;
         }
     }
-    
+    /**
+     * Metoda koja se poziva u simulaciji za kretanje unaprijed. Prilikom odvoza ažurira se
+     * statistika otpada
+     */
     @Override
     public void Napredovanje()
     {
@@ -84,7 +95,7 @@ public class StanjeOdvoz implements VoziloStanjeSucelje
                     case 4: statistikaOtpada.DodajMjesano(popunjenost); break;
                 }
             kontekst.Isprazni();
-            if(kontekst.DajKvar())
+            if(kontekst.JeLiKvar())
             {
                 kontekst.PostaviStanje(new StanjeParkiraliste(kontekst));
                 ispisiOdvoz(2);
@@ -99,7 +110,10 @@ public class StanjeOdvoz implements VoziloStanjeSucelje
             ispisiOdvoz(1);
         ciklusaOdvoz--;
     }  
-    
+    /**
+     * Ispis informacija o stanju
+     * @param mod mod ispisa
+     */
     private void ispisiOdvoz(int mod)
     {
         RandomGenerator rnd = RandomGenerator.getInstance();

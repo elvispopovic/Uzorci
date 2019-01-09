@@ -15,6 +15,7 @@ import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 /**
  * U ovo stanje vozilo prelazi kada je u ulici više od jednog vozila pa mora čekati da vozila 
  * napuste ulicu
+ * Upravljanje stanjem CEKANJE
  * @author elvis
  */
 public class StanjeCekanje implements VoziloStanjeSucelje
@@ -26,7 +27,10 @@ public class StanjeCekanje implements VoziloStanjeSucelje
     SimulacijaSucelje simulacija;
     protected VoziloKontekstSucelje kontekst;
     protected MVCModelSucelje MVCmodel;
-    
+    /**
+     * Kontruktor
+     * @param kontekst referenca konteksta vozila
+     */
     public StanjeCekanje(VoziloKontekstSucelje kontekst)
     {
         this.naziv = "CEKANJE";
@@ -43,6 +47,10 @@ public class StanjeCekanje implements VoziloStanjeSucelje
         }
     }
     
+    /**
+     * Metoda koja se poziva u simulaciji za kretanje unaprijed. Za stanje ČEKANJE provjerava
+     * postoji li broj aktivnih vozila 2 ili više i ako da, nastavlja čekati
+     */
     @Override
     public void Napredovanje()
     {
@@ -62,13 +70,19 @@ public class StanjeCekanje implements VoziloStanjeSucelje
             Prijelaz("PRIKUPLJANJE");
         }
     }
-
+    /**
+     * Getter koji vraća naziv stanja
+     * @return String koji je vraćeni naziv stanja
+     */
     @Override
     public String DajNaziv()
     {
         return naziv;
     }
-
+    /**
+     * Metoda koja prima vanjski zahtijev za promjenom stanja
+     * @param novoStanje zadtraženo novo stanje
+     */
     @Override
     public void Prijelaz(String novoStanje)
     {
@@ -78,7 +92,9 @@ public class StanjeCekanje implements VoziloStanjeSucelje
             kontekst.PostaviStanje(new StanjePrikupljanje(kontekst));
         }
     }
-    
+    /**
+     * Ispis informacija o stanju. Ovisno o modu ispisuje određenu fazu čekanja
+     */
     private void ispisiCekanje(int mod)
     {
         Parametri parametri = Parametri.getInstance();

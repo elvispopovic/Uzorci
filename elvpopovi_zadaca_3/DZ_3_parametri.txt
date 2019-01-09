@@ -2,7 +2,7 @@ područja:DZ_3_podrucja.txt
 ulice:DZ_3_ulice.txt
 spremnici:DZ_3_spremnici.txt
 vozila:DZ_3_vozila.txt
-izlaz:DZ2_ldapKorisnika.txt
+izlaz:DZ3_elvpopovi.txt
 dispečer:DZ_3_dispecer.txt
 ispis:0
 sjemeGeneratora:17153

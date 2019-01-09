@@ -15,7 +15,7 @@ import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
 
 /**
- *
+ * Statistika prikupljenog otpada
  * @author elvis
  */
 public class Statistika implements StatistikaSucelje
@@ -25,6 +25,10 @@ public class Statistika implements StatistikaSucelje
     private SimulacijaAbstractProduct simulacijske;
     Ispisivanje ispis = Ispisivanje.getInstance();
     MVCModelSucelje MVCmodel;
+    /**
+     * Konstruktor
+     * @param simulacijske poveznica sa produktom simulacijskog buildera
+     */
     public Statistika(SimulacijaAbstractProduct simulacijske)
     {
         this.simulacijske = simulacijske;
@@ -35,32 +39,54 @@ public class Statistika implements StatistikaSucelje
         ispis.prikaziRetke();
         ispis.Ispisi("Kreirano je statističko praćenje simulacije.");
     }
-
+    /**
+     * vraća produkt simulacijskog buildera.
+     * @return produkt simulacijskog buildera
+     */
     @Override
     public SimulacijaAbstractProduct DajSimulacijske()
     {
         return simulacijske;
     }
-    
+    /**
+     * vraća zapise količine otpada 
+     * @return podaci o količinama pojedine vrste otpada kao niz decimalnih vrijednosti
+     */
     @Override
     public float[] DajPodatke()
     {
         return podaci;
     }
+    /**
+     * vraća zapis količina stakla
+     * @param kolicina količina stakla
+     */
     @Override
     public void DodajStaklo(float kolicina)
     {
         podaci[0]+=kolicina;
     }
+    /**
+     * vraća zapis količina papira
+     * @param kolicina količina papira
+     */
     @Override
     public void DodajPapir(float kolicina)
     {
         podaci[1]+=kolicina;
     }
+    /**
+     * vraća zapis količina metala
+     * @param kolicina količina metala
+     */
     public void DodajMetal(float kolicina)
     {
         podaci[2]+=kolicina;
     }
+    /**
+     * vraća zapis količina bio otpada
+     * @param kolicina količina bio otpada
+     */
     @Override
     public void DodajBio(float kolicina)
     {
@@ -71,12 +97,19 @@ public class Statistika implements StatistikaSucelje
     {
         podaci[4]+=kolicina;
     }
-
+    /**
+     * Vraća ukupne količine (zbroj)
+     * @return zbroj masa prikupljenog otpada
+     */
     @Override
     public float[] UkupneKolicine()
     {
         return podaci;
     }
+    /**
+     * Ispisuje statistiku vozila
+     * @param vozila lista vozila
+     */
     @Override
     public void IspisiStatistiku(ArrayList<VoziloSucelje> vozila)
     {

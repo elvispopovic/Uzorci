@@ -18,7 +18,8 @@ import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
 
 /**
- *
+ * Upravljanje stanjem PRIKUPLJANJE
+ * Ovo je najvažnije stanje, jer aktivno obavlja prikupljanje otpada
  * @author elvis
  */
 public class StanjePrikupljanje implements VoziloStanjeSucelje
@@ -29,13 +30,19 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
     protected SimulacijaSucelje simulacija;
     protected VoziloStatistika statistikaVozilo;
     protected MVCModelSucelje MVCmodel;
-    
+    /**
+     * Getter koji vraća naziv stanja
+     * @return String koji je vraćeni naziv stanja
+     */
     @Override
     public String DajNaziv()
     {
         return naziv;
     }
-    
+    /**
+     * Konstruktor
+     * @param kontekst referenca konteksta
+     */
     public StanjePrikupljanje(VoziloKontekstSucelje kontekst)
     {
         naziv = "PRIKUPLJANJE";
@@ -52,7 +59,10 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
             }
         }
     }
-    
+    /**
+     * Metoda koja prima vanjski zahtijev za promjenom stanja
+     * @param novoStanje zatraženo novo stanje
+     */
     @Override
     public void Prijelaz(String novoStanje)
     {
@@ -76,7 +86,10 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
             return true;
         return false;
     }
-    
+    /**
+     * Metoda koja se poziva u simulaciji za kretanje unaprijed. 
+     * Obrađuje spremnike samo ako ima raspoloživog vozača
+     */
     @Override
     public void Napredovanje()
     {
@@ -93,7 +106,11 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
         else
             posaljiZadnjePraznjenje();
     }
-    
+    /**
+     * Provjerava postoji li dostupan vozač
+     * Ukoliko postoji neraspoređen vozač, pridružuje ga vozilu
+     * @return uspješnost provjere
+     */
     private boolean provjeriVozaca()
     {
         Vozac vozac = vozilo.DajTrenutnogVozaca();
@@ -119,7 +136,9 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
         else
             return true;
     }
-    
+    /**
+     * Preskače prazne spremnike u ulici
+     */
     private void preskociPrazne()
     {
         Spremnik spremnik = dajTrenutniSpremnik();
@@ -138,7 +157,9 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
                 kontekst.PostaviStanje(new StanjePunjenjePogonskog(kontekst));
         };
     }
-    
+    /**
+     * Prikuplja otpad iz spremnika
+     */
     private void obradiSpremnik()
     {
         Spremnik spremnik = dajTrenutniSpremnik();
@@ -171,7 +192,9 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
         }
         kontekst.SmanjiKolicinuPogonskog();
     }
-    
+    /**
+     * Ispisuje količinu preuzetog otpada prilikom svakog pražnjenja spremnika
+     */
     private void ispisiPreuzimanje()
     {
         RandomGenerator rnd = RandomGenerator.getInstance();
@@ -188,7 +211,9 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
                     "%, preuzeto "+kontekst.dajPreuzetoSpremnika()+
                     " spremnika, stanje pogona: "+kontekst.DajKolicinuPogonskog()+"/"+vozilo.dajKapacitetPogona());
     }
-    
+    /**
+     * Šalje vozilo na zadnje pražnjenje. Vozilo ne mora biti puno.
+     */
     private void posaljiZadnjePraznjenje()
     {
         if(kontekst.dajPopunjenost()>0.0)
@@ -199,7 +224,10 @@ public class StanjePrikupljanje implements VoziloStanjeSucelje
         else
             kontekst.PostaviStanje(new StanjeZavrseno(kontekst));
     }
-
+    /**
+     * Vraća trenutni spremnik do kojeg je vozilo došlo
+     * @return referenca na objekt spremnika
+     */
     private Spremnik dajTrenutniSpremnik()
     {
         ArrayList<ArrayList<Spremnik>> dodijeljeniSpremnici = vozilo.dajDodijeljeneSpremnike();

@@ -12,13 +12,19 @@ import java.util.LinkedHashMap;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.Vozac;
 
 /**
- *
+ * Lista vozila sa vlastitim iteratorom i metodama za manipulaciju
+ * Ova lista kao objekt sadrži i mapu vozača
  * @author elvis
  */
 public class ListaVozila 
 {
     private ArrayList<VoziloSucelje> mjesta;
     HashMap<Integer,Vozac> mapaVozaca;
+    /**
+     * Kontriktor koji prima generičku listu podataka vozila, kreira vozila i puni 
+     * internu listu referencama objekata vozila
+     * @param vozila lista vozila u smislu podataka pročitanih iz datoteke
+     */
     public ListaVozila(ArrayList<VoziloSucelje> vozila)
     {
         mjesta = new ArrayList<>();
@@ -33,15 +39,26 @@ public class ListaVozila
                     mapaVozaca.put(kljuc, mapa.get(kljuc));
             }
     }
+    /**
+     * Kreira praznu listu vozila
+     */
     public ListaVozila()
     {
         mjesta = new ArrayList<>();
     }
+    /**
+     * Vraća mapu vozača
+     * @return HashMap vozača
+     */
     public HashMap<Integer,Vozac> DajMapuVozaca()
     {
         return mapaVozaca;
     }
-    
+    /**
+     * Izvlači vozilo iz liste. Vozilo nakon toga neće biti u listi.
+     * @param v indeks vozila u internoj listi
+     * @return referenca objekta vozila
+     */
     public VoziloSucelje IzdvojiVozilo(int v)
     {
         if(v>=mjesta.size())
@@ -50,6 +67,11 @@ public class ListaVozila
         mjesta.remove(v);
         return vozilo;
     }
+    /**
+     * Izdvaja vozilo iz liste prema njegovom identifikatoru
+     * @param idVozila identifikator vozila
+     * @return referenca objekta vozila
+     */
     public VoziloSucelje IzdvojiVozilo(String idVozila)
     {
         for(int i = 0; i<mjesta.size(); i++)
@@ -63,11 +85,20 @@ public class ListaVozila
         }
         return null;
     }
+    /**
+     * Unosi novo vozilo u listu
+     * @param v referenca objeka vozilo
+     */
     public void UbaciVozilo(VoziloSucelje v)
     {
         if(v!=null)
             mjesta.add(v);
     }
+    /**
+     * Getter vozila. Ne uklanja vozilo iz liste već samo daje njegovu referencu
+     * @param idVozila identifikator vozila
+     * @return referenca objekta vozila
+     */
     public  VoziloSucelje DajVozilo(String idVozila)
     {
         for(int i = 0; i<mjesta.size(); i++)
@@ -78,6 +109,11 @@ public class ListaVozila
         }
         return null;       
     }
+    /**
+     * vraća indeks vozila u listi
+     * @param idVozila identifikator vozila
+     * @return indeks
+     */
     public int DajIndeksVozila(String idVozila)
     {
         for(int i = 0; i<mjesta.size(); i++)
@@ -88,6 +124,11 @@ public class ListaVozila
         }
         return -1;
     }    
+    /**
+     * vraća referencu vozila prema indeksu
+     * @param mjesto indeks u listi vozila
+     * @return referenca objekta vozilo
+     */
     public VoziloSucelje DajVozilo(int mjesto)
     {
         if(mjesto>=0&&mjesto<mjesta.size())
@@ -95,22 +136,32 @@ public class ListaVozila
         else
             return null;
     }
-    
+    /**
+     * briše listu vozila
+     */
     public void ObrisiListu()
     {
         mjesta.clear();
     }
-
+    /**
+     * vraća veličinu liste vozila
+     * @return veličina
+     */
     public int Velicina()
     {
         return mjesta.size();
     }
-    
+    /**
+     * vraća iterator tipa ListaVozila.Iterator. Iterator je interna klasa
+     * @return iterator tipa ListaVozila.Iterator
+     */
     public Iterator DajIterator()
     {
         return new Iterator(mjesta);
     }
-    
+    /**
+     * Interna klasa Iterator
+     */
     public class Iterator
     {
         private final ArrayList<VoziloSucelje> listaVozila;
@@ -119,6 +170,10 @@ public class ListaVozila
         {
             this.listaVozila = listaVozila;
         }
+        /**
+         * Vraća istinitost ako ima slijedećeg
+         * @return true ako ima inače false
+         */
         public boolean imaLiSlijedeceg()
         {
             if(index < listaVozila.size())
@@ -126,6 +181,10 @@ public class ListaVozila
             else
                 return false;
         }
+        /**
+         * vraća slijedeći iterirani podatak, u ovom slučaju vozilo iz liste
+         * @return podatak, konkretno: vozilo
+         */
         public VoziloSucelje slijedeci()
         {
             if(this.imaLiSlijedeceg()==true)
@@ -134,8 +193,6 @@ public class ListaVozila
         }
     }
 
-    
-    
     /* testiranje */
     public void Test()
     {

@@ -115,29 +115,6 @@ public class Podrucje implements PodrucjeSucelje
         return null;
     }
     /**
-     * Popunjava se lista svim potpodručjima
-     * @param lista Lista koja se treba popuniti
-     * @param rekurzivno Preklopnik za rekurzivno popunjavanje
-     */
-    /*
-    @Override
-    public void NapuniListuPodrucja(ArrayList<PodrucjeSucelje> lista, boolean rekurzivno)
-    {
-        for(String k : podPodrucja.keySet())
-        {
-            PodrucjeSucelje p = podPodrucja.get(k);
-            lista.add(p);
-        }
-        if(rekurzivno == false)
-            return;
-        for(String k : podPodrucja.keySet())
-        {
-            PodrucjeSucelje p = podPodrucja.get(k);
-            p.NapuniListuPodrucja(lista, rekurzivno);
-        }
-    }
-    */
-    /**
      * Popunjava se hash mapa svim potpodručjima
      * @param lista
      * @param rekurzivno 

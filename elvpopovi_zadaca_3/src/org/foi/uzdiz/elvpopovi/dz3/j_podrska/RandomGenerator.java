@@ -10,7 +10,7 @@ import java.math.RoundingMode;
 import java.util.Random;
 
 /**
- *
+ * Generator slučajnih brojeva
  * @author elvis
  */
 public class RandomGenerator 

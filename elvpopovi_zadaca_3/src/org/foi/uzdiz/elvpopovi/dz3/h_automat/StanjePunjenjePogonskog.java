@@ -12,7 +12,7 @@ import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.j_podrska.RandomGenerator;
 
 /**
- *
+ * Upravljanje stanjem PUNJENJA POGONSKOG SUSTAVA
  * @author elvis
  */
 public class StanjePunjenjePogonskog implements VoziloStanjeSucelje
@@ -40,7 +40,11 @@ public class StanjePunjenjePogonskog implements VoziloStanjeSucelje
             }
         }
     }
-
+    /**
+     * Metoda koja se poziva u simulaciji za kretanje unaprijed. Odbrojava vrijeme potrebno za punjenje.
+     * Vozilo ne mora imati dostupnog vozača za vrijeme punjenja
+     * Vozilo će pokušati promijeniti vozača ako postoji drugi na raspolaganju
+     */
     @Override
     public void Napredovanje()
     {
@@ -55,19 +59,28 @@ public class StanjePunjenjePogonskog implements VoziloStanjeSucelje
             ispisiPunjenje(1);
         ciklusaPunjenjaPogona--;
     }
-
+    /**
+     * Getter koji vraća naziv stanja
+     * @return String koji je vraćeni naziv stanja
+     */
     @Override
     public String DajNaziv()
     {
         return naziv;
     }
-
+    /**
+     * Metoda koja prima vanjski zahtijev za promjenom stanja
+     * @param novoStanje zatraženo novo stanje
+     */
     @Override
     public void Prijelaz(String novoStanje)
     {
         return;
     }
-    
+    /**
+     * Ispis informacija o stanju
+     * @param mod mod ispisa
+     */
     private void ispisiPunjenje(int mod)
     {
         RandomGenerator rnd = RandomGenerator.getInstance();

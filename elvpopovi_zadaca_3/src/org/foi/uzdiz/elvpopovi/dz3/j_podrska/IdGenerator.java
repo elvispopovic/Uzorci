@@ -6,7 +6,7 @@
 package org.foi.uzdiz.elvpopovi.dz3.j_podrska;
 
 /**
- *
+ * Generator identifikatora
  * @author elvis
  */
 public class IdGenerator 

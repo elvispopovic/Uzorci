@@ -8,10 +8,9 @@ package org.foi.uzdiz.elvpopovi.dz3.h_automat;
 import org.foi.uzdiz.elvpopovi.dz3.c_podaci.Parametri;
 import org.foi.uzdiz.elvpopovi.dz3.e_zbrinjavanje.VoziloSucelje;
 import org.foi.uzdiz.elvpopovi.dz3.i_MVC.MVCModelSucelje;
-import org.foi.uzdiz.elvpopovi.dz3.j_podrska.Ispisivanje;
 
 /**
- *
+ * Upravljanje stanjem KONTROLA
  * @author elvis
  */
 public class StanjeKontrola implements VoziloStanjeSucelje
@@ -20,13 +19,19 @@ public class StanjeKontrola implements VoziloStanjeSucelje
     protected VoziloSucelje vozilo;
     protected VoziloKontekstSucelje kontekst;
     protected MVCModelSucelje MVCmodel;
-    
+    /**
+     * Getter koji vraća naziv stanja
+     * @return String koji je vraćeni naziv stanja
+     */
     @Override
     public String DajNaziv()
     {
         return naziv;
     }
-    
+    /**
+     * Konstruktor
+     * @param kontekst referenca konteksta
+     */
     public StanjeKontrola(VoziloKontekstSucelje kontekst)
     {
         this.kontekst = kontekst;
@@ -38,22 +43,29 @@ public class StanjeKontrola implements VoziloStanjeSucelje
             ispisiKontrolu();
         }
     }
-    
+    /**
+     * Metoda koja prima vanjski zahtijev za promjenom stanja
+     * @param novoStanje zatraženo novo stanje
+     */
     @Override
     public void Prijelaz(String novoStanje)
     {
         if(novoStanje.equals("PRIKUPLJANJE"))
             kontekst.PostaviStanje(new StanjePrikupljanje(kontekst));
     }
-    
+    /**
+     * Metoda koja se poziva u simulaciji za kretanje unaprijed. Stanje KONTROLA ne radi ništa.
+     */
     @Override
     public void Napredovanje()
     {
         
     }
+    /**
+     * Ispis informacija o stanju
+     */
     private void ispisiKontrolu()
     {
-        Ispisivanje ispis = Ispisivanje.getInstance();
         Parametri parametri = Parametri.getInstance();
         if(parametri.DajVrijednost("ispis")!=0)
             return;
