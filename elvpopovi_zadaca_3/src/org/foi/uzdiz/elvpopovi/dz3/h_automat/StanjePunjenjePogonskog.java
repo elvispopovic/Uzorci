@@ -93,9 +93,13 @@ public class StanjePunjenjePogonskog implements VoziloStanjeSucelje
         {
             case 0: MVCmodel.Ispisi("Vozilo "+vozilo.dajId()+", "+vozilo.dajNaziv()+" puni pogonski sustav.");
                     break;
-            case 1: MVCmodel.Ispisi("Vozilo "+vozilo.dajId()+", "+vozilo.dajNaziv()+" je na punjenju. Preostalo je "+ciklusaPunjenjaPogona+".");
+            case 1: MVCmodel.Ispisi("Vozilo "+vozilo.dajId()+", "+vozilo.dajNaziv()+
+                    " je na punjenju. Preostalo je "+ciklusaPunjenjaPogona+".");
                     break;
-            case 2: MVCmodel.Ispisi("Vozilo "+vozilo.dajId()+", "+vozilo.dajNaziv()+" je završilo punjenje i vraća se u prikupljanje.");
+            case 2: MVCmodel.Ispisi("Vozilo "+vozilo.dajId()+", "+vozilo.dajNaziv()+
+                    " je završilo punjenje i vraća se u prikupljanje. "+
+                    (vozilo.DajTrenutnogVozaca()==null?"Nema raspoloživog vozača.":"Novi vozač je "+
+                            vozilo.DajTrenutnogVozaca().DajIme()+"."));
                     break;
         }
     }
